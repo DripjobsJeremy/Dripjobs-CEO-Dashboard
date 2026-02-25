@@ -1,0 +1,9 @@
+{
+  "name": "dripjobs-dashboard-updater",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fetches ClickUp data and writes data.json for the CEO Dashboard",
+  "main": "update-dashboard.js",
+  "type": "module",
+  "dependencies": {}
+}

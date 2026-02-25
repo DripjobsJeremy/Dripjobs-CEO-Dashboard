@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,6 +26,88 @@
     --cyan: #06B6D4;
     --radius: 12px;
     --radius-sm: 8px;
+  }
+
+  /* Light Mode */
+  [data-theme="light"] {
+    --bg: #F3F2FA;
+    --surface: #FFFFFF;
+    --surface-2: #ECEAF8;
+    --surface-3: #E2DFF3;
+    --border: rgba(0,0,0,0.09);
+    --border-bright: rgba(124, 58, 237, 0.25);
+    --text: #18162A;
+    --text-muted: #5A577A;
+    --text-dim: #9896B2;
+    --brand-dim: rgba(124, 58, 237, 0.1);
+    --brand-glow: rgba(124, 58, 237, 0.35);
+    color-scheme: light;
+  }
+
+  :root { color-scheme: dark; }
+
+  [data-theme="light"] body::before {
+    background:
+      radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,58,237,0.07) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 110%, rgba(6,182,212,0.04) 0%, transparent 50%);
+  }
+
+  [data-theme="light"] .topbar {
+    background: rgba(243,242,250,0.9);
+  }
+
+  [data-theme="light"] .sidebar {
+    background: #FFFFFF;
+  }
+
+  [data-theme="light"] .date-bar {
+    background: #FFFFFF;
+  }
+
+  [data-theme="light"] .sidebar-nav .nav-item:hover {
+    background: var(--surface-2);
+  }
+
+  [data-theme="light"] .progress-track {
+    background: #E2DFF3;
+  }
+
+  [data-theme="light"] .qa-platform {
+    background: #F3F2FA;
+  }
+
+  [data-theme="light"] .tab-bar {
+    background: #E2DFF3;
+  }
+
+  [data-theme="light"] .tab.active {
+    background: #FFFFFF;
+  }
+
+  [data-theme="light"] .strategy-box {
+    background: rgba(124,58,237,0.07);
+  }
+
+  .stat-pct { font-size: 16px; }
+  .bug-count-dim { color: var(--text-dim); }
+
+  #last-updated {
+    font-size: 11px;
+    color: var(--text-dim);
+    font-family: 'JetBrains Mono', monospace;
+    margin-right: 4px;
+  }
+
+  /* Theme Toggle Button */
+  .theme-toggle {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -802,7 +884,11 @@
 <aside class="sidebar">
   <div class="sidebar-logo">
     <div class="logo-mark">
-      <div class="logo-icon">💧</div>
+      <div class="logo-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+        </svg>
+      </div>
       <div>
         <div class="logo-text">DripJobs</div>
         <div class="logo-sub">CEO Intelligence</div>
@@ -842,7 +928,7 @@
     <div class="user-card">
       <div class="user-avatar">TH</div>
       <div class="user-info">
-        <div class="user-name">Tanner H.</div>
+        <div class="user-name">Tanner</div>
         <div class="user-role">CEO</div>
       </div>
     </div>
@@ -861,6 +947,8 @@
       </div>
     </div>
     <div class="topbar-right">
+      <span id="last-updated"></span>
+      <button class="btn theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">☀️</button>
       <button class="btn">⬇ Export</button>
       <button class="btn btn-primary">+ New Report</button>
     </div>
@@ -892,31 +980,31 @@
     <div class="overview-grid">
       <div class="stat-card purple" onclick="navigate('release', document.querySelector('[onclick*=release]'))">
         <div class="stat-icon">🚀</div>
-        <div class="stat-value">12</div>
+        <div class="stat-value" id="stat-features">12</div>
         <div class="stat-label">Features Shipped</div>
         <div class="stat-trend"><span class="up">↑ 4</span> vs prior period</div>
       </div>
       <div class="stat-card green">
         <div class="stat-icon">✅</div>
-        <div class="stat-value">94<small style="font-size:16px">%</small></div>
+        <div class="stat-value"><span id="stat-qa-rate">94</span><small class="stat-pct">%</small></div>
         <div class="stat-label">QA Pass Rate</div>
         <div class="stat-trend"><span class="up">↑ 6%</span> vs prior period</div>
       </div>
       <div class="stat-card amber">
         <div class="stat-icon">🔄</div>
-        <div class="stat-value">8</div>
+        <div class="stat-value" id="stat-in-progress">8</div>
         <div class="stat-label">In Progress</div>
         <div class="stat-trend">3 due this week</div>
       </div>
       <div class="stat-card red">
         <div class="stat-icon">🐛</div>
-        <div class="stat-value">3</div>
+        <div class="stat-value" id="stat-bugs">3</div>
         <div class="stat-label">Open Bugs</div>
         <div class="stat-trend"><span class="down">↑ 1</span> new this week</div>
       </div>
       <div class="stat-card cyan">
         <div class="stat-icon">📝</div>
-        <div class="stat-value">27</div>
+        <div class="stat-value" id="stat-tasks-closed">27</div>
         <div class="stat-label">Tasks Closed</div>
         <div class="stat-trend"><span class="up">↑ 11</span> vs prior period</div>
       </div>
@@ -1066,19 +1154,19 @@
           <div class="card-body" style="padding:16px 20px">
             <div class="bug-row">
               <span class="text-muted">New this week</span>
-              <span class="bug-count text-red">1</span>
+              <span class="bug-count text-red" id="bugs-new">1</span>
             </div>
             <div class="bug-row">
               <span class="text-muted">Resolved</span>
-              <span class="bug-count text-green">5</span>
+              <span class="bug-count text-green" id="bugs-resolved">5</span>
             </div>
             <div class="bug-row">
               <span class="text-muted">Open / Ongoing</span>
-              <span class="bug-count text-amber">3</span>
+              <span class="bug-count text-amber" id="bugs-open">3</span>
             </div>
             <div class="bug-row">
               <span class="text-muted">Deferred</span>
-              <span class="bug-count" style="color:var(--text-dim)">2</span>
+              <span class="bug-count bug-count-dim" id="bugs-deferred">2</span>
             </div>
             <div style="margin-top:14px; padding:10px 12px; background:rgba(239,68,68,0.06); border:1px solid rgba(239,68,68,0.15); border-radius:8px">
               <div style="font-size:11px; color:var(--red); font-weight:600; margin-bottom:4px">⚠ Risk Flag</div>
@@ -1939,7 +2027,67 @@
 </div><!-- /main -->
 
 <script>
-  // Page navigation
+  // ── Theme ──────────────────────────────────────────────────
+  function toggleTheme() {
+    const html = document.documentElement;
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    document.getElementById('theme-toggle').textContent = next === 'dark' ? '☀️' : '🌙';
+    localStorage.setItem('dj-theme', next);
+  }
+
+  (function initTheme() {
+    const saved = localStorage.getItem('dj-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', saved);
+    document.getElementById('theme-toggle').textContent = saved === 'dark' ? '☀️' : '🌙';
+  })();
+
+  // ── ClickUp data loader ────────────────────────────────────
+  async function loadDashboardData() {
+    try {
+      const res = await fetch('data.json?v=' + Date.now());
+      if (!res.ok) return;
+      const d = await res.json();
+
+      // Stat cards
+      if (d.stats) {
+        const s = d.stats;
+        setText('stat-features',    s.featuresShipped);
+        setText('stat-qa-rate',     s.qaPassRate);
+        setText('stat-in-progress', s.inProgress);
+        setText('stat-bugs',        s.openBugs);
+        setText('stat-tasks-closed',s.tasksClosed);
+      }
+
+      // Bug summary
+      if (d.bugs) {
+        const b = d.bugs;
+        setText('bugs-new',      b.newThisWeek);
+        setText('bugs-resolved', b.resolved);
+        setText('bugs-open',     b.open);
+        setText('bugs-deferred', b.deferred);
+      }
+
+      // Last updated pill
+      if (d.lastUpdated) {
+        const dt = new Date(d.lastUpdated);
+        const label = dt.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+          + ' · ' + dt.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+        setText('last-updated', '⟳ ' + label);
+      }
+    } catch (_) {
+      // No data.json yet — static values remain
+    }
+  }
+
+  function setText(id, val) {
+    const el = document.getElementById(id);
+    if (el && val !== undefined) el.textContent = val;
+  }
+
+  loadDashboardData();
+
+  // ── Page navigation
   const pages = {
     overview: { title: 'Dashboard Overview', subtitle: 'Product Intelligence Summary' },
     brief:    { title: 'CEO Product Brief', subtitle: 'Week of February 17, 2026' },

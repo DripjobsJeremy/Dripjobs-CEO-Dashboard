@@ -1,0 +1,44 @@
+name: Update Dashboard from ClickUp
+
+on:
+  schedule:
+    # 7:00 AM EST = 12:00 UTC (Nov–Mar, Eastern Standard Time)
+    - cron: '0 12 * * *'
+  workflow_dispatch: # Allow manual trigger from GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: scripts/package-lock.json
+
+      - name: Install dependencies
+        run: npm install --prefix scripts
+
+      - name: Fetch ClickUp data and update data.json
+        env:
+          CLICKUP_API_TOKEN: ${{ secrets.CLICKUP_API_TOKEN }}
+          CLICKUP_TEAM_ID: ${{ secrets.CLICKUP_TEAM_ID }}
+          CLICKUP_FEATURES_LIST_ID: ${{ secrets.CLICKUP_FEATURES_LIST_ID }}
+          CLICKUP_BUGS_LIST_ID: ${{ secrets.CLICKUP_BUGS_LIST_ID }}
+        run: node scripts/update-dashboard.js
+
+      - name: Commit and push data.json
+        run: |
+          git config user.name "CEO Dashboard Bot"
+          git config user.email "dashboard-bot@dripjobs.com"
+          git add data.json
+          git diff --staged --quiet || git commit -m "chore: refresh dashboard data $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push

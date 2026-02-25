@@ -1,0 +1,17 @@
+{
+  "lastUpdated": "2026-02-25T12:00:00.000Z",
+  "stats": {
+    "featuresShipped": 12,
+    "qaPassRate": 94,
+    "inProgress": 8,
+    "openBugs": 3,
+    "tasksClosed": 27
+  },
+  "bugs": {
+    "newThisWeek": 1,
+    "resolved": 5,
+    "open": 3,
+    "deferred": 2
+  },
+  "recentActivity": []
+}
