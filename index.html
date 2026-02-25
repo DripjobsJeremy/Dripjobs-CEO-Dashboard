@@ -872,9 +872,195 @@
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: var(--surface-3); border-radius: 99px; }
 
+  /* ── Grid helpers (override inline-styled grids on mobile) ── */
+  .sprint-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .stat-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .strategy-options {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .strategy-options > div {
+    flex: 1;
+    background: var(--surface-3);
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+
+  .release-actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+
+  /* ── Mobile Bottom Nav ─────────────────────────────────────── */
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    height: 64px;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    z-index: 200;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    padding: 0 4px;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .mobile-nav-inner {
+    display: flex;
+    height: 64px;
+    align-items: stretch;
+  }
+
+  .mobile-nav-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    margin: 6px 2px;
+    transition: background 0.15s;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+  }
+
+  .mobile-nav-item .mn-icon { font-size: 18px; line-height: 1; }
+  .mobile-nav-item .mn-label {
+    font-size: 9.5px;
+    font-weight: 500;
+    color: var(--text-dim);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+
+  .mobile-nav-item.active .mn-label { color: var(--brand-light); }
+  .mobile-nav-item.active .mn-icon { filter: drop-shadow(0 0 6px var(--brand-glow)); }
+
+  .mobile-nav-item.active::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 20%; right: 20%;
+    height: 2px;
+    background: var(--brand);
+    border-radius: 0 0 3px 3px;
+  }
+
+  /* ── Tablet (≤ 1100px) ─────────────────────────────────────── */
   @media (max-width: 1100px) {
     .main-grid { grid-template-columns: 1fr; }
     .overview-grid { grid-template-columns: repeat(3, 1fr); }
+    .stat-grid-4 { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* ── Mobile (≤ 768px) ──────────────────────────────────────── */
+  @media (max-width: 768px) {
+
+    /* Hide desktop sidebar, show mobile nav */
+    .sidebar { display: none; }
+    .mobile-nav { display: block; }
+    .main { margin-left: 0; padding-bottom: 64px; }
+
+    /* Topbar */
+    .topbar { padding: 0 16px; height: 54px; }
+    .page-subtitle { display: none; }
+    .page-title { font-size: 17px; }
+    #last-updated { display: none; }
+    .topbar-right .btn-export,
+    .topbar-right .btn-new { display: none; }
+
+    /* Date bar — horizontal scroll strip */
+    .date-bar {
+      padding: 10px 16px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      gap: 6px;
+    }
+    .date-bar::-webkit-scrollbar { display: none; }
+    .date-separator,
+    .custom-date-wrapper,
+    .active-range-pill { display: none; }
+    .date-label { display: none; }
+
+    /* Content padding */
+    .content { padding: 16px; }
+
+    /* Stat grid: 2 columns */
+    .overview-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .stat-card { padding: 14px; }
+    .stat-value { font-size: 22px; }
+    .stat-icon { font-size: 15px; margin-bottom: 6px; }
+
+    /* Main grid: 1 column */
+    .main-grid { grid-template-columns: 1fr; gap: 14px; }
+
+    /* Cards */
+    .card-header { flex-wrap: wrap; gap: 8px; padding: 14px 16px; }
+    .card-body { padding: 16px; }
+    .card-title { font-size: 12.5px; }
+
+    /* Sprint velocity */
+    .sprint-grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* Stat grids (QA metrics, monthly counts) */
+    .stat-grid-4 { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+
+    /* Strategy options */
+    .strategy-options { flex-direction: column; }
+
+    /* Release actions */
+    .release-actions { margin-left: 0; }
+    .release-header { flex-direction: column; gap: 10px; }
+
+    /* QA grid: 1 col */
+    .qa-grid { grid-template-columns: 1fr; }
+
+    /* Changelog table: make scrollable */
+    .changelog-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .changelog-table { min-width: 480px; }
+
+    /* Shipped items: stack tag below on narrow */
+    .shipped-item { gap: 8px; }
+    .shipped-tag { margin-left: 0; align-self: flex-start; }
+
+    /* Progress items */
+    .progress-item { margin-bottom: 12px; }
+
+    /* Brief section titles */
+    .brief-section-title { font-size: 9.5px; }
+
+    /* Activity feed */
+    .activity-item { gap: 10px; }
+
+    /* Bug row */
+    .bug-count { font-size: 14px; }
+  }
+
+  /* ── Small phones (≤ 390px) ─────────────────────────────────── */
+  @media (max-width: 390px) {
+    .overview-grid { grid-template-columns: repeat(2, 1fr); }
+    .mobile-nav-item .mn-label { font-size: 8.5px; }
+    .content { padding: 12px; }
   }
 </style>
 </head>
@@ -949,8 +1135,8 @@
     <div class="topbar-right">
       <span id="last-updated"></span>
       <button class="btn theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">☀️</button>
-      <button class="btn">⬇ Export</button>
-      <button class="btn btn-primary">+ New Report</button>
+      <button class="btn btn-export">⬇ Export</button>
+      <button class="btn btn-primary btn-new">+ New Report</button>
     </div>
   </div>
 
@@ -1081,7 +1267,7 @@
             <div class="card-title"><span class="card-title-icon">📈</span> Sprint Velocity — Last 4 Weeks</div>
           </div>
           <div class="card-body">
-            <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px; text-align:center; margin-bottom:20px">
+            <div class="sprint-grid">
               <div>
                 <div style="font-size:10px; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:6px">Feb 3</div>
                 <div style="height:80px; background:var(--surface-2); border-radius:6px; position:relative; overflow:hidden">
@@ -1264,7 +1450,7 @@
     <div class="card">
       <div class="card-header">
         <div class="card-title"><span class="card-title-icon">📋</span> CEO Product Brief — Week of February 17, 2026</div>
-        <div style="display:flex; gap:8px">
+        <div class="release-actions">
           <button class="btn">⬇ PDF</button>
           <button class="btn btn-primary">✉ Send to Slack</button>
         </div>
@@ -1359,7 +1545,7 @@
           <div class="brief-section-title">❓ CEO Alignment Question</div>
           <div class="strategy-box">
             <div class="strategy-q">"Should we prioritize the QuickBooks two-way sync before the scheduling AI assistant, given the 47 FeatureBase requests trending toward accounting integration? Scheduling AI has stronger long-term differentiation value but QuickBooks closes an immediate retention risk with mid-size contractors."</div>
-            <div style="display:flex; gap:12px; margin-top:12px">
+            <div class="strategy-options">
               <div style="flex:1; background:var(--surface-3); border-radius:8px; padding:10px 12px">
                 <div style="font-size:10px; color:var(--brand-light); font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:6px">Option A — QuickBooks First</div>
                 <div style="font-size:12px; color:var(--text-muted); line-height:1.5">Closes retention risk, addresses highest FeatureBase vote, estimated 8 weeks.</div>
@@ -1381,7 +1567,7 @@
     <div class="card">
       <div class="card-header">
         <div class="card-title"><span class="card-title-icon">🚀</span> Product Release Notes</div>
-        <div style="display:flex; gap:8px">
+        <div class="release-actions">
           <button class="btn">FeatureBase Sync</button>
           <button class="btn btn-primary">⬇ Export</button>
         </div>
@@ -1529,7 +1715,7 @@
 
         <div class="brief-section">
           <div class="brief-section-title">📊 QA Metrics</div>
-          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px">
+          <div class="stat-grid-4">
             <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:14px; text-align:center">
               <div style="font-family:'DM Serif Display',serif; font-size:28px; color:var(--green)">94%</div>
               <div style="font-size:11px; color:var(--text-muted); margin-top:4px; text-transform:uppercase; letter-spacing:0.06em">Pass Rate</div>
@@ -1570,7 +1756,7 @@
         </div>
 
         <div class="tab-content active" id="weekly-w-feb24">
-          <table class="changelog-table">
+          <div class="changelog-table-wrap"><table class="changelog-table">
             <thead>
               <tr>
                 <th style="width:90px">Date</th>
@@ -1617,11 +1803,11 @@
                 <td><span class="change-type ct-ux">UX</span></td>
               </tr>
             </tbody>
-          </table>
+          </table></div>
         </div>
 
         <div class="tab-content" id="weekly-w-feb17">
-          <table class="changelog-table">
+          <div class="changelog-table-wrap"><table class="changelog-table">
             <thead>
               <tr>
                 <th style="width:90px">Date</th>
@@ -1662,11 +1848,11 @@
                 <td><span class="change-type ct-fix">Fix</span></td>
               </tr>
             </tbody>
-          </table>
+          </table></div>
         </div>
 
         <div class="tab-content" id="weekly-w-feb10">
-          <table class="changelog-table">
+          <div class="changelog-table-wrap"><table class="changelog-table">
             <thead>
               <tr>
                 <th style="width:90px">Date</th>
@@ -1707,11 +1893,11 @@
                 <td><span class="change-type ct-feature">Feature</span></td>
               </tr>
             </tbody>
-          </table>
+          </table></div>
         </div>
 
         <div class="tab-content" id="weekly-w-feb03">
-          <table class="changelog-table">
+          <div class="changelog-table-wrap"><table class="changelog-table">
             <thead>
               <tr>
                 <th style="width:90px">Date</th>
@@ -1746,7 +1932,7 @@
                 <td><span class="change-type ct-perf">Perf</span></td>
               </tr>
             </tbody>
-          </table>
+          </table></div>
         </div>
 
       </div>
@@ -1769,7 +1955,7 @@
         </div>
 
         <div class="tab-content active" id="monthly-m-feb">
-          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:24px">
+          <div class="stat-grid-4">
             <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:14px; text-align:center">
               <div style="font-family:'DM Serif Display',serif; font-size:28px; color:var(--brand-light)">12</div>
               <div style="font-size:11px; color:var(--text-muted); margin-top:4px; text-transform:uppercase; letter-spacing:0.06em">Features</div>
@@ -1788,7 +1974,7 @@
             </div>
           </div>
 
-          <table class="changelog-table">
+          <div class="changelog-table-wrap"><table class="changelog-table">
             <thead>
               <tr>
                 <th style="width:90px">Date</th>
@@ -1883,11 +2069,11 @@
                 <td><span class="change-type ct-feature">Feature</span></td>
               </tr>
             </tbody>
-          </table>
+          </table></div>
         </div>
 
         <div class="tab-content" id="monthly-m-jan">
-          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:24px">
+          <div class="stat-grid-4">
             <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:14px; text-align:center">
               <div style="font-family:'DM Serif Display',serif; font-size:28px; color:var(--brand-light)">9</div>
               <div style="font-size:11px; color:var(--text-muted); margin-top:4px; text-transform:uppercase; letter-spacing:0.06em">Features</div>
@@ -1906,7 +2092,7 @@
             </div>
           </div>
 
-          <table class="changelog-table">
+          <div class="changelog-table-wrap"><table class="changelog-table">
             <thead>
               <tr>
                 <th style="width:90px">Date</th>
@@ -1953,11 +2139,11 @@
                 <td><span class="change-type ct-feature">Release</span></td>
               </tr>
             </tbody>
-          </table>
+          </table></div>
         </div>
 
         <div class="tab-content" id="monthly-m-dec">
-          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:24px">
+          <div class="stat-grid-4">
             <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:14px; text-align:center">
               <div style="font-family:'DM Serif Display',serif; font-size:28px; color:var(--brand-light)">7</div>
               <div style="font-size:11px; color:var(--text-muted); margin-top:4px; text-transform:uppercase; letter-spacing:0.06em">Features</div>
@@ -1976,7 +2162,7 @@
             </div>
           </div>
 
-          <table class="changelog-table">
+          <div class="changelog-table-wrap"><table class="changelog-table">
             <thead>
               <tr>
                 <th style="width:90px">Date</th>
@@ -2017,7 +2203,7 @@
                 <td><span class="change-type ct-perf">Perf</span></td>
               </tr>
             </tbody>
-          </table>
+          </table></div>
         </div>
 
       </div>
@@ -2025,6 +2211,36 @@
   </div>
 
 </div><!-- /main -->
+
+<!-- MOBILE BOTTOM NAV -->
+<nav class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-inner">
+    <div class="mobile-nav-item active" data-page="overview" onclick="navigate('overview', this)">
+      <span class="mn-icon">⬡</span>
+      <span class="mn-label">Dashboard</span>
+    </div>
+    <div class="mobile-nav-item" data-page="brief" onclick="navigate('brief', this)">
+      <span class="mn-icon">📋</span>
+      <span class="mn-label">Brief</span>
+    </div>
+    <div class="mobile-nav-item" data-page="release" onclick="navigate('release', this)">
+      <span class="mn-icon">🚀</span>
+      <span class="mn-label">Releases</span>
+    </div>
+    <div class="mobile-nav-item" data-page="qa" onclick="navigate('qa', this)">
+      <span class="mn-icon">✅</span>
+      <span class="mn-label">QA</span>
+    </div>
+    <div class="mobile-nav-item" data-page="weekly" onclick="navigate('weekly', this)">
+      <span class="mn-icon">📅</span>
+      <span class="mn-label">Weekly</span>
+    </div>
+    <div class="mobile-nav-item" data-page="monthly" onclick="navigate('monthly', this)">
+      <span class="mn-icon">🗓</span>
+      <span class="mn-label">Monthly</span>
+    </div>
+  </div>
+</nav>
 
 <script>
   // ── Theme ──────────────────────────────────────────────────
@@ -2100,15 +2316,24 @@
   function navigate(page, navEl) {
     // Hide all pages
     document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
-    // Deactivate all nav items
-    document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+
+    // Deactivate all nav items (sidebar + mobile)
+    document.querySelectorAll('.nav-item, .mobile-nav-item').forEach(el => el.classList.remove('active'));
 
     // Show target page
     const target = document.getElementById('page-' + page);
-    if (target) target.classList.add('active');
+    if (target) {
+      target.classList.add('active');
+      // Scroll to top on mobile when navigating
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-    // Activate nav item
+    // Activate the clicked element (sidebar or mobile nav item)
     if (navEl) navEl.classList.add('active');
+
+    // Sync the counterpart nav (sidebar ↔ mobile)
+    document.querySelectorAll(`.nav-item[onclick*="'${page}'"], .mobile-nav-item[data-page="${page}"]`)
+      .forEach(el => el.classList.add('active'));
 
     // Update topbar
     if (pages[page]) {
