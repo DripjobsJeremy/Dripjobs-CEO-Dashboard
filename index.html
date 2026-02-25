@@ -1,0 +1,2028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DripJobs — CEO Intelligence Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brand: #7C3AED;
+    --brand-light: #9D5CF5;
+    --brand-dim: rgba(124, 58, 237, 0.15);
+    --brand-glow: rgba(124, 58, 237, 0.4);
+    --bg: #0A090F;
+    --surface: #111018;
+    --surface-2: #1A1825;
+    --surface-3: #221F31;
+    --border: rgba(255,255,255,0.07);
+    --border-bright: rgba(124, 58, 237, 0.3);
+    --text: #F0EEF8;
+    --text-muted: #7B78A0;
+    --text-dim: #4A4765;
+    --green: #22C55E;
+    --red: #EF4444;
+    --amber: #F59E0B;
+    --cyan: #06B6D4;
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,58,237,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 110%, rgba(6,182,212,0.06) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    position: fixed;
+    left: 0; top: 0; bottom: 0;
+    width: 220px;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    padding: 0;
+  }
+
+  .sidebar-logo {
+    padding: 24px 20px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo-mark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo-icon {
+    width: 34px; height: 34px;
+    background: var(--brand);
+    border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+  }
+
+  .logo-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+
+  .logo-sub {
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 2px;
+    font-weight: 500;
+  }
+
+  .sidebar-nav {
+    padding: 16px 12px;
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  .nav-section-label {
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 0 8px;
+    margin-bottom: 6px;
+    margin-top: 16px;
+  }
+
+  .nav-section-label:first-child { margin-top: 0; }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 10px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.15s;
+    font-size: 13.5px;
+    font-weight: 400;
+    color: var(--text-muted);
+    user-select: none;
+    position: relative;
+  }
+
+  .nav-item:hover {
+    background: var(--surface-2);
+    color: var(--text);
+  }
+
+  .nav-item.active {
+    background: var(--brand-dim);
+    color: var(--brand-light);
+    font-weight: 500;
+  }
+
+  .nav-item.active::before {
+    content: '';
+    position: absolute;
+    left: -12px; top: 50%;
+    transform: translateY(-50%);
+    width: 3px; height: 16px;
+    background: var(--brand);
+    border-radius: 0 2px 2px 0;
+  }
+
+  .nav-icon { font-size: 14px; width: 16px; text-align: center; flex-shrink: 0; }
+
+  .nav-badge {
+    margin-left: auto;
+    background: var(--brand);
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 99px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .sidebar-footer {
+    padding: 16px 12px;
+    border-top: 1px solid var(--border);
+  }
+
+  .user-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+  }
+
+  .user-avatar {
+    width: 30px; height: 30px;
+    background: linear-gradient(135deg, var(--brand), #5B21B6);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .user-info .user-name { font-size: 13px; font-weight: 500; color: var(--text); }
+  .user-info .user-role { font-size: 11px; color: var(--text-dim); }
+
+  /* MAIN LAYOUT */
+  .main {
+    margin-left: 220px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* TOPBAR */
+  .topbar {
+    position: sticky;
+    top: 0;
+    background: rgba(10,9,15,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 32px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 50;
+  }
+
+  .topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .page-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+
+  .page-subtitle {
+    font-size: 12px;
+    color: var(--text-dim);
+    font-weight: 400;
+  }
+
+  .topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* DATE FILTER BAR */
+  .date-bar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 32px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .date-label {
+    font-size: 11px;
+    color: var(--text-dim);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-right: 4px;
+  }
+
+  .quick-range {
+    padding: 5px 14px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-muted);
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+
+  .quick-range:hover { border-color: var(--brand-glow); color: var(--brand-light); }
+  .quick-range.active { background: var(--brand-dim); border-color: var(--brand); color: var(--brand-light); }
+
+  .date-separator {
+    width: 1px; height: 20px;
+    background: var(--border);
+    margin: 0 4px;
+  }
+
+  .custom-date-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .custom-date-input {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 5px 10px;
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    width: 120px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+
+  .custom-date-input:focus { border-color: var(--brand); }
+
+  .date-connector { font-size: 11px; color: var(--text-dim); }
+
+  .btn-apply {
+    padding: 5px 14px;
+    background: var(--brand);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.15s;
+  }
+
+  .btn-apply:hover { opacity: 0.85; }
+
+  .active-range-pill {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--surface-2);
+    border: 1px solid var(--border-bright);
+    padding: 4px 12px;
+    border-radius: 99px;
+    font-size: 11px;
+    color: var(--brand-light);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .pulse-dot {
+    width: 6px; height: 6px;
+    background: var(--brand);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  /* CONTENT */
+  .content {
+    padding: 28px 32px;
+    display: none;
+    animation: fadeUp 0.25s ease;
+  }
+
+  .content.active { display: block; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* OVERVIEW GRID */
+  .overview-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.15s;
+  }
+
+  .stat-card:hover { border-color: var(--brand-glow); transform: translateY(-1px); }
+
+  .stat-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .stat-card.green::after { background: var(--green); }
+  .stat-card.purple::after { background: var(--brand); }
+  .stat-card.amber::after { background: var(--amber); }
+  .stat-card.red::after { background: var(--red); }
+  .stat-card.cyan::after { background: var(--cyan); }
+
+  .stat-icon { font-size: 18px; margin-bottom: 10px; }
+  .stat-value {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-label { font-size: 11px; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; }
+  .stat-trend { font-size: 11px; color: var(--text-dim); margin-top: 6px; }
+  .stat-trend .up { color: var(--green); }
+  .stat-trend .down { color: var(--red); }
+
+  /* MAIN CONTENT GRID */
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 20px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .card-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .card-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .card-title-icon { font-size: 14px; }
+
+  .card-action {
+    font-size: 11px;
+    color: var(--brand-light);
+    cursor: pointer;
+    font-weight: 500;
+    padding: 4px 10px;
+    border: 1px solid var(--border-bright);
+    border-radius: 99px;
+    background: var(--brand-dim);
+    transition: opacity 0.15s;
+  }
+
+  .card-action:hover { opacity: 0.8; }
+
+  .card-body { padding: 20px; }
+
+  /* BRIEF SECTIONS */
+  .brief-section { margin-bottom: 20px; }
+  .brief-section:last-child { margin-bottom: 0; }
+
+  .brief-section-title {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--brand-light);
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .brief-section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .shipped-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .shipped-item:last-child { border-bottom: none; }
+
+  .shipped-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+
+  .shipped-dot.green { background: var(--green); }
+  .shipped-dot.purple { background: var(--brand); }
+  .shipped-dot.amber { background: var(--amber); }
+  .shipped-dot.red { background: var(--red); }
+
+  .shipped-title { font-size: 13px; font-weight: 500; color: var(--text); line-height: 1.4; }
+  .shipped-meta { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+  .shipped-tag {
+    margin-left: auto;
+    flex-shrink: 0;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .tag-shipped { background: rgba(34,197,94,0.12); color: var(--green); }
+  .tag-progress { background: rgba(245,158,11,0.12); color: var(--amber); }
+  .tag-review { background: rgba(124,58,237,0.15); color: var(--brand-light); }
+  .tag-bug { background: rgba(239,68,68,0.12); color: var(--red); }
+
+  /* STRATEGY QUESTION BOX */
+  .strategy-box {
+    background: var(--brand-dim);
+    border: 1px solid var(--border-bright);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    margin-top: 4px;
+  }
+
+  .strategy-q { font-size: 13px; line-height: 1.5; color: var(--text); font-style: italic; }
+  .strategy-meta { font-size: 11px; color: var(--brand-light); margin-top: 8px; font-weight: 500; }
+
+  /* RIGHT COLUMN */
+  .right-col { display: flex; flex-direction: column; gap: 20px; }
+
+  /* BUG SUMMARY */
+  .bug-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+  }
+
+  .bug-row:last-child { border-bottom: none; }
+  .bug-count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  /* ACTIVITY FEED */
+  .activity-item {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .activity-item:last-child { border-bottom: none; }
+
+  .activity-icon {
+    width: 28px; height: 28px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+
+  .ai-green { background: rgba(34,197,94,0.12); }
+  .ai-purple { background: var(--brand-dim); }
+  .ai-amber { background: rgba(245,158,11,0.12); }
+  .ai-red { background: rgba(239,68,68,0.1); }
+  .ai-cyan { background: rgba(6,182,212,0.1); }
+
+  .activity-text { font-size: 12px; color: var(--text-muted); line-height: 1.45; }
+  .activity-text strong { color: var(--text); font-weight: 500; }
+  .activity-time { font-size: 10px; color: var(--text-dim); margin-top: 3px; font-family: 'JetBrains Mono', monospace; }
+
+  /* PROGRESS BAR */
+  .progress-item { margin-bottom: 14px; }
+  .progress-header { display: flex; justify-content: space-between; margin-bottom: 6px; }
+  .progress-label { font-size: 12px; color: var(--text-muted); }
+  .progress-val { font-size: 12px; color: var(--text); font-family: 'JetBrains Mono', monospace; font-weight: 500; }
+  .progress-track {
+    height: 4px;
+    background: var(--surface-3);
+    border-radius: 99px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    border-radius: 99px;
+    transition: width 0.6s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  /* CHANGELOG TABLE */
+  .changelog-table { width: 100%; border-collapse: collapse; }
+  .changelog-table th {
+    text-align: left;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    font-weight: 600;
+    padding: 0 0 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .changelog-table td {
+    padding: 11px 0;
+    font-size: 13px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  .changelog-table tr:last-child td { border-bottom: none; }
+
+  .changelog-table th:last-child,
+  .changelog-table td:last-child { text-align: right; }
+
+  .change-type {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .ct-feature { background: var(--brand-dim); color: var(--brand-light); }
+  .ct-fix { background: rgba(34,197,94,0.1); color: var(--green); }
+  .ct-ux { background: rgba(6,182,212,0.1); color: var(--cyan); }
+  .ct-perf { background: rgba(245,158,11,0.1); color: var(--amber); }
+
+  .td-date { color: var(--text-dim); font-family: 'JetBrains Mono', monospace; font-size: 11px; white-space: nowrap; padding-right: 16px; }
+  .td-title { color: var(--text); font-weight: 400; padding-right: 16px; }
+  .td-area { color: var(--text-muted); font-size: 12px; }
+
+  /* TABS */
+  .tab-bar {
+    display: flex;
+    gap: 2px;
+    background: var(--surface-2);
+    border-radius: var(--radius-sm);
+    padding: 3px;
+    margin-bottom: 20px;
+  }
+
+  .tab {
+    flex: 1;
+    text-align: center;
+    padding: 7px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s;
+    user-select: none;
+  }
+
+  .tab.active {
+    background: var(--surface);
+    color: var(--text);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  }
+
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* QA CHECKLIST */
+  .qa-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 20px; }
+
+  .qa-platform {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 14px;
+  }
+
+  .qa-platform-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .qa-check {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 4px 0;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .check-icon { font-size: 12px; }
+
+  /* RELEASE NOTES */
+  .release-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .release-header:last-child { border-bottom: none; }
+
+  .release-ver {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--brand-light);
+    margin-bottom: 4px;
+  }
+
+  .release-date { font-size: 11px; color: var(--text-dim); }
+
+  .release-body { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-top: 8px; }
+
+  .release-feature-list { list-style: none; margin-top: 8px; }
+  .release-feature-list li {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    padding: 3px 0 3px 16px;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .release-feature-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--brand);
+    font-size: 11px;
+    top: 4px;
+  }
+
+  /* UTILITY */
+  .flex { display: flex; }
+  .items-center { align-items: center; }
+  .gap-2 { gap: 8px; }
+  .ml-auto { margin-left: auto; }
+  .text-green { color: var(--green); }
+  .text-red { color: var(--red); }
+  .text-amber { color: var(--amber); }
+  .text-brand { color: var(--brand-light); }
+  .text-muted { color: var(--text-muted); }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+  .fw-6 { font-weight: 600; }
+
+  .btn {
+    padding: 7px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    background: var(--surface-2);
+    color: var(--text-muted);
+    transition: all 0.15s;
+  }
+
+  .btn:hover { border-color: var(--brand-glow); color: var(--brand-light); }
+  .btn-primary { background: var(--brand); border-color: var(--brand); color: white; }
+  .btn-primary:hover { opacity: 0.85; color: white; }
+
+  .inline-badge {
+    display: inline-block;
+    padding: 1px 7px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--surface-3); border-radius: 99px; }
+
+  @media (max-width: 1100px) {
+    .main-grid { grid-template-columns: 1fr; }
+    .overview-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark">
+      <div class="logo-icon">💧</div>
+      <div>
+        <div class="logo-text">DripJobs</div>
+        <div class="logo-sub">CEO Intelligence</div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    <div class="nav-section-label">Overview</div>
+    <div class="nav-item active" onclick="navigate('overview', this)">
+      <span class="nav-icon">⬡</span> Dashboard
+    </div>
+
+    <div class="nav-section-label">Reports</div>
+    <div class="nav-item" onclick="navigate('brief', this)">
+      <span class="nav-icon">📋</span> CEO Product Brief
+      <span class="nav-badge">1</span>
+    </div>
+    <div class="nav-item" onclick="navigate('release', this)">
+      <span class="nav-icon">🚀</span> Release Notes
+    </div>
+    <div class="nav-item" onclick="navigate('qa', this)">
+      <span class="nav-icon">✅</span> QA Summary
+      <span class="nav-badge">2</span>
+    </div>
+
+    <div class="nav-section-label">Changelogs</div>
+    <div class="nav-item" onclick="navigate('weekly', this)">
+      <span class="nav-icon">📅</span> Weekly Changelog
+    </div>
+    <div class="nav-item" onclick="navigate('monthly', this)">
+      <span class="nav-icon">🗓</span> Monthly Changelog
+    </div>
+  </nav>
+
+  <div class="sidebar-footer">
+    <div class="user-card">
+      <div class="user-avatar">TH</div>
+      <div class="user-info">
+        <div class="user-name">Tanner H.</div>
+        <div class="user-role">CEO</div>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- MAIN AREA -->
+<div class="main">
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <div>
+        <div class="page-title" id="page-title">Dashboard Overview</div>
+        <div class="page-subtitle" id="page-subtitle">Product Intelligence Summary</div>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <button class="btn">⬇ Export</button>
+      <button class="btn btn-primary">+ New Report</button>
+    </div>
+  </div>
+
+  <!-- DATE FILTER BAR -->
+  <div class="date-bar">
+    <span class="date-label">Range</span>
+    <button class="quick-range" onclick="setRange('today', this)">Today</button>
+    <button class="quick-range active" onclick="setRange('7d', this)">Last 7 Days</button>
+    <button class="quick-range" onclick="setRange('30d', this)">Last 30 Days</button>
+    <button class="quick-range" onclick="setRange('90d', this)">Last Quarter</button>
+    <button class="quick-range" onclick="setRange('ytd', this)">Year to Date</button>
+    <div class="date-separator"></div>
+    <div class="custom-date-wrapper">
+      <input type="date" class="custom-date-input" id="date-from" value="2026-02-18">
+      <span class="date-connector">→</span>
+      <input type="date" class="custom-date-input" id="date-to" value="2026-02-25">
+      <button class="btn-apply" onclick="applyCustomRange()">Apply</button>
+    </div>
+    <div class="active-range-pill ml-auto">
+      <div class="pulse-dot"></div>
+      <span id="range-display">Feb 18 – Feb 25, 2026</span>
+    </div>
+  </div>
+
+  <!-- ============ OVERVIEW PAGE ============ -->
+  <div class="content active" id="page-overview">
+    <div class="overview-grid">
+      <div class="stat-card purple" onclick="navigate('release', document.querySelector('[onclick*=release]'))">
+        <div class="stat-icon">🚀</div>
+        <div class="stat-value">12</div>
+        <div class="stat-label">Features Shipped</div>
+        <div class="stat-trend"><span class="up">↑ 4</span> vs prior period</div>
+      </div>
+      <div class="stat-card green">
+        <div class="stat-icon">✅</div>
+        <div class="stat-value">94<small style="font-size:16px">%</small></div>
+        <div class="stat-label">QA Pass Rate</div>
+        <div class="stat-trend"><span class="up">↑ 6%</span> vs prior period</div>
+      </div>
+      <div class="stat-card amber">
+        <div class="stat-icon">🔄</div>
+        <div class="stat-value">8</div>
+        <div class="stat-label">In Progress</div>
+        <div class="stat-trend">3 due this week</div>
+      </div>
+      <div class="stat-card red">
+        <div class="stat-icon">🐛</div>
+        <div class="stat-value">3</div>
+        <div class="stat-label">Open Bugs</div>
+        <div class="stat-trend"><span class="down">↑ 1</span> new this week</div>
+      </div>
+      <div class="stat-card cyan">
+        <div class="stat-icon">📝</div>
+        <div class="stat-value">27</div>
+        <div class="stat-label">Tasks Closed</div>
+        <div class="stat-trend"><span class="up">↑ 11</span> vs prior period</div>
+      </div>
+    </div>
+
+    <div class="main-grid">
+      <!-- LEFT: CEO BRIEF PREVIEW -->
+      <div>
+        <div class="card" style="margin-bottom:20px">
+          <div class="card-header">
+            <div class="card-title"><span class="card-title-icon">📋</span> CEO Product Brief — Week of Feb 17</div>
+            <div class="card-action" onclick="navigate('brief', document.querySelector('[onclick*=brief]'))">View Full Brief →</div>
+          </div>
+          <div class="card-body">
+            <div class="brief-section">
+              <div class="brief-section-title">🚀 Shipped Last Week</div>
+              <div class="shipped-item">
+                <div class="shipped-dot green"></div>
+                <div>
+                  <div class="shipped-title">Lead Source Tracking — Full Funnel Attribution</div>
+                  <div class="shipped-meta">Proposals → Jobs · iOS + Android · Feb 21</div>
+                </div>
+                <div class="shipped-tag tag-shipped">Shipped</div>
+              </div>
+              <div class="shipped-item">
+                <div class="shipped-dot green"></div>
+                <div>
+                  <div class="shipped-title">Customer Portal — Notification Preferences</div>
+                  <div class="shipped-meta">Customer-facing · Desktop + Mobile · Feb 20</div>
+                </div>
+                <div class="shipped-tag tag-shipped">Shipped</div>
+              </div>
+              <div class="shipped-item">
+                <div class="shipped-dot green"></div>
+                <div>
+                  <div class="shipped-title">Appointment Reminder — SMS Customization</div>
+                  <div class="shipped-meta">Automation · All platforms · Feb 18</div>
+                </div>
+                <div class="shipped-tag tag-shipped">Shipped</div>
+              </div>
+            </div>
+            <div class="brief-section">
+              <div class="brief-section-title">🔄 Currently In Flight</div>
+              <div class="shipped-item">
+                <div class="shipped-dot amber"></div>
+                <div>
+                  <div class="shipped-title">Proposal PDF Redesign — Brand Customization</div>
+                  <div class="shipped-meta">UX/UI · QA started · Due Feb 28</div>
+                </div>
+                <div class="shipped-tag tag-progress">In QA</div>
+              </div>
+              <div class="shipped-item">
+                <div class="shipped-dot amber"></div>
+                <div>
+                  <div class="shipped-title">Zapier Trigger — Job Status Changed</div>
+                  <div class="shipped-meta">Integration · Dev 80% · Due Mar 4</div>
+                </div>
+                <div class="shipped-tag tag-progress">In Dev</div>
+              </div>
+            </div>
+            <div class="brief-section">
+              <div class="brief-section-title">❓ Strategic Alignment Question</div>
+              <div class="strategy-box">
+                <div class="strategy-q">"Should we prioritize the QuickBooks two-way sync before the scheduling AI assistant, given the number of active FeatureBase requests trending toward accounting integration?"</div>
+                <div class="strategy-meta">📊 47 FeatureBase votes · Roadmap Q2 · Requires CEO input</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SPRINT VELOCITY -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title"><span class="card-title-icon">📈</span> Sprint Velocity — Last 4 Weeks</div>
+          </div>
+          <div class="card-body">
+            <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px; text-align:center; margin-bottom:20px">
+              <div>
+                <div style="font-size:10px; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:6px">Feb 3</div>
+                <div style="height:80px; background:var(--surface-2); border-radius:6px; position:relative; overflow:hidden">
+                  <div style="position:absolute; bottom:0; left:0; right:0; background:var(--brand); opacity:0.5; height:52%; border-radius:4px"></div>
+                </div>
+                <div style="font-size:12px; color:var(--text-muted); margin-top:6px; font-family:'JetBrains Mono',monospace">18</div>
+              </div>
+              <div>
+                <div style="font-size:10px; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:6px">Feb 10</div>
+                <div style="height:80px; background:var(--surface-2); border-radius:6px; position:relative; overflow:hidden">
+                  <div style="position:absolute; bottom:0; left:0; right:0; background:var(--brand); opacity:0.5; height:68%; border-radius:4px"></div>
+                </div>
+                <div style="font-size:12px; color:var(--text-muted); margin-top:6px; font-family:'JetBrains Mono',monospace">23</div>
+              </div>
+              <div>
+                <div style="font-size:10px; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:6px">Feb 17</div>
+                <div style="height:80px; background:var(--surface-2); border-radius:6px; position:relative; overflow:hidden">
+                  <div style="position:absolute; bottom:0; left:0; right:0; background:var(--brand); opacity:0.6; height:78%; border-radius:4px"></div>
+                </div>
+                <div style="font-size:12px; color:var(--text-muted); margin-top:6px; font-family:'JetBrains Mono',monospace">26</div>
+              </div>
+              <div>
+                <div style="font-size:10px; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:6px">Feb 24</div>
+                <div style="height:80px; background:var(--surface-2); border-radius:6px; position:relative; overflow:hidden">
+                  <div style="position:absolute; bottom:0; left:0; right:0; background:var(--brand); height:82%; border-radius:4px"></div>
+                </div>
+                <div style="font-size:12px; color:var(--text); font-weight:600; margin-top:6px; font-family:'JetBrains Mono',monospace">27</div>
+              </div>
+            </div>
+            <div class="progress-item">
+              <div class="progress-header">
+                <div class="progress-label">iOS Completion Rate</div>
+                <div class="progress-val">91%</div>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" style="width:91%; background: var(--green)"></div>
+              </div>
+            </div>
+            <div class="progress-item">
+              <div class="progress-header">
+                <div class="progress-label">Android Completion Rate</div>
+                <div class="progress-val">87%</div>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" style="width:87%; background: var(--cyan)"></div>
+              </div>
+            </div>
+            <div class="progress-item">
+              <div class="progress-header">
+                <div class="progress-label">Customer Portal</div>
+                <div class="progress-val">78%</div>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" style="width:78%; background: var(--brand)"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COL -->
+      <div class="right-col">
+
+        <!-- BUG SUMMARY -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title"><span class="card-title-icon">🐛</span> Bug Summary</div>
+            <div class="card-action" onclick="navigate('qa', document.querySelector('[onclick*=qa]'))">QA Report →</div>
+          </div>
+          <div class="card-body" style="padding:16px 20px">
+            <div class="bug-row">
+              <span class="text-muted">New this week</span>
+              <span class="bug-count text-red">1</span>
+            </div>
+            <div class="bug-row">
+              <span class="text-muted">Resolved</span>
+              <span class="bug-count text-green">5</span>
+            </div>
+            <div class="bug-row">
+              <span class="text-muted">Open / Ongoing</span>
+              <span class="bug-count text-amber">3</span>
+            </div>
+            <div class="bug-row">
+              <span class="text-muted">Deferred</span>
+              <span class="bug-count" style="color:var(--text-dim)">2</span>
+            </div>
+            <div style="margin-top:14px; padding:10px 12px; background:rgba(239,68,68,0.06); border:1px solid rgba(239,68,68,0.15); border-radius:8px">
+              <div style="font-size:11px; color:var(--red); font-weight:600; margin-bottom:4px">⚠ Risk Flag</div>
+              <div style="font-size:12px; color:var(--text-muted); line-height:1.5">Zapier webhook intermittent failure on job completion trigger — actively monitored, patch in review.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RECENT ACTIVITY -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title"><span class="card-title-icon">⚡</span> Recent Activity</div>
+          </div>
+          <div class="card-body" style="padding:12px 20px">
+            <div class="activity-item">
+              <div class="activity-icon ai-green">✅</div>
+              <div>
+                <div class="activity-text"><strong>Lead Source feature</strong> passed QA on all platforms</div>
+                <div class="activity-time">Today · 9:14 AM</div>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon ai-red">🐛</div>
+              <div>
+                <div class="activity-text"><strong>Bug #DJ-441</strong> reported — Zapier job trigger</div>
+                <div class="activity-time">Yesterday · 3:52 PM</div>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon ai-purple">🚀</div>
+              <div>
+                <div class="activity-text"><strong>v2.14.1</strong> deployed to production</div>
+                <div class="activity-time">Feb 21 · 11:00 AM</div>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon ai-amber">📋</div>
+              <div>
+                <div class="activity-text"><strong>CEO Brief</strong> for Feb 17 week generated</div>
+                <div class="activity-time">Feb 18 · 9:00 AM</div>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon ai-cyan">📝</div>
+              <div>
+                <div class="activity-text"><strong>FeatureBase review:</strong> 12 new submissions scored</div>
+                <div class="activity-time">Feb 17 · 2:30 PM</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROADMAP HEALTH -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title"><span class="card-title-icon">🗺</span> Roadmap Health</div>
+          </div>
+          <div class="card-body">
+            <div class="progress-item">
+              <div class="progress-header">
+                <div class="progress-label">Q1 Milestones</div>
+                <div class="progress-val">7 / 11</div>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" style="width:64%; background: var(--brand)"></div>
+              </div>
+            </div>
+            <div class="progress-item">
+              <div class="progress-header">
+                <div class="progress-label">Backlog Drift Score</div>
+                <div class="progress-val">Low ✓</div>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" style="width:22%; background: var(--green)"></div>
+              </div>
+            </div>
+            <div class="progress-item">
+              <div class="progress-header">
+                <div class="progress-label">FeatureBase Alignment</div>
+                <div class="progress-val">81%</div>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" style="width:81%; background: var(--cyan)"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CEO BRIEF PAGE ============ -->
+  <div class="content" id="page-brief">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title"><span class="card-title-icon">📋</span> CEO Product Brief — Week of February 17, 2026</div>
+        <div style="display:flex; gap:8px">
+          <button class="btn">⬇ PDF</button>
+          <button class="btn btn-primary">✉ Send to Slack</button>
+        </div>
+      </div>
+      <div class="card-body">
+
+        <div class="brief-section">
+          <div class="brief-section-title">🚀 Shipped Last Week</div>
+          <div class="shipped-item">
+            <div class="shipped-dot green"></div>
+            <div>
+              <div class="shipped-title">Lead Source Tracking — Full Funnel Attribution</div>
+              <div class="shipped-meta">Allows contractors to see exactly where a lead originated (Google, referral, form, etc.) and track it through proposal → job conversion. iOS, Android, Desktop. · Shipped Feb 21</div>
+            </div>
+            <div class="shipped-tag tag-shipped">Shipped</div>
+          </div>
+          <div class="shipped-item">
+            <div class="shipped-dot green"></div>
+            <div>
+              <div class="shipped-title">Customer Portal — Notification Preferences</div>
+              <div class="shipped-meta">Customers can now control which updates they receive (appointment reminders, status changes, invoice notifications). Desktop + Mobile Portal. · Shipped Feb 20</div>
+            </div>
+            <div class="shipped-tag tag-shipped">Shipped</div>
+          </div>
+          <div class="shipped-item">
+            <div class="shipped-dot green"></div>
+            <div>
+              <div class="shipped-title">SMS Appointment Reminder Customization</div>
+              <div class="shipped-meta">Contractors can now customize reminder timing and message text for appointment confirmations. All platforms. · Shipped Feb 18</div>
+            </div>
+            <div class="shipped-tag tag-shipped">Shipped</div>
+          </div>
+        </div>
+
+        <div class="brief-section">
+          <div class="brief-section-title">🔄 Currently In Flight</div>
+          <div class="shipped-item">
+            <div class="shipped-dot amber"></div>
+            <div>
+              <div class="shipped-title">Proposal PDF Redesign — Brand Customization Layer</div>
+              <div class="shipped-meta">Enables contractors to apply company colors, logo placement, and footer text to PDF proposals. QA in progress. Due Feb 28.</div>
+            </div>
+            <div class="shipped-tag tag-progress">In QA</div>
+          </div>
+          <div class="shipped-item">
+            <div class="shipped-dot amber"></div>
+            <div>
+              <div class="shipped-title">Zapier Trigger: Job Status Changed</div>
+              <div class="shipped-meta">New Zapier event enabling automation when a job moves status. Dev 80% complete. Known intermittent failure under investigation. Due Mar 4.</div>
+            </div>
+            <div class="shipped-tag tag-progress">In Dev</div>
+          </div>
+          <div class="shipped-item">
+            <div class="shipped-dot purple"></div>
+            <div>
+              <div class="shipped-title">Mobile: Swipe Gesture Navigation Update</div>
+              <div class="shipped-meta">UX improvement for faster navigation between job cards on mobile. In review. Due Feb 27.</div>
+            </div>
+            <div class="shipped-tag tag-review">In Review</div>
+          </div>
+        </div>
+
+        <div class="brief-section">
+          <div class="brief-section-title">🐛 Bug Summary</div>
+          <div class="shipped-item">
+            <div class="shipped-dot red"></div>
+            <div>
+              <div class="shipped-title">DJ-441 — Zapier Webhook Intermittent Failure</div>
+              <div class="shipped-meta">Job completion trigger drops ~8% of events under load. Patch in review. <span class="text-red fw-6">Active risk.</span></div>
+            </div>
+            <div class="shipped-tag tag-bug">Open</div>
+          </div>
+          <div class="shipped-item">
+            <div class="shipped-dot green"></div>
+            <div>
+              <div class="shipped-title">DJ-438 — Invoice Date Display Off by 1 Day (UTC)</div>
+              <div class="shipped-meta">Resolved. Timezone normalization corrected. Shipped Feb 20.</div>
+            </div>
+            <div class="shipped-tag tag-shipped">Resolved</div>
+          </div>
+          <div class="shipped-item">
+            <div class="shipped-dot green"></div>
+            <div>
+              <div class="shipped-title">DJ-431 — Android Back Button Exits App Unexpectedly</div>
+              <div class="shipped-meta">Resolved. Navigation stack corrected. Shipped Feb 19.</div>
+            </div>
+            <div class="shipped-tag tag-shipped">Resolved</div>
+          </div>
+        </div>
+
+        <div class="brief-section">
+          <div class="brief-section-title">❓ CEO Alignment Question</div>
+          <div class="strategy-box">
+            <div class="strategy-q">"Should we prioritize the QuickBooks two-way sync before the scheduling AI assistant, given the 47 FeatureBase requests trending toward accounting integration? Scheduling AI has stronger long-term differentiation value but QuickBooks closes an immediate retention risk with mid-size contractors."</div>
+            <div style="display:flex; gap:12px; margin-top:12px">
+              <div style="flex:1; background:var(--surface-3); border-radius:8px; padding:10px 12px">
+                <div style="font-size:10px; color:var(--brand-light); font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:6px">Option A — QuickBooks First</div>
+                <div style="font-size:12px; color:var(--text-muted); line-height:1.5">Closes retention risk, addresses highest FeatureBase vote, estimated 8 weeks.</div>
+              </div>
+              <div style="flex:1; background:var(--surface-3); border-radius:8px; padding:10px 12px">
+                <div style="font-size:10px; color:var(--cyan); font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:6px">Option B — AI Scheduling First</div>
+                <div style="font-size:12px; color:var(--text-muted); line-height:1.5">Stronger differentiation, marketing story, longer runway. Estimated 14 weeks.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ RELEASE NOTES PAGE ============ -->
+  <div class="content" id="page-release">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title"><span class="card-title-icon">🚀</span> Product Release Notes</div>
+        <div style="display:flex; gap:8px">
+          <button class="btn">FeatureBase Sync</button>
+          <button class="btn btn-primary">⬇ Export</button>
+        </div>
+      </div>
+      <div class="card-body">
+
+        <div class="release-header">
+          <div>
+            <div class="release-ver">v2.14.1 — February 21, 2026</div>
+            <div class="release-date">iOS · Android · Desktop · Customer Portal</div>
+            <ul class="release-feature-list">
+              <li>Lead Source Tracking now available across Proposals and Jobs — track attribution from first touch to closed job.</li>
+              <li>Customer Portal Notification Preferences — customers control which alerts they receive.</li>
+              <li>SMS Appointment Reminders are now fully customizable in timing and message copy.</li>
+              <li>Fix: Invoice date display corrected for UTC timezone edge cases.</li>
+              <li>Fix: Android back navigation no longer exits the app unexpectedly.</li>
+            </ul>
+          </div>
+          <div class="shipped-tag tag-shipped" style="flex-shrink:0; margin-left:16px">Live</div>
+        </div>
+
+        <div class="release-header">
+          <div>
+            <div class="release-ver">v2.13.0 — February 7, 2026</div>
+            <div class="release-date">iOS · Android · Desktop</div>
+            <ul class="release-feature-list">
+              <li>Job Notes now support photo attachments — take or upload photos directly to job notes from mobile.</li>
+              <li>Proposal expiration dates now visible on the contractor dashboard in a new "Expiring Soon" view.</li>
+              <li>Performance: Job list loads 40% faster on accounts with 500+ jobs.</li>
+              <li>UX: Appointment Calendar now shows job type color codes in the month view.</li>
+            </ul>
+          </div>
+          <div class="shipped-tag tag-shipped" style="flex-shrink:0; margin-left:16px">Live</div>
+        </div>
+
+        <div class="release-header">
+          <div>
+            <div class="release-ver">v2.12.2 — January 24, 2026</div>
+            <div class="release-date">Desktop · Customer Portal</div>
+            <ul class="release-feature-list">
+              <li>Customer Portal redesign — cleaner layout with faster job status visibility for homeowners.</li>
+              <li>Stripe payout schedule now visible in the Payments settings page.</li>
+              <li>Fix: Recurring job scheduling edge case on month-end dates resolved.</li>
+            </ul>
+          </div>
+          <div class="shipped-tag tag-shipped" style="flex-shrink:0; margin-left:16px">Live</div>
+        </div>
+
+        <div class="release-header">
+          <div>
+            <div class="release-ver">v2.11.0 — January 10, 2026</div>
+            <div class="release-date">iOS · Android · Desktop</div>
+            <ul class="release-feature-list">
+              <li>New: Team Member Permissions — granular role controls for field techs vs. office staff.</li>
+              <li>New: Bulk Job Status Update from the Jobs list view.</li>
+              <li>Improved: Search now indexes job notes and customer contact fields.</li>
+              <li>Fix: Calendar sync occasionally creating duplicate appointments resolved.</li>
+            </ul>
+          </div>
+          <div class="shipped-tag tag-shipped" style="flex-shrink:0; margin-left:16px">Live</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ QA SUMMARY PAGE ============ -->
+  <div class="content" id="page-qa">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title"><span class="card-title-icon">✅</span> QA Summary — v2.14.1 · February 18–21, 2026</div>
+        <button class="btn btn-primary">⬇ Export QA Report</button>
+      </div>
+      <div class="card-body">
+
+        <div class="brief-section">
+          <div class="brief-section-title">📱 Platform Checklist</div>
+          <div class="qa-grid">
+            <div class="qa-platform">
+              <div class="qa-platform-name">📱 iOS</div>
+              <div class="qa-check"><span class="check-icon text-green">✓</span> Lead Source UI</div>
+              <div class="qa-check"><span class="check-icon text-green">✓</span> SMS Reminder Settings</div>
+              <div class="qa-check"><span class="check-icon text-green">✓</span> Navigation / Back Gesture</div>
+              <div class="qa-check"><span class="check-icon text-green">✓</span> Push Notifications</div>
+            </div>
+            <div class="qa-platform">
+              <div class="qa-platform-name">🤖 Android</div>
+              <div class="qa-check"><span class="check-icon text-green">✓</span> Lead Source UI</div>
+              <div class="qa-check"><span class="check-icon text-green">✓</span> Back Button Fix Verified</div>
+              <div class="qa-check"><span class="check-icon text-green">✓</span> SMS Reminder Settings</div>
+              <div class="qa-check"><span class="check-icon text-amber">⚠</span> Pixel 6 — minor layout shift</div>
+            </div>
+            <div class="qa-platform">
+              <div class="qa-platform-name">💻 Desktop / Tablet</div>
+              <div class="qa-check"><span class="check-icon text-green">✓</span> Customer Portal Notifications</div>
+              <div class="qa-check"><span class="check-icon text-green">✓</span> Invoice Date Fix</div>
+              <div class="qa-check"><span class="check-icon text-green">✓</span> Safari / Chrome / Edge</div>
+              <div class="qa-check"><span class="check-icon text-green">✓</span> Tablet Responsive Layout</div>
+            </div>
+            <div class="qa-platform">
+              <div class="qa-platform-name">🌐 Customer Portal</div>
+              <div class="qa-check"><span class="check-icon text-green">✓</span> Notification Preferences UI</div>
+              <div class="qa-check"><span class="check-icon text-green">✓</span> Save State Persistence</div>
+              <div class="qa-check"><span class="check-icon text-green">✓</span> Email Delivery Verified</div>
+              <div class="qa-check"><span class="check-icon text-green">✓</span> Mobile Responsive</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="brief-section">
+          <div class="brief-section-title">⚠ Issues Found &amp; Resolution</div>
+          <div class="shipped-item">
+            <div class="shipped-dot amber"></div>
+            <div>
+              <div class="shipped-title">Android Pixel 6 — Status bar overlap in SMS settings</div>
+              <div class="shipped-meta">Minor layout shift on Pixel 6 Pro. Padding fix applied. Deferred to hotfix — cosmetic only, no functional impact.</div>
+            </div>
+            <div class="shipped-tag tag-progress">Deferred</div>
+          </div>
+          <div class="shipped-item">
+            <div class="shipped-dot red"></div>
+            <div>
+              <div class="shipped-title">DJ-441 — Zapier Webhook Intermittent Failure</div>
+              <div class="shipped-meta">Job completion trigger drops ~8% of events under high load. Root cause identified as race condition in queue processing. Patch in code review — estimated fix Feb 27.</div>
+            </div>
+            <div class="shipped-tag tag-bug">Open</div>
+          </div>
+          <div class="shipped-item">
+            <div class="shipped-dot green"></div>
+            <div>
+              <div class="shipped-title">DJ-438 — Invoice Date Off by 1 Day</div>
+              <div class="shipped-meta">UTC timezone normalization applied. Verified across 6 timezones. Resolved and shipped Feb 20.</div>
+            </div>
+            <div class="shipped-tag tag-shipped">Resolved</div>
+          </div>
+          <div class="shipped-item">
+            <div class="shipped-dot green"></div>
+            <div>
+              <div class="shipped-title">DJ-431 — Android Back Button Exits App</div>
+              <div class="shipped-meta">Navigation stack corrected. Tested on Android 12, 13, and 14. Resolved and shipped Feb 19.</div>
+            </div>
+            <div class="shipped-tag tag-shipped">Resolved</div>
+          </div>
+        </div>
+
+        <div class="brief-section">
+          <div class="brief-section-title">📊 QA Metrics</div>
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px">
+            <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:14px; text-align:center">
+              <div style="font-family:'DM Serif Display',serif; font-size:28px; color:var(--green)">94%</div>
+              <div style="font-size:11px; color:var(--text-muted); margin-top:4px; text-transform:uppercase; letter-spacing:0.06em">Pass Rate</div>
+            </div>
+            <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:14px; text-align:center">
+              <div style="font-family:'DM Serif Display',serif; font-size:28px; color:var(--text)">48</div>
+              <div style="font-size:11px; color:var(--text-muted); margin-top:4px; text-transform:uppercase; letter-spacing:0.06em">Cases Run</div>
+            </div>
+            <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:14px; text-align:center">
+              <div style="font-family:'DM Serif Display',serif; font-size:28px; color:var(--amber)">3</div>
+              <div style="font-size:11px; color:var(--text-muted); margin-top:4px; text-transform:uppercase; letter-spacing:0.06em">Open Issues</div>
+            </div>
+            <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:14px; text-align:center">
+              <div style="font-family:'DM Serif Display',serif; font-size:28px; color:var(--cyan)">3d</div>
+              <div style="font-size:11px; color:var(--text-muted); margin-top:4px; text-transform:uppercase; letter-spacing:0.06em">Cycle Time</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ WEEKLY CHANGELOG PAGE ============ -->
+  <div class="content" id="page-weekly">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title"><span class="card-title-icon">📅</span> Weekly Changelog</div>
+        <button class="btn btn-primary">⬇ Export</button>
+      </div>
+      <div class="card-body">
+
+        <div class="tab-bar">
+          <div class="tab active" onclick="switchTab('weekly', 'w-feb24', this)">Feb 17–24</div>
+          <div class="tab" onclick="switchTab('weekly', 'w-feb17', this)">Feb 10–17</div>
+          <div class="tab" onclick="switchTab('weekly', 'w-feb10', this)">Feb 3–10</div>
+          <div class="tab" onclick="switchTab('weekly', 'w-feb03', this)">Jan 27–Feb 3</div>
+        </div>
+
+        <div class="tab-content active" id="weekly-w-feb24">
+          <table class="changelog-table">
+            <thead>
+              <tr>
+                <th style="width:90px">Date</th>
+                <th>Change</th>
+                <th style="width:130px">Area</th>
+                <th style="width:90px">Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-date">Feb 21</td>
+                <td class="td-title">Lead Source Tracking — Full Funnel Attribution</td>
+                <td class="td-area">CRM / Jobs</td>
+                <td><span class="change-type ct-feature">Feature</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Feb 20</td>
+                <td class="td-title">Customer Portal — Notification Preferences</td>
+                <td class="td-area">Customer Portal</td>
+                <td><span class="change-type ct-feature">Feature</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Feb 20</td>
+                <td class="td-title">Invoice date display corrected for UTC timezone</td>
+                <td class="td-area">Invoicing</td>
+                <td><span class="change-type ct-fix">Fix</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Feb 19</td>
+                <td class="td-title">Android back button navigation stack corrected</td>
+                <td class="td-area">Android</td>
+                <td><span class="change-type ct-fix">Fix</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Feb 18</td>
+                <td class="td-title">SMS Appointment Reminder — Customization Controls</td>
+                <td class="td-area">Automation</td>
+                <td><span class="change-type ct-feature">Feature</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Feb 18</td>
+                <td class="td-title">Proposal list sort order preference now persisted per user</td>
+                <td class="td-area">Proposals</td>
+                <td><span class="change-type ct-ux">UX</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="tab-content" id="weekly-w-feb17">
+          <table class="changelog-table">
+            <thead>
+              <tr>
+                <th style="width:90px">Date</th>
+                <th>Change</th>
+                <th style="width:130px">Area</th>
+                <th style="width:90px">Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-date">Feb 14</td>
+                <td class="td-title">Job photo attachments in notes — mobile camera access</td>
+                <td class="td-area">Mobile / Jobs</td>
+                <td><span class="change-type ct-feature">Feature</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Feb 13</td>
+                <td class="td-title">Proposal expiration "Expiring Soon" dashboard view</td>
+                <td class="td-area">Proposals</td>
+                <td><span class="change-type ct-feature">Feature</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Feb 12</td>
+                <td class="td-title">Job list performance — 40% faster on 500+ job accounts</td>
+                <td class="td-area">Performance</td>
+                <td><span class="change-type ct-perf">Perf</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Feb 11</td>
+                <td class="td-title">Appointment Calendar — job type color codes in month view</td>
+                <td class="td-area">Calendar</td>
+                <td><span class="change-type ct-ux">UX</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Feb 10</td>
+                <td class="td-title">Fix: Dropdown z-index overlap on mobile job detail</td>
+                <td class="td-area">Mobile</td>
+                <td><span class="change-type ct-fix">Fix</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="tab-content" id="weekly-w-feb10">
+          <table class="changelog-table">
+            <thead>
+              <tr>
+                <th style="width:90px">Date</th>
+                <th>Change</th>
+                <th style="width:130px">Area</th>
+                <th style="width:90px">Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-date">Feb 7</td>
+                <td class="td-title">v2.13.0 released to production</td>
+                <td class="td-area">Platform</td>
+                <td><span class="change-type ct-feature">Release</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Feb 6</td>
+                <td class="td-title">Bulk status update from Jobs list view</td>
+                <td class="td-area">Jobs</td>
+                <td><span class="change-type ct-feature">Feature</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Feb 5</td>
+                <td class="td-title">Search now indexes job notes and customer contact fields</td>
+                <td class="td-area">Search</td>
+                <td><span class="change-type ct-feature">Feature</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Feb 4</td>
+                <td class="td-title">Fix: Calendar sync duplicate appointment edge case</td>
+                <td class="td-area">Calendar</td>
+                <td><span class="change-type ct-fix">Fix</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Feb 3</td>
+                <td class="td-title">Team member permissions — granular role controls</td>
+                <td class="td-area">Settings</td>
+                <td><span class="change-type ct-feature">Feature</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="tab-content" id="weekly-w-feb03">
+          <table class="changelog-table">
+            <thead>
+              <tr>
+                <th style="width:90px">Date</th>
+                <th>Change</th>
+                <th style="width:130px">Area</th>
+                <th style="width:90px">Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-date">Jan 31</td>
+                <td class="td-title">Stripe payout schedule visible in Payments settings</td>
+                <td class="td-area">Payments</td>
+                <td><span class="change-type ct-feature">Feature</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Jan 30</td>
+                <td class="td-title">Customer Portal redesign — job status visibility</td>
+                <td class="td-area">Customer Portal</td>
+                <td><span class="change-type ct-ux">UX</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Jan 29</td>
+                <td class="td-title">Fix: Recurring job scheduling edge case on month-end dates</td>
+                <td class="td-area">Scheduling</td>
+                <td><span class="change-type ct-fix">Fix</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Jan 28</td>
+                <td class="td-title">Performance: Invoice PDF generation 30% faster</td>
+                <td class="td-area">Invoicing</td>
+                <td><span class="change-type ct-perf">Perf</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MONTHLY CHANGELOG PAGE ============ -->
+  <div class="content" id="page-monthly">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title"><span class="card-title-icon">🗓</span> Monthly Changelog</div>
+        <button class="btn btn-primary">⬇ Export</button>
+      </div>
+      <div class="card-body">
+
+        <div class="tab-bar">
+          <div class="tab active" onclick="switchTab('monthly', 'm-feb', this)">February 2026</div>
+          <div class="tab" onclick="switchTab('monthly', 'm-jan', this)">January 2026</div>
+          <div class="tab" onclick="switchTab('monthly', 'm-dec', this)">December 2025</div>
+        </div>
+
+        <div class="tab-content active" id="monthly-m-feb">
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:24px">
+            <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:14px; text-align:center">
+              <div style="font-family:'DM Serif Display',serif; font-size:28px; color:var(--brand-light)">12</div>
+              <div style="font-size:11px; color:var(--text-muted); margin-top:4px; text-transform:uppercase; letter-spacing:0.06em">Features</div>
+            </div>
+            <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:14px; text-align:center">
+              <div style="font-family:'DM Serif Display',serif; font-size:28px; color:var(--green)">8</div>
+              <div style="font-size:11px; color:var(--text-muted); margin-top:4px; text-transform:uppercase; letter-spacing:0.06em">Bug Fixes</div>
+            </div>
+            <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:14px; text-align:center">
+              <div style="font-family:'DM Serif Display',serif; font-size:28px; color:var(--cyan)">5</div>
+              <div style="font-size:11px; color:var(--text-muted); margin-top:4px; text-transform:uppercase; letter-spacing:0.06em">UX Updates</div>
+            </div>
+            <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:14px; text-align:center">
+              <div style="font-family:'DM Serif Display',serif; font-size:28px; color:var(--amber)">3</div>
+              <div style="font-size:11px; color:var(--text-muted); margin-top:4px; text-transform:uppercase; letter-spacing:0.06em">Perf Wins</div>
+            </div>
+          </div>
+
+          <table class="changelog-table">
+            <thead>
+              <tr>
+                <th style="width:90px">Date</th>
+                <th>Change</th>
+                <th style="width:140px">Area</th>
+                <th style="width:90px">Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-date">Feb 21</td>
+                <td class="td-title">Lead Source Tracking — Full Funnel Attribution</td>
+                <td class="td-area">CRM / Jobs</td>
+                <td><span class="change-type ct-feature">Feature</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Feb 20</td>
+                <td class="td-title">Customer Portal — Notification Preferences</td>
+                <td class="td-area">Customer Portal</td>
+                <td><span class="change-type ct-feature">Feature</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Feb 20</td>
+                <td class="td-title">Invoice date UTC timezone fix</td>
+                <td class="td-area">Invoicing</td>
+                <td><span class="change-type ct-fix">Fix</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Feb 19</td>
+                <td class="td-title">Android back button navigation fix</td>
+                <td class="td-area">Android</td>
+                <td><span class="change-type ct-fix">Fix</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Feb 18</td>
+                <td class="td-title">SMS Appointment Reminder Customization</td>
+                <td class="td-area">Automation</td>
+                <td><span class="change-type ct-feature">Feature</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Feb 14</td>
+                <td class="td-title">Job Notes — Photo Attachment Support</td>
+                <td class="td-area">Mobile / Jobs</td>
+                <td><span class="change-type ct-feature">Feature</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Feb 13</td>
+                <td class="td-title">Proposal Expiration "Expiring Soon" View</td>
+                <td class="td-area">Proposals</td>
+                <td><span class="change-type ct-feature">Feature</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Feb 12</td>
+                <td class="td-title">Job list 40% performance improvement</td>
+                <td class="td-area">Performance</td>
+                <td><span class="change-type ct-perf">Perf</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Feb 11</td>
+                <td class="td-title">Calendar job type color codes</td>
+                <td class="td-area">Calendar</td>
+                <td><span class="change-type ct-ux">UX</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Feb 7</td>
+                <td class="td-title">v2.13.0 — Full platform release</td>
+                <td class="td-area">Platform</td>
+                <td><span class="change-type ct-feature">Release</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Feb 6</td>
+                <td class="td-title">Bulk job status update from list view</td>
+                <td class="td-area">Jobs</td>
+                <td><span class="change-type ct-feature">Feature</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Feb 5</td>
+                <td class="td-title">Search indexing — job notes and contact fields</td>
+                <td class="td-area">Search</td>
+                <td><span class="change-type ct-feature">Feature</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Feb 4</td>
+                <td class="td-title">Fix: Calendar sync duplicate appointments</td>
+                <td class="td-area">Calendar</td>
+                <td><span class="change-type ct-fix">Fix</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Feb 3</td>
+                <td class="td-title">Team Member Permissions — granular role controls</td>
+                <td class="td-area">Settings</td>
+                <td><span class="change-type ct-feature">Feature</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="tab-content" id="monthly-m-jan">
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:24px">
+            <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:14px; text-align:center">
+              <div style="font-family:'DM Serif Display',serif; font-size:28px; color:var(--brand-light)">9</div>
+              <div style="font-size:11px; color:var(--text-muted); margin-top:4px; text-transform:uppercase; letter-spacing:0.06em">Features</div>
+            </div>
+            <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:14px; text-align:center">
+              <div style="font-family:'DM Serif Display',serif; font-size:28px; color:var(--green)">6</div>
+              <div style="font-size:11px; color:var(--text-muted); margin-top:4px; text-transform:uppercase; letter-spacing:0.06em">Bug Fixes</div>
+            </div>
+            <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:14px; text-align:center">
+              <div style="font-family:'DM Serif Display',serif; font-size:28px; color:var(--cyan)">4</div>
+              <div style="font-size:11px; color:var(--text-muted); margin-top:4px; text-transform:uppercase; letter-spacing:0.06em">UX Updates</div>
+            </div>
+            <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:14px; text-align:center">
+              <div style="font-family:'DM Serif Display',serif; font-size:28px; color:var(--amber)">2</div>
+              <div style="font-size:11px; color:var(--text-muted); margin-top:4px; text-transform:uppercase; letter-spacing:0.06em">Perf Wins</div>
+            </div>
+          </div>
+
+          <table class="changelog-table">
+            <thead>
+              <tr>
+                <th style="width:90px">Date</th>
+                <th>Change</th>
+                <th style="width:140px">Area</th>
+                <th style="width:90px">Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-date">Jan 31</td>
+                <td class="td-title">Stripe payout schedule in Payments settings</td>
+                <td class="td-area">Payments</td>
+                <td><span class="change-type ct-feature">Feature</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Jan 30</td>
+                <td class="td-title">Customer Portal redesign — improved job status UX</td>
+                <td class="td-area">Customer Portal</td>
+                <td><span class="change-type ct-ux">UX</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Jan 29</td>
+                <td class="td-title">Fix: Recurring job month-end scheduling edge case</td>
+                <td class="td-area">Scheduling</td>
+                <td><span class="change-type ct-fix">Fix</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Jan 28</td>
+                <td class="td-title">Invoice PDF generation 30% faster</td>
+                <td class="td-area">Invoicing</td>
+                <td><span class="change-type ct-perf">Perf</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Jan 24</td>
+                <td class="td-title">v2.12.2 — Desktop &amp; Portal release</td>
+                <td class="td-area">Platform</td>
+                <td><span class="change-type ct-feature">Release</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Jan 10</td>
+                <td class="td-title">v2.11.0 — Team permissions &amp; bulk job update</td>
+                <td class="td-area">Platform</td>
+                <td><span class="change-type ct-feature">Release</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="tab-content" id="monthly-m-dec">
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:24px">
+            <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:14px; text-align:center">
+              <div style="font-family:'DM Serif Display',serif; font-size:28px; color:var(--brand-light)">7</div>
+              <div style="font-size:11px; color:var(--text-muted); margin-top:4px; text-transform:uppercase; letter-spacing:0.06em">Features</div>
+            </div>
+            <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:14px; text-align:center">
+              <div style="font-family:'DM Serif Display',serif; font-size:28px; color:var(--green)">11</div>
+              <div style="font-size:11px; color:var(--text-muted); margin-top:4px; text-transform:uppercase; letter-spacing:0.06em">Bug Fixes</div>
+            </div>
+            <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:14px; text-align:center">
+              <div style="font-family:'DM Serif Display',serif; font-size:28px; color:var(--cyan)">3</div>
+              <div style="font-size:11px; color:var(--text-muted); margin-top:4px; text-transform:uppercase; letter-spacing:0.06em">UX Updates</div>
+            </div>
+            <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:14px; text-align:center">
+              <div style="font-family:'DM Serif Display',serif; font-size:28px; color:var(--amber)">2</div>
+              <div style="font-size:11px; color:var(--text-muted); margin-top:4px; text-transform:uppercase; letter-spacing:0.06em">Perf Wins</div>
+            </div>
+          </div>
+
+          <table class="changelog-table">
+            <thead>
+              <tr>
+                <th style="width:90px">Date</th>
+                <th>Change</th>
+                <th style="width:140px">Area</th>
+                <th style="width:90px">Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-date">Dec 19</td>
+                <td class="td-title">v2.10.0 — Year-end stability release</td>
+                <td class="td-area">Platform</td>
+                <td><span class="change-type ct-feature">Release</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Dec 18</td>
+                <td class="td-title">Holiday scheduling — blackout date support</td>
+                <td class="td-area">Scheduling</td>
+                <td><span class="change-type ct-feature">Feature</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Dec 15</td>
+                <td class="td-title">Fix: iOS 18 notification permission regression</td>
+                <td class="td-area">iOS</td>
+                <td><span class="change-type ct-fix">Fix</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Dec 12</td>
+                <td class="td-title">Proposal template library — 3 new templates added</td>
+                <td class="td-area">Proposals</td>
+                <td><span class="change-type ct-feature">Feature</span></td>
+              </tr>
+              <tr>
+                <td class="td-date">Dec 5</td>
+                <td class="td-title">API rate limit headers added to all endpoints</td>
+                <td class="td-area">API / Integrations</td>
+                <td><span class="change-type ct-perf">Perf</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<script>
+  // Page navigation
+  const pages = {
+    overview: { title: 'Dashboard Overview', subtitle: 'Product Intelligence Summary' },
+    brief:    { title: 'CEO Product Brief', subtitle: 'Week of February 17, 2026' },
+    release:  { title: 'Release Notes', subtitle: 'All Production Releases' },
+    qa:       { title: 'QA Summary', subtitle: 'v2.14.1 · February 18–21, 2026' },
+    weekly:   { title: 'Weekly Changelog', subtitle: 'Development Activity by Week' },
+    monthly:  { title: 'Monthly Changelog', subtitle: 'Development Activity by Month' },
+  };
+
+  function navigate(page, navEl) {
+    // Hide all pages
+    document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
+    // Deactivate all nav items
+    document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+
+    // Show target page
+    const target = document.getElementById('page-' + page);
+    if (target) target.classList.add('active');
+
+    // Activate nav item
+    if (navEl) navEl.classList.add('active');
+
+    // Update topbar
+    if (pages[page]) {
+      document.getElementById('page-title').textContent = pages[page].title;
+      document.getElementById('page-subtitle').textContent = pages[page].subtitle;
+    }
+  }
+
+  // Date range quick selects
+  function setRange(range, btn) {
+    document.querySelectorAll('.quick-range').forEach(el => el.classList.remove('active'));
+    btn.classList.add('active');
+
+    const today = new Date();
+    const fmt = d => d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    const isoFmt = d => d.toISOString().split('T')[0];
+
+    let from, to = new Date(today);
+
+    if (range === 'today') {
+      from = new Date(today);
+    } else if (range === '7d') {
+      from = new Date(today); from.setDate(today.getDate() - 7);
+    } else if (range === '30d') {
+      from = new Date(today); from.setDate(today.getDate() - 30);
+    } else if (range === '90d') {
+      from = new Date(today); from.setDate(today.getDate() - 90);
+    } else if (range === 'ytd') {
+      from = new Date(today.getFullYear(), 0, 1);
+    }
+
+    document.getElementById('date-from').value = isoFmt(from);
+    document.getElementById('date-to').value = isoFmt(to);
+    document.getElementById('range-display').textContent = fmt(from) + ' – ' + fmt(to);
+  }
+
+  function applyCustomRange() {
+    const from = document.getElementById('date-from').value;
+    const to   = document.getElementById('date-to').value;
+    if (!from || !to) return;
+
+    document.querySelectorAll('.quick-range').forEach(el => el.classList.remove('active'));
+
+    const fmtDate = str => {
+      const d = new Date(str + 'T00:00:00');
+      return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    };
+    document.getElementById('range-display').textContent = fmtDate(from) + ' – ' + fmtDate(to);
+  }
+
+  // Tab switcher (generic — works for weekly and monthly)
+  function switchTab(group, tabId, el) {
+    // Deactivate sibling tabs
+    el.closest('.tab-bar').querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+
+    // Hide all tab content for this group, show target
+    document.querySelectorAll('[id^="' + group + '-"]').forEach(c => c.classList.remove('active'));
+    const target = document.getElementById(group + '-' + tabId);
+    if (target) target.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
