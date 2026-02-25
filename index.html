@@ -2342,6 +2342,52 @@
     }
   }
 
+  // Per-range stat data
+  const rangeData = {
+    today: {
+      stats: { featuresShipped: 2, qaPassRate: 100, inProgress: 8, openBugs: 3, tasksClosed: 4 },
+      bugs:  { newThisWeek: 0, resolved: 1, open: 3, deferred: 2 },
+      trends: { features: '↑ 2 today', qa: '↑ 6% vs prior period', tasks: '↑ 4 today' }
+    },
+    '7d': {
+      stats: { featuresShipped: 12, qaPassRate: 94, inProgress: 8, openBugs: 3, tasksClosed: 27 },
+      bugs:  { newThisWeek: 1, resolved: 5, open: 3, deferred: 2 },
+      trends: { features: '↑ 4 vs prior period', qa: '↑ 6% vs prior period', tasks: '↑ 11 vs prior period' }
+    },
+    '30d': {
+      stats: { featuresShipped: 34, qaPassRate: 91, inProgress: 8, openBugs: 6, tasksClosed: 89 },
+      bugs:  { newThisWeek: 4, resolved: 18, open: 6, deferred: 5 },
+      trends: { features: '↑ 9 vs prior period', qa: '↑ 3% vs prior period', tasks: '↑ 22 vs prior period' }
+    },
+    '90d': {
+      stats: { featuresShipped: 87, qaPassRate: 93, inProgress: 8, openBugs: 6, tasksClosed: 241 },
+      bugs:  { newThisWeek: 11, resolved: 52, open: 6, deferred: 9 },
+      trends: { features: '↑ 18 vs prior period', qa: '↑ 5% vs prior period', tasks: '↑ 63 vs prior period' }
+    },
+    ytd: {
+      stats: { featuresShipped: 56, qaPassRate: 92, inProgress: 8, openBugs: 6, tasksClosed: 152 },
+      bugs:  { newThisWeek: 7, resolved: 31, open: 6, deferred: 7 },
+      trends: { features: '↑ 12 vs prior period', qa: '↑ 4% vs prior period', tasks: '↑ 38 vs prior period' }
+    }
+  };
+
+  function applyRangeData(range) {
+    const d = rangeData[range] || rangeData['7d'];
+
+    // Stat cards
+    setText('stat-features',    d.stats.featuresShipped);
+    setText('stat-qa-rate',     d.stats.qaPassRate);
+    setText('stat-in-progress', d.stats.inProgress);
+    setText('stat-bugs',        d.stats.openBugs);
+    setText('stat-tasks-closed',d.stats.tasksClosed);
+
+    // Bug summary
+    setText('bugs-new',      d.bugs.newThisWeek);
+    setText('bugs-resolved', d.bugs.resolved);
+    setText('bugs-open',     d.bugs.open);
+    setText('bugs-deferred', d.bugs.deferred);
+  }
+
   // Date range quick selects
   function setRange(range, btn) {
     document.querySelectorAll('.quick-range').forEach(el => el.classList.remove('active'));
@@ -2368,6 +2414,8 @@
     document.getElementById('date-from').value = isoFmt(from);
     document.getElementById('date-to').value = isoFmt(to);
     document.getElementById('range-display').textContent = fmt(from) + ' – ' + fmt(to);
+
+    applyRangeData(range);
   }
 
   function applyCustomRange() {
@@ -2382,6 +2430,11 @@
       return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
     };
     document.getElementById('range-display').textContent = fmtDate(from) + ' – ' + fmtDate(to);
+
+    // Calculate days in custom range and find closest preset
+    const days = Math.round((new Date(to) - new Date(from)) / (1000 * 60 * 60 * 24));
+    const range = days <= 1 ? 'today' : days <= 14 ? '7d' : days <= 60 ? '30d' : days <= 120 ? '90d' : 'ytd';
+    applyRangeData(range);
   }
 
   // Tab switcher (generic — works for weekly and monthly)
