@@ -1,94 +1,125 @@
 {
-  "lastUpdated": "2026-02-26T17:34:17.252Z",
+  "lastUpdated": "2026-02-26T17:57:43.090Z",
   "stats": {
-    "featuresShipped": 0,
+    "featuresShipped": 24,
     "qaPassRate": 100,
-    "inProgress": 0,
-    "openBugs": 27,
-    "tasksClosed": 0
+    "inProgress": 1,
+    "openBugs": 14,
+    "tasksClosed": 24
   },
   "bugs": {
     "newThisWeek": 4,
     "resolved": 0,
-    "open": 27,
+    "open": 14,
     "deferred": 0
   },
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 0,
+        "featuresShipped": 6,
         "qaPassRate": 100,
-        "inProgress": 0,
-        "openBugs": 27,
-        "tasksClosed": 0
+        "inProgress": 1,
+        "openBugs": 14,
+        "tasksClosed": 6
       },
       "bugs": {
         "newThisWeek": 1,
         "resolved": 0,
-        "open": 27,
+        "open": 14,
         "deferred": 0
       }
     },
     "7d": {
       "stats": {
-        "featuresShipped": 0,
+        "featuresShipped": 24,
         "qaPassRate": 100,
-        "inProgress": 0,
-        "openBugs": 27,
-        "tasksClosed": 0
+        "inProgress": 1,
+        "openBugs": 14,
+        "tasksClosed": 24
       },
       "bugs": {
         "newThisWeek": 4,
         "resolved": 0,
-        "open": 27,
+        "open": 14,
         "deferred": 0
       }
     },
     "30d": {
       "stats": {
-        "featuresShipped": 0,
+        "featuresShipped": 59,
         "qaPassRate": 100,
-        "inProgress": 0,
-        "openBugs": 27,
-        "tasksClosed": 0
+        "inProgress": 1,
+        "openBugs": 14,
+        "tasksClosed": 59
       },
       "bugs": {
-        "newThisWeek": 8,
+        "newThisWeek": 9,
         "resolved": 0,
-        "open": 27,
+        "open": 14,
         "deferred": 0
       }
     },
     "90d": {
       "stats": {
-        "featuresShipped": 0,
+        "featuresShipped": 98,
         "qaPassRate": 100,
-        "inProgress": 0,
-        "openBugs": 27,
-        "tasksClosed": 0
+        "inProgress": 1,
+        "openBugs": 14,
+        "tasksClosed": 98
       },
       "bugs": {
-        "newThisWeek": 10,
+        "newThisWeek": 11,
         "resolved": 0,
-        "open": 27,
+        "open": 14,
         "deferred": 0
       }
     },
     "ytd": {
       "stats": {
-        "featuresShipped": 0,
+        "featuresShipped": 98,
         "qaPassRate": 100,
-        "inProgress": 0,
-        "openBugs": 27,
-        "tasksClosed": 0
+        "inProgress": 1,
+        "openBugs": 14,
+        "tasksClosed": 98
       },
       "bugs": {
-        "newThisWeek": 9,
+        "newThisWeek": 10,
         "resolved": 0,
-        "open": 27,
+        "open": 14,
         "deferred": 0
       }
     }
   },
-  "recentActivity": []
+  "recentActivity": [
+    {
+      "title": "Fix View Dropdown Hidden Under Table Border on Last Row of Proposals List",
+      "status": "pushed to production",
+      "closedAt": "2026-02-26T10:02:48.980Z",
+      "url": "https://app.clickup.com/t/86b8dcnaw"
+    },
+    {
+      "title": "Tenant 14486 Edwards Painting Co. - Customer portal blocks proposal acceptance",
+      "status": "pushed to production",
+      "closedAt": "2026-02-26T10:02:48.496Z",
+      "url": "https://app.clickup.com/t/86b8en2zr"
+    },
+    {
+      "title": "Quo Integration MVP - Premium Painting only",
+      "status": "pushed to production",
+      "closedAt": "2026-02-26T10:02:47.982Z",
+      "url": "https://app.clickup.com/t/86b8jkraz"
+    },
+    {
+      "title": "Alternative Payment Instructions Not Displayed to Customers When Stripe Payment Option Is Enabled",
+      "status": "pushed to production",
+      "closedAt": "2026-02-26T10:02:47.500Z",
+      "url": "https://app.clickup.com/t/86b8mam55"
+    },
+    {
+      "title": "Fix False Package Selection Prompt When Toggle is Disabled",
+      "status": "pushed to production",
+      "closedAt": "2026-02-26T10:02:46.554Z",
+      "url": "https://app.clickup.com/t/86b8mn69y"
+    }
+  ]
 }
