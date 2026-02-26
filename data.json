@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-02-26T17:57:43.090Z",
+  "lastUpdated": "2026-02-26T19:52:05.543Z",
   "stats": {
-    "featuresShipped": 24,
+    "featuresShipped": 25,
     "qaPassRate": 100,
     "inProgress": 1,
     "openBugs": 14,
-    "tasksClosed": 24
+    "tasksClosed": 25
   },
   "bugs": {
-    "newThisWeek": 4,
+    "newThisWeek": 3,
     "resolved": 0,
     "open": 14,
     "deferred": 0
@@ -16,14 +16,14 @@
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 6,
+        "featuresShipped": 7,
         "qaPassRate": 100,
         "inProgress": 1,
         "openBugs": 14,
-        "tasksClosed": 6
+        "tasksClosed": 7
       },
       "bugs": {
-        "newThisWeek": 1,
+        "newThisWeek": 0,
         "resolved": 0,
         "open": 14,
         "deferred": 0
@@ -31,14 +31,14 @@
     },
     "7d": {
       "stats": {
-        "featuresShipped": 24,
+        "featuresShipped": 25,
         "qaPassRate": 100,
         "inProgress": 1,
         "openBugs": 14,
-        "tasksClosed": 24
+        "tasksClosed": 25
       },
       "bugs": {
-        "newThisWeek": 4,
+        "newThisWeek": 3,
         "resolved": 0,
         "open": 14,
         "deferred": 0
@@ -46,14 +46,14 @@
     },
     "30d": {
       "stats": {
-        "featuresShipped": 59,
+        "featuresShipped": 60,
         "qaPassRate": 100,
         "inProgress": 1,
         "openBugs": 14,
-        "tasksClosed": 59
+        "tasksClosed": 60
       },
       "bugs": {
-        "newThisWeek": 9,
+        "newThisWeek": 8,
         "resolved": 0,
         "open": 14,
         "deferred": 0
@@ -68,7 +68,7 @@
         "tasksClosed": 98
       },
       "bugs": {
-        "newThisWeek": 11,
+        "newThisWeek": 10,
         "resolved": 0,
         "open": 14,
         "deferred": 0
@@ -83,7 +83,7 @@
         "tasksClosed": 98
       },
       "bugs": {
-        "newThisWeek": 10,
+        "newThisWeek": 9,
         "resolved": 0,
         "open": 14,
         "deferred": 0
@@ -91,6 +91,12 @@
     }
   },
   "recentActivity": [
+    {
+      "title": "iOs - Dripjobs Chat - Fix  Duplicate Lightning Bolt Icon ",
+      "status": "pushed to production",
+      "closedAt": "2026-02-26T18:32:42.887Z",
+      "url": "https://app.clickup.com/t/86b8eh6p1"
+    },
     {
       "title": "Fix View Dropdown Hidden Under Table Border on Last Row of Proposals List",
       "status": "pushed to production",
@@ -114,12 +120,6 @@
       "status": "pushed to production",
       "closedAt": "2026-02-26T10:02:47.500Z",
       "url": "https://app.clickup.com/t/86b8mam55"
-    },
-    {
-      "title": "Fix False Package Selection Prompt When Toggle is Disabled",
-      "status": "pushed to production",
-      "closedAt": "2026-02-26T10:02:46.554Z",
-      "url": "https://app.clickup.com/t/86b8mn69y"
     }
   ]
 }
