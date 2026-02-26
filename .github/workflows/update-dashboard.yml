@@ -21,11 +21,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
-          cache-dependency-path: scripts/package-lock.json
-
-      - name: Install dependencies
-        run: npm install --prefix scripts
 
       - name: Fetch ClickUp data and update data.json
         env:
