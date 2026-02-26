@@ -28,9 +28,13 @@ const TEAM_ID = process.env.CLICKUP_TEAM_ID;
 const FEATURES_LIST = process.env.CLICKUP_FEATURES_LIST_ID;
 const BUGS_LIST     = process.env.CLICKUP_BUGS_LIST_ID;
 
-// ── Customize these to match your ClickUp status names ──────────────────────
-const DONE_STATUSES        = ['complete', 'done', 'closed', 'shipped'];
-const IN_PROGRESS_STATUSES = ['in progress', 'in review', 'in qa', 'dev', 'review'];
+// ── DripJobs ClickUp status names ───────────────────────────────────────────
+// Active Development: 'pushed to production' = shipped to users
+const DONE_STATUSES        = ['pushed to production', 'resolved without fix', 'no fix needed', 'send to dev'];
+// Active Development in-flight statuses
+const IN_PROGRESS_STATUSES = ['in progress', 'deployed to test', 'testing complete', 'pr created', 'code complete', 'branch ready'];
+// Active Triage deferred statuses
+const DEFERRED_STATUSES    = ['postponed', 'on hold'];
 // ────────────────────────────────────────────────────────────────────────────
 
 if (!TOKEN || !TEAM_ID) {
@@ -73,21 +77,23 @@ async function getListTasks(listId, extraParams = {}) {
 }
 
 function computeStats(featureTasks, bugTasks, sinceMs) {
-  const isDone        = t => DONE_STATUSES.includes(t.status?.status?.toLowerCase());
-  const isInProgress  = t => IN_PROGRESS_STATUSES.includes(t.status?.status?.toLowerCase());
-  const closedInRange = t => isDone(t) && Number(t.date_closed) >= sinceMs;
+  const status       = t => t.status?.status?.toLowerCase().trim();
+  const isDone       = t => DONE_STATUSES.includes(status(t));
+  const isInProgress = t => IN_PROGRESS_STATUSES.includes(status(t));
+  const closedInRange  = t => isDone(t) && Number(t.date_closed) >= sinceMs;
   const createdInRange = t => Number(t.date_created) >= sinceMs;
 
-  const featuresShipped = featureTasks.filter(closedInRange).length;
-  const inProgress      = featureTasks.filter(isInProgress).length;
-  const tasksClosed     = [...featureTasks, ...bugTasks].filter(closedInRange).length;
+  // Features shipped = pushed to production only (not resolved-without-fix)
+  const featuresShipped = featureTasks.filter(t =>
+    status(t) === 'pushed to production' && Number(t.date_closed) >= sinceMs
+  ).length;
+  const inProgress  = featureTasks.filter(isInProgress).length;
+  const tasksClosed = [...featureTasks, ...bugTasks].filter(closedInRange).length;
 
   const openBugs     = bugTasks.filter(t => !isDone(t)).length;
   const bugsNew      = bugTasks.filter(createdInRange).length;
   const bugsResolved = bugTasks.filter(closedInRange).length;
-  const bugsDeferred = bugTasks.filter(t =>
-    t.status?.status?.toLowerCase() === 'deferred'
-  ).length;
+  const bugsDeferred = bugTasks.filter(t => DEFERRED_STATUSES.includes(status(t))).length;
 
   const bugsClosedInRange = bugTasks.filter(closedInRange).length;
   const totalShipped = featuresShipped + bugsClosedInRange;
