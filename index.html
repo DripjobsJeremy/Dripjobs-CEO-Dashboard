@@ -2265,23 +2265,24 @@
       if (!res.ok) return;
       const d = await res.json();
 
-      // Stat cards
-      if (d.stats) {
-        const s = d.stats;
-        setText('stat-features',    s.featuresShipped);
-        setText('stat-qa-rate',     s.qaPassRate);
-        setText('stat-in-progress', s.inProgress);
-        setText('stat-bugs',        s.openBugs);
-        setText('stat-tasks-closed',s.tasksClosed);
-      }
-
-      // Bug summary
-      if (d.bugs) {
-        const b = d.bugs;
-        setText('bugs-new',      b.newThisWeek);
-        setText('bugs-resolved', b.resolved);
-        setText('bugs-open',     b.open);
-        setText('bugs-deferred', b.deferred);
+      // Merge per-range stats from data.json into rangeData so all
+      // date range buttons reflect live ClickUp numbers
+      if (d.ranges) {
+        Object.keys(d.ranges).forEach(key => {
+          if (rangeData[key]) {
+            rangeData[key].stats = { ...rangeData[key].stats, ...d.ranges[key].stats };
+            rangeData[key].bugs  = { ...rangeData[key].bugs,  ...d.ranges[key].bugs  };
+          }
+        });
+        // Re-apply the currently active range with fresh data
+        const activeBtn = document.querySelector('.quick-range.active');
+        const activeRange = activeBtn ? activeBtn.getAttribute('onclick').match(/'([^']+)'/)?.[1] : '7d';
+        applyRangeData(activeRange || '7d');
+      } else if (d.stats) {
+        // Backwards compat: single-snapshot data.json (7d only)
+        rangeData['7d'].stats = { ...rangeData['7d'].stats, ...d.stats };
+        rangeData['7d'].bugs  = { ...rangeData['7d'].bugs,  ...d.bugs  };
+        applyRangeData('7d');
       }
 
       // Last updated pill
@@ -2365,7 +2366,7 @@
       trends: { features: '↑ 18 vs prior period', qa: '↑ 5% vs prior period', tasks: '↑ 63 vs prior period' }
     },
     ytd: {
-      stats: { featuresShipped: 56, qaPassRate: 92, inProgress: 8, openBugs: 6, tasksClosed: 152 },
+      stats: { featuresShipped: 120, qaPassRate: 92, inProgress: 8, openBugs: 6, tasksClosed: 152 },
       bugs:  { newThisWeek: 7, resolved: 31, open: 6, deferred: 7 },
       trends: { features: '↑ 12 vs prior period', qa: '↑ 4% vs prior period', tasks: '↑ 38 vs prior period' }
     }

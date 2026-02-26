@@ -58,6 +58,11 @@ function daysAgo(n) {
   return Date.now() - n * 24 * 60 * 60 * 1000;
 }
 
+// Returns Unix timestamp for Jan 1 of the current year
+function startOfYear() {
+  return new Date(new Date().getFullYear(), 0, 1).getTime();
+}
+
 async function getListTasks(listId, extraParams = {}) {
   if (!listId) return [];
   const data = await clickup(`/list/${listId}/task`, {
@@ -67,44 +72,58 @@ async function getListTasks(listId, extraParams = {}) {
   return data.tasks || [];
 }
 
+function computeStats(featureTasks, bugTasks, sinceMs) {
+  const isDone        = t => DONE_STATUSES.includes(t.status?.status?.toLowerCase());
+  const isInProgress  = t => IN_PROGRESS_STATUSES.includes(t.status?.status?.toLowerCase());
+  const closedInRange = t => isDone(t) && Number(t.date_closed) >= sinceMs;
+  const createdInRange = t => Number(t.date_created) >= sinceMs;
+
+  const featuresShipped = featureTasks.filter(closedInRange).length;
+  const inProgress      = featureTasks.filter(isInProgress).length;
+  const tasksClosed     = [...featureTasks, ...bugTasks].filter(closedInRange).length;
+
+  const openBugs     = bugTasks.filter(t => !isDone(t)).length;
+  const bugsNew      = bugTasks.filter(createdInRange).length;
+  const bugsResolved = bugTasks.filter(closedInRange).length;
+  const bugsDeferred = bugTasks.filter(t =>
+    t.status?.status?.toLowerCase() === 'deferred'
+  ).length;
+
+  const bugsClosedInRange = bugTasks.filter(closedInRange).length;
+  const totalShipped = featuresShipped + bugsClosedInRange;
+  const qaPassRate = totalShipped > 0
+    ? Math.round((featuresShipped / totalShipped) * 100)
+    : 100;
+
+  return {
+    stats: { featuresShipped, qaPassRate, inProgress, openBugs, tasksClosed },
+    bugs:  { newThisWeek: bugsNew, resolved: bugsResolved, open: openBugs, deferred: bugsDeferred },
+  };
+}
+
 async function main() {
   console.log('🔄 Fetching ClickUp data…');
 
-  const sevenDaysAgo = daysAgo(7);
-
-  // ── Features list ──────────────────────────────────────────────────────────
   const [allFeatureTasks, allBugTasks] = await Promise.all([
     getListTasks(FEATURES_LIST),
     getListTasks(BUGS_LIST),
   ]);
 
-  const isDone = t => DONE_STATUSES.includes(t.status?.status?.toLowerCase());
-  const isInProgress = t => IN_PROGRESS_STATUSES.includes(t.status?.status?.toLowerCase());
-  const completedRecently = t => isDone(t) && Number(t.date_closed) >= sevenDaysAgo;
+  console.log(`   Feature tasks fetched : ${allFeatureTasks.length}`);
+  console.log(`   Bug tasks fetched     : ${allBugTasks.length}`);
 
-  // Stats
-  const featuresShipped = allFeatureTasks.filter(completedRecently).length;
-  const inProgress      = allFeatureTasks.filter(isInProgress).length;
-  const tasksClosed     = [...allFeatureTasks, ...allBugTasks].filter(completedRecently).length;
-
-  // Bugs
-  const openBugs      = allBugTasks.filter(t => !isDone(t)).length;
-  const bugsNew       = allBugTasks.filter(t => Number(t.date_created) >= sevenDaysAgo).length;
-  const bugsResolved  = allBugTasks.filter(completedRecently).length;
-  const bugsDeferred  = allBugTasks.filter(t =>
-    t.status?.status?.toLowerCase() === 'deferred'
-  ).length;
-
-  // QA Pass Rate: completed features / (completed features + bug-tagged completed in period)
-  const bugsClosedThisWeek = allBugTasks.filter(completedRecently).length;
-  const totalShipped = featuresShipped + bugsClosedThisWeek;
-  const qaPassRate = totalShipped > 0
-    ? Math.round((featuresShipped / totalShipped) * 100)
-    : 100;
+  // Compute stats for every range the dashboard supports
+  const ranges = {
+    today: computeStats(allFeatureTasks, allBugTasks, daysAgo(1)),
+    '7d':  computeStats(allFeatureTasks, allBugTasks, daysAgo(7)),
+    '30d': computeStats(allFeatureTasks, allBugTasks, daysAgo(30)),
+    '90d': computeStats(allFeatureTasks, allBugTasks, daysAgo(90)),
+    ytd:   computeStats(allFeatureTasks, allBugTasks, startOfYear()),
+  };
 
   // ── Recent activity (last 5 completed tasks across both lists) ─────────────
   const recent = [...allFeatureTasks, ...allBugTasks]
-    .filter(t => isDone(t) && t.date_closed)
+    .filter(t => DONE_STATUSES.includes(t.status?.status?.toLowerCase()) && t.date_closed)
     .sort((a, b) => Number(b.date_closed) - Number(a.date_closed))
     .slice(0, 5)
     .map(t => ({
@@ -116,19 +135,11 @@ async function main() {
 
   const data = {
     lastUpdated: new Date().toISOString(),
-    stats: {
-      featuresShipped,
-      qaPassRate,
-      inProgress,
-      openBugs,
-      tasksClosed,
-    },
-    bugs: {
-      newThisWeek: bugsNew,
-      resolved: bugsResolved,
-      open: openBugs,
-      deferred: bugsDeferred,
-    },
+    // Default (7d) stats at the top level for backwards compatibility
+    stats: ranges['7d'].stats,
+    bugs:  ranges['7d'].bugs,
+    // Per-range stats for the date range buttons
+    ranges,
     recentActivity: recent,
   };
 
@@ -136,11 +147,9 @@ async function main() {
   writeFileSync(outPath, JSON.stringify(data, null, 2));
 
   console.log('✅ data.json updated:');
-  console.log(`   Features shipped : ${featuresShipped}`);
-  console.log(`   In progress      : ${inProgress}`);
-  console.log(`   Open bugs        : ${openBugs}`);
-  console.log(`   Tasks closed     : ${tasksClosed}`);
-  console.log(`   QA pass rate     : ${qaPassRate}%`);
+  Object.entries(ranges).forEach(([range, d]) => {
+    console.log(`   [${range.padEnd(5)}] Features: ${d.stats.featuresShipped}, Tasks closed: ${d.stats.tasksClosed}, Bugs open: ${d.stats.openBugs}`);
+  });
 }
 
 main().catch(err => {
