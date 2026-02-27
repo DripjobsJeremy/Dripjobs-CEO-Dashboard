@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-02-26T19:52:05.543Z",
+  "lastUpdated": "2026-02-27T12:13:42.120Z",
   "stats": {
     "featuresShipped": 25,
     "qaPassRate": 100,
-    "inProgress": 1,
+    "inProgress": 2,
     "openBugs": 14,
     "tasksClosed": 25
   },
   "bugs": {
-    "newThisWeek": 3,
+    "newThisWeek": 4,
     "resolved": 0,
     "open": 14,
     "deferred": 0
@@ -16,14 +16,14 @@
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 7,
+        "featuresShipped": 1,
         "qaPassRate": 100,
-        "inProgress": 1,
+        "inProgress": 2,
         "openBugs": 14,
-        "tasksClosed": 7
+        "tasksClosed": 1
       },
       "bugs": {
-        "newThisWeek": 0,
+        "newThisWeek": 3,
         "resolved": 0,
         "open": 14,
         "deferred": 0
@@ -33,12 +33,12 @@
       "stats": {
         "featuresShipped": 25,
         "qaPassRate": 100,
-        "inProgress": 1,
+        "inProgress": 2,
         "openBugs": 14,
         "tasksClosed": 25
       },
       "bugs": {
-        "newThisWeek": 3,
+        "newThisWeek": 4,
         "resolved": 0,
         "open": 14,
         "deferred": 0
@@ -46,14 +46,14 @@
     },
     "30d": {
       "stats": {
-        "featuresShipped": 60,
+        "featuresShipped": 55,
         "qaPassRate": 100,
-        "inProgress": 1,
+        "inProgress": 2,
         "openBugs": 14,
-        "tasksClosed": 60
+        "tasksClosed": 55
       },
       "bugs": {
-        "newThisWeek": 8,
+        "newThisWeek": 9,
         "resolved": 0,
         "open": 14,
         "deferred": 0
@@ -61,14 +61,14 @@
     },
     "90d": {
       "stats": {
-        "featuresShipped": 98,
+        "featuresShipped": 97,
         "qaPassRate": 100,
-        "inProgress": 1,
+        "inProgress": 2,
         "openBugs": 14,
-        "tasksClosed": 98
+        "tasksClosed": 97
       },
       "bugs": {
-        "newThisWeek": 10,
+        "newThisWeek": 11,
         "resolved": 0,
         "open": 14,
         "deferred": 0
@@ -76,14 +76,14 @@
     },
     "ytd": {
       "stats": {
-        "featuresShipped": 98,
+        "featuresShipped": 97,
         "qaPassRate": 100,
-        "inProgress": 1,
+        "inProgress": 2,
         "openBugs": 14,
-        "tasksClosed": 98
+        "tasksClosed": 97
       },
       "bugs": {
-        "newThisWeek": 9,
+        "newThisWeek": 10,
         "resolved": 0,
         "open": 14,
         "deferred": 0
