@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2026-02-27T12:13:42.120Z",
+  "lastUpdated": "2026-02-28T12:09:56.336Z",
   "stats": {
-    "featuresShipped": 25,
+    "featuresShipped": 19,
     "qaPassRate": 100,
-    "inProgress": 2,
+    "inProgress": 3,
     "openBugs": 14,
-    "tasksClosed": 25
+    "tasksClosed": 19
   },
   "bugs": {
     "newThisWeek": 4,
@@ -16,14 +16,14 @@
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 1,
+        "featuresShipped": 0,
         "qaPassRate": 100,
-        "inProgress": 2,
+        "inProgress": 3,
         "openBugs": 14,
-        "tasksClosed": 1
+        "tasksClosed": 0
       },
       "bugs": {
-        "newThisWeek": 3,
+        "newThisWeek": 1,
         "resolved": 0,
         "open": 14,
         "deferred": 0
@@ -31,11 +31,11 @@
     },
     "7d": {
       "stats": {
-        "featuresShipped": 25,
+        "featuresShipped": 19,
         "qaPassRate": 100,
-        "inProgress": 2,
+        "inProgress": 3,
         "openBugs": 14,
-        "tasksClosed": 25
+        "tasksClosed": 19
       },
       "bugs": {
         "newThisWeek": 4,
@@ -46,11 +46,11 @@
     },
     "30d": {
       "stats": {
-        "featuresShipped": 55,
+        "featuresShipped": 54,
         "qaPassRate": 100,
-        "inProgress": 2,
+        "inProgress": 3,
         "openBugs": 14,
-        "tasksClosed": 55
+        "tasksClosed": 54
       },
       "bugs": {
         "newThisWeek": 9,
@@ -61,11 +61,11 @@
     },
     "90d": {
       "stats": {
-        "featuresShipped": 97,
+        "featuresShipped": 96,
         "qaPassRate": 100,
-        "inProgress": 2,
+        "inProgress": 3,
         "openBugs": 14,
-        "tasksClosed": 97
+        "tasksClosed": 96
       },
       "bugs": {
         "newThisWeek": 11,
@@ -76,11 +76,11 @@
     },
     "ytd": {
       "stats": {
-        "featuresShipped": 97,
+        "featuresShipped": 96,
         "qaPassRate": 100,
-        "inProgress": 2,
+        "inProgress": 3,
         "openBugs": 14,
-        "tasksClosed": 97
+        "tasksClosed": 96
       },
       "bugs": {
         "newThisWeek": 10,
