@@ -342,6 +342,9 @@ function TannerTracker() {
     if (filter==="nicetohave")   return t.sub==="nicetohave";
     if (filter==="considered")   return t.sub==="considered";
     if (filter==="urgent")       return t.priority==="urgent";
+    if (filter==="planned-v2")   return t.status==="planned-v2";
+    if (filter==="on-hold")      return t.status==="on-hold";
+    if (filter==="postponed")    return t.status==="postponed";
     return true;
   });
   if (search) filtered = filtered.filter(t =>
