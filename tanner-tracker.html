@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tanner Tracker — DripJobs</title>
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: #F8F7FF; color: #1A1A2E; }
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #C4C2E0; border-radius: 3px; }
+    .filter-pill { padding: 6px 14px; border-radius: 20px; border: 1.5px solid #E0DFEF; background: #fff; color: #6B7280; font-size: 12px; font-weight: 600; cursor: pointer; white-space: nowrap; transition: all 0.15s; font-family: inherit; }
+    .filter-pill:hover { border-color: #6E63E5; color: #6E63E5; }
+    .filter-pill.active { background: #6E63E5; border-color: #6E63E5; color: #fff; }
+    .btn { padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; font-size: 13px; font-weight: 600; font-family: inherit; transition: opacity 0.15s; }
+    .btn:hover { opacity: 0.85; }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .btn-primary { background: #6E63E5; color: #fff; }
+    .btn-outline { background: #fff; color: #6E63E5; border: 1.5px solid #6E63E5; }
+    .btn-danger { background: #FEE2E2; color: #EF4444; }
+    .btn-gray { background: #F3F4F6; color: #374151; }
+    .ticket-card { background: #fff; border-radius: 10px; border: 1.5px solid #EEECF9; padding: 14px 16px 14px 20px; transition: box-shadow 0.15s, border-color 0.15s; position: relative; overflow: hidden; }
+    .ticket-card:hover { box-shadow: 0 4px 16px rgba(110,99,229,0.08); border-color: #D1CFE8; }
+    .priority-bar { position: absolute; left: 0; top: 0; bottom: 0; width: 5px; }
+    input, select, textarea { font-family: 'Inter', sans-serif; }
+    .stat-card { background: #fff; border: 1.5px solid #EEECF9; border-radius: 10px; padding: 14px 16px; }
+    .modal-overlay { position: fixed; inset: 0; background: rgba(15,10,40,0.55); z-index: 500; display: flex; align-items: center; justify-content: center; padding: 20px; }
+    /* ── Dark mode overrides for CSS-class-based elements ── */
+    [data-dark] .filter-pill { background: #18162A; border-color: #2C2945; color: #6A658A; }
+    [data-dark] .filter-pill:hover { border-color: #8B7FF5; color: #8B7FF5; }
+    [data-dark] .filter-pill.active { background: #6E63E5; border-color: #6E63E5; color: #fff; }
+    [data-dark] .btn-gray { background: #252240; color: #C4C2E0; }
+    [data-dark] .btn-outline { background: #18162A; color: #8B7FF5; border-color: #8B7FF5; }
+    [data-dark] .btn-danger { background: #3A1E1E; color: #F87171; }
+    [data-dark] .ticket-card { background: #18162A; border-color: #2C2945; }
+    [data-dark] .ticket-card:hover { border-color: #3A3660; box-shadow: 0 4px 16px rgba(0,0,0,0.4); }
+    [data-dark] .stat-card { background: #18162A; border-color: #2C2945; }
+    [data-dark] ::-webkit-scrollbar-thumb { background: #3A3660; }
+    /* Force readable text in dark mode for all text-bearing elements */
+    div[data-dark] { color: #F0EEFF; }
+    [data-dark] input, [data-dark] select, [data-dark] textarea { color: #F0EEFF; background: #201E33; border-color: #252240; }
+    [data-dark] option { background: #201E33; color: #F0EEFF; }
+    [data-dark] input::placeholder, [data-dark] textarea::placeholder { color: #4C4870; }
+    [data-dark] strong { color: inherit; }
+    [data-dark] a { color: #9D95F5; }
+  </style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { useState, useEffect, useCallback } = React;
+
+const PURPLE = "#6E63E5";
+
+// ── Theme tokens ──
+const LT = {
+  bg:"#F8F7FF", surface:"#fff", surface2:"#F8F7FF", surface3:"#F5F5FB",
+  border:"#EEECF9", border2:"#E8E7F4", border3:"#D1CFE8",
+  text:"#1A1A2E", text2:"#6B7280", text3:"#9CA3AF", text4:"#B0ADCC", text5:"#C4C2E0",
+  chip:"#F3F4F6", chipText:"#9CA3AF",
+  closeBtn:"#F3F4F6", closeBtnText:"#6B7280",
+  pre:"#F8F7FF", preText:"#1A1A2E",
+};
+const DK = {
+  bg:"#0D0C18", surface:"#18162A", surface2:"#1A1830", surface3:"#201E33",
+  border:"#2C2945", border2:"#252240", border3:"#3A3660",
+  text:"#F0EEFF", text2:"#8B87AA", text3:"#6A658A", text4:"#7A77A0", text5:"#3E3A60",
+  chip:"#252240", chipText:"#8B87AA",
+  closeBtn:"#252240", closeBtnText:"#8B87AA",
+  pre:"#13112A", preText:"#D4D0F0",
+};
+
+const RESOLVED_IDS = new Set([
+  "T-007","T-022","T-026","T-027","T-033","T-035","T-067","T-097","T-099"
+]);
+
+const SEED = [
+  {id:"T-001",title:"Google Maps API missing on Edit Deal address field",desc:"When editing a deal from the Deal Command Center, the address field has no Google Maps API — autocomplete unavailable.",type:"bug",sub:"missed",priority:"high",status:"open",date:"2025-02-21",area:"Deals / CRM",clickup:""},
+  {id:"T-002",title:'Deal stage not defaulting to "In Draft" when proposal created from deal',desc:'When a proposal is created from a deal, the stage should auto-set to "In Draft." Currently does not reset.',type:"bug",sub:"missed",priority:"high",status:"open",date:"2025-02-23",area:"Proposal Builder",clickup:""},
+  {id:"T-003",title:"Job address not updating in deal/contact record after proposal creation",desc:"After creating a proposal from a deal, the job address fails to propagate back to the deal and contact record.",type:"bug",sub:"missed",priority:"high",status:"open",date:"2025-02-23",area:"Deals / CRM",clickup:""},
+  {id:"T-004",title:"Deal card link display incorrect after filter applied",desc:"When a filter is created in the Sales Pipeline, deal card links display incorrectly.",type:"bug",sub:"missed",priority:"low",status:"open",date:"2025-02-23",area:"Sales Pipeline",clickup:""},
+  {id:"T-005",title:"Menu not expanding properly on Android",desc:"The navigation menu is not expanding on Android devices.",type:"bug",sub:"missed",priority:"high",status:"open",date:"2025-03-05",area:"Mobile (Android)",clickup:""},
+  {id:"T-006",title:"Production rate duplication not copying ceiling measurement correctly",desc:"When duplicating an area (e.g. Lanai Ceiling), the square footage does not copy correctly.",type:"bug",sub:"missed",priority:"normal",status:"open",date:"2025-03-05",area:"Production Rates",clickup:""},
+  {id:"T-007",title:"Bad phone number in contact blocks deal channel rendering",desc:"An invalid phone number format prevents the deal channel from rendering. Even after fixing the number, channel remains inaccessible.",type:"bug",sub:"missed",priority:"high",status:"resolved",date:"2025-03-05",area:"Deals / Chat",clickup:"https://app.clickup.com/t/86b47jn2x",resolvedNote:"Pushed to production — 86b47jn2x"},
+  {id:"T-008",title:"Endless spinner when adding production rates to account",desc:"Adding production rates results in an infinite loading spinner — save never completes.",type:"bug",sub:"missed",priority:"urgent",status:"open",date:"2025-03-11",area:"Production Rates",clickup:""},
+  {id:"T-009",title:"Change order addition does not auto-refresh screen",desc:"When a change order line item is added on an accepted/scheduled proposal, the screen requires a hard refresh.",type:"bug",sub:"missed",priority:"normal",status:"open",date:"2025-03-12",area:"Proposals / Change Orders",clickup:""},
+  {id:"T-010",title:'Invalid email shows "opted out" error instead of "invalid email"',desc:'When an email hard bounces, the system incorrectly shows an opt-out message. Should display "invalid email."',type:"bug",sub:"missed",priority:"high",status:"open",date:"2025-03-18",area:"Email / Proposals",clickup:""},
+  {id:"T-011",title:"Save button still visible on mobile deal card",desc:"The Save button remains visible on the mobile deal card when it should be hidden.",type:"bug",sub:"missed",priority:"normal",status:"open",date:"2025-03-19",area:"Mobile",clickup:""},
+  {id:"T-012",title:"Salesperson keywords not replacing in Receipt Email & Confirmation SMS",desc:"{current-user-name}, {salesperson-name}, and {salesperson-first-name} not being replaced in specific templates.",type:"bug",sub:"missed",priority:"high",status:"open",date:"2025-03-28",area:"Templates / Email & SMS",clickup:""},
+  {id:"T-013",title:'"Submitted on" timestamp incorrect on proposals',desc:"Submitted-on timestamp is significantly off from the actual received time.",type:"bug",sub:"missed",priority:"normal",status:"open",date:"2025-03-28",area:"Proposals",clickup:""},
+  {id:"T-014",title:"Google Maps API not working on customer portal address field",desc:"On the customer portal booking form, Google Maps API is not functioning on the address input.",type:"bug",sub:"missed",priority:"high",status:"open",date:"2025-04-22",area:"Customer Portal",clickup:""},
+  {id:"T-015",title:'"No drips left" incorrectly showing on every deal card',desc:"After a recent update, every deal card shows 'no drips left' — urgent regression affecting all users.",type:"bug",sub:"considered",priority:"urgent",status:"open",date:"2025-04-07",area:"Drips / Deals",clickup:"https://app.clickup.com/t/86b4j3jgj",notes:"Jeremy in Slack: 'Oh wait! I already did this! I'll update the existing ticket and change status.' Linked ClickUp 86b4j3jgj. Product had already submitted and owned this ticket before Tanner raised it in the channel."},
+  {id:"T-016",title:"Closing ratio and Jobs Won showing 0 in weekly metrics",desc:"Closing ratio and Jobs Won count displaying 0 in weekly dashboard view even when jobs are confirmed closed.",type:"bug",sub:"missed",priority:"urgent",status:"open",date:"2025-05-05",area:"Metrics / Dashboard",clickup:""},
+  {id:"T-017",title:'"End time" not showing when appointment is rescheduled',desc:"When rescheduling an appointment, the end time field is not populated or displayed.",type:"bug",sub:"missed",priority:"normal",status:"open",date:"2025-05-05",area:"Appointments",clickup:""},
+  {id:"T-018",title:"Error when clicking activity item; raw error code exposed to customers",desc:"Clicking an activity item throws an error. Raw error code also exposed on customer-facing proposal page.",type:"bug",sub:"considered",priority:"high",status:"open",date:"2025-05-11",area:"Activity / Customer Portal",clickup:"https://app.clickup.com/t/86b4xyb8c",notes:"Jeremy replied in Slack: 'This is a known issue; we have a ticket for it.' Linked existing ClickUp 86b4xyb8c (High / In Progress). Was already being tracked before Tanner raised it."},
+  {id:"T-019",title:"Cancel button does not close drip editor on unsaved drips",desc:"In the drip builder, clicking Cancel does not close the editor when the drip has never been saved.",type:"bug",sub:"missed",priority:"normal",status:"open",date:"2025-05-12",area:"Drips",clickup:""},
+  {id:"T-020",title:"Deal stage resets when email is invalid during proposal send",desc:"When proposal send fails due to an invalid email, the deal stage resets — causing data loss.",type:"bug",sub:"missed",priority:"high",status:"open",date:"2025-05-19",area:"Proposals / Email",clickup:""},
+  {id:"T-021",title:"Internal lead sources not rendering in lead source dropdown",desc:"Custom/internal lead sources are missing from the dropdown when creating a new proposal for an existing customer.",type:"bug",sub:"considered",priority:"high",status:"open",date:"2025-05-15",area:"Leads / CRM",clickup:"https://app.clickup.com/t/86b88wc0z",notes:"Jeremy submitted a full ClickUp ticket (86b88wc0z) for this issue — scoped to Onsite Estimate scheduler and Contact Record lead source dropdown. Product had already documented and owned this before it was raised in the channel."},
+  {id:"T-022",title:'Duplicate proposal incorrectly moves to "accepted" state immediately',desc:"Duplicating a proposal in Jobs Pipeline skips to accepted state instead of starting In Draft.",type:"bug",sub:"missed",priority:"high",status:"resolved",date:"2025-05-15",area:"Proposal Builder",clickup:"https://app.clickup.com/t/86b50wq0z",resolvedNote:"Pushed to production — 86b50wq0z"},
+  {id:"T-023",title:'"Mark all notifications as read" not working',desc:"The mark-all-as-read function fails. Individual mark-as-read and gear icon method both work.",type:"bug",sub:"missed",priority:"normal",status:"open",date:"2025-05-09",area:"Notifications",clickup:""},
+  {id:"T-024",title:'"Jobs Won" dashboard filter using wrong data field',desc:"Jobs Won filter was using wrong field — returning 0 even with confirmed closed jobs.",type:"bug",sub:"missed",priority:"urgent",status:"open",date:"2025-05-05",area:"Metrics / Dashboard",clickup:""},
+  {id:"T-025",title:"Amount showing $0 on deal movement modal",desc:"The dollar amount on the deal movement modal shows $0 instead of the actual deal value.",type:"bug",sub:"missed",priority:"normal",status:"open",date:"2025-04-17",area:"Deals",clickup:""},
+  {id:"T-026",title:"Duplicate invoices generated 3x for same transaction",desc:"A CCK Admin account had 3 duplicate invoices created simultaneously, triggering 3 thank-you emails. Related to drip sender bug.",type:"bug",sub:"missed",priority:"urgent",status:"resolved",date:"2025-05-13",area:"Invoices / Payments",clickup:"https://app.clickup.com/t/86b5dmpnw",resolvedNote:"Pushed to production — 86b5dmpnw (Prime Choice Flooring fix)"},
+  {id:"T-027",title:"Drip emails/messages being sent multiple times",desc:"Drips triggered and sent multiple times due to drip sender issue. Partial fix deployed; full audit needed.",type:"bug",sub:"missed",priority:"urgent",status:"resolved",date:"2025-05-13",area:"Drips",clickup:"",resolvedNote:"Addressed via drip sender fix — partial resolution confirmed"},
+  {id:"T-028",title:"Invoice send options missing on iPhone (present on Android/Desktop)",desc:"Invoice action dropdown options visible on Android/Desktop but missing on iPhone.",type:"bug",sub:"missed",priority:"high",status:"open",date:"2025-05-08",area:"Mobile (iOS) / Invoices",clickup:""},
+  {id:"T-029",title:"Photo preview not rendering properly on uploaded photos",desc:"Uploaded photo previews are not displaying correctly in the attachment viewer.",type:"bug",sub:"missed",priority:"normal",status:"open",date:"2025-04-28",area:"Attachments / Photos",clickup:""},
+  {id:"T-030",title:"Deal timestamp shows deal age instead of time sold",desc:"The timestamp on won deals reflects deal age rather than when it was marked sold.",type:"bug",sub:"missed",priority:"normal",status:"open",date:"2025-05-09",area:"Deals / Metrics",clickup:""},
+  {id:"T-031",title:"Lead received as 3 duplicate entries via webhook",desc:"A lead was received 3 duplicate times. Needs diagnosis and should be added to the contact merging ticket.",type:"bug",sub:"missed",priority:"high",status:"open",date:"2025-05-16",area:"Leads / Integrations",clickup:""},
+  {id:"T-032",title:"Reset button formatting broken on Mac 13-inch",desc:"The Reset button has a display issue specifically on 13-inch Mac screens.",type:"bug",sub:"missed",priority:"low",status:"open",date:"2025-02-20",area:"UI / Desktop",clickup:""},
+  {id:"T-033",title:"Schedule Job button missing from deal card on completed jobs",desc:"Schedule Job button is hidden when a job is completed, even though multi-stage projects need re-scheduling.",type:"bug",sub:"missed",priority:"high",status:"resolved",date:"2025-02-27",area:"Jobs / Scheduling",clickup:"https://app.clickup.com/t/86b53v784",resolvedNote:"Pushed to production — 86b53v784"},
+  {id:"T-034",title:"PM not listed correctly when scheduling job; shown as salesperson",desc:"When scheduling a job with a PM assigned, the PM appears as the salesperson and salesperson attribution is also wrong.",type:"bug",sub:"missed",priority:"high",status:"open",date:"2025-04-02",area:"Jobs / Scheduling",clickup:""},
+  {id:"T-035",title:"Blast messages not appearing in Blast reporting table",desc:"Blast messages sent from Sales/Jobs list do not show in the Blast table with data, open rates, etc.",type:"bug",sub:"missed",priority:"low",status:"resolved",date:"2025-02-27",area:"Messaging / Blasts",clickup:"https://app.clickup.com/t/86b7huhpk",resolvedNote:"Pushed to production — 86b7huhpk (Jobs List & Pipeline Enhancement)"},
+  {id:"T-036",title:"New proposal/appointment modal load times are high",desc:"New proposal and new appointment modals have high load times, likely due to template fetching.",type:"bug",sub:"missed",priority:"normal",status:"open",date:"2025-04-04",area:"Performance",clickup:""},
+  {id:"T-037",title:"Phone number text input has broken behavior",desc:"Phone number input field has broken/unusual behavior per Loom — likely a mask or formatting bug.",type:"bug",sub:"missed",priority:"normal",status:"open",date:"2025-04-04",area:"UI / Forms",clickup:""},
+  {id:"T-038",title:"Job report not loading on job detail page",desc:"The Job Report section fails to load when navigating to a specific job's detail page.",type:"bug",sub:"missed",priority:"normal",status:"open",date:"2025-05-12",area:"Jobs / Reports",clickup:""},
+  {id:"T-039",title:'Add "Secret Work Order URL" to proposal dropdown options',desc:"Add Secret Work Order URL as a selectable option in proposal builder dropdowns. Work shipped without this being included.",type:"enhancement",sub:"considered",priority:"normal",status:"open",date:"2025-02-15",area:"Proposal Builder",clickup:"https://app.clickup.com/t/86b3cz2u7",notes:"Jeremy in Slack: 'We have this ticket' + linked ClickUp 86b3cz2u7. Also noted: 'We had a ticket built & ready to go — the work happened without our knowing about it.' Product owned the ticket; work shipped outside of process."},
+  {id:"T-040",title:"Hide job stages in Sales Pipeline and sales stages in Jobs Pipeline",desc:"After manual acceptance shipped, job stages should not appear in Sales Pipeline and vice versa. Should have been part of that release.",type:"enhancement",sub:"considered",priority:"high",status:"open",date:"2025-02-18",area:"Pipelines",clickup:"",notes:"Jesus replied in Slack with screenshots showing this WAS ALREADY the current behavior. Tanner confirmed: 'yes confirmed.' Product had already handled this as part of manual acceptance — not a miss."},
+  {id:"T-041",title:"Manual acceptance message copy is incorrect",desc:'The manual acceptance message has wrong copy. Should read: "This proposal was accepted on behalf of the customer manually without a signature by {company-name}."',type:"enhancement",sub:"missed",priority:"normal",status:"open",date:"2025-02-27",area:"Proposals",clickup:""},
+  {id:"T-042",title:"API deal creation: first salesperson assignment logic is wrong",desc:"When a deal is created via API, the logic for assigning the first salesperson is incorrect.",type:"enhancement",sub:"missed",priority:"high",status:"open",date:"2025-02-27",area:"API / Deals",clickup:""},
+  {id:"T-043",title:"Proposal PDFs should include CompanyCam and attached photos",desc:"Proposal PDFs should pull in CompanyCam and internal attachment photos for a complete customer deliverable.",type:"enhancement",sub:"missed",priority:"normal",status:"open",date:"2025-04-02",area:"Proposals / CompanyCam",clickup:""},
+  {id:"T-044",title:"Remove 12:00 AM timestamps from all-day calendar events",desc:"All-day events should not show a 12:00 AM timestamp. Default end time should draw from Settings (5:00 PM).",type:"enhancement",sub:"missed",priority:"normal",status:"open",date:"2025-04-03",area:"Calendar",clickup:""},
+  {id:"T-045",title:"Company logo in drip emails should link to company website, not DripJobs.com",desc:"When a company logo is clicked in a drip email, it should redirect to the company's website, not dripjobs.com.",type:"enhancement",sub:"missed",priority:"high",status:"open",date:"2025-04-22",area:"Email / Branding",clickup:""},
+  {id:"T-046",title:"New users added to DripJobs should receive a sign-in welcome email",desc:"When a new user is added to a DripJobs account, they should automatically receive a welcome email with a login link.",type:"enhancement",sub:"missed",priority:"normal",status:"open",date:"2025-04-25",area:"Users / Onboarding",clickup:""},
+  {id:"T-047",title:"Duplicate proposal modal must warn that a new deal will be created",desc:"The duplicate proposal modal must clearly indicate this action creates a new deal, not staying within the current one.",type:"enhancement",sub:"missed",priority:"normal",status:"open",date:"2025-05-27",area:"Proposal Builder",clickup:""},
+  {id:"T-048",title:"Drip builder: cannot save multiple drips at once in a sequence",desc:"Users can edit multiple drips in a row but can only save one at a time — major UX failure when building sequences.",type:"enhancement",sub:"missed",priority:"high",status:"open",date:"2025-05-19",area:"Drips",clickup:""},
+  {id:"T-049",title:"Chargebee paused subscription should deactivate DripJobs account",desc:"When a Chargebee subscription is paused (seasonal), DripJobs account should auto-deactivate and re-activate when subscription resumes.",type:"enhancement",sub:"considered",priority:"high",status:"open",date:"2025-03-18",area:"Billing / Chargebee",clickup:"https://app.clickup.com/t/86b49mbb6",notes:"Jeremy in Slack: 'We have this one already.' Linked ClickUp 86b49mbb6 (Ready for Dev / Basit). Product had already scoped, documented, and queued this for development before it was raised in the channel."},
+  {id:"T-050",title:"Billing modal launcher for cancelled accounts",desc:"Create a billing modal launcher for cancelled accounts so they can be prompted to re-activate from within the app.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-02-18",area:"Billing",clickup:""},
+  {id:"T-051",title:"Mobile Task UI improvements",desc:"General improvements to the task UI on mobile — layout, spacing, and field usability.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-02-20",area:"Mobile / Tasks",clickup:""},
+  {id:"T-052",title:"SMS Disabled screen: update header and feature copy",desc:'Replace the red SMS Disabled bar. New header: "Text Your Leads & Contacts." Updated subline with feature bullet points.',type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-02-24",area:"SMS / UI",clickup:""},
+  {id:"T-053",title:"Activation email drip sequence at 24/48/72hrs for inactive signups",desc:"If a company has not activated within 24 hours of signup, send drip emails at 24, 48, and 72 hours with onboarding links.",type:"enhancement",sub:"nicetohave",priority:"high",status:"open",date:"2025-02-24",area:"Onboarding / Drips",clickup:""},
+  {id:"T-054",title:"Add Event Assignee field to appointment/event creation modal",desc:"The event modal should include an Event Assignee field. For on-site estimates show Salesperson label.",type:"enhancement",sub:"nicetohave",priority:"high",status:"open",date:"2025-03-18",area:"Appointments",clickup:""},
+  {id:"T-055",title:"Production rate duplication: allow user to set quantity of copies",desc:"When duplicating an area in Production Rates, let the user specify how many copies they want in one action.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-03-05",area:"Production Rates",clickup:""},
+  {id:"T-056",title:"Improved DripJobs Chat onboarding flow after feature activation",desc:"Show chat widget in side panel (feature-locked), replace SMS disabled banner with Complete A2P CTA, update deal info state.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-03-11",area:"Chat / Onboarding",clickup:""},
+  {id:"T-057",title:'Zapier: "Send Chat Message to Contact" action',desc:"Create a Zapier action that allows users to send a DripJobs chat message to a contact via Zap.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-03-18",area:"Zapier / Integrations",clickup:""},
+  {id:"T-058",title:"Postmark: route email replies into DripJobs deal activity",desc:"Route Postmark replies into DripJobs via reply-to email. Store on backend. Surface in deal activity. Option to pause drips on reply.",type:"enhancement",sub:"nicetohave",priority:"high",status:"open",date:"2025-04-07",area:"Email / Drips",clickup:""},
+  {id:"T-059",title:"Create Bookkeeper user role (contacts & invoices access only)",desc:"A new restricted role that limits access to only Contacts and Invoices modules.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-04-07",area:"User Roles",clickup:""},
+  {id:"T-060",title:"Store and version proposal history — save PDF snapshot on each send",desc:"Every time a proposal is sent, save a version/PDF snapshot so previous states can be reviewed.",type:"enhancement",sub:"nicetohave",priority:"high",status:"open",date:"2025-04-07",area:"Proposals",clickup:""},
+  {id:"T-061",title:"Invoice bar on deal card should be clickable (like proposal bar)",desc:"Make the invoice line item bar on the deal card clickable for direct navigation to the invoice.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-04-16",area:"Invoices / Deals",clickup:""},
+  {id:"T-062",title:"Indicator on deal cards for proposals scheduled to send",desc:"Display a visual flag on deal cards when a proposal is scheduled to send. Flag exists in system — needs to surface on card.",type:"enhancement",sub:"considered",priority:"normal",status:"open",date:"2025-04-06",area:"Deals / Proposals",clickup:"https://app.clickup.com/t/86b3w2j2m",notes:"Jeremy in Slack: 'We actually already have a ticket for this one.' Linked ClickUp 86b3w2j2m. When Tanner raised this request, Product already had it documented and in the backlog."},
+  {id:"T-063",title:"Date filter on Change Order table",desc:"Add a date range filter to the Change Order table for better auditing.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-04-06",area:"Change Orders",clickup:""},
+  {id:"T-064",title:"Job Type Labels — label engine on job record level",desc:"Build a label engine so users can tag jobs by type (interior, exterior, cabinets, remodel, etc.) for filtering and reporting.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-04-27",area:"Jobs / Labels",clickup:""},
+  {id:"T-065",title:"Surface Job Type Labels on mobile deal and job card views",desc:"Once built, show Job Type Labels on mobile deal card and job card views.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-04-28",area:"Mobile / Labels",clickup:""},
+  {id:"T-066",title:"Invoice due reminders + Change Order reminders engine",desc:"Build 2 new reminder engines: Invoice Due Reminders and Change Order Reminders, following the appointment/job reminder pattern.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-04-03",area:"Invoices / Reminders",clickup:""},
+  {id:"T-067",title:'"Schedule Again" button on completed job deal cards',desc:"Add a Schedule Again button on completed job deal cards that triggers the Schedule Job function. High business value for multi-stage projects.",type:"enhancement",sub:"nicetohave",priority:"high",status:"resolved",date:"2025-04-02",area:"Jobs / Scheduling",clickup:"https://app.clickup.com/t/86b53v784",resolvedNote:"Pushed to production — 86b53v784"},
+  {id:"T-068",title:"Enhanced Schedule Job modal with full job context",desc:"Redesign the Schedule Job modal to show job amount, crew name, work order options, start/end dates, and all calendar-visible fields.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-04-02",area:"Jobs / Scheduling",clickup:""},
+  {id:"T-069",title:"Enhanced Duplicate Proposal flow with deal assignment and stage selection",desc:"Redesign duplicate proposal: select current/new/existing contact; choose In Draft or Project Accepted; assign to deal; pre-fill salesperson/crew.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-05-27",area:"Proposal Builder",clickup:""},
+  {id:"T-070",title:"Drip builder: block duplicate drips at same time interval",desc:"Prevent users from creating a second drip at the same time interval. Prompt them to use the Text+Email toggle on the existing drip.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-05-09",area:"Drips",clickup:""},
+  {id:"T-071",title:"Assign CompanyCam photos to specific proposal line items/areas",desc:"Allow users to assign specific CompanyCam photos to individual line items and substrate areas in a proposal.",type:"enhancement",sub:"considered",priority:"normal",status:"open",date:"2025-04-27",area:"CompanyCam / Proposals",clickup:"https://app.clickup.com/t/86b4rd3v9",notes:"Jeremy in Slack: 'I actually have a FeatureBase ticket from Feb for this. I'll update it with new details.' Product had been tracking this since February — two months before Tanner raised it in April."},
+  {id:"T-072",title:"Chargebee trial add-on for AI Feature",desc:"Set up a Chargebee trial add-on for the DripJobs AI Feature.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-04-27",area:"Billing / AI",clickup:""},
+  {id:"T-073",title:"Info icon on internal lead sources with better help text",desc:"Add an info icon on internal lead sources with clearer help text explaining their purpose and use cases.",type:"enhancement",sub:"nicetohave",priority:"low",status:"open",date:"2025-04-28",area:"Lead Sources",clickup:""},
+  {id:"T-074",title:"Search tenants page by Chargebee ID",desc:"Add a search field on the Tenants admin page for searching by Chargebee subscription ID.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-04-22",area:"Admin / Tenants",clickup:""},
+  {id:"T-075",title:"Match appointment header font to Sales Pipeline style",desc:"Appointment headers in the new Calendar should match the font/text style used in the Sales Pipeline.",type:"enhancement",sub:"nicetohave",priority:"low",status:"open",date:"2025-04-28",area:"Calendar / UI",clickup:""},
+  {id:"T-076",title:"Reorder Integrations page (Acorn first, then Zapier, CompanyCam)",desc:"Reorder integrations: Row 1: Acorn, Zapier, CompanyCam. Row 2: Quickbooks, Angi Leads. People can't find the Acorn financing widget.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-05-09",area:"Integrations / UI",clickup:""},
+  {id:"T-077",title:"Friendly error page on customer-facing proposal errors — no raw code",desc:"Replace raw error code with friendly message. Show company logo (not DripJobs). Remove broken Contact Us and Dashboard buttons.",type:"enhancement",sub:"nicetohave",priority:"high",status:"open",date:"2025-04-22",area:"Customer Portal / Errors",clickup:""},
+  {id:"T-078",title:'Proposal "Accepted" badge spacing fix',desc:"The spacing around the Accepted badge on proposals is off — minor UI correction needed.",type:"enhancement",sub:"nicetohave",priority:"low",status:"open",date:"2025-04-28",area:"Proposals / UI",clickup:""},
+  {id:"T-079",title:"Contact and Lead Score Logging for analytics",desc:"Log dates/times of contact and lead score changes to enable filtering by recency.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-05-01",area:"CRM / Analytics",clickup:""},
+  {id:"T-080",title:"Auto-pause drips when a change is requested on a proposal",desc:"When a proposal has Change Requested status, automatically pause active drips for that deal.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-05-01",area:"Drips / Proposals",clickup:""},
+  {id:"T-081",title:"Text message response rate % per drip in reporting",desc:"Surface a text message response rate % metric per individual drip in the reporting dashboard.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-04-26",area:"Metrics / SMS",clickup:""},
+  {id:"T-082",title:"Expose proposal count in Jobs list for closing rate audit",desc:"Proposal count is tracked in the system — surface it in the Jobs list so the team can calculate closing rates.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-05-05",area:"Metrics / Jobs",clickup:""},
+  {id:"T-083",title:"Quick Job — create proposal, accept, and invoice in one flow",desc:'In Jobs Schedule, add "New Job" button. User inputs contact, amount, address, dates. System auto-creates a proposal, marks it accepted, and creates an invoice in one shot.',type:"enhancement",sub:"nicetohave",priority:"high",status:"open",date:"2025-05-01",area:"Jobs / Proposals",clickup:""},
+  {id:"T-084",title:"Customer portal: add email validation on booking form",desc:"Add client-side and server-side email validation to the customer portal booking form.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-04-26",area:"Customer Portal",clickup:""},
+  {id:"T-085",title:"Multi-day calendar events: auto-flag all-day, support start/end time, remove toggle",desc:"Auto-flag as all-day if dates differ. Remove the toggle. Support start/end time input for multi-day events.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-05-12",area:"Calendar / Events",clickup:""},
+  {id:"T-086",title:"Acorn financing widget: right-align on desktop",desc:"The financing widget should be right-aligned on desktop. Currently spreading full-width.",type:"enhancement",sub:"considered",priority:"low",status:"open",date:"2025-03-19",area:"Proposal Builder / Financing",clickup:"",notes:"Jeremy replied in Slack: 'We changed it to that at your request, so that it fit mobile better. When it was smaller and on the right, it got bunched up when moving to mobile.' Tanner acknowledged: 'yeah... i mean it's fine.' This was a deliberate design decision made at Tanner's prior request — not a miss."},
+  {id:"T-087",title:"Payment failed banner with failure state indicator",desc:"When a payment fails, display a banner similar to the update-payment-info banner, with an appropriate CTA.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-03-20",area:"Billing / Payments",clickup:""},
+  {id:"T-088",title:"Attachments/images on mobile should expand to full-screen view",desc:"Tapping an attachment on mobile should open a full-screen view with a close button.",type:"enhancement",sub:"nicetohave",priority:"high",status:"open",date:"2025-02-28",area:"Mobile / Attachments",clickup:""},
+  {id:"T-089",title:"Notification settings: support multiple email addresses",desc:"Give users the ability to set who receives notification emails, with support for adding multiple addresses.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-02-27",area:"Notifications / Settings",clickup:""},
+  {id:"T-090",title:"Clean up duplicate area functionality in production rates",desc:"Audit and clean up all duplicate area functionality in production rates.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-03-07",area:"Production Rates",clickup:""},
+  {id:"T-091",title:"Salesperson-signature token: support HTML/coded email signatures",desc:"Enhance the {salesperson-signature} token to render clean HTML/coded signatures, not just plain text.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-03-28",area:"Templates / Email",clickup:""},
+  {id:"T-092",title:"Validate reply-email field when using custom email domain",desc:"When a company configures a Custom Email Domain, validate that the Reply Email in Settings matches to prevent delivery failures.",type:"enhancement",sub:"considered",priority:"normal",status:"open",date:"2025-03-18",area:"Email / Settings",clickup:"",notes:"Jeremy posted this in the channel explicitly noting: 'I think this one came from another channel, so I'm tossing it in here for visibility.' Jesus confirmed: 'This one came from Rick.' Not a Tanner-initiated request — was already in ClickUp before it appeared here."},
+  {id:"T-093",title:"Move/link Acorn Financing from Payments tab in Settings for discoverability",desc:"Acorn Financing modal is buried at the bottom of Integrations. Move or link from the Payments tab.",type:"enhancement",sub:"nicetohave",priority:"low",status:"open",date:"2025-03-19",area:"Settings / Integrations",clickup:""},
+  {id:"T-094",title:"Investigate slow loading of attachments/CompanyCam when proposal opens",desc:"When a proposal is first opened, attachments and CompanyCam photos load slowly. Investigate and optimize.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-05-16",area:"Performance / Proposals",clickup:""},
+  {id:"T-095",title:"Win/Ask Automation Flow based on deal value milestones",desc:"Implement an automated Win/Ask flow triggered by deal value milestones, with tailored email and SMS at each tier.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-04-28",area:"Automation / CRM",clickup:""},
+  {id:"T-096",title:'"Request Review" button in Jobs Pipeline Command Center',desc:"Add a button in the Jobs Pipeline Command Center that lets users send a review request (text and/or email) at any pipeline stage.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-04-17",area:"Jobs / Reviews",clickup:""},
+  {id:"T-097",title:"Packaged pricing (Good/Better/Best) in Proposal Builder",desc:"Allow contractors to present Good/Better/Best pricing packages within a single proposal so customers can compare and select.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"resolved",date:"2025-03-18",area:"Proposal Builder",clickup:"https://app.clickup.com/t/86b52xnx5",resolvedNote:"Pushed to production — 86b52xnx5"},
+  {id:"T-098",title:"Stripe Tap to Pay integration research",desc:"Explore Stripe Terminal's Tap to Pay (iPhone/Android contactless payments) — no extra hardware required.",type:"enhancement",sub:"nicetohave",priority:"low",status:"open",date:"2025-05-05",area:"Payments / Integrations",clickup:""},
+  {id:"T-099",title:"Add hover action menus to invoice and proposal bars on deal card",desc:"Add hover action menus to invoice and proposal bars on the deal card for quicker access to key actions.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"resolved",date:"2025-05-07",area:"Deals / UI",clickup:"https://app.clickup.com/t/86b4qxjdr",resolvedNote:"Pushed to production — 86b4qxjdr"},
+  {id:"T-100",title:"Allow sending invoices in all payment states",desc:"Allow users to send/re-send invoices regardless of payment state — open, partially paid, paid, or voided.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-05-08",area:"Invoices",clickup:""},
+  {id:"T-101",title:"In-app Calendly demo booking buttons for Job Costing, Production Rates & Zapier",desc:"Add a 'Book a Free Demo' button within Job Costing UI, Production Rates UI, and Zapier integration area linking to Calendly. Greenlit by Tanner; coordinated between Jeremy and Laura C. Calendly links TBD.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-03-03",area:"Job Costing / Production Rates / Zapier",clickup:"",notes:"Owner: Jeremy + Laura C. Calendly links needed from Laura before dev handoff."},
+  {id:"T-102",title:"Invoice Activity Log with Timestamped Payment Events",desc:"Log every invoice payment event (sent, viewed, paid, partial payment, refund) with timestamps, surfaced directly in the invoice record for full audit trail.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-04-07",area:"Invoices / Audit Trail",clickup:"https://app.clickup.com/t/86b2xayhp",notes:"Status in ClickUp: Long Term Parking"},
+  {id:"T-103",title:"Post-Payment Onboarding Scheduling Flow for Cold Signups",desc:"After a cold signup completes payment, trigger an automated flow to schedule an onboarding call — reducing activation drop-off.",type:"enhancement",sub:"nicetohave",priority:"high",status:"open",date:"2025-04-14",area:"Onboarding / Growth",clickup:"https://app.clickup.com/t/86b8e0b44",notes:"Status in ClickUp: Short Term Parking"},
+  {id:"T-104",title:"Include Deal ID / Job ID in All Zapier Trigger Payloads",desc:"Every Zapier trigger should expose the Deal ID and Job ID in the payload so downstream Zaps can map and route correctly without workarounds.",type:"enhancement",sub:"nicetohave",priority:"high",status:"open",date:"2025-04-21",area:"Zapier / Integrations",clickup:"https://app.clickup.com/t/86b8cxhgr",notes:"Status in ClickUp: Long Term Parking"},
+  {id:"T-105",title:"Payment Received Zapier Trigger",desc:"New Zapier trigger: fires when a payment is received on a DripJobs invoice. Enables downstream automation for thank-you flows, accounting sync, etc.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-04-14",area:"Zapier / Payments",clickup:"https://app.clickup.com/t/86b7u2cy5",notes:"Status in ClickUp: Short Term Parking"},
+  {id:"T-106",title:"Add Payment Voiding Capability with Transaction History Tracking",desc:"Allow users to void payments in DripJobs with a full audit trail — timestamped transaction history showing original payment, void event, and outcome.",type:"enhancement",sub:"nicetohave",priority:"normal",status:"open",date:"2025-04-14",area:"Invoices / Payments",clickup:"https://app.clickup.com/t/86b748vjk",notes:"Status in ClickUp: Short Term Parking"},
+  {id:"T-107",title:"Restrict Deletion of Proposal-Based & Change Order Discounts from Invoices",desc:"Discounts that are auto-applied from accepted proposals or change orders should be locked on the invoice and not manually deletable, preventing billing errors.",type:"enhancement",sub:"considered",priority:"high",status:"open",date:"2025-05-01",area:"Invoices / Proposals",clickup:"https://app.clickup.com/t/86b6xkg7y",notes:"Already tracked in ClickUp as Ready for Dev — was in the engineering queue prior to this ticket being raised."},
+  {id:"T-108",title:"Alternative Payment Instructions Not Displayed When Stripe Enabled",desc:"When Stripe is enabled as a payment option, the alternative payment instructions set in Settings were not being shown to customers on the invoice/proposal page.",type:"bug",sub:"missed",priority:"high",status:"resolved",date:"2025-05-12",area:"Invoices / Payments",clickup:"https://app.clickup.com/t/86b8mam55",resolvedNote:"Pushed to production — 86b8mam55"},
+  {id:"T-109",title:"Metrics vs Job Costing Dashboard Mismatch — Carters Painting (#16198)",desc:"Numbers in the Metrics dashboard do not match totals shown in the Job Costing dashboard. Active investigation underway for account #16198.",type:"bug",sub:"missed",priority:"high",status:"in-progress",date:"2025-05-19",area:"Metrics / Job Costing",clickup:"https://app.clickup.com/t/86b8m121w",notes:"Status in ClickUp: In Progress (Terry)"},
+  {id:"T-110",title:'Salesperson Field Returns Null in Zapier "Proposal Accepted" Trigger — Regression',desc:'After a prior fix, the Salesperson field regressed and again returns null in the "Proposal Accepted" Zapier trigger payload, breaking downstream automations.',type:"bug",sub:"missed",priority:"high",status:"resolved",date:"2025-05-20",area:"Zapier / Proposals",clickup:"https://app.clickup.com/t/86b8j9165",resolvedNote:"Pushed to production — 86b8j9165 (regression of 86b8829d8)"},
+];
+
+const INITIAL_SEED = SEED.map(t => RESOLVED_IDS.has(t.id) ? {...t, status:"resolved"} : t);
+
+const PO = {urgent:0,high:1,normal:2,low:3};
+const PL = p => ({urgent:"🔴 Urgent",high:"🟡 High",normal:"🟣 Normal",low:"⚪ Low"}[p]||p);
+const SD = s => ({open:"🔓 Open","in-progress":"🔵 In Progress",resolved:"✅ Resolved","wont-fix":"❌ Won't Fix","planned-v2":"🗺️ Planned for V2","on-hold":"⏸️ On Hold",postponed:"⏭️ Postponed"}[s]||s);
+const PCOLOR = {urgent:"#EF4444",high:"#F59E0B",normal:PURPLE,low:"#E5E7EB"};
+
+const Badge = ({cls, children}) => {
+  const C = {
+    bug:{bg:"#FEF2F2",c:"#EF4444"},
+    enhancement:{bg:"#F0EFFD",c:"#6E63E5"},
+    missed:{bg:"#FFFBEB",c:"#F59E0B"},
+    nicetohave:{bg:"#ECFDF5",c:"#10B981"},
+    considered:{bg:"#EFF6FF",c:"#2563EB"},
+    na:{bg:"#F3F4F6",c:"#6B7280"},
+    urgent:{bg:"#FEE2E2",c:"#B91C1C"},
+    high:{bg:"#FFFBEB",c:"#B45309"},
+    normal:{bg:"#F0EFFD",c:"#5248C7"},
+    low:{bg:"#F9FAFB",c:"#9CA3AF"},
+    resolved:{bg:"#ECFDF5",c:"#059669"},
+    "in-progress":{bg:"#EFF6FF",c:"#3B82F6"},
+    open:{bg:"#F9FAFB",c:"#6B7280"},
+    "wont-fix":{bg:"#FEF2F2",c:"#DC2626"},
+    "planned-v2":{bg:"#EEF2FF",c:"#4F46E5"},
+    "on-hold":{bg:"#FFF7ED",c:"#C2410C"},
+    postponed:{bg:"#F3F4F6",c:"#6B7280"},
+  };
+  const s = C[cls]||{bg:"#F3F4F6",c:"#6B7280"};
+  return (
+    <span style={{display:"inline-flex",alignItems:"center",padding:"2px 8px",borderRadius:20,fontSize:11,fontWeight:700,background:s.bg,color:s.c,whiteSpace:"nowrap"}}>
+      {children}
+    </span>
+  );
+};
+
+const ReportModal = ({title, subtitle, content, onClose, onCopy, T}) => (
+  <div className="modal-overlay" onClick={e => e.target===e.currentTarget && onClose()}>
+    <div style={{background:T.surface,borderRadius:14,maxWidth:780,width:"100%",maxHeight:"88vh",display:"flex",flexDirection:"column",boxShadow:"0 24px 64px rgba(0,0,0,0.22)"}}>
+      <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",padding:"18px 22px 14px",borderBottom:`1.5px solid ${T.border}`}}>
+        <div>
+          <div style={{fontWeight:700,fontSize:16,color:T.text}}>{title}</div>
+          {subtitle && <div style={{fontSize:12,color:T.text3,marginTop:3}}>{subtitle}</div>}
+        </div>
+        <div style={{display:"flex",gap:8,alignItems:"center"}}>
+          {onCopy && <button className="btn btn-outline" onClick={onCopy} style={{fontSize:12,padding:"6px 14px"}}>Copy</button>}
+          <button onClick={onClose} style={{background:T.closeBtn,border:"none",borderRadius:8,width:32,height:32,cursor:"pointer",fontSize:16,color:T.closeBtnText,display:"flex",alignItems:"center",justifyContent:"center"}}>✕</button>
+        </div>
+      </div>
+      <div style={{flex:1,overflowY:"auto",padding:"18px 22px"}}>
+        <pre style={{fontSize:12,fontFamily:"'Courier New',monospace",background:T.pre,padding:16,borderRadius:8,whiteSpace:"pre-wrap",wordBreak:"break-word",lineHeight:1.65,color:T.preText}}>{content}</pre>
+      </div>
+    </div>
+  </div>
+);
+
+const isEmbedded = window.self !== window.top;
+
+function TannerTracker() {
+  const SK = "dj_tt_v10";
+  const [tickets, setTicketsRaw] = useState([]);
+  const [filter, setFilter] = useState("all");
+  const [search, setSearch] = useState("");
+  const [sort, setSort] = useState("newest");
+  const [editId, setEditId] = useState(null);
+  const [editData, setEditData] = useState({});
+  const [slackMsg, setSlackMsg] = useState("");
+  const [pendingAI, setPendingAI] = useState(null);
+  const [classifying, setClassifying] = useState(false);
+  const [overrides, setOverrides] = useState({type:"",sub:"",priority:""});
+  const [showCEO, setShowCEO] = useState(false);
+  const [showStats, setShowStats] = useState(false);
+  const [toast, setToast] = useState({msg:"",show:false});
+  const [dateVal, setDateVal] = useState(new Date().toISOString().split("T")[0]);
+  const [apiKey, setApiKey] = useState("");
+  const [showAdd, setShowAdd] = useState(false);
+  const [ceoTab, setCeoTab] = useState("ceo");
+  const [dark, setDark] = useState(() => {
+    try { return localStorage.getItem("dj_tt_dark") === "1"; } catch { return false; }
+  });
+
+  useEffect(() => {
+    try { localStorage.setItem("dj_tt_dark", dark ? "1" : "0"); } catch {}
+  }, [dark]);
+
+  const T = dark ? DK : LT;
+
+  const setTickets = useCallback(v => {
+    setTicketsRaw(v);
+    try { localStorage.setItem(SK, JSON.stringify(v)); } catch {}
+  }, []);
+
+  useEffect(() => {
+    try {
+      const sv = localStorage.getItem(SK);
+      if (sv) {
+        const parsed = JSON.parse(sv);
+        if (parsed.length < 110) { setTickets([...INITIAL_SEED]); }
+        else { setTicketsRaw(parsed); }
+      } else { setTickets([...INITIAL_SEED]); }
+    } catch { setTickets([...INITIAL_SEED]); }
+  }, []);
+
+  const showToast = msg => {
+    setToast({msg, show:true});
+    setTimeout(() => setToast(t => ({...t, show:false})), 2800);
+  };
+
+  // ── Stats ──
+  const total      = tickets.length;
+  const bugs       = tickets.filter(t => t.type==="bug");
+  const enhs       = tickets.filter(t => t.type==="enhancement");
+  const missed      = tickets.filter(t => t.sub==="missed");
+  const nice        = tickets.filter(t => t.sub==="nicetohave");
+  const considered  = tickets.filter(t => t.sub==="considered");
+  const resolved   = tickets.filter(t => t.status==="resolved");
+  const inProgress = tickets.filter(t => t.status==="in-progress");
+  const openList   = tickets.filter(t => t.status==="open");
+  const resolvedBugs  = resolved.filter(t => t.type==="bug");
+  const resolvedEnhs  = resolved.filter(t => t.type==="enhancement");
+  const resolvedMissed = resolved.filter(t => t.sub==="missed");
+  const resolvedRate  = Math.round(resolved.length / Math.max(total,1) * 100);
+  const INACTIVE = new Set(["resolved","wont-fix","planned-v2","on-hold","postponed"]);
+  const urgentOpen    = tickets.filter(t => t.priority==="urgent" && !INACTIVE.has(t.status));
+  const withClickup   = tickets.filter(t => t.clickup && t.clickup.length>0);
+
+  // ── Filter / Sort ──
+  let filtered = tickets.filter(t => {
+    if (filter==="all")          return true;
+    if (filter==="resolved")     return t.status==="resolved";
+    if (filter==="in-progress")  return t.status==="in-progress";
+    if (filter==="open")         return t.status==="open";
+    if (filter==="bug")          return t.type==="bug";
+    if (filter==="enhancement")  return t.type==="enhancement";
+    if (filter==="missed")       return t.sub==="missed";
+    if (filter==="nicetohave")   return t.sub==="nicetohave";
+    if (filter==="considered")   return t.sub==="considered";
+    if (filter==="urgent")       return t.priority==="urgent";
+    return true;
+  });
+  if (search) filtered = filtered.filter(t =>
+    t.title.toLowerCase().includes(search.toLowerCase()) ||
+    t.desc.toLowerCase().includes(search.toLowerCase()) ||
+    (t.area||"").toLowerCase().includes(search.toLowerCase()) ||
+    t.id.toLowerCase().includes(search.toLowerCase())
+  );
+  if (sort==="oldest")   filtered.sort((a,b) => a.date.localeCompare(b.date));
+  else if (sort==="newest")   filtered.sort((a,b) => b.date.localeCompare(a.date));
+  else if (sort==="priority") filtered.sort((a,b) => (PO[a.priority]||2)-(PO[b.priority]||2));
+  else if (sort==="type")     filtered.sort((a,b) => a.type.localeCompare(b.type));
+  else if (sort==="status")   filtered.sort((a,b) => a.status.localeCompare(b.status));
+
+  // ── Actions ──
+  const changeStatus = (id, val) => {
+    setTickets(tickets.map(t => t.id===id ? {...t,status:val} : t));
+    showToast(`Status → ${SD(val)}`);
+  };
+  const deleteTicket = id => {
+    if (!confirm("Delete this ticket?")) return;
+    setTickets(tickets.filter(t => t.id!==id));
+    showToast("Deleted");
+  };
+  const openEdit = id => {
+    const t = tickets.find(t => t.id===id);
+    if (!t) return;
+    setEditData({...t});
+    setEditId(id);
+  };
+  const saveEdit = () => {
+    setTickets(tickets.map(t => t.id===editId ? {...t,...editData} : t));
+    setEditId(null);
+    showToast("Saved ✓");
+  };
+
+  // ── AI Classify ──
+  const classify = async () => {
+    if (!slackMsg.trim()) { showToast("Paste a Slack message first"); return; }
+    setClassifying(true);
+    const prompt = `You are a product manager at DripJobs, a contractor CRM. Classify this CEO Slack message as a product ticket. Return ONLY valid JSON, no markdown.\n\nMessage: """${slackMsg}"""\n\nJSON schema: {"title":"Short actionable title max 80 chars","summary":"1-2 sentence description","type":"bug or enhancement","sub":"missed or nicetohave or na","priority":"urgent or high or normal or low","area":"feature area","reasoning":"1 sentence explaining classification"}\n\nRules:\n- bug = broken behavior, regression, or wrong data\n- enhancement = new feature or UX improvement\n- missed = enhancement that should have shipped with a prior release\n- nicetohave = additive new feature request\n- na = sub-type for bugs only\n- urgent = blocking users or data integrity risk`;
+    try {
+      const headers = {"Content-Type":"application/json","anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"};
+      if (apiKey) headers["x-api-key"] = apiKey;
+      const res = await fetch("https://api.anthropic.com/v1/messages", {
+        method:"POST", headers,
+        body: JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:500,messages:[{role:"user",content:prompt}]})
+      });
+      const data = await res.json();
+      const raw = data.content?.find(b => b.type==="text")?.text || "";
+      const ai = JSON.parse(raw.replace(/```json|```/g,"").trim());
+      setPendingAI(ai);
+      setOverrides({type:"",sub:"",priority:""});
+    } catch(e) {
+      console.error(e);
+      showToast("Classification failed — see console");
+    } finally { setClassifying(false); }
+  };
+
+  const confirmTicket = () => {
+    if (!pendingAI) return;
+    const mx = tickets.reduce((m,t) => Math.max(m, parseInt(t.id.replace("T-",""))||0), 0);
+    const nid = "T-" + String(mx+1).padStart(3,"0");
+    setTickets([{
+      id:nid,
+      title:pendingAI.title,
+      desc:pendingAI.summary,
+      type:overrides.type||pendingAI.type,
+      sub:overrides.sub||pendingAI.sub,
+      priority:overrides.priority||pendingAI.priority,
+      status:"open",
+      date:dateVal||new Date().toISOString().split("T")[0],
+      area:pendingAI.area||"",
+      source:"Slack #tanner-tickets",
+      clickup:""
+    }, ...tickets]);
+    setSlackMsg(""); setPendingAI(null); setShowAdd(false);
+    showToast(`✅ ${nid} added`);
+  };
+
+  // ── Report Generators ──
+  const fmt = (arr, n=8) => arr.slice(0,n).map((t,i) => `  ${i+1}. [${t.id}] ${t.title}`).join("\n") || "  None";
+
+  const generateCEO = () => {
+    const urg = tickets.filter(t => t.priority==="urgent" && t.status!=="resolved" && t.status!=="wont-fix");
+    const bm  = missed.filter(t => t.type==="bug" && t.status!=="resolved");
+    const em  = missed.filter(t => t.type==="enhancement" && t.status!=="resolved");
+    const no  = nice.filter(t => t.status!=="resolved");
+    const d   = new Date().toLocaleDateString("en-US",{weekday:"long",year:"numeric",month:"long",day:"numeric"});
+    return `DRIPJOBS — #tanner-tickets CEO SUMMARY\nGenerated: ${d}\n${"═".repeat(52)}\n\nOVERVIEW\n${"─".repeat(52)}\n  Total Tickets:           ${total}\n  Bugs:                    ${bugs.length}  |  Enhancements: ${enhs.length}\n  Newly Surfaced (open):   ${bm.length+em.length}  |  Nice-to-Have: ${no.length}\n  Resolved:                ${resolved.length} (${resolvedRate}% resolution rate)\n  In Progress:             ${inProgress.length}\n  Urgent Open:             ${urg.length}\n  Linked to ClickUp:       ${withClickup.length}\n\n${"═".repeat(52)}\n🚨 URGENT OPEN ITEMS (${urg.length})\n${"─".repeat(52)}\n${fmt(urg)}\n\n${"═".repeat(52)}\n🐛 BUGS — NEWLY SURFACED (open, ${bm.length})\n${"─".repeat(52)}\n${fmt(bm)}\n\n${"═".repeat(52)}\n⚠️ ENHANCEMENTS — NEWLY SURFACED (open, ${em.length})\n${"─".repeat(52)}\n${fmt(em)}\n\n${"═".repeat(52)}\n💡 TOP NICE-TO-HAVE REQUESTS (${no.length} open)\n${"─".repeat(52)}\n${fmt(no)}\n\n${"═".repeat(52)}\n✅ RESOLVED (${resolved.length} total)\n${"─".repeat(52)}\n  Bugs Resolved:           ${resolvedBugs.length}\n  Enhancements Resolved:   ${resolvedEnhs.length}\n  Newly Surfaced Resolved: ${resolvedMissed.length}\n${fmt(resolved.slice(0,8))}\n\n${"═".repeat(52)}\nSTRATEGIC NOTES\n${"─".repeat(52)}\n• ${missed.filter(t=>t.status!=="resolved").length} "Newly Surfaced" items still open — gaps from prior releases.\n• ${urg.length} urgent items unresolved — need immediate team attention.\n• ${resolvedRate}% overall resolution rate across ${total} tracked requests.`;
+  };
+
+  const generateStats = () => {
+    const byArea = {};
+    tickets.forEach(t => {
+      const a = t.area||"Unknown";
+      if (!byArea[a]) byArea[a] = {total:0,resolved:0};
+      byArea[a].total++;
+      if (t.status==="resolved") byArea[a].resolved++;
+    });
+    const topAreas = Object.entries(byArea).sort((a,b) => b[1].total-a[1].total).slice(0,10);
+    const byPri = {urgent:0,high:0,normal:0,low:0};
+    tickets.filter(t => t.status!=="resolved" && t.status!=="wont-fix").forEach(t => { byPri[t.priority]=(byPri[t.priority]||0)+1; });
+    const d = new Date().toLocaleDateString("en-US",{weekday:"long",year:"numeric",month:"long",day:"numeric"});
+    return `DRIPJOBS — TICKET RESOLUTION STATS\nGenerated: ${d}\n${"═".repeat(52)}\n\nOVERALL HEALTH\n${"─".repeat(52)}\n  Total Tracked:           ${total}\n  Open:                    ${openList.length}\n  In Progress:             ${inProgress.length}\n  Resolved:                ${resolved.length}\n  Resolution Rate:         ${resolvedRate}%\n\nBY TYPE\n${"─".repeat(52)}\n  Bugs Total:              ${bugs.length}  (${resolvedBugs.length} resolved, ${bugs.length-resolvedBugs.length} open)\n  Enhancements Total:      ${enhs.length}  (${resolvedEnhs.length} resolved, ${enhs.length-resolvedEnhs.length} open)\n\nBY CLASSIFICATION\n${"─".repeat(52)}\n  Newly Surfaced Total:    ${missed.length}  (${resolvedMissed.length} resolved)\n  Nice-to-Have Total:      ${nice.length}  (${resolved.filter(t=>t.sub==="nicetohave").length} resolved)\n\nOPEN BACKLOG BY PRIORITY\n${"─".repeat(52)}\n  🔴 Urgent:   ${byPri.urgent||0}\n  🟡 High:     ${byPri.high||0}\n  🟣 Normal:   ${byPri.normal||0}\n  ⚪ Low:      ${byPri.low||0}\n\nLINKED TO CLICKUP\n${"─".repeat(52)}\n  With ClickUp ticket:     ${withClickup.length} of ${total}\n  Without ClickUp link:    ${total-withClickup.length}\n\nALL RESOLVED TICKETS\n${"─".repeat(52)}\n${resolved.map((t,i) => `  ${i+1}. [${t.id}] ${t.title}\n     ${t.resolvedNote||t.clickup||"No ClickUp link"}`).join("\n")}\n\nTOP 10 AREAS BY VOLUME\n${"─".repeat(52)}\n${topAreas.map(([a,v],i) => `  ${i+1}. ${a}: ${v.total} total, ${v.resolved} resolved`).join("\n")}`;
+  };
+
+  const generateRebuttal = () => {
+    const missedBugs  = missed.filter(t => t.type==="bug");
+    const missedEnhs  = missed.filter(t => t.type==="enhancement");
+    const resolvedBugsRate    = Math.round(resolvedBugs.length/Math.max(bugs.length,1)*100);
+    const resolvedMissedRate  = Math.round(resolvedMissed.length/Math.max(missed.length,1)*100);
+    const openMissed  = missed.filter(t => t.status!=="resolved" && t.status!=="wont-fix");
+    const d = new Date().toLocaleDateString("en-US",{weekday:"long",year:"numeric",month:"long",day:"numeric"});
+    const pad = (n,w=5) => String(n).padStart(w);
+    return `DRIPJOBS — #TANNER-TICKETS: CHANNEL SUMMARY\nGenerated: ${d}\n${"═".repeat(56)}\n\nABOUT THIS TRACKER\n${"─".repeat(56)}\n  #tanner-tickets is a dedicated channel for surfacing\n  product feedback and requests. This tracker was built\n  to organize every item raised there — classifying,\n  prioritizing, and following each one through to\n  resolution.\n\n  Total items tracked:                              ${pad(total)}\n  Resolved:                                         ${pad(resolved.length)}  (${resolvedRate}%)\n  In progress:                                      ${pad(inProgress.length)}\n\n${"═".repeat(56)}\nCLASSIFICATION GUIDE\n${"═".repeat(56)}\n\n  The labels below describe the nature and context of\n  each item — not a judgment on work quality.\n\n  🐛  BUG\n${"─".repeat(56)}\n    A defect or regression identified after a release.\n    All bugs have been triaged, prioritized, and routed\n    to the appropriate team for resolution.\n\n    Bugs tracked:     ${pad(bugs.length)}\n    Bugs resolved:    ${pad(resolvedBugs.length)} of ${bugs.length}  (${resolvedBugsRate}%)\n\n  ✨  ENHANCEMENT\n${"─".repeat(56)}\n    A feature request or improvement. Enhancements are\n    reviewed against the roadmap and engineering capacity\n    before being scheduled.\n\n    Enhancements tracked:   ${pad(enhs.length)}\n    Enhancements resolved:  ${pad(resolvedEnhs.length)} of ${enhs.length}\n\n  ⚠️   NEWLY SURFACED\n${"─".repeat(56)}\n    An item raised in the channel that was not already\n    tracked in the product backlog at the time it was\n    posted. These items have since been logged,\n    classified, and are being followed through.\n\n      Bugs in this category:          ${pad(missedBugs.length)}\n      Enhancements in this category:  ${pad(missedEnhs.length)}\n      Open:                           ${pad(openMissed.length)}\n      Closed:                         ${pad(resolvedMissed.length)} of ${missed.length}  (${resolvedMissedRate}%)\n\n  💬  CONSIDERED\n${"─".repeat(56)}\n    An item the product team was already tracking,\n    investigating, or had made a deliberate decision\n    about at or before the time it was raised in the\n    channel. This label is informational — it helps\n    distinguish new requests from items already in\n    the team's active workflow.\n\n    Items with prior tracking:  ${pad(considered.length)}\n\n  💡  NICE-TO-HAVE\n${"─".repeat(56)}\n    A valuable idea or UX improvement that has been\n    documented and organized for future roadmap\n    consideration.\n\n    Items tracked:  ${pad(nice.length)}\n\n${"═".repeat(56)}\nRESOLUTION SUMMARY\n${"═".repeat(56)}\n\n    Overall resolution rate:    ${resolvedRate}%\n    Bugs resolved:              ${resolvedBugs.length} of ${bugs.length}  (${resolvedBugsRate}%)\n    Enhancements resolved:      ${resolvedEnhs.length} of ${enhs.length}\n    Newly Surfaced closed:      ${resolvedMissed.length} of ${missed.length}  (${resolvedMissedRate}%)\n\n${"═".repeat(56)}\nOVERVIEW\n${"─".repeat(56)}\n  Item                            Count\n  ${"─".repeat(36)}\n  Total items:                    ${pad(total)}\n  Already in backlog when raised: ${pad(considered.length)}\n  Bugs:                           ${pad(bugs.length)}   (${resolvedBugs.length} resolved)\n  Enhancements:                   ${pad(enhs.length)}   (${resolvedEnhs.length} resolved)\n  Overall resolved:               ${pad(resolved.length)}   (${resolvedRate}%)\n  ${"─".repeat(36)}\n\n  This tracker is a living record of how the product\n  team is managing feedback from the channel — every\n  item organized, prioritized, and followed through.`;
+  };
+
+  const exportCSV = () => {
+    const h = ["ID","Title","Type","Sub-Type","Priority","Status","Area","Date","ClickUp","Resolved Note","Notes"];
+    const rows = tickets.map(t => [
+      t.id,
+      `"${(t.title||"").replace(/"/g,'""')}"`,
+      t.type, t.sub==="missed"?"Newly Surfaced":t.sub, t.priority, t.status,
+      `"${(t.area||"").replace(/"/g,'""')}"`,
+      t.date, t.clickup||"",
+      `"${(t.resolvedNote||"").replace(/"/g,'""')}"`,
+      `"${(t.notes||"").replace(/"/g,'""')}"`
+    ].join(","));
+    const a = document.createElement("a");
+    a.href = "data:text/csv;charset=utf-8," + encodeURIComponent([h.join(","), ...rows].join("\n"));
+    a.download = `tanner-tickets-${new Date().toISOString().split("T")[0]}.csv`;
+    a.click();
+    showToast("CSV exported ✓");
+  };
+
+  // ── Shared input style ──
+  const inp = {width:"100%",background:T.surface3,border:`1.5px solid ${T.border2}`,borderRadius:8,padding:"8px 11px",fontSize:13,fontFamily:"inherit",outline:"none",color:T.text,boxSizing:"border-box"};
+  const sel = {...inp,cursor:"pointer"};
+
+  const FILTERS = [
+    {k:"all",l:"All"},
+    {k:"bug",l:"🐛 Bugs"},
+    {k:"enhancement",l:"✨ Enhancements"},
+    {k:"missed",l:"⚠️ Newly Surfaced"},
+    {k:"nicetohave",l:"💡 Nice-to-Have"},
+    {k:"considered",l:"💬 Considered"},
+    {k:"urgent",l:"🚨 Urgent"},
+    {k:"open",l:"🔓 Open"},
+    {k:"in-progress",l:"🔵 In Progress"},
+    {k:"resolved",l:"✅ Resolved"},
+    {k:"planned-v2",l:"🗺️ Planned for V2"},
+    {k:"on-hold",l:"⏸️ On Hold"},
+    {k:"postponed",l:"⏭️ Postponed"},
+  ];
+
+  return (
+    <div data-dark={dark||undefined} style={{minHeight:"100vh",background:T.bg,fontFamily:"'Inter',sans-serif",transition:"background 0.2s,color 0.2s"}}>
+
+      {/* Toast */}
+      {toast.show && (
+        <div style={{position:"fixed",top:20,right:20,zIndex:2000,background:"#1A1A2E",color:"#fff",padding:"10px 18px",borderRadius:10,fontSize:13,fontWeight:600,boxShadow:"0 8px 28px rgba(0,0,0,0.22)",animation:"none"}}>
+          {toast.msg}
+        </div>
+      )}
+
+      {/* Header */}
+      <div style={{background:T.surface,borderBottom:`1.5px solid ${T.border}`,padding:"13px 28px",display:"flex",justifyContent:"space-between",alignItems:"center",position:"sticky",top:0,zIndex:100,boxShadow:"0 2px 8px rgba(110,99,229,0.05)"}}>
+        <div style={{display:"flex",alignItems:"center",gap:12}}>
+          <div style={{width:38,height:38,borderRadius:10,background:PURPLE,display:"flex",alignItems:"center",justifyContent:"center",color:"#fff",fontWeight:800,fontSize:17,letterSpacing:"-0.5px"}}>D</div>
+          <div>
+            <div style={{fontWeight:700,fontSize:16,color:T.text,lineHeight:1.2}}>#Tanner-Tickets</div>
+            <div style={{fontSize:11,color:T.text3,lineHeight:1.2}}>DripJobs Product Backlog · {total} tickets · {resolved.length} resolved</div>
+          </div>
+        </div>
+        <div style={{display:"flex",gap:8,alignItems:"center",flexWrap:"wrap"}}>
+          {!isEmbedded && (
+            <button className="btn btn-gray" onClick={() => setShowAdd(v => !v)} style={{fontSize:12}}>
+              {showAdd ? "▲ Close" : "＋ Add Ticket"}
+            </button>
+          )}
+          <button
+            style={{fontSize:12,padding:"8px 14px",borderRadius:8,border:dark?"1.5px solid "+PURPLE:"none",cursor:"pointer",fontWeight:600,fontFamily:"inherit",background:dark?"#0D0C18":PURPLE,color:dark?PURPLE:"#fff"}}
+            onClick={() => { setCeoTab("tanner"); setShowCEO(true); setShowStats(false); }}
+          >
+            📊 Channel Context
+          </button>
+          <button
+            style={{fontSize:12,padding:"8px 14px",borderRadius:8,border:dark?"1.5px solid "+PURPLE:"none",cursor:"pointer",fontWeight:600,fontFamily:"inherit",background:dark?"#0D0C18":PURPLE,color:dark?PURPLE:"#fff"}}
+            onClick={() => { setShowStats(true); setShowCEO(false); }}
+          >
+            📈 Stats
+          </button>
+          <button
+            style={{fontSize:12,padding:"8px 14px",borderRadius:8,border:dark?"1.5px solid "+PURPLE:"none",cursor:"pointer",fontWeight:600,fontFamily:"inherit",background:dark?"#0D0C18":PURPLE,color:dark?PURPLE:"#fff"}}
+            onClick={() => { setCeoTab("ceo"); setShowCEO(true); setShowStats(false); }}
+          >
+            📋 CEO Brief
+          </button>
+          <button className="btn btn-gray" style={{fontSize:12}} onClick={exportCSV}>
+            ⬇ CSV
+          </button>
+          <button
+            className="btn btn-gray"
+            onClick={() => setDark(d => !d)}
+            style={{fontSize:15,padding:"6px 11px"}}
+            title={dark ? "Switch to Light Mode" : "Switch to Dark Mode"}
+          >
+            {dark ? "☀️" : "🌙"}
+          </button>
+        </div>
+      </div>
+
+      <div style={{maxWidth:1080,margin:"0 auto",padding:"22px 18px"}}>
+
+        {/* Stat Cards */}
+        <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:10,marginBottom:18}}>
+          {[
+            {l:"Total Tickets",v:total,       c:T.text},
+            {l:"🐛 Bugs",      v:bugs.length,  c:"#EF4444"},
+            {l:"✨ Enhancements",v:enhs.length, c:PURPLE},
+            {l:"⚠️ Newly Surfaced (open)",v:missed.filter(t=>t.status!=="resolved").length,c:"#F59E0B"},
+            {l:"✅ Resolved",  v:resolved.length,   c:"#10B981"},
+            {l:"🔵 In Progress",v:inProgress.length, c:"#3B82F6"},
+            {l:"🚨 Urgent Open",v:urgentOpen.length, c:"#EF4444"},
+            {l:"🔗 ClickUp Linked",v:withClickup.length, c:T.text2},
+          ].map((s,i) => (
+            <div key={i} className="stat-card">
+              <div style={{fontSize:11,color:T.text3,fontWeight:600,marginBottom:5}}>{s.l}</div>
+              <div style={{fontSize:28,fontWeight:700,color:s.c,lineHeight:1}}>{s.v}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Add Ticket / AI Panel */}
+        {showAdd && (
+          <div style={{background:T.surface,border:`1.5px solid ${T.border3}`,borderRadius:12,padding:20,marginBottom:18}}>
+            <div style={{fontWeight:700,fontSize:14,color:T.text,marginBottom:14}}>🤖 AI Ticket Classification</div>
+            <div style={{marginBottom:10}}>
+              <label style={{fontSize:12,fontWeight:600,color:T.text2,display:"block",marginBottom:4}}>Paste #tanner-tickets Slack message</label>
+              <textarea
+                value={slackMsg}
+                onChange={e => setSlackMsg(e.target.value)}
+                style={{...inp,height:80,resize:"vertical"}}
+                placeholder="Paste CEO Slack message here..."
+              />
+            </div>
+            <div style={{display:"flex",gap:8,marginBottom:14,flexWrap:"wrap",alignItems:"center"}}>
+              <input type="text" value={apiKey} onChange={e => setApiKey(e.target.value)} placeholder="Anthropic API key (sk-ant-...)" style={{...inp,flex:1,minWidth:200,fontSize:12}} />
+              <input type="date" value={dateVal} onChange={e => setDateVal(e.target.value)} style={{...inp,width:160}} />
+              <button className="btn btn-primary" onClick={classify} disabled={classifying}>
+                {classifying ? "Classifying…" : "Classify →"}
+              </button>
+            </div>
+            <p style={{fontSize:11,color:T.text3,marginBottom:pendingAI?14:0}}>
+              Note: API call goes to Anthropic directly. Requires valid API key. CORS must be allowed in your browser environment.
+            </p>
+            {pendingAI && (
+              <div style={{background:T.surface2,borderRadius:10,border:`1.5px solid ${T.border3}`,padding:16}}>
+                <div style={{fontWeight:700,fontSize:13,color:T.text,marginBottom:6}}>AI Classification Result</div>
+                <div style={{fontWeight:600,fontSize:14,marginBottom:4,color:T.text}}>{pendingAI.title}</div>
+                <div style={{fontSize:12,color:T.text2,marginBottom:10,lineHeight:1.5}}>{pendingAI.summary}</div>
+                <div style={{fontSize:11,color:T.text2,marginBottom:12,background:T.surface,padding:"8px 12px",borderRadius:8,border:`1px solid ${T.border}`,lineHeight:1.5}}>
+                  <strong>Reasoning:</strong> {pendingAI.reasoning}
+                </div>
+                <div style={{display:"flex",gap:6,flexWrap:"wrap",marginBottom:14,alignItems:"center"}}>
+                  <Badge cls={pendingAI.type}>{pendingAI.type}</Badge>
+                  <Badge cls={pendingAI.sub}>{pendingAI.sub}</Badge>
+                  <Badge cls={pendingAI.priority}>{PL(pendingAI.priority)}</Badge>
+                  <span style={{fontSize:11,color:"#9CA3AF"}}>{pendingAI.area}</span>
+                </div>
+                <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:8,marginBottom:14}}>
+                  {[
+                    ["type",["bug","enhancement"]],
+                    ["sub",["missed","nicetohave","considered","na"]],
+                    ["priority",["urgent","high","normal","low"]]
+                  ].map(([k,opts]) => (
+                    <div key={k}>
+                      <label style={{fontSize:11,fontWeight:600,color:T.text3,display:"block",marginBottom:3}}>Override {k}</label>
+                      <select value={overrides[k]} onChange={e => setOverrides(v => ({...v,[k]:e.target.value}))} style={sel}>
+                        <option value="">AI: {pendingAI[k]}</option>
+                        {opts.map(o => <option key={o} value={o}>{o}</option>)}
+                      </select>
+                    </div>
+                  ))}
+                </div>
+                <div style={{display:"flex",gap:8}}>
+                  <button className="btn btn-primary" onClick={confirmTicket}>✅ Confirm & Add</button>
+                  <button className="btn btn-gray" onClick={() => setPendingAI(null)}>Discard</button>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Filter + Search */}
+        <div style={{background:T.surface,border:`1.5px solid ${T.border}`,borderRadius:12,padding:"12px 14px",marginBottom:14}}>
+          <div style={{display:"flex",gap:6,flexWrap:"wrap",marginBottom:10}}>
+            {FILTERS.map(f => (
+              <button key={f.k} className={`filter-pill${filter===f.k?" active":""}`} onClick={() => setFilter(f.k)}>
+                {f.l}
+              </button>
+            ))}
+          </div>
+          <div style={{display:"flex",gap:8,alignItems:"center"}}>
+            <input
+              type="text"
+              placeholder="Search by title, description, area, or ID…"
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+              style={{...inp,flex:1}}
+            />
+            <select value={sort} onChange={e => setSort(e.target.value)} style={{...sel,width:170}}>
+              <option value="newest">Newest first</option>
+              <option value="oldest">Oldest first</option>
+              <option value="priority">By priority</option>
+              <option value="type">By type</option>
+              <option value="status">By status</option>
+            </select>
+            <span style={{fontSize:12,color:T.text3,whiteSpace:"nowrap",fontWeight:600}}>
+              {filtered.length} / {total}
+            </span>
+          </div>
+        </div>
+
+        {/* Ticket List */}
+        <div style={{display:"flex",flexDirection:"column",gap:8}}>
+          {filtered.map(t => {
+            const pc = PCOLOR[t.priority] || "#E5E7EB";
+            const isResolved = t.status==="resolved" || t.status==="wont-fix";
+            return (
+              <div key={t.id} className="ticket-card" style={{opacity:isResolved?0.68:1}}>
+                <div className="priority-bar" style={{background:pc}} />
+
+                {/* Meta row */}
+                <div style={{display:"flex",alignItems:"center",gap:6,flexWrap:"wrap",marginBottom:6}}>
+                  <span style={{fontSize:11,fontWeight:700,color:T.text4,letterSpacing:"0.4px"}}>{t.id}</span>
+                  <Badge cls={t.type}>{t.type}</Badge>
+                  {t.sub && t.sub!=="na" && (
+                    <Badge cls={t.sub}>
+                      {t.sub==="missed" ? "⚠️ newly surfaced" : t.sub==="considered" ? "💬 considered" : "💡 nice-to-have"}
+                    </Badge>
+                  )}
+                  <Badge cls={t.priority}>{PL(t.priority)}</Badge>
+                  {t.area && (
+                    <span style={{fontSize:11,color:T.chipText,background:T.chip,padding:"2px 7px",borderRadius:6}}>
+                      {t.area}
+                    </span>
+                  )}
+                  <span style={{fontSize:11,color:T.text5,marginLeft:"auto"}}>{t.date}</span>
+                </div>
+
+                {/* Title */}
+                <div style={{fontWeight:600,fontSize:14,color:T.text,marginBottom:4,lineHeight:1.4}}>{t.title}</div>
+
+                {/* Description */}
+                <div style={{fontSize:12,color:T.text2,marginBottom:8,lineHeight:1.55,display:"-webkit-box",WebkitLineClamp:2,WebkitBoxOrient:"vertical",overflow:"hidden"}}>
+                  {t.desc}
+                </div>
+
+                {/* ClickUp / notes */}
+                {(t.clickup || t.resolvedNote || t.notes) && (
+                  <div style={{fontSize:11,color:T.text3,marginBottom:8,display:"flex",gap:14,flexWrap:"wrap",lineHeight:1.4}}>
+                    {t.clickup && <a href={t.clickup} target="_blank" rel="noreferrer" style={{color:PURPLE,fontWeight:600,textDecoration:"none"}}>🔗 ClickUp ↗</a>}
+                    {t.resolvedNote && <span style={{color:"#059669",fontWeight:600}}>✓ {t.resolvedNote}</span>}
+                    {t.notes && !t.resolvedNote && <span>{t.notes}</span>}
+                  </div>
+                )}
+
+                {/* Actions */}
+                <div style={{display:"flex",alignItems:"center",gap:8,flexWrap:"wrap"}}>
+                  <select
+                    value={t.status}
+                    onChange={e => changeStatus(t.id, e.target.value)}
+                    style={{...sel,width:170,fontSize:12,padding:"5px 9px"}}
+                  >
+                    <option value="open">🔓 Open</option>
+                    <option value="in-progress">🔵 In Progress</option>
+                    <option value="resolved">✅ Resolved</option>
+                    <option value="wont-fix">❌ Won't Fix</option>
+                    <option value="planned-v2">🗺️ Planned for V2</option>
+                    <option value="on-hold">⏸️ On Hold</option>
+                    <option value="postponed">⏭️ Postponed</option>
+                  </select>
+                  <button className="btn btn-gray" onClick={() => openEdit(t.id)} style={{fontSize:11,padding:"5px 12px"}}>Edit</button>
+                  <button className="btn btn-danger" onClick={() => deleteTicket(t.id)} style={{fontSize:11,padding:"5px 12px"}}>Delete</button>
+                </div>
+              </div>
+            );
+          })}
+          {filtered.length === 0 && (
+            <div style={{textAlign:"center",padding:"56px 20px",color:T.text3,fontSize:14}}>
+              No tickets match your current filter.
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Edit Modal */}
+      {editId && (
+        <div className="modal-overlay" onClick={e => e.target===e.currentTarget && setEditId(null)}>
+          <div style={{background:T.surface,borderRadius:14,padding:0,maxWidth:580,width:"100%",maxHeight:"92vh",display:"flex",flexDirection:"column",boxShadow:"0 24px 64px rgba(0,0,0,0.22)"}}>
+            <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"18px 22px 14px",borderBottom:`1.5px solid ${T.border}`}}>
+              <div style={{fontWeight:700,fontSize:15,color:T.text}}>Edit {editData.id}</div>
+              <button onClick={() => setEditId(null)} style={{background:T.closeBtn,border:"none",borderRadius:8,width:32,height:32,cursor:"pointer",fontSize:15,color:T.closeBtnText,display:"flex",alignItems:"center",justifyContent:"center"}}>✕</button>
+            </div>
+            <div style={{flex:1,overflowY:"auto",padding:"18px 22px"}}>
+              {[
+                {k:"title",l:"Title",type:"text"},
+                {k:"desc",l:"Description",type:"textarea"},
+                {k:"area",l:"Area",type:"text"},
+                {k:"date",l:"Date",type:"text"},
+                {k:"clickup",l:"ClickUp URL",type:"text"},
+                {k:"resolvedNote",l:"Resolved Note",type:"text"},
+                {k:"notes",l:"Notes",type:"text"},
+              ].map(f => (
+                <div key={f.k} style={{marginBottom:12}}>
+                  <label style={{fontSize:12,fontWeight:600,color:T.text2,display:"block",marginBottom:4}}>{f.l}</label>
+                  {f.type==="textarea"
+                    ? <textarea value={editData[f.k]||""} onChange={e => setEditData(v => ({...v,[f.k]:e.target.value}))} style={{...inp,height:72,resize:"vertical"}} />
+                    : <input type="text" value={editData[f.k]||""} onChange={e => setEditData(v => ({...v,[f.k]:e.target.value}))} style={inp} />
+                  }
+                </div>
+              ))}
+              <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr 1fr",gap:8,marginBottom:18}}>
+                {[
+                  {k:"type",opts:["bug","enhancement"]},
+                  {k:"sub",opts:["missed","nicetohave","considered","na"]},
+                  {k:"priority",opts:["urgent","high","normal","low"]},
+                  {k:"status",opts:["open","in-progress","resolved","wont-fix","planned-v2","on-hold","postponed"]},
+                ].map(f => (
+                  <div key={f.k}>
+                    <label style={{fontSize:11,fontWeight:600,color:T.text3,display:"block",marginBottom:3}}>{f.k}</label>
+                    <select value={editData[f.k]||""} onChange={e => setEditData(v => ({...v,[f.k]:e.target.value}))} style={sel}>
+                      {f.opts.map(o => <option key={o} value={o}>{o}</option>)}
+                    </select>
+                  </div>
+                ))}
+              </div>
+              <div style={{display:"flex",gap:8}}>
+                <button className="btn btn-primary" onClick={saveEdit}>Save Changes</button>
+                <button className="btn btn-gray" onClick={() => setEditId(null)}>Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* CEO Dashboard Modal (tabbed: CEO Brief | #Tanner-Tickets) */}
+      {showCEO && (
+        <div className="modal-overlay" onClick={e => e.target===e.currentTarget && setShowCEO(false)}>
+          <div style={{background:T.surface,borderRadius:14,maxWidth:780,width:"100%",maxHeight:"88vh",display:"flex",flexDirection:"column",boxShadow:"0 24px 64px rgba(0,0,0,0.22)"}}>
+            <div style={{padding:"18px 22px 0",borderBottom:`1.5px solid ${T.border}`}}>
+              <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:12}}>
+                <div>
+                  <div style={{fontWeight:700,fontSize:16,color:T.text}}>CEO Dashboard</div>
+                  <div style={{fontSize:12,color:T.text3,marginTop:2}}>
+                    {ceoTab==="ceo" ? `DripJobs #tanner-tickets — ${new Date().toLocaleDateString()}` : "Channel summary — shareable with leadership"}
+                  </div>
+                </div>
+                <div style={{display:"flex",gap:8,alignItems:"center"}}>
+                  <button className="btn btn-outline" onClick={() => {
+                    const txt = ceoTab==="ceo" ? generateCEO() : generateRebuttal();
+                    navigator.clipboard.writeText(txt);
+                    showToast("Copied ✓");
+                  }} style={{fontSize:12,padding:"6px 14px"}}>Copy</button>
+                  <button onClick={() => setShowCEO(false)} style={{background:T.closeBtn,border:"none",borderRadius:8,width:32,height:32,cursor:"pointer",fontSize:16,color:T.closeBtnText,display:"flex",alignItems:"center",justifyContent:"center"}}>✕</button>
+                </div>
+              </div>
+              <div style={{display:"flex",gap:0}}>
+                {[["ceo","📋 CEO Brief"],["tanner","📊 #Tanner-Tickets"]].map(([k,l]) => (
+                  <button key={k} onClick={() => setCeoTab(k)} style={{
+                    fontSize:12,padding:"8px 16px",border:"none",cursor:"pointer",
+                    fontWeight:600,fontFamily:"inherit",background:"transparent",
+                    borderBottom: ceoTab===k ? `2.5px solid ${PURPLE}` : "2.5px solid transparent",
+                    color: ceoTab===k ? PURPLE : T.text3,
+                    transition:"color 0.15s"
+                  }}>{l}</button>
+                ))}
+              </div>
+            </div>
+            <div style={{flex:1,overflowY:"auto",padding:"18px 22px"}}>
+              <pre style={{fontSize:12,fontFamily:"'Courier New',monospace",background:T.pre,padding:16,borderRadius:8,whiteSpace:"pre-wrap",wordBreak:"break-word",lineHeight:1.65,color:T.preText}}>
+                {ceoTab==="ceo" ? generateCEO() : generateRebuttal()}
+              </pre>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Stats Modal */}
+      {showStats && (
+        <ReportModal
+          title="Resolution Stats"
+          subtitle="Full backlog analytics"
+          content={generateStats()}
+          onClose={() => setShowStats(false)}
+          onCopy={() => { navigator.clipboard.writeText(generateStats()); showToast("Copied ✓"); }}
+          T={T}
+        />
+      )}
+
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<TannerTracker />);
+</script>
+</body>
+</html>
