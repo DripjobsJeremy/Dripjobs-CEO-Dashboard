@@ -1306,6 +1306,9 @@
     <div class="nav-item" onclick="navigate('featurebase', this)">
       <span class="nav-icon">💬</span> FeatureBase Reporting
     </div>
+    <div class="nav-item" onclick="navigate('tanner', this)">
+      <span class="nav-icon">📊</span> #Tanner-Tickets
+    </div>
   </nav>
 
   <div class="sidebar-footer">
@@ -1339,7 +1342,7 @@
   </div>
 
   <!-- DATE FILTER BAR -->
-  <div class="date-bar">
+  <div class="date-bar" id="date-bar">
     <span class="date-label">Range</span>
     <button class="quick-range" onclick="setRange('today', this)">Today</button>
     <button class="quick-range active" onclick="setRange('7d', this)">Last 7 Days</button>
@@ -2627,6 +2630,14 @@
 
   </div><!-- /page-featurebase -->
 
+  <div class="content" id="page-tanner" style="padding:0;overflow:hidden;">
+    <iframe
+      src="tanner-tracker.html"
+      style="width:100%;height:calc(100vh - 61px);border:none;display:block;"
+      title="#Tanner-Tickets Backlog"
+    ></iframe>
+  </div><!-- /page-tanner -->
+
 </div><!-- /main -->
 
 <!-- MOBILE BOTTOM NAV -->
@@ -2734,6 +2745,7 @@
     weekly:   { title: 'Weekly Changelog', subtitle: 'Development Activity by Week' },
     monthly:     { title: 'Monthly Changelog', subtitle: 'Development Activity by Month' },
     featurebase: { title: 'FeatureBase Reporting', subtitle: 'FeatureBase Demand Signals' },
+    tanner:      { title: '#Tanner-Tickets', subtitle: 'Product Feedback Backlog · DripJobs Channel' },
   };
 
   function navigate(page, navEl) {
@@ -2763,6 +2775,8 @@
       document.getElementById('page-title').textContent = pages[page].title;
       document.getElementById('page-subtitle').textContent = pages[page].subtitle;
     }
+    const db = document.getElementById('date-bar');
+    if (db) db.style.display = page === 'tanner' ? 'none' : '';
   }
 
   // Per-range stat data
