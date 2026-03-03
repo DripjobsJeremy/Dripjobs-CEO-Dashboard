@@ -153,10 +153,11 @@
     "type": "bug",
     "sub": "missed",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-03-19",
     "area": "Mobile",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b4b7cfb",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-012",
@@ -165,22 +166,24 @@
     "type": "bug",
     "sub": "missed",
     "priority": "high",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-03-28",
     "area": "Templates / Email & SMS",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b4ftfw3",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-013",
     "title": "\"Submitted on\" timestamp incorrect on proposals",
     "desc": "Submitted-on timestamp is significantly off from the actual received time.",
     "type": "bug",
-    "sub": "missed",
+    "sub": "na",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-03-28",
     "area": "Proposals",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b4xutm2",
+    "resolvedNote": "Recurring issue - Resolved Without Fix"
   },
   {
     "id": "T-014",
