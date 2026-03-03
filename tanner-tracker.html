@@ -269,12 +269,25 @@ function TannerTracker() {
   const [showAdd, setShowAdd] = useState(false);
   const [ceoTab, setCeoTab] = useState("ceo");
   const [dark, setDark] = useState(() => {
+    if (isEmbedded) return true; // parent will override via postMessage
     try { return localStorage.getItem("dj_tt_dark") === "1"; } catch { return false; }
   });
 
   useEffect(() => {
+    if (isEmbedded) return;
     try { localStorage.setItem("dj_tt_dark", dark ? "1" : "0"); } catch {}
   }, [dark]);
+
+  // Sync dark mode with parent CEO Dashboard when embedded in iframe
+  useEffect(() => {
+    if (!isEmbedded) return;
+    const handler = (e) => {
+      if (e.data && e.data.type === 'dj-theme') setDark(e.data.dark);
+    };
+    window.addEventListener('message', handler);
+    window.parent.postMessage({ type: 'dj-theme-request' }, '*');
+    return () => window.removeEventListener('message', handler);
+  }, []);
 
   const T = dark ? DK : LT;
 
@@ -531,14 +544,16 @@ function TannerTracker() {
           <button className="btn btn-gray" style={{fontSize:12}} onClick={exportCSV}>
             ⬇ CSV
           </button>
-          <button
-            className="btn btn-gray"
-            onClick={() => setDark(d => !d)}
-            style={{fontSize:15,padding:"6px 11px"}}
-            title={dark ? "Switch to Light Mode" : "Switch to Dark Mode"}
-          >
-            {dark ? "☀️" : "🌙"}
-          </button>
+          {!isEmbedded && (
+            <button
+              className="btn btn-gray"
+              onClick={() => setDark(d => !d)}
+              style={{fontSize:15,padding:"6px 11px"}}
+              title={dark ? "Switch to Light Mode" : "Switch to Dark Mode"}
+            >
+              {dark ? "☀️" : "🌙"}
+            </button>
+          )}
         </div>
       </div>
 
