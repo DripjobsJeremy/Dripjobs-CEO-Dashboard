@@ -586,9 +586,8 @@ function TannerTracker() {
           {!isEmbedded && (
             <button
               className="btn btn-gray"
-              onClick={publish}
-              disabled={publishing}
-              style={{fontSize:12,background:"#10B981",color:"#fff",border:"none"}}
+              onClick={() => { if (!publishing) publish(); }}
+              style={{fontSize:12,background:publishing?"#6B7280":"#10B981",color:"#fff",border:"none",cursor:publishing?"not-allowed":"pointer"}}
               title="Push current ticket data to CEO Dashboard"
             >
               {publishing ? "Publishing…" : "🚀 Publish"}
