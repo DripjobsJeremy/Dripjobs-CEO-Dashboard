@@ -44,10 +44,11 @@
     "type": "bug",
     "sub": "missed",
     "priority": "high",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-02-23",
     "area": "Proposal Builder",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b41ry1m",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-003",
@@ -56,10 +57,11 @@
     "type": "bug",
     "sub": "missed",
     "priority": "high",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-02-23",
     "area": "Deals / CRM",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b42v0yn",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-004",
@@ -80,10 +82,11 @@
     "type": "bug",
     "sub": "missed",
     "priority": "high",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-03-05",
     "area": "Mobile (Android)",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b47jncj",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-006",
@@ -92,10 +95,11 @@
     "type": "bug",
     "sub": "missed",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-03-05",
     "area": "Production Rates",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b47jnqx",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-007",
@@ -129,10 +133,11 @@
     "type": "bug",
     "sub": "missed",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-03-12",
     "area": "Proposals / Change Orders",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b25kztv",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-010",
@@ -141,10 +146,11 @@
     "type": "bug",
     "sub": "missed",
     "priority": "high",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-03-18",
     "area": "Email / Proposals",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b49mbtd",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-011",
