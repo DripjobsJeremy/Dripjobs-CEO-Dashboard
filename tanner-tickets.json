@@ -346,10 +346,11 @@
     "type": "bug",
     "sub": "missed",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-04-17",
     "area": "Deals",
-    "clickup": ""
+    "clickup": "",
+    "resolvedNote": "Resolved without a Fix"
   },
   {
     "id": "T-026",
