@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2026-03-02T12:14:17.261Z",
+  "lastUpdated": "2026-03-03T12:14:01.515Z",
   "stats": {
-    "featuresShipped": 15,
+    "featuresShipped": 10,
     "qaPassRate": 100,
     "inProgress": 0,
     "openBugs": 14,
-    "tasksClosed": 15
+    "tasksClosed": 10
   },
   "bugs": {
     "newThisWeek": 4,
@@ -16,14 +16,14 @@
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 3,
+        "featuresShipped": 0,
         "qaPassRate": 100,
         "inProgress": 0,
         "openBugs": 14,
-        "tasksClosed": 3
+        "tasksClosed": 0
       },
       "bugs": {
-        "newThisWeek": 0,
+        "newThisWeek": 1,
         "resolved": 0,
         "open": 14,
         "deferred": 0
@@ -31,11 +31,11 @@
     },
     "7d": {
       "stats": {
-        "featuresShipped": 15,
+        "featuresShipped": 10,
         "qaPassRate": 100,
         "inProgress": 0,
         "openBugs": 14,
-        "tasksClosed": 15
+        "tasksClosed": 10
       },
       "bugs": {
         "newThisWeek": 4,
