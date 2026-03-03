@@ -2682,7 +2682,23 @@
     html.setAttribute('data-theme', next);
     document.getElementById('theme-toggle').textContent = next === 'dark' ? '☀️' : '🌙';
     localStorage.setItem('dj-theme', next);
+    pushThemeToTracker(next === 'dark');
   }
+
+  function pushThemeToTracker(isDark) {
+    const iframe = document.querySelector('#page-tanner iframe');
+    if (iframe && iframe.contentWindow) {
+      iframe.contentWindow.postMessage({ type: 'dj-theme', dark: isDark }, '*');
+    }
+  }
+
+  // Respond to theme-request from tanner iframe on initial load
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.type === 'dj-theme-request') {
+      const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+      pushThemeToTracker(isDark);
+    }
+  });
 
   (function initTheme() {
     const saved = localStorage.getItem('dj-theme') || 'dark';
@@ -2777,6 +2793,10 @@
     }
     const db = document.getElementById('date-bar');
     if (db) db.style.display = page === 'tanner' ? 'none' : '';
+    if (page === 'tanner') {
+      const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+      pushThemeToTracker(isDark);
+    }
   }
 
   // Per-range stat data
