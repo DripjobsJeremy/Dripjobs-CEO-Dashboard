@@ -280,10 +280,11 @@
     "type": "bug",
     "sub": "missed",
     "priority": "high",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-05-19",
     "area": "Proposals / Email",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b49mbtd",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-021",
@@ -1382,7 +1383,7 @@
     "type": "bug",
     "sub": "missed",
     "priority": "high",
-    "status": "in-progress",
+    "status": "resolved",
     "date": "2025-05-19",
     "area": "Metrics / Job Costing",
     "clickup": "https://app.clickup.com/t/86b8m121w",
