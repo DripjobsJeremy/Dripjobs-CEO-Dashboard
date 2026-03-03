@@ -2796,6 +2796,10 @@
     if (page === 'tanner') {
       const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
       pushThemeToTracker(isDark);
+      const iframe = document.querySelector('#page-tanner iframe');
+      if (iframe && iframe.contentWindow) {
+        iframe.contentWindow.postMessage({ type: 'dj-refresh' }, '*');
+      }
     }
   }
 
