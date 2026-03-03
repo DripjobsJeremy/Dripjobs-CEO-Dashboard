@@ -446,10 +446,11 @@
     "type": "bug",
     "sub": "missed",
     "priority": "high",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-04-02",
     "area": "Jobs / Scheduling",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b454tb7",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-035",
@@ -469,12 +470,13 @@
     "title": "New proposal/appointment modal load times are high",
     "desc": "New proposal and new appointment modals have high load times, likely due to template fetching.",
     "type": "bug",
-    "sub": "missed",
+    "sub": "na",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-04-04",
     "area": "Performance",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b4j47bt",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-037",
@@ -483,10 +485,11 @@
     "type": "bug",
     "sub": "missed",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-04-04",
     "area": "UI / Forms",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b403wnx",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-038",
