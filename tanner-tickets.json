@@ -431,12 +431,13 @@
     "title": "Reset button formatting broken on Mac 13-inch",
     "desc": "The Reset button has a display issue specifically on 13-inch Mac screens.",
     "type": "bug",
-    "sub": "missed",
+    "sub": "considered",
     "priority": "low",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-02-20",
     "area": "UI / Desktop",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b40xbam",
+    "resolvedNote": "No Fix Needed"
   },
   {
     "id": "T-033",
