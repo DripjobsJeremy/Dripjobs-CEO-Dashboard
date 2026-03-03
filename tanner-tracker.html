@@ -268,6 +268,9 @@ function TannerTracker() {
   const [apiKey, setApiKey] = useState("");
   const [showAdd, setShowAdd] = useState(false);
   const [ceoTab, setCeoTab] = useState("ceo");
+  const [ghToken, setGhToken] = useState(() => { try { return localStorage.getItem("dj_gh_token")||""; } catch { return ""; } });
+  const [publishing, setPublishing] = useState(false);
+  const [showTokenInput, setShowTokenInput] = useState(false);
   const [dark, setDark] = useState(() => {
     if (isEmbedded) return true; // parent will override via postMessage
     try { return localStorage.getItem("dj_tt_dark") === "1"; } catch { return false; }
@@ -283,6 +286,7 @@ function TannerTracker() {
     if (!isEmbedded) return;
     const handler = (e) => {
       if (e.data && e.data.type === 'dj-theme') setDark(e.data.dark);
+      if (e.data && e.data.type === 'dj-refresh') loadFromJSON();
     };
     window.addEventListener('message', handler);
     window.parent.postMessage({ type: 'dj-theme-request' }, '*');
@@ -296,7 +300,14 @@ function TannerTracker() {
     try { localStorage.setItem(SK, JSON.stringify(v)); } catch {}
   }, []);
 
+  const loadFromJSON = () =>
+    fetch("/tanner-tickets.json?v=" + Date.now())
+      .then(r => r.ok ? r.json() : Promise.reject())
+      .then(data => { if (Array.isArray(data) && data.length > 0) setTicketsRaw(data); else setTicketsRaw([...INITIAL_SEED]); })
+      .catch(() => setTicketsRaw([...INITIAL_SEED]));
+
   useEffect(() => {
+    if (isEmbedded) { loadFromJSON(); return; }
     try {
       const sv = localStorage.getItem(SK);
       if (sv) {
@@ -481,6 +492,31 @@ function TannerTracker() {
     showToast("CSV exported ✓");
   };
 
+  const publish = async () => {
+    if (!ghToken) { setShowTokenInput(true); return; }
+    setPublishing(true);
+    try {
+      const REPO = "DripjobsJeremy/Dripjobs-CEO-Dashboard";
+      const jsonStr = JSON.stringify(tickets, null, 2);
+      const encoded = btoa(unescape(encodeURIComponent(jsonStr)));
+      let sha;
+      try {
+        const r = await fetch(`https://api.github.com/repos/${REPO}/contents/tanner-tickets.json`, { headers: { Authorization: `token ${ghToken}` } });
+        if (r.ok) sha = (await r.json()).sha;
+      } catch {}
+      const body = { message: `Update tanner-tickets — ${new Date().toLocaleDateString()}`, content: encoded };
+      if (sha) body.sha = sha;
+      const r = await fetch(`https://api.github.com/repos/${REPO}/contents/tanner-tickets.json`, {
+        method: "PUT",
+        headers: { Authorization: `token ${ghToken}`, "Content-Type": "application/json" },
+        body: JSON.stringify(body)
+      });
+      if (!r.ok) throw new Error();
+      showToast("Published ✓ · Live on CEO Dashboard in ~60s");
+    } catch { showToast("Publish failed — check GitHub token"); }
+    finally { setPublishing(false); }
+  };
+
   // ── Shared input style ──
   const inp = {width:"100%",background:T.surface3,border:`1.5px solid ${T.border2}`,borderRadius:8,padding:"8px 11px",fontSize:13,fontFamily:"inherit",outline:"none",color:T.text,boxSizing:"border-box"};
   const sel = {...inp,cursor:"pointer"};
@@ -550,6 +586,17 @@ function TannerTracker() {
           {!isEmbedded && (
             <button
               className="btn btn-gray"
+              onClick={publish}
+              disabled={publishing}
+              style={{fontSize:12,background:"#10B981",color:"#fff",border:"none"}}
+              title="Push current ticket data to CEO Dashboard"
+            >
+              {publishing ? "Publishing…" : "🚀 Publish"}
+            </button>
+          )}
+          {!isEmbedded && (
+            <button
+              className="btn btn-gray"
               onClick={() => setDark(d => !d)}
               style={{fontSize:15,padding:"6px 11px"}}
               title={dark ? "Switch to Light Mode" : "Switch to Dark Mode"}
@@ -580,6 +627,22 @@ function TannerTracker() {
             </div>
           ))}
         </div>
+
+        {/* GitHub Token Panel */}
+        {showTokenInput && !isEmbedded && (
+          <div style={{background:T.surface,border:`1.5px solid #10B981`,borderRadius:12,padding:"14px 18px",marginBottom:18,display:"flex",gap:10,alignItems:"center",flexWrap:"wrap"}}>
+            <span style={{fontSize:12,fontWeight:600,color:T.text}}>🔑 GitHub token needed to publish:</span>
+            <input
+              type="password"
+              value={ghToken}
+              onChange={e => { setGhToken(e.target.value); try { localStorage.setItem("dj_gh_token", e.target.value); } catch {} }}
+              placeholder="ghp_..."
+              style={{flex:1,minWidth:220,background:T.surface3,border:`1.5px solid ${T.border2}`,borderRadius:8,padding:"6px 10px",fontSize:12,fontFamily:"inherit",color:T.text,outline:"none"}}
+            />
+            <button className="btn btn-gray" style={{fontSize:12,background:"#10B981",color:"#fff",border:"none"}} onClick={() => { setShowTokenInput(false); if (ghToken) publish(); }}>Save & Publish</button>
+            <button className="btn btn-gray" style={{fontSize:12}} onClick={() => setShowTokenInput(false)}>Cancel</button>
+          </div>
+        )}
 
         {/* Add Ticket / AI Panel */}
         {showAdd && (
