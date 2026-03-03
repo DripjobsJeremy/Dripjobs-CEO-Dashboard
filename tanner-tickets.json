@@ -32,10 +32,12 @@
     "type": "bug",
     "sub": "missed",
     "priority": "high",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-02-21",
     "area": "Deals / CRM",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b4qyc03",
+    "resolvedNote": "Pushed to Production",
+    "notes": "Believe this one was addressed with the same ticket as another similar."
   },
   {
     "id": "T-002",
@@ -70,10 +72,11 @@
     "type": "bug",
     "sub": "missed",
     "priority": "low",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-02-23",
     "area": "Sales Pipeline",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b41q858",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-005",
