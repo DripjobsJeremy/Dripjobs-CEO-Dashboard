@@ -6,11 +6,12 @@
     "type": "enhancement",
     "sub": "considered",
     "priority": "normal",
-    "status": "open",
+    "status": "in-progress",
     "date": "2026-03-03",
     "area": "UI/UX",
     "source": "Slack #tanner-tickets",
-    "clickup": ""
+    "clickup": "",
+    "notes": "UI Refresh Audit can be found in Dripjobs | Prod Reports"
   },
   {
     "id": "T-111",
@@ -19,11 +20,12 @@
     "type": "enhancement",
     "sub": "considered",
     "priority": "normal",
-    "status": "open",
+    "status": "in-progress",
     "date": "2026-03-03",
     "area": "Packaged Pricing",
     "source": "Slack #tanner-tickets",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b8r7be9",
+    "notes": "Decision: Enhance the Duplicate Package Flow with a Modal"
   },
   {
     "id": "T-001",
@@ -539,7 +541,7 @@
     "type": "enhancement",
     "sub": "considered",
     "priority": "high",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-02-18",
     "area": "Pipelines",
     "clickup": "",
