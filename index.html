@@ -1348,7 +1348,7 @@
     <button class="quick-range" onclick="setRange('today', this)">Today</button>
     <button class="quick-range active" onclick="setRange('7d', this)">Last 7 Days</button>
     <button class="quick-range" onclick="setRange('30d', this)">Last 30 Days</button>
-    <button class="quick-range" onclick="setRange('90d', this)">Last Quarter</button>
+    <button class="quick-range" onclick="setRange('90d', this)">Last 90 Days</button>
     <button class="quick-range" onclick="setRange('ytd', this)">Year to Date</button>
     <div class="date-separator"></div>
     <div class="custom-date-wrapper">
@@ -1369,7 +1369,7 @@
       <div class="stat-card purple" onclick="navigate('release', document.querySelector('[onclick*=release]'))">
         <div class="stat-icon">🚀</div>
         <div class="stat-value" id="stat-features">21</div>
-        <div class="stat-label">Feb Shipped</div>
+        <div class="stat-label" id="stat-features-label">7-Day Shipped</div>
         <div class="stat-trend"><span class="up">↑ Quo MVP live</span> · Premium Painting</div>
       </div>
       <div class="stat-card green">
@@ -3338,15 +3338,24 @@
     }
   };
 
+  const RANGE_LABELS = {
+    today: 'Today Shipped',
+    '7d':  '7-Day Shipped',
+    '30d': '30-Day Shipped',
+    '90d': '90-Day Shipped',
+    ytd:   'YTD Shipped',
+  };
+
   function applyRangeData(range) {
     const d = rangeData[range] || rangeData['7d'];
 
     // Stat cards
-    setText('stat-features',    d.stats.featuresShipped);
-    setText('stat-qa-rate',     d.stats.qaPassRate);
-    setText('stat-in-progress', d.stats.inProgress);
-    setText('stat-bugs',        d.stats.openBugs);
-    setText('stat-tasks-closed',d.stats.tasksClosed);
+    setText('stat-features',       d.stats.featuresShipped);
+    setText('stat-features-label', RANGE_LABELS[range] || 'Shipped');
+    setText('stat-qa-rate',        d.stats.qaPassRate);
+    setText('stat-in-progress',    d.stats.inProgress);
+    setText('stat-bugs',           d.stats.openBugs);
+    setText('stat-tasks-closed',   d.stats.tasksClosed);
 
     // Bug summary
     setText('bugs-new',      d.bugs.newThisWeek);
