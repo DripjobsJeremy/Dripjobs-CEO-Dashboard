@@ -626,7 +626,7 @@
     "type": "enhancement",
     "sub": "missed",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-05-27",
     "area": "Proposal Builder",
     "clickup": ""
@@ -638,7 +638,7 @@
     "type": "enhancement",
     "sub": "missed",
     "priority": "high",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-05-19",
     "area": "Drips",
     "clickup": ""
@@ -896,7 +896,8 @@
     "status": "open",
     "date": "2025-05-27",
     "area": "Proposal Builder",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b57decc",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-070",
@@ -908,7 +909,8 @@
     "status": "open",
     "date": "2025-05-09",
     "area": "Drips",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b4xyvp6",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-071",
@@ -978,7 +980,7 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-05-09",
     "area": "Integrations / UI",
     "clickup": ""
@@ -1050,7 +1052,7 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-05-05",
     "area": "Metrics / Jobs",
     "clickup": ""
@@ -1086,7 +1088,7 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-05-12",
     "area": "Calendar / Events",
     "clickup": ""
@@ -1199,7 +1201,8 @@
     "status": "open",
     "date": "2025-05-16",
     "area": "Performance / Proposals",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b54r6cr",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-095",
@@ -1248,7 +1251,8 @@
     "status": "open",
     "date": "2025-05-05",
     "area": "Payments / Integrations",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b4axa06",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-099",
@@ -1273,7 +1277,8 @@
     "status": "open",
     "date": "2025-05-08",
     "area": "Invoices",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b4rdqbm",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-101",
