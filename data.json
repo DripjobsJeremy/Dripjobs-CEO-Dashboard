@@ -1,16 +1,16 @@
 {
-  "lastUpdated": "2026-03-04T12:13:33.420Z",
+  "lastUpdated": "2026-03-04T14:56:36.099Z",
   "stats": {
-    "featuresShipped": 10,
+    "featuresShipped": 11,
     "qaPassRate": 100,
     "inProgress": 6,
-    "openBugs": 20,
-    "tasksClosed": 10
+    "openBugs": 21,
+    "tasksClosed": 11
   },
   "bugs": {
-    "newThisWeek": 9,
+    "newThisWeek": 10,
     "resolved": 0,
-    "open": 20,
+    "open": 21,
     "deferred": 0
   },
   "ranges": {
@@ -19,73 +19,73 @@
         "featuresShipped": 0,
         "qaPassRate": 100,
         "inProgress": 6,
-        "openBugs": 20,
+        "openBugs": 21,
         "tasksClosed": 0
       },
       "bugs": {
-        "newThisWeek": 6,
+        "newThisWeek": 7,
         "resolved": 0,
-        "open": 20,
+        "open": 21,
         "deferred": 0
       }
     },
     "7d": {
       "stats": {
-        "featuresShipped": 10,
+        "featuresShipped": 11,
         "qaPassRate": 100,
         "inProgress": 6,
-        "openBugs": 20,
-        "tasksClosed": 10
+        "openBugs": 21,
+        "tasksClosed": 11
       },
       "bugs": {
-        "newThisWeek": 9,
+        "newThisWeek": 10,
         "resolved": 0,
-        "open": 20,
+        "open": 21,
         "deferred": 0
       }
     },
     "30d": {
       "stats": {
-        "featuresShipped": 51,
+        "featuresShipped": 57,
         "qaPassRate": 100,
         "inProgress": 6,
-        "openBugs": 20,
-        "tasksClosed": 51
+        "openBugs": 21,
+        "tasksClosed": 57
       },
       "bugs": {
-        "newThisWeek": 15,
+        "newThisWeek": 16,
         "resolved": 0,
-        "open": 20,
+        "open": 21,
         "deferred": 0
       }
     },
     "90d": {
       "stats": {
-        "featuresShipped": 93,
+        "featuresShipped": 177,
         "qaPassRate": 100,
         "inProgress": 6,
-        "openBugs": 20,
-        "tasksClosed": 93
+        "openBugs": 21,
+        "tasksClosed": 177
       },
       "bugs": {
-        "newThisWeek": 17,
+        "newThisWeek": 18,
         "resolved": 0,
-        "open": 20,
+        "open": 21,
         "deferred": 0
       }
     },
     "ytd": {
       "stats": {
-        "featuresShipped": 93,
+        "featuresShipped": 143,
         "qaPassRate": 100,
         "inProgress": 6,
-        "openBugs": 20,
-        "tasksClosed": 93
+        "openBugs": 21,
+        "tasksClosed": 143
       },
       "bugs": {
-        "newThisWeek": 16,
+        "newThisWeek": 17,
         "resolved": 0,
-        "open": 20,
+        "open": 21,
         "deferred": 0
       }
     }
@@ -116,10 +116,10 @@
       "url": "https://app.clickup.com/t/86b8eh6p1"
     },
     {
-      "title": "Fix View Dropdown Hidden Under Table Border on Last Row of Proposals List",
+      "title": "Terms and Conditions Generator Link Broken with Security Warning",
       "status": "pushed to production",
-      "closedAt": "2026-02-26T10:02:48.980Z",
-      "url": "https://app.clickup.com/t/86b8dcnaw"
+      "closedAt": "2026-02-26T10:02:49.525Z",
+      "url": "https://app.clickup.com/t/86b8128yt"
     }
   ]
 }
