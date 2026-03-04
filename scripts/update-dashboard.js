@@ -69,11 +69,20 @@ function startOfYear() {
 
 async function getListTasks(listId, extraParams = {}) {
   if (!listId) return [];
-  const data = await clickup(`/list/${listId}/task`, {
-    include_closed: true,
-    ...extraParams,
-  });
-  return data.tasks || [];
+  const allTasks = [];
+  let page = 0;
+  while (true) {
+    const data = await clickup(`/list/${listId}/task`, {
+      include_closed: true,
+      page,
+      ...extraParams,
+    });
+    const tasks = data.tasks || [];
+    allTasks.push(...tasks);
+    if (tasks.length < 100) break; // ClickUp returns max 100/page; < 100 means last page
+    page++;
+  }
+  return allTasks;
 }
 
 function computeStats(featureTasks, bugTasks, sinceMs) {
