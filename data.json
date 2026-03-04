@@ -1,16 +1,16 @@
 {
-  "lastUpdated": "2026-03-03T12:14:01.515Z",
+  "lastUpdated": "2026-03-04T12:13:33.420Z",
   "stats": {
     "featuresShipped": 10,
     "qaPassRate": 100,
-    "inProgress": 0,
-    "openBugs": 14,
+    "inProgress": 6,
+    "openBugs": 20,
     "tasksClosed": 10
   },
   "bugs": {
-    "newThisWeek": 4,
+    "newThisWeek": 9,
     "resolved": 0,
-    "open": 14,
+    "open": 20,
     "deferred": 0
   },
   "ranges": {
@@ -18,14 +18,14 @@
       "stats": {
         "featuresShipped": 0,
         "qaPassRate": 100,
-        "inProgress": 0,
-        "openBugs": 14,
+        "inProgress": 6,
+        "openBugs": 20,
         "tasksClosed": 0
       },
       "bugs": {
-        "newThisWeek": 1,
+        "newThisWeek": 6,
         "resolved": 0,
-        "open": 14,
+        "open": 20,
         "deferred": 0
       }
     },
@@ -33,59 +33,59 @@
       "stats": {
         "featuresShipped": 10,
         "qaPassRate": 100,
-        "inProgress": 0,
-        "openBugs": 14,
+        "inProgress": 6,
+        "openBugs": 20,
         "tasksClosed": 10
       },
       "bugs": {
-        "newThisWeek": 4,
+        "newThisWeek": 9,
         "resolved": 0,
-        "open": 14,
+        "open": 20,
         "deferred": 0
       }
     },
     "30d": {
       "stats": {
-        "featuresShipped": 56,
+        "featuresShipped": 51,
         "qaPassRate": 100,
-        "inProgress": 0,
-        "openBugs": 14,
-        "tasksClosed": 56
+        "inProgress": 6,
+        "openBugs": 20,
+        "tasksClosed": 51
       },
       "bugs": {
-        "newThisWeek": 9,
+        "newThisWeek": 15,
         "resolved": 0,
-        "open": 14,
+        "open": 20,
         "deferred": 0
       }
     },
     "90d": {
       "stats": {
-        "featuresShipped": 99,
+        "featuresShipped": 93,
         "qaPassRate": 100,
-        "inProgress": 0,
-        "openBugs": 14,
-        "tasksClosed": 99
+        "inProgress": 6,
+        "openBugs": 20,
+        "tasksClosed": 93
       },
       "bugs": {
-        "newThisWeek": 11,
+        "newThisWeek": 17,
         "resolved": 0,
-        "open": 14,
+        "open": 20,
         "deferred": 0
       }
     },
     "ytd": {
       "stats": {
-        "featuresShipped": 99,
+        "featuresShipped": 93,
         "qaPassRate": 100,
-        "inProgress": 0,
-        "openBugs": 14,
-        "tasksClosed": 99
+        "inProgress": 6,
+        "openBugs": 20,
+        "tasksClosed": 93
       },
       "bugs": {
-        "newThisWeek": 10,
+        "newThisWeek": 16,
         "resolved": 0,
-        "open": 14,
+        "open": 20,
         "deferred": 0
       }
     }
