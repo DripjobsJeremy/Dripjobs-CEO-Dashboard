@@ -578,10 +578,11 @@
     "type": "enhancement",
     "sub": "missed",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-04-02",
     "area": "Proposals / CompanyCam",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b61kcf3",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-044",
@@ -590,7 +591,7 @@
     "type": "enhancement",
     "sub": "missed",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-04-03",
     "area": "Calendar",
     "clickup": ""
@@ -856,12 +857,13 @@
     "title": "Invoice due reminders + Change Order reminders engine",
     "desc": "Build 2 new reminder engines: Invoice Due Reminders and Change Order Reminders, following the appointment/job reminder pattern.",
     "type": "enhancement",
-    "sub": "nicetohave",
+    "sub": "considered",
     "priority": "normal",
-    "status": "open",
+    "status": "planned-v2",
     "date": "2025-04-03",
     "area": "Invoices / Reminders",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b32d4gr",
+    "notes": "FeatureBase"
   },
   {
     "id": "T-067",
@@ -1303,7 +1305,7 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "on-hold",
     "date": "2025-04-07",
     "area": "Invoices / Audit Trail",
     "clickup": "https://app.clickup.com/t/86b2xayhp",
@@ -1316,11 +1318,12 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "high",
-    "status": "open",
+    "status": "postponed",
     "date": "2025-04-14",
     "area": "Onboarding / Growth",
     "clickup": "https://app.clickup.com/t/86b8e0b44",
-    "notes": "Status in ClickUp: Short Term Parking"
+    "notes": "Status in ClickUp: Short Term Parking",
+    "resolvedNote": "Considering combined flow"
   },
   {
     "id": "T-104",
@@ -1342,7 +1345,7 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "on-hold",
     "date": "2025-04-14",
     "area": "Zapier / Payments",
     "clickup": "https://app.clickup.com/t/86b7u2cy5",
@@ -1355,7 +1358,7 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "on-hold",
     "date": "2025-04-14",
     "area": "Invoices / Payments",
     "clickup": "https://app.clickup.com/t/86b748vjk",
