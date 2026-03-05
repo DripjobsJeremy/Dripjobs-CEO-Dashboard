@@ -472,6 +472,10 @@ body {
 }
 .cl-table tbody tr:last-child { border-bottom: none; }
 .cl-table tbody tr:hover { background: var(--surface-2); }
+.cl-table th.sortable { cursor: pointer; -webkit-user-select: none; user-select: none; white-space: nowrap; }
+.cl-table th.sortable:hover { color: var(--brand-light); }
+.cl-table th.sort-asc::after  { content: ' ↑'; color: var(--brand-light); font-size: 11px; }
+.cl-table th.sort-desc::after { content: ' ↓'; color: var(--brand-light); font-size: 11px; }
 .cl-table td {
   padding: 10px 14px;
   color: var(--text-2);
@@ -950,6 +954,8 @@ let histFrom = null;   // YYYY-MM-DD string
 let histTo   = null;
 let histType = 'all';
 let histArea = 'all';
+let sortCol  = 'date';
+let sortDir  = 'desc'; // newest first by default
 
 /* ══════════════════════════════════════════════════════════
    DATE HELPERS
@@ -1036,6 +1042,13 @@ function setArea(area) {
   renderTable();
 }
 
+function cycleSort(col) {
+  sortDir = (sortCol === col && sortDir === 'desc') ? 'asc' : 'desc';
+  if (sortCol !== col) { sortDir = col === 'date' ? 'desc' : 'asc'; }
+  sortCol = col;
+  renderTable();
+}
+
 function applyCustom() {
   const from = document.getElementById('date-from').value;
   const to   = document.getElementById('date-to').value;
@@ -1093,7 +1106,12 @@ function renderTable() {
     return;
   }
 
-  const rows = data.map(e =>
+  const sorted = [...data].sort((a, b) => {
+    const av = a[sortCol] || '', bv = b[sortCol] || '';
+    return sortDir === 'asc' ? av.localeCompare(bv) : bv.localeCompare(av);
+  });
+
+  const rows = sorted.map(e =>
     `<tr>
       <td class="td-date">${fmtDate(e.date)}</td>
       <td class="td-title">${e.title}</td>
@@ -1102,15 +1120,16 @@ function renderTable() {
     </tr>`
   ).join('');
 
+  const thCls = col => `class="sortable${sortCol===col?' sort-'+sortDir:''}"`;
   wrap.innerHTML = `
     <div class="table-wrap">
       <table class="cl-table">
         <thead>
           <tr>
-            <th style="width:80px">Date</th>
-            <th>Change</th>
-            <th style="width:150px">Area</th>
-            <th style="width:80px">Type</th>
+            <th ${thCls('date')}    style="width:80px"  onclick="cycleSort('date')">Date</th>
+            <th ${thCls('title')}                       onclick="cycleSort('title')">Change</th>
+            <th ${thCls('area')}    style="width:150px" onclick="cycleSort('area')">Area</th>
+            <th ${thCls('type')}    style="width:80px"  onclick="cycleSort('type')">Type</th>
           </tr>
         </thead>
         <tbody>${rows}</tbody>
