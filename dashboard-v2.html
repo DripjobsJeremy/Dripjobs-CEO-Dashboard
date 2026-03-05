@@ -417,6 +417,20 @@ body {
   transition: background 0.15s;
 }
 .apply-btn:hover { background: rgba(124,58,237,0.25); }
+.hidden { display: none; }
+.clear-btn {
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-2);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  margin-left: auto;
+}
+.clear-btn:hover { color: var(--text); border-color: var(--text-muted); }
 .area-select {
   background: var(--surface-2);
   border: 1px solid var(--border-2);
@@ -614,7 +628,7 @@ body {
     </div>
     <div class="nav-label">History</div>
     <div class="nav-item" onclick="navigate('history',this)">
-      <span class="nav-icon">📅</span> Changelog
+      <span class="nav-icon">📅</span> Change Log
     </div>
     <div class="nav-label">Voice of Customer</div>
     <div class="nav-item" onclick="navigate('featurebase',this)">
@@ -740,6 +754,7 @@ body {
       <select class="area-select" id="area-select" title="Filter by area" aria-label="Filter by area" onchange="setArea(this.value)">
         <option value="all">All Areas</option>
       </select>
+      <button type="button" class="clear-btn hidden" id="clear-filters-btn" onclick="clearFilters()">✕ Clear</button>
     </div>
   </div>
 
@@ -1053,6 +1068,17 @@ function setArea(area) {
   renderTable();
 }
 
+function clearFilters() {
+  document.getElementById('type-select').value = 'all';
+  document.getElementById('area-select').value = 'all';
+  histType = 'all';
+  histArea = 'all';
+  // Reset period to This Week
+  document.getElementById('period-select').value = 'thisWeek';
+  document.getElementById('custom-inputs').style.display = 'none';
+  setPeriod('thisWeek');
+}
+
 function cycleSort(col) {
   sortDir = (sortCol === col && sortDir === 'desc') ? 'asc' : 'desc';
   if (sortCol !== col) { sortDir = col === 'date' ? 'desc' : 'asc'; }
@@ -1085,6 +1111,11 @@ function renderTable() {
   const data = getFiltered();
   const wrap = document.getElementById('hist-table-wrap');
   const summary = document.getElementById('hist-summary');
+
+  // Show Clear button only when type or area filter is active
+  const clearBtn = document.getElementById('clear-filters-btn');
+  const filtersActive = histType !== 'all' || histArea !== 'all';
+  clearBtn.classList.toggle('hidden', !filtersActive);
 
   // Summary bar
   if (data.length > 0) {
@@ -1311,7 +1342,7 @@ function loadData() {
 ══════════════════════════════════════════════════════════ */
 const PAGE_META = {
   brief:       { title:'CEO Brief',      sub:'Current week summary' },
-  history:     { title:'Changelog',      sub:'Filter by week, month, or custom range' },
+  history:     { title:'Change Log',      sub:'Filter by week, month, or custom range' },
   featurebase: { title:'FeatureBase',    sub:'Voice of customer — top requests' },
   tanner:      { title:'#Tanner-Tickets', sub:'Full backlog tracker' },
 };
