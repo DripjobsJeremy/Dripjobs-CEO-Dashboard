@@ -1021,7 +1021,7 @@ function setPeriod(val) {
   } else if (val === 'ytd') {
     histFrom = now.getFullYear() + '-01-01'; histTo = today;
   } else if (val === 'allTime') {
-    histFrom = '2020-01-01'; histTo = '2099-12-31';
+    histFrom = '2020-01-01'; histTo = today;
   }
   renderTable();
 }
