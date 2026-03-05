@@ -1,125 +1,156 @@
 {
-  "lastUpdated": "2026-03-05T12:15:47.217Z",
+  "lastUpdated": "2026-03-05T09:00:00.000Z",
+  "currentWeek": {
+    "label": "Mar 3–7, 2026",
+    "stats": {
+      "featuresShipped": 5,
+      "qaPassRate": 94,
+      "inProgress": 4,
+      "openBugs": 4,
+      "tasksClosed": 12
+    },
+    "shipped": [
+      { "title": "Quo Integration MVP — Live for Premium Painting", "area": "Integrations", "type": "feature", "note": "First native integration with a third-party estimating platform. Webhooks fire when a Quo call completes, match phone number to a DripJobs customer, fetch the AI summary, and save it as a note on the customer record. · Shipped Mar 3" },
+      { "title": "Zapier — Salesperson Field Regression Fixed", "area": "Zapier", "type": "fix", "note": "Regression caused the Salesperson field to return null in the Proposal Accepted trigger payload. Resolved and shipped. · Shipped Mar 3" },
+      { "title": "Alternative Payment Instructions — Customer Portal Fix", "area": "Payments / Portal", "type": "fix", "note": "When Stripe is enabled, alternative payment instructions were not being shown to customers. Now resolved and live. · Shipped Mar 3" },
+      { "title": "Appointments Tab Modal Fix — Contact Record", "area": "CRM", "type": "fix", "note": "Modal behavior within the Appointments tab on the Contact Record was broken. Fix confirmed and live. · Shipped Mar 3" },
+      { "title": "False Package Selection Prompt Fix", "area": "Proposals", "type": "fix", "note": "System was incorrectly prompting users to select a package even when the package toggle was disabled. Fix confirmed and live. · Shipped Mar 3" }
+    ],
+    "inFlight": [
+      { "title": "Twilio A2P — Missing Privacy Policy & Terms URLs", "status": "Urgent", "risk": true, "note": "A compliance gap in the A2P registration flow. Regulatory implications — should be prioritized." },
+      { "title": "Zapier Lead Source Mapping Fix — Superior Attic (#12157)", "status": "In Dev", "risk": false, "note": "Specific tenant can't correctly map lead sources through Zapier. In active development." },
+      { "title": "Blast Preview Missing Images (#16194)", "status": "In Dev", "risk": false, "note": "Blast preview failing to render images for a tenant. Customer-facing impact on marketing workflow." },
+      { "title": "Users Receiving Notifications Despite Disabled Settings", "status": "Ready for Dev", "risk": false, "note": "Users getting notifications even when explicitly turned off. Assigned to Terry." }
+    ],
+    "bugs": {
+      "newThisWeek": 1,
+      "resolved": 5,
+      "open": 4,
+      "deferred": 2
+    },
+    "strategicQuestion": "The Quo Integration is now live with Premium Painting. What data do we need from this pilot — usage, errors, feedback, conversion impact — and over what timeframe, before we greenlight a broader rollout?",
+    "strategicMeta": "🚀 Quo MVP pilot active · Premium Painting only · Expansion criteria TBD · Week of Mar 3–7, 2026"
+  },
   "stats": {
-    "featuresShipped": 15,
+    "featuresShipped": 25,
     "qaPassRate": 100,
-    "inProgress": 0,
-    "openBugs": 22,
-    "tasksClosed": 15
+    "inProgress": 2,
+    "openBugs": 14,
+    "tasksClosed": 25
   },
   "bugs": {
-    "newThisWeek": 11,
+    "newThisWeek": 4,
     "resolved": 0,
-    "open": 22,
+    "open": 14,
     "deferred": 0
   },
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 11,
+        "featuresShipped": 1,
         "qaPassRate": 100,
-        "inProgress": 0,
-        "openBugs": 22,
-        "tasksClosed": 11
+        "inProgress": 2,
+        "openBugs": 14,
+        "tasksClosed": 1
       },
       "bugs": {
-        "newThisWeek": 4,
+        "newThisWeek": 3,
         "resolved": 0,
-        "open": 22,
+        "open": 14,
         "deferred": 0
       }
     },
     "7d": {
       "stats": {
-        "featuresShipped": 15,
+        "featuresShipped": 25,
         "qaPassRate": 100,
-        "inProgress": 0,
-        "openBugs": 22,
-        "tasksClosed": 15
+        "inProgress": 2,
+        "openBugs": 14,
+        "tasksClosed": 25
       },
       "bugs": {
-        "newThisWeek": 11,
+        "newThisWeek": 4,
         "resolved": 0,
-        "open": 22,
+        "open": 14,
         "deferred": 0
       }
     },
     "30d": {
       "stats": {
-        "featuresShipped": 66,
+        "featuresShipped": 55,
         "qaPassRate": 100,
-        "inProgress": 0,
-        "openBugs": 22,
-        "tasksClosed": 66
+        "inProgress": 2,
+        "openBugs": 14,
+        "tasksClosed": 55
       },
       "bugs": {
-        "newThisWeek": 17,
+        "newThisWeek": 9,
         "resolved": 0,
-        "open": 22,
+        "open": 14,
         "deferred": 0
       }
     },
     "90d": {
       "stats": {
-        "featuresShipped": 185,
+        "featuresShipped": 97,
         "qaPassRate": 100,
-        "inProgress": 0,
-        "openBugs": 22,
-        "tasksClosed": 185
+        "inProgress": 2,
+        "openBugs": 14,
+        "tasksClosed": 97
       },
       "bugs": {
-        "newThisWeek": 19,
+        "newThisWeek": 11,
         "resolved": 0,
-        "open": 22,
+        "open": 14,
         "deferred": 0
       }
     },
     "ytd": {
       "stats": {
-        "featuresShipped": 154,
+        "featuresShipped": 97,
         "qaPassRate": 100,
-        "inProgress": 0,
-        "openBugs": 22,
-        "tasksClosed": 154
+        "inProgress": 2,
+        "openBugs": 14,
+        "tasksClosed": 97
       },
       "bugs": {
-        "newThisWeek": 18,
+        "newThisWeek": 10,
         "resolved": 0,
-        "open": 22,
+        "open": 14,
         "deferred": 0
       }
     }
   },
   "recentActivity": [
     {
-      "title": "Tenant 15117 Prime Painting & Construction - QuickBooks Time records not syncing to DripJobs",
+      "title": "iOs - Dripjobs Chat - Fix  Duplicate Lightning Bolt Icon ",
       "status": "pushed to production",
-      "closedAt": "2026-03-05T10:10:34.659Z",
-      "url": "https://app.clickup.com/t/86b8ektfe"
+      "closedAt": "2026-02-26T18:32:42.887Z",
+      "url": "https://app.clickup.com/t/86b8eh6p1"
     },
     {
-      "title": "Fix Blast Preview Missing Images - Tenant #16194 (Blast #11663)",
+      "title": "Fix View Dropdown Hidden Under Table Border on Last Row of Proposals List",
       "status": "pushed to production",
-      "closedAt": "2026-03-05T10:10:34.205Z",
-      "url": "https://app.clickup.com/t/86b8ncb8h"
+      "closedAt": "2026-02-26T10:02:48.980Z",
+      "url": "https://app.clickup.com/t/86b8dcnaw"
     },
     {
-      "title": "#12157  - Superior Attic - Fix Zapier Lead Source Mapping",
+      "title": "Tenant 14486 Edwards Painting Co. - Customer portal blocks proposal acceptance",
       "status": "pushed to production",
-      "closedAt": "2026-03-05T10:10:33.495Z",
-      "url": "https://app.clickup.com/t/86b8nd7du"
+      "closedAt": "2026-02-26T10:02:48.496Z",
+      "url": "https://app.clickup.com/t/86b8en2zr"
     },
     {
-      "title": "Fix Missing Privacy Policy & Terms URLs in Twilio A2P Registration",
+      "title": "Quo Integration MVP - Premium Painting only",
       "status": "pushed to production",
-      "closedAt": "2026-03-05T10:10:32.991Z",
-      "url": "https://app.clickup.com/t/86b8nq3n3"
+      "closedAt": "2026-02-26T10:02:47.982Z",
+      "url": "https://app.clickup.com/t/86b8jkraz"
     },
     {
-      "title": "Invoice Displays \"Paid in Full\" When Stripe Payment Still Requires Customer Action",
+      "title": "Alternative Payment Instructions Not Displayed to Customers When Stripe Payment Option Is Enabled",
       "status": "pushed to production",
-      "closedAt": "2026-03-05T10:10:32.263Z",
-      "url": "https://app.clickup.com/t/86b8nve0r"
+      "closedAt": "2026-02-26T10:02:47.500Z",
+      "url": "https://app.clickup.com/t/86b8mam55"
     }
   ]
 }
