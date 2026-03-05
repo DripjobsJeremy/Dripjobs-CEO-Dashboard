@@ -379,32 +379,6 @@ body {
   gap: 10px;
   flex-wrap: wrap;
 }
-.filter-row + .filter-row { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
-.filter-lbl {
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--text-dim);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  min-width: 48px;
-}
-.mode-btn {
-  padding: 6px 14px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border-2);
-  background: var(--surface-2);
-  color: var(--text-muted);
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.15s;
-}
-.mode-btn:hover { color: var(--text); border-color: var(--brand); }
-.mode-btn.active {
-  background: var(--brand-dim);
-  border-color: var(--brand);
-  color: var(--brand-light);
-}
 .custom-range {
   display: flex;
   align-items: center;
@@ -435,23 +409,6 @@ body {
   transition: background 0.15s;
 }
 .apply-btn:hover { background: rgba(124,58,237,0.25); }
-.type-btn {
-  padding: 4px 11px;
-  border-radius: 20px;
-  border: 1px solid var(--border-2);
-  background: transparent;
-  color: var(--text-muted);
-  font-size: 11px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.15s;
-}
-.type-btn:hover { color: var(--text); }
-.type-btn.active-feature { background: rgba(124,58,237,0.15); border-color: var(--brand); color: var(--brand-light); }
-.type-btn.active-fix     { background: rgba(34,197,94,0.12);  border-color: var(--green); color: var(--green); }
-.type-btn.active-ux      { background: rgba(6,182,212,0.12);  border-color: var(--cyan);  color: var(--cyan); }
-.type-btn.active-perf    { background: rgba(245,158,11,0.12); border-color: var(--amber); color: var(--amber); }
-.type-btn.active-all     { background: var(--surface-3); border-color: var(--text-muted); color: var(--text); }
 .area-select {
   background: var(--surface-2);
   border: 1px solid var(--border-2);
@@ -464,26 +421,6 @@ body {
 }
 .area-select:focus { outline: none; border-color: var(--brand); }
 
-/* ── HISTORY: CHIPS ──────────────────────────────────────── */
-.chip-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 14px;
-}
-.chip {
-  padding: 5px 12px;
-  border-radius: 20px;
-  border: 1px solid var(--border-2);
-  background: var(--surface-2);
-  color: var(--text-muted);
-  font-size: 11px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.15s;
-}
-.chip:hover { color: var(--text); border-color: var(--text-muted); }
-.chip.selected { background: var(--brand-dim); border-color: var(--brand); color: var(--brand-light); }
 
 /* ── HISTORY: SUMMARY BAR ────────────────────────────────── */
 .hist-summary {
@@ -763,34 +700,33 @@ body {
   <!-- Filter Bar -->
   <div class="filter-bar">
     <div class="filter-row">
-      <span class="filter-lbl">View</span>
-      <button class="mode-btn active" id="mode-weekly" onclick="setMode('weekly')">Weekly</button>
-      <button class="mode-btn" id="mode-monthly" onclick="setMode('monthly')">Monthly</button>
-      <button class="mode-btn" id="mode-custom" onclick="setMode('custom')">Custom Range</button>
+      <select class="area-select" id="period-select" title="Select period" aria-label="Date period" onchange="setPeriod(this.value)">
+        <option value="thisWeek">This Week</option>
+        <option value="lastWeek">Last Week</option>
+        <option value="30d">Last 30 Days</option>
+        <option value="90d">Last 90 Days</option>
+        <option value="ytd">Year to Date</option>
+        <option value="allTime">All Time</option>
+        <option value="custom">Custom Range…</option>
+      </select>
       <div class="custom-range" id="custom-inputs" style="display:none">
-        <span class="sep">From</span>
         <input type="date" id="date-from" value="2026-01-01">
-        <span class="sep">to</span>
+        <span class="sep">→</span>
         <input type="date" id="date-to" value="2026-03-07">
-        <button class="apply-btn" onclick="applyCustom()">Apply</button>
+        <button type="button" class="apply-btn" onclick="applyCustom()">Apply</button>
       </div>
-    </div>
-    <div class="filter-row">
-      <span class="filter-lbl">Type</span>
-      <button class="type-btn active-all" id="tf-all"     onclick="setType('all')">All</button>
-      <button class="type-btn"            id="tf-feature" onclick="setType('feature')">Feature</button>
-      <button class="type-btn"            id="tf-fix"     onclick="setType('fix')">Fix</button>
-      <button class="type-btn"            id="tf-ux"      onclick="setType('ux')">UX</button>
-      <button class="type-btn"            id="tf-perf"    onclick="setType('perf')">Perf</button>
-      <span class="filter-lbl" style="margin-left:12px">Area</span>
-      <select class="area-select" id="area-select" onchange="setArea(this.value)">
+      <select class="area-select" id="type-select" title="Filter by type" aria-label="Filter by type" onchange="setType(this.value)">
+        <option value="all">All Types</option>
+        <option value="feature">Feature</option>
+        <option value="fix">Fix</option>
+        <option value="ux">UX</option>
+        <option value="perf">Perf</option>
+      </select>
+      <select class="area-select" id="area-select" title="Filter by area" aria-label="Filter by area" onchange="setArea(this.value)">
         <option value="all">All Areas</option>
       </select>
     </div>
   </div>
-
-  <!-- Chip selector (weekly or monthly) -->
-  <div class="chip-row" id="chip-row"></div>
 
   <!-- Summary bar -->
   <div class="hist-summary" id="hist-summary" style="display:none"></div>
@@ -1010,63 +946,30 @@ function setBriefRange(range) {
 /* ══════════════════════════════════════════════════════════
    HISTORY STATE
 ══════════════════════════════════════════════════════════ */
-let histMode    = 'weekly';
-let histFrom    = null;     // YYYY-MM-DD string
-let histTo      = null;
-let histType    = 'all';
-let histArea    = 'all';
-let selectedChip = null;    // week-start or month-key string
+let histFrom = null;   // YYYY-MM-DD string
+let histTo   = null;
+let histType = 'all';
+let histArea = 'all';
 
 /* ══════════════════════════════════════════════════════════
    DATE HELPERS
 ══════════════════════════════════════════════════════════ */
-function weekStart(dateStr) {
-  const d = new Date(dateStr + 'T12:00:00');
-  const day = d.getDay();                     // 0=Sun
-  const diff = day === 0 ? -6 : 1 - day;    // offset to Monday
-  d.setDate(d.getDate() + diff);
-  return d.toISOString().slice(0, 10);
-}
+const MON_SHORT = ['Jan','Feb','Mar','Apr','May','Jun',
+                   'Jul','Aug','Sep','Oct','Nov','Dec'];
 
-function weekEnd(startStr) {
-  const d = new Date(startStr + 'T12:00:00');
-  d.setDate(d.getDate() + 6);
-  return d.toISOString().slice(0, 10);
-}
-
-function monthKey(dateStr) { return dateStr.slice(0, 7); }
-function monthStart(ym)    { return ym + '-01'; }
-function monthEnd(ym) {
-  const [y, m] = ym.split('-').map(Number);
-  return new Date(y, m, 0).toISOString().slice(0, 10);
-}
-
-const MONTH_NAMES = ['January','February','March','April','May','June',
-                     'July','August','September','October','November','December'];
-const MON_SHORT   = ['Jan','Feb','Mar','Apr','May','Jun',
-                     'Jul','Aug','Sep','Oct','Nov','Dec'];
+function toYMD(d) { return d.toISOString().slice(0, 10); }
 
 function fmtDate(d) {
   const [, m, day] = d.split('-').map(Number);
   return `${MON_SHORT[m-1]} ${day}`;
 }
 
-function fmtWeekRange(start) {
-  const end = weekEnd(start);
-  const [sy, sm, sd] = start.split('-').map(Number);
-  const [ey, em, ed] = end.split('-').map(Number);
-  if (sm === em) return `${MON_SHORT[sm-1]} ${sd}–${ed}`;
-  return `${MON_SHORT[sm-1]} ${sd} – ${MON_SHORT[em-1]} ${ed}`;
-}
-
-function fmtMonth(ym) {
-  const [y, m] = ym.split('-').map(Number);
-  return `${MONTH_NAMES[m-1]} ${y}`;
-}
-
 function fmtRangePill(from, to) {
   if (!from || !to) return '';
-  return `${fmtDate(from)} – ${fmtDate(to)}, ${to.slice(0,4)}`;
+  const fromY = from.slice(0, 4), toY = to.slice(0, 4);
+  return fromY === toY
+    ? `${fmtDate(from)} – ${fmtDate(to)}, ${toY}`
+    : `${fmtDate(from)}, ${fromY} – ${fmtDate(to)}, ${toY}`;
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -1082,63 +985,49 @@ function getFiltered() {
   });
 }
 
-function uniqueWeeks()  {
-  return [...new Set(ACTIVE_LOG.map(e => weekStart(e.date)))].sort().reverse();
-}
-function uniqueMonths() {
-  return [...new Set(ACTIVE_LOG.map(e => monthKey(e.date)))].sort().reverse();
-}
 function uniqueAreas()  {
   return [...new Set(ACTIVE_LOG.map(e => e.area))].sort();
 }
 
 /* ══════════════════════════════════════════════════════════
-   HISTORY: MODE / TYPE / AREA CONTROLS
+   HISTORY: PERIOD / TYPE / AREA CONTROLS
 ══════════════════════════════════════════════════════════ */
-function setMode(mode) {
-  histMode = mode;
-  ['weekly','monthly','custom'].forEach(m => {
-    document.getElementById('mode-' + m).classList.toggle('active', m === mode);
-  });
-  document.getElementById('custom-inputs').style.display = mode === 'custom' ? 'flex' : 'none';
-
-  if (mode === 'weekly') {
-    const weeks = uniqueWeeks();
-    if (weeks.length) selectChip(weeks[0], 'weekly');
-    else renderChips();
-  } else if (mode === 'monthly') {
-    const months = uniqueMonths();
-    if (months.length) selectChip(months[0], 'monthly');
-    else renderChips();
-  } else {
-    // custom — clear chip selection, use full range until Apply
-    selectedChip = null;
-    histFrom = null;
-    histTo   = null;
-    renderChips();
-    renderTable();
+function setPeriod(val) {
+  const ci = document.getElementById('custom-inputs');
+  if (val === 'custom') {
+    ci.style.display = 'flex';
+    return; // wait for Apply
   }
-}
-
-function selectChip(key, mode) {
-  selectedChip = key;
-  if (mode === 'weekly' || histMode === 'weekly') {
-    histFrom = key;
-    histTo   = weekEnd(key);
-  } else {
-    histFrom = monthStart(key);
-    histTo   = monthEnd(key);
+  ci.style.display = 'none';
+  const now = new Date();
+  const today = toYMD(now);
+  if (val === 'thisWeek') {
+    const day = now.getDay();
+    const diff = day === 0 ? -6 : 1 - day;
+    const mon = new Date(now); mon.setDate(now.getDate() + diff);
+    histFrom = toYMD(mon); histTo = today;
+  } else if (val === 'lastWeek') {
+    const day = now.getDay();
+    const diff = day === 0 ? -6 : 1 - day;
+    const mon = new Date(now); mon.setDate(now.getDate() + diff - 7);
+    const sun = new Date(mon); sun.setDate(mon.getDate() + 6);
+    histFrom = toYMD(mon); histTo = toYMD(sun);
+  } else if (val === '30d') {
+    const from = new Date(now); from.setDate(now.getDate() - 30);
+    histFrom = toYMD(from); histTo = today;
+  } else if (val === '90d') {
+    const from = new Date(now); from.setDate(now.getDate() - 90);
+    histFrom = toYMD(from); histTo = today;
+  } else if (val === 'ytd') {
+    histFrom = now.getFullYear() + '-01-01'; histTo = today;
+  } else if (val === 'allTime') {
+    histFrom = '2020-01-01'; histTo = '2099-12-31';
   }
-  renderChips();
   renderTable();
 }
 
-function setType(type) {
-  histType = type;
-  ['all','feature','fix','ux','perf'].forEach(t => {
-    const btn = document.getElementById('tf-' + t);
-    btn.className = 'type-btn' + (t === type ? ' active-' + t : '');
-  });
+function setType(val) {
+  histType = val;
   renderTable();
 }
 
@@ -1158,29 +1047,9 @@ function applyCustom() {
   }
   document.getElementById('date-from').style.borderColor = '';
   document.getElementById('date-to').style.borderColor   = '';
-  selectedChip = null;
   histFrom = from;
   histTo   = to;
-  renderChips();
   renderTable();
-}
-
-/* ══════════════════════════════════════════════════════════
-   HISTORY: RENDER CHIPS
-══════════════════════════════════════════════════════════ */
-function renderChips() {
-  const row = document.getElementById('chip-row');
-  if (histMode === 'custom') {
-    row.innerHTML = '';
-    return;
-  }
-  const items = histMode === 'weekly' ? uniqueWeeks() : uniqueMonths();
-  row.innerHTML = items.map(k => {
-    const label = histMode === 'weekly' ? fmtWeekRange(k) : fmtMonth(k);
-    const sel   = k === selectedChip ? ' selected' : '';
-    const mode  = histMode;
-    return `<div class="chip${sel}" onclick="selectChip('${k}','${mode}')">${label}</div>`;
-  }).join('');
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -1197,12 +1066,7 @@ function renderTable() {
   if (data.length > 0) {
     const counts = { feature:0, fix:0, ux:0, perf:0 };
     data.forEach(e => { counts[e.type] = (counts[e.type]||0) + 1; });
-    let rangeTxt = '';
-    if (histFrom && histTo) {
-      rangeTxt = histMode === 'weekly'  ? fmtWeekRange(selectedChip || histFrom) :
-                 histMode === 'monthly' ? fmtMonth(selectedChip || histFrom.slice(0,7)) :
-                                          fmtRangePill(histFrom, histTo);
-    }
+    const rangeTxt = (histFrom && histTo) ? fmtRangePill(histFrom, histTo) : '';
     summary.style.display = 'flex';
     summary.innerHTML =
       `<span class="hist-summary-label">Showing</span>` +
@@ -1398,9 +1262,7 @@ function loadData() {
         ACTIVE_LOG = [...CHANGELOG_SEED, ...remoteOnly].sort((a, b) => b.date.localeCompare(a.date));
         // Refresh History tab with full dataset
         populateAreaDropdown();
-        const weeks = uniqueWeeks();
-        if (weeks.length && histMode === 'weekly') selectChip(weeks[0], 'weekly');
-        else renderTable();
+        setPeriod(document.getElementById('period-select').value);
       }
     })
     .catch(() => {
@@ -1465,12 +1327,9 @@ function toggleTheme() {
   // Load remote data
   loadData();
 
-  // Populate area dropdown
+  // Initialize History tab
   populateAreaDropdown();
-
-  // Initialize History tab to current week
-  const weeks = uniqueWeeks();
-  if (weeks.length) selectChip(weeks[0], 'weekly');
+  setPeriod('thisWeek');
 })();
 </script>
 </body>
