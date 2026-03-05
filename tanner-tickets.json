@@ -528,11 +528,12 @@
     "type": "enhancement",
     "sub": "considered",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-02-15",
     "area": "Proposal Builder",
     "clickup": "https://app.clickup.com/t/86b3cz2u7",
-    "notes": "Jeremy in Slack: 'We have this ticket' + linked ClickUp 86b3cz2u7. Also noted: 'We had a ticket built & ready to go — the work happened without our knowing about it.' Product owned the ticket; work shipped outside of process."
+    "notes": "Jeremy in Slack: 'We have this ticket' + linked ClickUp 86b3cz2u7. Also noted: 'We had a ticket built & ready to go — the work happened without our knowing about it.' Product owned the ticket; work shipped outside of process.",
+    "resolvedNote": "Completed in another ticket from previous January "
   },
   {
     "id": "T-040",
@@ -669,10 +670,11 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-02-18",
     "area": "Billing",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b401w60",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-051",
@@ -681,10 +683,11 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-02-20",
     "area": "Mobile / Tasks",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b40xbu7",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-052",
