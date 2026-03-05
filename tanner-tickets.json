@@ -1039,10 +1039,11 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "planned-v2",
     "date": "2025-05-01",
     "area": "CRM / Analytics",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b4x2vgt",
+    "resolvedNote": "Planned for V2"
   },
   {
     "id": "T-080",
@@ -1063,10 +1064,10 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "planned-v2",
     "date": "2025-04-26",
     "area": "Metrics / SMS",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b5knn42"
   },
   {
     "id": "T-082",
@@ -1177,10 +1178,11 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-03-07",
     "area": "Production Rates",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b47jnqx",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-091",
