@@ -807,11 +807,12 @@
     "type": "enhancement",
     "sub": "considered",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-04-06",
     "area": "Deals / Proposals",
     "clickup": "https://app.clickup.com/t/86b3w2j2m",
-    "notes": "Jeremy in Slack: 'We actually already have a ticket for this one.' Linked ClickUp 86b3w2j2m. When Tanner raised this request, Product already had it documented and in the backlog."
+    "notes": "Jeremy in Slack: 'We actually already have a ticket for this one.' Linked ClickUp 86b3w2j2m. When Tanner raised this request, Product already had it documented and in the backlog.",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-063",
@@ -832,10 +833,11 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-04-27",
     "area": "Jobs / Labels",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b4vqucp",
+    "resolvedNote": "Did Customer Success Activation Tracking (90-Day Milestone) instead"
   },
   {
     "id": "T-065",
@@ -844,7 +846,7 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "planned-v2",
     "date": "2025-04-28",
     "area": "Mobile / Labels",
     "clickup": ""
@@ -893,7 +895,7 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-05-27",
     "area": "Proposal Builder",
     "clickup": "https://app.clickup.com/t/86b57decc",
@@ -906,7 +908,7 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-05-09",
     "area": "Drips",
     "clickup": "https://app.clickup.com/t/86b4xyvp6",
@@ -919,7 +921,7 @@
     "type": "enhancement",
     "sub": "considered",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-04-27",
     "area": "CompanyCam / Proposals",
     "clickup": "https://app.clickup.com/t/86b4rd3v9",
@@ -944,7 +946,7 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "low",
-    "status": "open",
+    "status": "planned-v2",
     "date": "2025-04-28",
     "area": "Lead Sources",
     "clickup": ""
@@ -968,7 +970,7 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "low",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-04-28",
     "area": "Calendar / UI",
     "clickup": ""
@@ -1004,10 +1006,11 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "low",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-04-28",
     "area": "Proposals / UI",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b4vcqjh",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-079",
@@ -1028,7 +1031,7 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "planned-v2",
     "date": "2025-05-01",
     "area": "Drips / Proposals",
     "clickup": ""
@@ -1064,10 +1067,10 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "high",
-    "status": "open",
+    "status": "planned-v2",
     "date": "2025-05-01",
     "area": "Jobs / Proposals",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b4xawb2"
   },
   {
     "id": "T-084",
@@ -1198,7 +1201,7 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-05-16",
     "area": "Performance / Proposals",
     "clickup": "https://app.clickup.com/t/86b54r6cr",
@@ -1211,7 +1214,7 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "postponed",
     "date": "2025-04-28",
     "area": "Automation / CRM",
     "clickup": ""
@@ -1248,7 +1251,7 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "low",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-05-05",
     "area": "Payments / Integrations",
     "clickup": "https://app.clickup.com/t/86b4axa06",
@@ -1274,7 +1277,7 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-05-08",
     "area": "Invoices",
     "clickup": "https://app.clickup.com/t/86b4rdqbm",
@@ -1365,7 +1368,7 @@
     "type": "enhancement",
     "sub": "considered",
     "priority": "high",
-    "status": "open",
+    "status": "on-hold",
     "date": "2025-05-01",
     "area": "Invoices / Proposals",
     "clickup": "https://app.clickup.com/t/86b6xkg7y",
