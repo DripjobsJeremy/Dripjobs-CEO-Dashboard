@@ -67,6 +67,22 @@ function startOfYear() {
   return new Date(new Date().getFullYear(), 0, 1).getTime();
 }
 
+// Returns Unix timestamp for Monday 00:00 of the current week
+function startOfWeek() {
+  const now = new Date();
+  const day = now.getDay(); // 0=Sun
+  const diff = day === 0 ? -6 : 1 - day;
+  return new Date(now.getFullYear(), now.getMonth(), now.getDate() + diff).getTime();
+}
+
+// Returns Unix timestamps for start/end of the previous calendar year
+function startOfPrevYear() {
+  return new Date(new Date().getFullYear() - 1, 0, 1).getTime();
+}
+function endOfPrevYear() {
+  return new Date(new Date().getFullYear(), 0, 0, 23, 59, 59, 999).getTime();
+}
+
 async function getListTasks(listId, extraParams = {}) {
   if (!listId) return [];
   const allTasks = [];
@@ -85,12 +101,12 @@ async function getListTasks(listId, extraParams = {}) {
   return allTasks;
 }
 
-function computeStats(featureTasks, bugTasks, sinceMs) {
+function computeStats(featureTasks, bugTasks, sinceMs, untilMs = Date.now()) {
   const status       = t => t.status?.status?.toLowerCase().trim();
   const isDone       = t => DONE_STATUSES.includes(status(t));
   const isInProgress = t => IN_PROGRESS_STATUSES.includes(status(t));
-  const closedInRange  = t => isDone(t) && Number(t.date_closed) >= sinceMs;
-  const createdInRange = t => Number(t.date_created) >= sinceMs;
+  const closedInRange  = t => isDone(t) && Number(t.date_closed) >= sinceMs && Number(t.date_closed) <= untilMs;
+  const createdInRange = t => Number(t.date_created) >= sinceMs && Number(t.date_created) <= untilMs;
 
   // Features shipped = pushed to production only (not resolved-without-fix)
   const featuresShipped = featureTasks.filter(t =>
@@ -128,13 +144,34 @@ async function main() {
   console.log(`   Bug tasks fetched     : ${allBugTasks.length}`);
 
   // Compute stats for every range the dashboard supports
+  const now = Date.now();
+  const weekStart = startOfWeek();
   const ranges = {
-    today: computeStats(allFeatureTasks, allBugTasks, daysAgo(1)),
-    '7d':  computeStats(allFeatureTasks, allBugTasks, daysAgo(7)),
-    '30d': computeStats(allFeatureTasks, allBugTasks, daysAgo(30)),
-    '90d': computeStats(allFeatureTasks, allBugTasks, daysAgo(90)),
-    ytd:   computeStats(allFeatureTasks, allBugTasks, startOfYear()),
+    today:    computeStats(allFeatureTasks, allBugTasks, daysAgo(1)),
+    thisWeek: computeStats(allFeatureTasks, allBugTasks, weekStart),
+    lastWeek: computeStats(allFeatureTasks, allBugTasks, weekStart - 7 * 86400000, weekStart - 1),
+    '7d':     computeStats(allFeatureTasks, allBugTasks, daysAgo(7)),
+    '30d':    computeStats(allFeatureTasks, allBugTasks, daysAgo(30)),
+    '90d':    computeStats(allFeatureTasks, allBugTasks, daysAgo(90)),
+    ytd:      computeStats(allFeatureTasks, allBugTasks, startOfYear()),
+    lastYear: computeStats(allFeatureTasks, allBugTasks, startOfPrevYear(), endOfPrevYear()),
+    allTime:  computeStats(allFeatureTasks, allBugTasks, 0),
   };
+
+  // ── Full changelog: all shipped tasks for custom date range search ──────────
+  const bugTaskIds = new Set(allBugTasks.map(t => t.id));
+  const changelog = [...allFeatureTasks, ...allBugTasks]
+    .filter(t => t.status?.status?.toLowerCase().trim() === 'pushed to production' && t.date_closed)
+    .sort((a, b) => Number(b.date_closed) - Number(a.date_closed))
+    .map(t => {
+      const date  = new Date(Number(t.date_closed)).toISOString().slice(0, 10);
+      const isBug = bugTaskIds.has(t.id);
+      const lower = (t.name || '').toLowerCase();
+      let type = isBug ? 'fix' : 'feature';
+      if (/\b(ux|ui|design|layout|display|modal|button|icon|style)\b/.test(lower))  type = 'ux';
+      if (/\b(perf|performance|speed|faster|pagination|load time|optimize)\b/.test(lower)) type = 'perf';
+      return { date, title: t.name, area: t.list?.name || 'General', type };
+    });
 
   // ── Recent activity (last 5 completed tasks across both lists) ─────────────
   const recent = [...allFeatureTasks, ...allBugTasks]
@@ -153,8 +190,10 @@ async function main() {
     // Default (7d) stats at the top level for backwards compatibility
     stats: ranges['7d'].stats,
     bugs:  ranges['7d'].bugs,
-    // Per-range stats for the date range buttons
+    // Per-range stats for the date range dropdown
     ranges,
+    // Full changelog — all shipped tasks, used by custom date range search
+    changelog,
     recentActivity: recent,
   };
 
@@ -163,8 +202,9 @@ async function main() {
 
   console.log('✅ data.json updated:');
   Object.entries(ranges).forEach(([range, d]) => {
-    console.log(`   [${range.padEnd(5)}] Features: ${d.stats.featuresShipped}, Tasks closed: ${d.stats.tasksClosed}, Bugs open: ${d.stats.openBugs}`);
+    console.log(`   [${range.padEnd(8)}] Features: ${d.stats.featuresShipped}, Tasks closed: ${d.stats.tasksClosed}, Bugs open: ${d.stats.openBugs}`);
   });
+  console.log(`   Changelog entries written: ${changelog.length}`);
 }
 
 main().catch(err => {
