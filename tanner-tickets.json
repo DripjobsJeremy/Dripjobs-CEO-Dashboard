@@ -1,5 +1,20 @@
 [
   {
+    "id": "T-113",
+    "title": "Draft proposals visible in customer portal before being sent",
+    "desc": "Customers can see draft proposals in their portal even when only one proposal has been sent. This appears to be a regression from the new customer portal rollout.",
+    "type": "bug",
+    "sub": "na",
+    "priority": "high",
+    "status": "in-progress",
+    "date": "2026-03-05",
+    "area": "customer portal",
+    "source": "Slack #tanner-tickets",
+    "clickup": "https://app.clickup.com/t/86b03uvug",
+    "notes": "Jesus Rubio  [2:54 PM] I think this is part of the rollout of the new customer portal. Probably that check wasn't implemented.",
+    "resolvedNote": "Pushed to Production (but looks to have resurfaced)"
+  },
+  {
     "id": "T-112",
     "title": "Complete UI refresh for remaining outdated pages",
     "desc": "Identify and update all app pages that haven't received the UI refresh, including products/services and work order list pages. Some tickets may already exist for specific pages.",
