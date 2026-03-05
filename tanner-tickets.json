@@ -603,10 +603,11 @@
     "type": "enhancement",
     "sub": "missed",
     "priority": "high",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-04-22",
     "area": "Email / Branding",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b4djaq8",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-046",
@@ -615,10 +616,11 @@
     "type": "enhancement",
     "sub": "missed",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-04-25",
     "area": "Users / Onboarding",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b4t9n3g",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-047",
@@ -651,11 +653,12 @@
     "type": "enhancement",
     "sub": "considered",
     "priority": "high",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-03-18",
     "area": "Billing / Chargebee",
     "clickup": "https://app.clickup.com/t/86b49mbb6",
-    "notes": "Jeremy in Slack: 'We have this one already.' Linked ClickUp 86b49mbb6 (Ready for Dev / Basit). Product had already scoped, documented, and queued this for development before it was raised in the channel."
+    "notes": "Jeremy in Slack: 'We have this one already.' Linked ClickUp 86b49mbb6 (Ready for Dev / Basit). Product had already scoped, documented, and queued this for development before it was raised in the channel.",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-050",
@@ -712,10 +715,11 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "high",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-03-18",
     "area": "Appointments",
-    "clickup": ""
+    "clickup": "Add \"Event Assignee\" to \"Appointment Details\" in  Active Development 11mo ago",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-055",
@@ -736,10 +740,11 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-03-11",
     "area": "Chat / Onboarding",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b49manh",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-057",
@@ -748,10 +753,11 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-03-18",
     "area": "Zapier / Integrations",
-    "clickup": ""
+    "clickup": "Zapier: Enable “Send Chat Message to Contact” via Integration in  Active Development 6mo ago",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-058",
@@ -760,10 +766,10 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "high",
-    "status": "open",
+    "status": "planned-v2",
     "date": "2025-04-07",
     "area": "Email / Drips",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b4kmrru"
   },
   {
     "id": "T-059",
@@ -772,22 +778,23 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "planned-v2",
     "date": "2025-04-07",
     "area": "User Roles",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b4n210b",
+    "notes": "Planned for v2"
   },
   {
     "id": "T-060",
     "title": "Store and version proposal history — save PDF snapshot on each send",
     "desc": "Every time a proposal is sent, save a version/PDF snapshot so previous states can be reviewed.",
     "type": "enhancement",
-    "sub": "nicetohave",
+    "sub": "considered",
     "priority": "high",
-    "status": "open",
+    "status": "on-hold",
     "date": "2025-04-07",
     "area": "Proposals",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b4n3bd3"
   },
   {
     "id": "T-061",
@@ -796,7 +803,7 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-04-16",
     "area": "Invoices / Deals",
     "clickup": ""
@@ -822,10 +829,11 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "on-hold",
     "date": "2025-04-06",
     "area": "Change Orders",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b4kmazr",
+    "notes": " Jesus Rubio Oct 9 2025 at 12:01 pm     Reply We faced an issue here where the change date of the change order wasn't being stored properly, we need to asses how to track and store these events."
   },
   {
     "id": "T-064",
@@ -885,10 +893,11 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-04-02",
     "area": "Jobs / Scheduling",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b54a7u9",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-069",
@@ -936,10 +945,10 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "postponed",
     "date": "2025-04-27",
     "area": "Billing / AI",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b4u6y7u"
   },
   {
     "id": "T-073",
@@ -960,10 +969,11 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-04-22",
     "area": "Admin / Tenants",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b4qz4yy",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-075",
@@ -996,10 +1006,11 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "high",
-    "status": "open",
+    "status": "postponed",
     "date": "2025-04-22",
     "area": "Customer Portal / Errors",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b4qxrpw",
+    "notes": "Jason: In these instances, obtaining Company Logo, or other company info is not possible, because there isn't an authenticated session. "
   },
   {
     "id": "T-078",
@@ -1081,10 +1092,11 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-04-26",
     "area": "Customer Portal",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b4tag6f",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-085",
@@ -1105,11 +1117,12 @@
     "type": "enhancement",
     "sub": "considered",
     "priority": "low",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-03-19",
     "area": "Proposal Builder / Financing",
-    "clickup": "",
-    "notes": "Jeremy replied in Slack: 'We changed it to that at your request, so that it fit mobile better. When it was smaller and on the right, it got bunched up when moving to mobile.' Tanner acknowledged: 'yeah... i mean it's fine.' This was a deliberate design decision made at Tanner's prior request — not a miss."
+    "clickup": "https://app.clickup.com/t/86b4cgkhh",
+    "notes": "Jeremy replied in Slack: 'We changed it to that at your request, so that it fit mobile better. When it was smaller and on the right, it got bunched up when moving to mobile.' Tanner acknowledged: 'yeah... i mean it's fine.' This was a deliberate design decision made at Tanner's prior request — not a miss.",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-087",
@@ -1166,10 +1179,10 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "on-hold",
     "date": "2025-03-28",
     "area": "Templates / Email",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b4febwe"
   },
   {
     "id": "T-092",
@@ -1178,11 +1191,12 @@
     "type": "enhancement",
     "sub": "considered",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-03-18",
     "area": "Email / Settings",
-    "clickup": "",
-    "notes": "Jeremy posted this in the channel explicitly noting: 'I think this one came from another channel, so I'm tossing it in here for visibility.' Jesus confirmed: 'This one came from Rick.' Not a Tanner-initiated request — was already in ClickUp before it appeared here."
+    "clickup": "https://app.clickup.com/t/8633445/86b487cxm",
+    "notes": "Jeremy posted this in the channel explicitly noting: 'I think this one came from another channel, so I'm tossing it in here for visibility.' Jesus confirmed: 'This one came from Rick.' Not a Tanner-initiated request — was already in ClickUp before it appeared here.",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-093",
@@ -1191,10 +1205,11 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "low",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-03-19",
     "area": "Settings / Integrations",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/8633445/86b4rdqbm",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-094",
@@ -1228,10 +1243,11 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-04-17",
     "area": "Jobs / Reviews",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b4qk3t8",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-097",
@@ -1332,11 +1348,11 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "high",
-    "status": "open",
+    "status": "postponed",
     "date": "2025-04-21",
     "area": "Zapier / Integrations",
     "clickup": "https://app.clickup.com/t/86b8cxhgr",
-    "notes": "Status in ClickUp: Long Term Parking"
+    "notes": "JR Jesus Rubio Feb 5 at 5:51 pm     Reply @Abdul Basit  we need to enhance the remainder of the Zapier Trigers to include the Deal ID as it's only contained on the \"Move Deal\" trigger right now."
   },
   {
     "id": "T-105",
