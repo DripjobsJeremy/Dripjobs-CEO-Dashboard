@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DripJobs — CEO Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ─────────────────────────────────────────────── */
+:root {
+  --brand: #7C3AED;
+  --brand-light: #9D5CF5;
+  --brand-dim: rgba(124,58,237,0.15);
+  --bg: #0A090F;
+  --surface: #111018;
+  --surface-2: #1A1825;
+  --surface-3: #221F31;
+  --border: rgba(255,255,255,0.07);
+  --border-2: rgba(255,255,255,0.12);
+  --text: #F0EEF8;
+  --text-2: #C4C0DC;
+  --text-muted: #7B78A0;
+  --text-dim: #4A4765;
+  --green: #22C55E;
+  --red: #EF4444;
+  --amber: #F59E0B;
+  --cyan: #06B6D4;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --sidebar-w: 220px;
+  color-scheme: dark;
+}
+[data-theme="light"] {
+  --bg: #F3F2FA;
+  --surface: #FFFFFF;
+  --surface-2: #ECEAF8;
+  --surface-3: #E2DFF3;
+  --border: rgba(0,0,0,0.09);
+  --border-2: rgba(0,0,0,0.16);
+  --text: #18162A;
+  --text-2: #3A3660;
+  --text-muted: #5A577A;
+  --text-dim: #9896B2;
+  --brand-dim: rgba(124,58,237,0.1);
+  color-scheme: light;
+}
+
+/* ── RESET ───────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ── SIDEBAR ─────────────────────────────────────────────── */
+.sidebar {
+  width: var(--sidebar-w);
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  z-index: 100;
+}
+.sidebar-logo {
+  padding: 20px 18px 14px;
+  border-bottom: 1px solid var(--border);
+}
+.sidebar-logo-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 17px;
+  color: var(--text);
+  letter-spacing: -0.3px;
+}
+.sidebar-logo-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+.sidebar-nav { padding: 14px 10px; flex: 1; }
+.nav-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 10px 8px 4px;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 10px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: background 0.15s, color 0.15s;
+  margin-bottom: 2px;
+}
+.nav-item:hover { background: var(--surface-2); color: var(--text); }
+.nav-item.active {
+  background: var(--brand-dim);
+  color: var(--brand-light);
+}
+.nav-icon { font-size: 15px; width: 20px; text-align: center; }
+.sidebar-footer {
+  padding: 14px 16px;
+  border-top: 1px solid var(--border);
+  font-size: 11px;
+  color: var(--text-dim);
+}
+.updated-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+.updated-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+}
+
+/* ── MAIN ────────────────────────────────────────────────── */
+.main {
+  margin-left: var(--sidebar-w);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.topbar {
+  position: sticky;
+  top: 0;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0 28px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 50;
+}
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.page-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px;
+  color: var(--text);
+}
+.page-subtitle {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.topbar-right { display: flex; align-items: center; gap: 10px; }
+.theme-btn {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  color: var(--text-muted);
+}
+.theme-btn:hover { color: var(--text); }
+
+/* ── CONTENT PAGES ───────────────────────────────────────── */
+.page {
+  display: none;
+  flex: 1;
+  padding: 28px;
+  max-width: 1100px;
+  width: 100%;
+}
+.page.active { display: block; }
+.page-tanner {
+  display: none;
+  flex: 1;
+  padding: 0;
+  overflow: hidden;
+}
+.page-tanner.active { display: flex; flex-direction: column; }
+
+/* ── STAT CARDS ──────────────────────────────────────────── */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+.stat-card.purple::before { background: var(--brand); }
+.stat-card.green::before  { background: var(--green); }
+.stat-card.amber::before  { background: var(--amber); }
+.stat-card.red::before    { background: var(--red); }
+.stat-card.cyan::before   { background: var(--cyan); }
+.stat-icon { font-size: 20px; margin-bottom: 8px; }
+.stat-value {
+  font-family: 'DM Serif Display', serif;
+  font-size: 32px;
+  line-height: 1;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.stat-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* ── CARDS ───────────────────────────────────────────────── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.card-title {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.card-action { font-size: 11px; color: var(--text-muted); }
+.card-body { padding: 20px; }
+
+/* ── BRIEF: SHIPPED / IN-FLIGHT ──────────────────────────── */
+.brief-section { margin-bottom: 24px; }
+.brief-section-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.shipped-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.shipped-item:last-child { border-bottom: none; }
+.shipped-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+.shipped-dot.green  { background: var(--green); }
+.shipped-dot.amber  { background: var(--amber); }
+.shipped-dot.red    { background: var(--red); }
+.shipped-title { font-weight: 600; font-size: 13px; color: var(--text); margin-bottom: 3px; }
+.shipped-meta { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+.shipped-tag {
+  margin-left: auto;
+  flex-shrink: 0;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.tag-shipped { background: rgba(34,197,94,0.15); color: var(--green); }
+.tag-progress { background: rgba(245,158,11,0.15); color: var(--amber); }
+.tag-bug { background: rgba(239,68,68,0.15); color: var(--red); }
+
+/* ── BRIEF: BUG SUMMARY ──────────────────────────────────── */
+.bug-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 10px;
+}
+.bug-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  text-align: center;
+}
+.bug-card-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 26px;
+  line-height: 1;
+}
+.bug-card-lbl { font-size: 10px; color: var(--text-muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* ── STRATEGY BOX ────────────────────────────────────────── */
+.strategy-box {
+  background: var(--brand-dim);
+  border: 1px solid rgba(124,58,237,0.25);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+}
+.strategy-q {
+  font-size: 14px;
+  color: var(--text);
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.strategy-meta { font-size: 11px; color: var(--text-muted); }
+
+/* ── HISTORY: FILTER BAR ─────────────────────────────────── */
+.filter-bar {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.filter-row + .filter-row { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
+.filter-lbl {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  min-width: 48px;
+}
+.mode-btn {
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-2);
+  background: var(--surface-2);
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.mode-btn:hover { color: var(--text); border-color: var(--brand); }
+.mode-btn.active {
+  background: var(--brand-dim);
+  border-color: var(--brand);
+  color: var(--brand-light);
+}
+.custom-range {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.custom-range input[type="date"] {
+  background: var(--surface-2);
+  border: 1px solid var(--border-2);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  padding: 5px 9px;
+  cursor: pointer;
+}
+.custom-range input[type="date"]:focus { outline: none; border-color: var(--brand); }
+.custom-range .sep { color: var(--text-dim); font-size: 12px; }
+.apply-btn {
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--brand);
+  background: var(--brand-dim);
+  color: var(--brand-light);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.apply-btn:hover { background: rgba(124,58,237,0.25); }
+.type-btn {
+  padding: 4px 11px;
+  border-radius: 20px;
+  border: 1px solid var(--border-2);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.type-btn:hover { color: var(--text); }
+.type-btn.active-feature { background: rgba(124,58,237,0.15); border-color: var(--brand); color: var(--brand-light); }
+.type-btn.active-fix     { background: rgba(34,197,94,0.12);  border-color: var(--green); color: var(--green); }
+.type-btn.active-ux      { background: rgba(6,182,212,0.12);  border-color: var(--cyan);  color: var(--cyan); }
+.type-btn.active-perf    { background: rgba(245,158,11,0.12); border-color: var(--amber); color: var(--amber); }
+.type-btn.active-all     { background: var(--surface-3); border-color: var(--text-muted); color: var(--text); }
+.area-select {
+  background: var(--surface-2);
+  border: 1px solid var(--border-2);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  padding: 5px 9px;
+  cursor: pointer;
+}
+.area-select:focus { outline: none; border-color: var(--brand); }
+
+/* ── HISTORY: CHIPS ──────────────────────────────────────── */
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.chip {
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--border-2);
+  background: var(--surface-2);
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.chip:hover { color: var(--text); border-color: var(--text-muted); }
+.chip.selected { background: var(--brand-dim); border-color: var(--brand); color: var(--brand-light); }
+
+/* ── HISTORY: SUMMARY BAR ────────────────────────────────── */
+.hist-summary {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 18px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.hist-summary-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-right: 4px;
+}
+.hist-summary-count {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text);
+  margin-right: 16px;
+}
+.hist-stat { font-size: 12px; color: var(--text-muted); }
+.hist-stat strong { color: var(--text); }
+
+/* ── HISTORY: TABLE ──────────────────────────────────────── */
+.table-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--border); }
+.cl-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.cl-table thead th {
+  padding: 10px 14px;
+  text-align: left;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+}
+.cl-table tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.1s;
+}
+.cl-table tbody tr:last-child { border-bottom: none; }
+.cl-table tbody tr:hover { background: var(--surface-2); }
+.cl-table td {
+  padding: 10px 14px;
+  color: var(--text-2);
+  vertical-align: middle;
+}
+.td-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  width: 80px;
+}
+.td-title { color: var(--text); }
+.td-area { font-size: 12px; color: var(--text-muted); width: 150px; }
+.ct {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+.ct-feature { background: rgba(124,58,237,0.15); color: var(--brand-light); }
+.ct-fix     { background: rgba(34,197,94,0.12);  color: var(--green); }
+.ct-ux      { background: rgba(6,182,212,0.12);  color: var(--cyan); }
+.ct-perf    { background: rgba(245,158,11,0.12); color: var(--amber); }
+
+/* ── EMPTY STATE ─────────────────────────────────────────── */
+.empty-state {
+  text-align: center;
+  padding: 48px 20px;
+  color: var(--text-muted);
+}
+.empty-state-icon { font-size: 32px; margin-bottom: 12px; }
+.empty-state-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+.empty-state-sub { font-size: 12px; }
+
+/* ── FEATUREBASE ─────────────────────────────────────────── */
+.fb-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.fb-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.fb-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+}
+.fb-row:last-child { border-bottom: none; }
+.fb-rank { width: 18px; text-align: right; color: var(--text-dim); font-size: 11px; font-weight: 700; }
+.fb-vote { width: 30px; text-align: right; font-family: 'JetBrains Mono',monospace; font-size: 12px; color: var(--brand-light); font-weight: 700; }
+.fb-title { flex: 1; color: var(--text); }
+.fb-tag {
+  font-size: 10px; font-weight: 700; padding: 2px 7px;
+  border-radius: 4px; text-transform: uppercase; letter-spacing: 0.04em; white-space: nowrap;
+}
+.t-feature { background: rgba(124,58,237,0.15); color: var(--brand-light); }
+.t-sched   { background: rgba(6,182,212,0.12);  color: var(--cyan); }
+.t-crm     { background: rgba(245,158,11,0.12); color: var(--amber); }
+.t-int     { background: rgba(34,197,94,0.12);  color: var(--green); }
+.fb-status { font-size: 11px; color: var(--text-muted); white-space: nowrap; }
+.bar-row {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 12px; font-size: 12px;
+}
+.bar-lbl { width: 170px; color: var(--text-muted); }
+.bar-track { flex: 1; height: 6px; background: var(--surface-3); border-radius: 3px; overflow: hidden; }
+.bar-fill  { height: 100%; border-radius: 3px; background: var(--brand); }
+.bar-count { width: 36px; text-align: right; color: var(--text-muted); font-size: 11px; }
+.match-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.match-table th { padding: 8px 12px; text-align: left; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted); background: var(--surface-2); border-bottom: 1px solid var(--border); }
+.match-table td { padding: 9px 12px; color: var(--text-2); border-bottom: 1px solid var(--border); }
+.match-table tr:last-child td { border-bottom: none; }
+.fb-cta {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--brand-light);
+  text-decoration: none;
+}
+.fb-cta:hover { text-decoration: underline; }
+.fb-opt-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+.fb-opt {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+}
+.fb-opt-label { font-size: 12px; font-weight: 700; color: var(--text); margin-bottom: 5px; }
+.fb-opt-a .fb-opt-label { color: var(--brand-light); }
+.fb-opt-b .fb-opt-label { color: var(--green); }
+.fb-opt-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+/* ── MOBILE (hide sidebar on small screens) ─────────────── */
+@media (max-width: 700px) {
+  .sidebar { display: none; }
+  .main { margin-left: 0; }
+  .stat-grid { grid-template-columns: repeat(2,1fr); }
+  .fb-two-col, .fb-stat-grid { grid-template-columns: 1fr; }
+  .fb-opt-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ SIDEBAR ═══════════════════════════════════════════ -->
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <div class="sidebar-logo-name">DripJobs</div>
+    <div class="sidebar-logo-sub">CEO Dashboard</div>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-label">This Week</div>
+    <div class="nav-item active" onclick="navigate('brief',this)">
+      <span class="nav-icon">📋</span> CEO Brief
+    </div>
+    <div class="nav-label">History</div>
+    <div class="nav-item" onclick="navigate('history',this)">
+      <span class="nav-icon">📅</span> Changelog
+    </div>
+    <div class="nav-label">Voice of Customer</div>
+    <div class="nav-item" onclick="navigate('featurebase',this)">
+      <span class="nav-icon">📊</span> FeatureBase
+    </div>
+    <div class="nav-label">Tickets</div>
+    <div class="nav-item" onclick="navigate('tanner',this)">
+      <span class="nav-icon">🎟️</span> #Tanner-Tickets
+    </div>
+  </nav>
+  <div class="sidebar-footer">
+    <div class="updated-pill">
+      <div class="updated-dot"></div>
+      <span id="last-updated">Loading…</span>
+    </div>
+  </div>
+</aside>
+
+<!-- ══ TOPBAR ═════════════════════════════════════════════ -->
+<div class="main">
+<div class="topbar">
+  <div class="topbar-left">
+    <div>
+      <div class="page-title" id="page-title">CEO Brief</div>
+      <div class="page-subtitle" id="page-subtitle">Current week summary</div>
+    </div>
+  </div>
+  <div class="topbar-right">
+    <button class="theme-btn" onclick="toggleTheme()" id="theme-btn">☀️</button>
+  </div>
+</div>
+
+<!-- ══ PAGE: CEO BRIEF ═══════════════════════════════════ -->
+<div class="page active" id="page-brief">
+  <!-- Stat Cards -->
+  <div class="stat-grid">
+    <div class="stat-card purple">
+      <div class="stat-icon">🚀</div>
+      <div class="stat-value" id="b-features">–</div>
+      <div class="stat-label">Shipped</div>
+    </div>
+    <div class="stat-card green">
+      <div class="stat-icon">✅</div>
+      <div class="stat-value"><span id="b-qa">–</span><small style="font-size:18px">%</small></div>
+      <div class="stat-label">QA Pass Rate</div>
+    </div>
+    <div class="stat-card amber">
+      <div class="stat-icon">🔄</div>
+      <div class="stat-value" id="b-inflight">–</div>
+      <div class="stat-label">In Progress</div>
+    </div>
+    <div class="stat-card red">
+      <div class="stat-icon">🐛</div>
+      <div class="stat-value" id="b-bugs">–</div>
+      <div class="stat-label">Open Bugs</div>
+    </div>
+    <div class="stat-card cyan">
+      <div class="stat-icon">📝</div>
+      <div class="stat-value" id="b-tasks">–</div>
+      <div class="stat-label">Tasks Closed</div>
+    </div>
+  </div>
+
+  <!-- Brief Content (renders from data.json) -->
+  <div id="brief-content">
+    <div class="empty-state">
+      <div class="empty-state-icon">⏳</div>
+      <div class="empty-state-title">Loading brief…</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PAGE: HISTORY / CHANGELOG ════════════════════════ -->
+<div class="page" id="page-history">
+
+  <!-- Filter Bar -->
+  <div class="filter-bar">
+    <div class="filter-row">
+      <span class="filter-lbl">View</span>
+      <button class="mode-btn active" id="mode-weekly" onclick="setMode('weekly')">Weekly</button>
+      <button class="mode-btn" id="mode-monthly" onclick="setMode('monthly')">Monthly</button>
+      <button class="mode-btn" id="mode-custom" onclick="setMode('custom')">Custom Range</button>
+      <div class="custom-range" id="custom-inputs" style="display:none">
+        <span class="sep">From</span>
+        <input type="date" id="date-from" value="2026-01-01">
+        <span class="sep">to</span>
+        <input type="date" id="date-to" value="2026-03-07">
+        <button class="apply-btn" onclick="applyCustom()">Apply</button>
+      </div>
+    </div>
+    <div class="filter-row">
+      <span class="filter-lbl">Type</span>
+      <button class="type-btn active-all" id="tf-all"     onclick="setType('all')">All</button>
+      <button class="type-btn"            id="tf-feature" onclick="setType('feature')">Feature</button>
+      <button class="type-btn"            id="tf-fix"     onclick="setType('fix')">Fix</button>
+      <button class="type-btn"            id="tf-ux"      onclick="setType('ux')">UX</button>
+      <button class="type-btn"            id="tf-perf"    onclick="setType('perf')">Perf</button>
+      <span class="filter-lbl" style="margin-left:12px">Area</span>
+      <select class="area-select" id="area-select" onchange="setArea(this.value)">
+        <option value="all">All Areas</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Chip selector (weekly or monthly) -->
+  <div class="chip-row" id="chip-row"></div>
+
+  <!-- Summary bar -->
+  <div class="hist-summary" id="hist-summary" style="display:none"></div>
+
+  <!-- Table -->
+  <div id="hist-table-wrap"></div>
+</div>
+
+<!-- ══ PAGE: FEATUREBASE ════════════════════════════════ -->
+<div class="page" id="page-featurebase">
+
+  <div class="fb-stat-grid">
+    <div class="stat-card purple">
+      <div class="stat-icon">💬</div>
+      <div class="stat-value">654</div>
+      <div class="stat-label">Total Requests</div>
+    </div>
+    <div class="stat-card green">
+      <div class="stat-icon">✅</div>
+      <div class="stat-value">57</div>
+      <div class="stat-label">Completed</div>
+    </div>
+    <div class="stat-card amber">
+      <div class="stat-icon">🔥</div>
+      <div class="stat-value">37</div>
+      <div class="stat-label">High Priority (20+ votes)</div>
+    </div>
+    <div class="stat-card red">
+      <div class="stat-icon">⚠️</div>
+      <div class="stat-value">31</div>
+      <div class="stat-label">No Ticket Found</div>
+    </div>
+  </div>
+
+  <div class="fb-two-col">
+    <!-- Top Requests -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">📊 Top Unresolved Requests</div>
+        <div class="card-action">In Review · Top 10 by votes</div>
+      </div>
+      <div class="card-body" style="padding:12px 20px">
+        <div class="fb-row"><span class="fb-rank">1</span><span class="fb-vote">98</span><span class="fb-title">Ability to set times and days Drips go out</span><span class="fb-tag t-feature">Feature</span><span class="fb-status">In Review</span></div>
+        <div class="fb-row"><span class="fb-rank">2</span><span class="fb-vote">71</span><span class="fb-title">Ability to Set Calendar Availability</span><span class="fb-tag t-sched">Scheduling</span><span class="fb-status">In Review</span></div>
+        <div class="fb-row"><span class="fb-rank">3</span><span class="fb-vote">58</span><span class="fb-title">Create a way to "skip" the weekend when scheduling (business days toggle)</span><span class="fb-tag t-sched">Scheduling</span><span class="fb-status">In Review</span></div>
+        <div class="fb-row"><span class="fb-rank">4</span><span class="fb-vote">46</span><span class="fb-title">Phone follow-up reminders in main dashboard</span><span class="fb-tag t-crm">CRM</span><span class="fb-status">In Review</span></div>
+        <div class="fb-row"><span class="fb-rank">5</span><span class="fb-vote">40</span><span class="fb-title">Google Calendar Invitation to Customer For Estimate</span><span class="fb-tag t-int">Integrations</span><span class="fb-status">In Review</span></div>
+        <div class="fb-row"><span class="fb-rank">6</span><span class="fb-vote">35</span><span class="fb-title">Combine/Merge Duplicate Contacts/Leads</span><span class="fb-tag t-crm">CRM</span><span class="fb-status">In Review</span></div>
+        <div class="fb-row"><span class="fb-rank">7</span><span class="fb-vote">31</span><span class="fb-title">Ability to schedule on Jobs Schedule without existing Deal or Proposal</span><span class="fb-tag t-sched">Scheduling</span><span class="fb-status">In Review</span></div>
+        <div class="fb-row"><span class="fb-rank">8</span><span class="fb-vote">30</span><span class="fb-title">Integrate with Square for payment processing</span><span class="fb-tag t-int">Integrations</span><span class="fb-status">In Review</span></div>
+        <div class="fb-row"><span class="fb-rank">9</span><span class="fb-vote">29</span><span class="fb-title">Builders (commercial/new construction workflow)</span><span class="fb-tag t-feature">Feature</span><span class="fb-status">In Review</span></div>
+        <div class="fb-row"><span class="fb-rank">10</span><span class="fb-vote">26</span><span class="fb-title">Option to reschedule appointment</span><span class="fb-tag t-sched">Scheduling</span><span class="fb-status">In Review</span></div>
+      </div>
+    </div>
+
+    <!-- Volume by Theme -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">📈 Request Volume by Theme</div>
+      </div>
+      <div class="card-body">
+        <div class="bar-row"><span class="bar-lbl">Proposals &amp; Payments</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bar-count">200</span></div>
+        <div class="bar-row"><span class="bar-lbl">Drips &amp; Automation</span><div class="bar-track"><div class="bar-fill" style="width:75%"></div></div><span class="bar-count">150</span></div>
+        <div class="bar-row"><span class="bar-lbl">Calendar &amp; Scheduling</span><div class="bar-track"><div class="bar-fill" style="width:60%"></div></div><span class="bar-count">119</span></div>
+        <div class="bar-row"><span class="bar-lbl">CRM &amp; Pipeline</span><div class="bar-track"><div class="bar-fill" style="width:19%"></div></div><span class="bar-count">38</span></div>
+        <div class="bar-row"><span class="bar-lbl">Other / Misc</span><div class="bar-track"><div class="bar-fill" style="width:17%"></div></div><span class="bar-count">35</span></div>
+        <div class="bar-row"><span class="bar-lbl">Job Costing &amp; Production</span><div class="bar-track"><div class="bar-fill" style="width:16%"></div></div><span class="bar-count">34</span></div>
+        <div class="bar-row"><span class="bar-lbl">Integrations &amp; API</span><div class="bar-track"><div class="bar-fill" style="width:10%"></div></div><span class="bar-count">20</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ClickUp Match Status -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">🔍 Completed Items — ClickUp Match Status</div>
+      <div class="card-action">57 completed FeatureBase items</div>
+    </div>
+    <div class="card-body">
+      <table class="match-table">
+        <thead><tr><th>Match Status</th><th>Count</th><th>What it means</th></tr></thead>
+        <tbody>
+          <tr><td>✅ Confirmed in Production</td><td>8</td><td>ClickUp ticket status = "pushed to production"</td></tr>
+          <tr><td>🔵 High Confidence Match</td><td>11</td><td>Matching ClickUp task found, strong title/description match</td></tr>
+          <tr><td>🟡 Medium Confidence Match</td><td>10</td><td>Possible match found — recommend manual review</td></tr>
+          <tr><td>🔴 No Ticket Found</td><td>31</td><td>Marked complete in FeatureBase, no ClickUp task located</td></tr>
+        </tbody>
+      </table>
+      <a href="https://docs.google.com/spreadsheets/d/1E2rpl0_n5uySJxzWIm7cHqLLcdt5vrO2DMUiXlhjjy0/edit?usp=drive_link" target="_blank" rel="noopener" class="fb-cta">View Full Cleanup Workbook →</a>
+    </div>
+  </div>
+
+  <!-- Strategic Question -->
+  <div class="card">
+    <div class="card-body">
+      <div class="brief-section-title">❓ Strategic Question for Tanner</div>
+      <div class="strategy-box">
+        <div class="strategy-q">The top 3 unresolved requests — Drip scheduling control, Calendar availability, and the Business days toggle — have a combined <strong>227 votes</strong> and all relate to scheduling intelligence. Should these be grouped into a unified <strong>"Smart Scheduling"</strong> initiative for Q2 planning?</div>
+        <div class="fb-opt-row">
+          <div class="fb-opt fb-opt-a">
+            <div class="fb-opt-label">Option A — Unified Initiative</div>
+            <div class="fb-opt-desc">Group into a "Smart Scheduling" Q2 theme. Stronger marketing story, cleaner roadmap, addresses 227 votes at once.</div>
+          </div>
+          <div class="fb-opt fb-opt-b">
+            <div class="fb-opt-label">Option B — Ship Incrementally</div>
+            <div class="fb-opt-desc">Ship each feature independently as ready. Faster time-to-value per item, avoids scope creep from bundling.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PAGE: TANNER-TICKETS ══════════════════════════════ -->
+<div class="page-tanner" id="page-tanner">
+  <iframe
+    src="tanner-tracker.html"
+    style="width:100%;flex:1;border:none;display:block;"
+    title="#Tanner-Tickets Backlog">
+  </iframe>
+</div>
+
+</div><!-- /main -->
+
+<script>
+/* ══════════════════════════════════════════════════════════
+   CHANGELOG DATA — all entries Dec 2025 → Mar 2026
+   Add new entries at the top as weeks ship.
+   Fields: date (YYYY-MM-DD), title, area, type (feature|fix|ux|perf)
+══════════════════════════════════════════════════════════ */
+const CHANGELOG = [
+  // ── March 2026 ──────────────────────────────────────────
+  {date:"2026-03-03", title:"Quo Integration MVP — Live for Premium Painting pilot", area:"Integrations", type:"feature"},
+  {date:"2026-03-03", title:"Zapier — Salesperson field regression fixed in Proposal Accepted trigger", area:"Zapier", type:"fix"},
+  {date:"2026-03-03", title:"Alternative payment instructions now display when Stripe is enabled", area:"Payments / Portal", type:"fix"},
+  {date:"2026-03-03", title:"Appointments tab modal behavior fixed in Contact Record", area:"CRM", type:"fix"},
+  {date:"2026-03-03", title:"False package selection prompt removed when toggle is disabled", area:"Proposals", type:"fix"},
+  // ── February 2026 ───────────────────────────────────────
+  {date:"2026-02-27", title:"Zero dollar total false warning on proposals — fix staged for deploy", area:"Proposals", type:"fix"},
+  {date:"2026-02-25", title:"Proposal Builder — major polish batch (custom sections, countersignature, discount visibility)", area:"Proposals", type:"fix"},
+  {date:"2026-02-25", title:"Customer Portal — uploaded documents and hero images display immediately", area:"Customer Portal", type:"fix"},
+  {date:"2026-02-25", title:"Job Costing — future date scheduling unblocked", area:"Job Costing", type:"feature"},
+  {date:"2026-02-25", title:"Revenue metric — unaccepted packages no longer inflate project-in-progress total", area:"Metrics", type:"fix"},
+  {date:"2026-02-25", title:"Booking form — social media icons now render correctly in published view", area:"Booking Forms", type:"fix"},
+  {date:"2026-02-25", title:"Proposal delete line item — empty pop-up replaced with proper confirmation", area:"Proposals", type:"ux"},
+  {date:"2026-02-25", title:"Activation Tracking — retroactive/pre-launch companies removed from display", area:"Admin", type:"fix"},
+  {date:"2026-02-25", title:"Multiple discounts now itemized visibly in Customer Portal", area:"Proposals / Portal", type:"ux"},
+  {date:"2026-02-25", title:"Countersignature multi-line display — resolved", area:"Proposals", type:"fix"},
+  {date:"2026-02-25", title:"Custom section template description — not auto-populating resolved", area:"Proposals", type:"fix"},
+  {date:"2026-02-17", title:"Package Area Details modal — new customer-facing detail view", area:"Proposals / Portal", type:"feature"},
+  {date:"2026-02-17", title:"Booking form — UX improvements to layout and icon rendering", area:"Booking Forms", type:"ux"},
+  {date:"2026-02-14", title:"Jobi AI add-on auto-removal fix — subscription integrity restored", area:"Jobi AI / Billing", type:"fix"},
+  {date:"2026-02-12", title:"Twilio — account disconnect & campaign re-initiation fixes", area:"Twilio / SMS", type:"fix"},
+  {date:"2026-02-10", title:"Work Orders — multi-recipient SMS & email delivery", area:"Work Orders", type:"feature"},
+  {date:"2026-02-10", title:"Default proposal template setting — new proposals start from preferred layout", area:"Proposals", type:"feature"},
+  {date:"2026-02-10", title:"Project Manager keywords added to dynamic messaging templates and drips", area:"Messaging / Drips", type:"feature"},
+  {date:"2026-02-10", title:"Work Orders — server-side pagination for faster page loads on large lists", area:"Work Orders", type:"perf"},
+  {date:"2026-02-10", title:"Duplicate discount visibility fix — multiple discounts itemized in portal", area:"Proposals / Portal", type:"fix"},
+  {date:"2026-02-05", title:"Twilio A2P — account disconnect & campaign re-initiation reliability fixes", area:"Twilio / SMS", type:"fix"},
+  {date:"2026-02-03", title:"Invoice status clarity — removed \"Due\" and \"Late\" from status UI", area:"Invoicing", type:"ux"},
+  // ── January 2026 ────────────────────────────────────────
+  {date:"2026-01-24", title:"Work Orders — multi-recipient SMS & email delivery (crew + subs at once)", area:"Work Orders", type:"feature"},
+  {date:"2026-01-24", title:"Default proposal template setting — new proposals start from preferred layout", area:"Proposals", type:"feature"},
+  {date:"2026-01-24", title:"Project Manager keywords added to dynamic messaging templates and drips", area:"Messaging / Drips", type:"feature"},
+  {date:"2026-01-24", title:"Zapier — optional Deal Name field added to deal creation action", area:"Zapier", type:"feature"},
+  {date:"2026-01-24", title:"Pipelines — duplicate deals on Jobs Pipeline fixed; lead source filters corrected", area:"Pipelines", type:"fix"},
+  {date:"2026-01-24", title:"Deal card stage display — cards now move visually without requiring page refresh", area:"Pipelines", type:"fix"},
+  {date:"2026-01-24", title:"Scheduling — appointment rescheduling errors fixed when salesperson assigned", area:"Scheduling", type:"fix"},
+  {date:"2026-01-24", title:"Branch switching — no longer signs users out when switching linked accounts", area:"Auth / Accounts", type:"fix"},
+  {date:"2026-01-24", title:"Invoice status — removed \"Due\" and \"Late\"; clarified to Open / Partially Paid / Paid", area:"Invoicing", type:"fix"},
+  {date:"2026-01-24", title:"QuickBooks sync indicators now display correctly in invoices list", area:"Invoicing / QB", type:"fix"},
+  {date:"2026-01-24", title:"Date sorting fixed in Proposals, Work Orders, and Activity (newest first)", area:"Sorting / Lists", type:"fix"},
+  {date:"2026-01-24", title:"Calendly timezone conversion — meeting times no longer shift by 1 hour", area:"Zapier / Calendly", type:"fix"},
+  {date:"2026-01-24", title:"Mobile — photo attachments restored for package line items", area:"Mobile", type:"fix"},
+  {date:"2026-01-24", title:"Work Orders — server-side pagination; reduced unnecessary data loading", area:"Work Orders", type:"perf"},
+  {date:"2026-01-24", title:"Zapier — Onsite Estimate action improved for existing deals (stage + appointment)", area:"Zapier", type:"fix"},
+  {date:"2026-01-10", title:"Package-based proposals — option-based pricing tiers in customer portal", area:"Proposals", type:"feature"},
+  {date:"2026-01-10", title:"Proposal totals — fixed edge cases in package duplication, PDFs, discount modals, man-hours", area:"Proposals", type:"fix"},
+  {date:"2026-01-10", title:"Proposal builder — Send button restored; line item description reset fixed", area:"Proposals", type:"fix"},
+  {date:"2026-01-10", title:"A2P registration — post-submission confirmation view with clear next steps", area:"A2P / Texting", type:"fix"},
+  {date:"2026-01-10", title:"Email blast targeting — archived/closed deals excluded from \"Send to\" dropdown", area:"Email Blasts", type:"fix"},
+  {date:"2026-01-10", title:"Email blast content — missing logos, appointment buttons, and emoji rendering fixed", area:"Email Blasts", type:"fix"},
+  {date:"2026-01-10", title:"Contact import — failures with DripJobs CSV template resolved", area:"Contacts", type:"fix"},
+  {date:"2026-01-10", title:"Command Center drip toggles — now save correctly from mobile", area:"Command Center", type:"fix"},
+  {date:"2026-01-10", title:"DJ Chat iOS/Android — password manager autofill now supported on login", area:"DJ Chat / Mobile", type:"fix"},
+  {date:"2026-01-10", title:"Jobi AI upsell — refreshed view in Deal Command Center for non-subscribed accounts", area:"Jobi AI", type:"fix"},
+  {date:"2026-01-10", title:"Jobi AI helper text added in Command Center and Proposal Builder", area:"Jobi AI", type:"fix"},
+  {date:"2026-01-10", title:"Proposal template packages — no longer removed after editing template name", area:"Proposals", type:"fix"},
+  {date:"2026-01-10", title:"Invoices page — performance improved; only required data loaded", area:"Invoicing", type:"perf"},
+  // ── December 2025 ───────────────────────────────────────
+  {date:"2025-12-19", title:"v2.10.0 — Year-end stability release", area:"Platform", type:"feature"},
+  {date:"2025-12-18", title:"Holiday scheduling — blackout date support", area:"Scheduling", type:"feature"},
+  {date:"2025-12-15", title:"Fix: iOS 18 notification permission regression", area:"iOS", type:"fix"},
+  {date:"2025-12-12", title:"Proposal template library — 3 new templates added", area:"Proposals", type:"feature"},
+  {date:"2025-12-05", title:"API rate limit headers added to all endpoints", area:"API / Integrations", type:"perf"},
+];
+
+/* ══════════════════════════════════════════════════════════
+   HISTORY STATE
+══════════════════════════════════════════════════════════ */
+let histMode    = 'weekly';
+let histFrom    = null;     // YYYY-MM-DD string
+let histTo      = null;
+let histType    = 'all';
+let histArea    = 'all';
+let selectedChip = null;    // week-start or month-key string
+
+/* ══════════════════════════════════════════════════════════
+   DATE HELPERS
+══════════════════════════════════════════════════════════ */
+function weekStart(dateStr) {
+  const d = new Date(dateStr + 'T12:00:00');
+  const day = d.getDay();                     // 0=Sun
+  const diff = day === 0 ? -6 : 1 - day;    // offset to Monday
+  d.setDate(d.getDate() + diff);
+  return d.toISOString().slice(0, 10);
+}
+
+function weekEnd(startStr) {
+  const d = new Date(startStr + 'T12:00:00');
+  d.setDate(d.getDate() + 6);
+  return d.toISOString().slice(0, 10);
+}
+
+function monthKey(dateStr) { return dateStr.slice(0, 7); }
+function monthStart(ym)    { return ym + '-01'; }
+function monthEnd(ym) {
+  const [y, m] = ym.split('-').map(Number);
+  return new Date(y, m, 0).toISOString().slice(0, 10);
+}
+
+const MONTH_NAMES = ['January','February','March','April','May','June',
+                     'July','August','September','October','November','December'];
+const MON_SHORT   = ['Jan','Feb','Mar','Apr','May','Jun',
+                     'Jul','Aug','Sep','Oct','Nov','Dec'];
+
+function fmtDate(d) {
+  const [, m, day] = d.split('-').map(Number);
+  return `${MON_SHORT[m-1]} ${day}`;
+}
+
+function fmtWeekRange(start) {
+  const end = weekEnd(start);
+  const [sy, sm, sd] = start.split('-').map(Number);
+  const [ey, em, ed] = end.split('-').map(Number);
+  if (sm === em) return `${MON_SHORT[sm-1]} ${sd}–${ed}`;
+  return `${MON_SHORT[sm-1]} ${sd} – ${MON_SHORT[em-1]} ${ed}`;
+}
+
+function fmtMonth(ym) {
+  const [y, m] = ym.split('-').map(Number);
+  return `${MONTH_NAMES[m-1]} ${y}`;
+}
+
+function fmtRangePill(from, to) {
+  if (!from || !to) return '';
+  return `${fmtDate(from)} – ${fmtDate(to)}, ${to.slice(0,4)}`;
+}
+
+/* ══════════════════════════════════════════════════════════
+   FILTERING
+══════════════════════════════════════════════════════════ */
+function getFiltered() {
+  return CHANGELOG.filter(e => {
+    if (histFrom && e.date < histFrom) return false;
+    if (histTo   && e.date > histTo)   return false;
+    if (histType !== 'all' && e.type !== histType) return false;
+    if (histArea !== 'all' && e.area !== histArea) return false;
+    return true;
+  });
+}
+
+function uniqueWeeks()  {
+  return [...new Set(CHANGELOG.map(e => weekStart(e.date)))].sort().reverse();
+}
+function uniqueMonths() {
+  return [...new Set(CHANGELOG.map(e => monthKey(e.date)))].sort().reverse();
+}
+function uniqueAreas()  {
+  return [...new Set(CHANGELOG.map(e => e.area))].sort();
+}
+
+/* ══════════════════════════════════════════════════════════
+   HISTORY: MODE / TYPE / AREA CONTROLS
+══════════════════════════════════════════════════════════ */
+function setMode(mode) {
+  histMode = mode;
+  ['weekly','monthly','custom'].forEach(m => {
+    document.getElementById('mode-' + m).classList.toggle('active', m === mode);
+  });
+  document.getElementById('custom-inputs').style.display = mode === 'custom' ? 'flex' : 'none';
+
+  if (mode === 'weekly') {
+    const weeks = uniqueWeeks();
+    if (weeks.length) selectChip(weeks[0], 'weekly');
+    else renderChips();
+  } else if (mode === 'monthly') {
+    const months = uniqueMonths();
+    if (months.length) selectChip(months[0], 'monthly');
+    else renderChips();
+  } else {
+    // custom — clear chip selection, use full range until Apply
+    selectedChip = null;
+    histFrom = null;
+    histTo   = null;
+    renderChips();
+    renderTable();
+  }
+}
+
+function selectChip(key, mode) {
+  selectedChip = key;
+  if (mode === 'weekly' || histMode === 'weekly') {
+    histFrom = key;
+    histTo   = weekEnd(key);
+  } else {
+    histFrom = monthStart(key);
+    histTo   = monthEnd(key);
+  }
+  renderChips();
+  renderTable();
+}
+
+function setType(type) {
+  histType = type;
+  ['all','feature','fix','ux','perf'].forEach(t => {
+    const btn = document.getElementById('tf-' + t);
+    btn.className = 'type-btn' + (t === type ? ' active-' + t : '');
+  });
+  renderTable();
+}
+
+function setArea(area) {
+  histArea = area;
+  renderTable();
+}
+
+function applyCustom() {
+  const from = document.getElementById('date-from').value;
+  const to   = document.getElementById('date-to').value;
+  if (!from || !to) return;
+  if (from > to) {
+    document.getElementById('date-from').style.borderColor = 'var(--red)';
+    document.getElementById('date-to').style.borderColor   = 'var(--red)';
+    return;
+  }
+  document.getElementById('date-from').style.borderColor = '';
+  document.getElementById('date-to').style.borderColor   = '';
+  selectedChip = null;
+  histFrom = from;
+  histTo   = to;
+  renderChips();
+  renderTable();
+}
+
+/* ══════════════════════════════════════════════════════════
+   HISTORY: RENDER CHIPS
+══════════════════════════════════════════════════════════ */
+function renderChips() {
+  const row = document.getElementById('chip-row');
+  if (histMode === 'custom') {
+    row.innerHTML = '';
+    return;
+  }
+  const items = histMode === 'weekly' ? uniqueWeeks() : uniqueMonths();
+  row.innerHTML = items.map(k => {
+    const label = histMode === 'weekly' ? fmtWeekRange(k) : fmtMonth(k);
+    const sel   = k === selectedChip ? ' selected' : '';
+    const mode  = histMode;
+    return `<div class="chip${sel}" onclick="selectChip('${k}','${mode}')">${label}</div>`;
+  }).join('');
+}
+
+/* ══════════════════════════════════════════════════════════
+   HISTORY: RENDER TABLE
+══════════════════════════════════════════════════════════ */
+const TYPE_LABELS = { feature:'Feature', fix:'Fix', ux:'UX', perf:'Perf' };
+
+function renderTable() {
+  const data = getFiltered();
+  const wrap = document.getElementById('hist-table-wrap');
+  const summary = document.getElementById('hist-summary');
+
+  // Summary bar
+  if (data.length > 0) {
+    const counts = { feature:0, fix:0, ux:0, perf:0 };
+    data.forEach(e => { counts[e.type] = (counts[e.type]||0) + 1; });
+    let rangeTxt = '';
+    if (histFrom && histTo) {
+      rangeTxt = histMode === 'weekly'  ? fmtWeekRange(selectedChip || histFrom) :
+                 histMode === 'monthly' ? fmtMonth(selectedChip || histFrom.slice(0,7)) :
+                                          fmtRangePill(histFrom, histTo);
+    }
+    summary.style.display = 'flex';
+    summary.innerHTML =
+      `<span class="hist-summary-label">Showing</span>` +
+      `<span class="hist-summary-count">${data.length} entries</span>` +
+      (rangeTxt ? `<span class="hist-stat">${rangeTxt}</span>` : '') +
+      `<span style="margin-left:auto;display:flex;gap:14px">` +
+      (counts.feature ? `<span class="hist-stat"><strong style="color:var(--brand-light)">${counts.feature}</strong> Features</span>` : '') +
+      (counts.fix     ? `<span class="hist-stat"><strong style="color:var(--green)">${counts.fix}</strong> Fixes</span>` : '') +
+      (counts.ux      ? `<span class="hist-stat"><strong style="color:var(--cyan)">${counts.ux}</strong> UX</span>` : '') +
+      (counts.perf    ? `<span class="hist-stat"><strong style="color:var(--amber)">${counts.perf}</strong> Perf</span>` : '') +
+      `</span>`;
+  } else {
+    summary.style.display = 'none';
+  }
+
+  // Table
+  if (data.length === 0) {
+    wrap.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-state-icon">🔍</div>
+        <div class="empty-state-title">No entries found</div>
+        <div class="empty-state-sub">Try adjusting the date range, type, or area filter.</div>
+      </div>`;
+    return;
+  }
+
+  const rows = data.map(e =>
+    `<tr>
+      <td class="td-date">${fmtDate(e.date)}</td>
+      <td class="td-title">${e.title}</td>
+      <td class="td-area">${e.area}</td>
+      <td><span class="ct ct-${e.type}">${TYPE_LABELS[e.type]||e.type}</span></td>
+    </tr>`
+  ).join('');
+
+  wrap.innerHTML = `
+    <div class="table-wrap">
+      <table class="cl-table">
+        <thead>
+          <tr>
+            <th style="width:80px">Date</th>
+            <th>Change</th>
+            <th style="width:150px">Area</th>
+            <th style="width:80px">Type</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>`;
+}
+
+/* ══════════════════════════════════════════════════════════
+   HISTORY: POPULATE AREA DROPDOWN
+══════════════════════════════════════════════════════════ */
+function populateAreaDropdown() {
+  const sel = document.getElementById('area-select');
+  uniqueAreas().forEach(a => {
+    const opt = document.createElement('option');
+    opt.value = a;
+    opt.textContent = a;
+    sel.appendChild(opt);
+  });
+}
+
+/* ══════════════════════════════════════════════════════════
+   CEO BRIEF: RENDER FROM data.json
+══════════════════════════════════════════════════════════ */
+function renderBrief(w) {
+  // Stat cards
+  const set = (id, v) => { const el = document.getElementById(id); if(el && v!=null) el.textContent = v; };
+  if (w.stats) {
+    set('b-features', w.stats.featuresShipped);
+    set('b-qa',       w.stats.qaPassRate);
+    set('b-inflight', w.stats.inProgress);
+    set('b-bugs',     w.stats.openBugs);
+    set('b-tasks',    w.stats.tasksClosed);
+  }
+
+  // Brief narrative
+  const wrap = document.getElementById('brief-content');
+  let html = '';
+
+  // Week label
+  if (w.label) {
+    html += `<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:20px">Week of ${w.label}</div>`;
+  }
+
+  // Shipped
+  if (w.shipped && w.shipped.length) {
+    html += `<div class="card"><div class="card-header"><div class="card-title">🚀 Shipped This Week</div></div><div class="card-body">`;
+    html += w.shipped.map(s => `
+      <div class="shipped-item">
+        <div class="shipped-dot green"></div>
+        <div>
+          <div class="shipped-title">${s.title}</div>
+          ${s.note ? `<div class="shipped-meta">${s.note}</div>` : ''}
+          ${s.area ? `<div class="shipped-meta" style="margin-top:2px">${s.area}</div>` : ''}
+        </div>
+        <div class="shipped-tag tag-shipped">${s.type === 'feature' ? 'Feature' : 'Shipped'}</div>
+      </div>`).join('');
+    html += `</div></div>`;
+  }
+
+  // In Flight
+  if (w.inFlight && w.inFlight.length) {
+    html += `<div class="card"><div class="card-header"><div class="card-title">🔄 Currently In Flight</div></div><div class="card-body">`;
+    html += w.inFlight.map(s => `
+      <div class="shipped-item">
+        <div class="shipped-dot ${s.risk ? 'red' : 'amber'}"></div>
+        <div>
+          <div class="shipped-title">${s.title}</div>
+          ${s.note ? `<div class="shipped-meta">${s.note}</div>` : ''}
+        </div>
+        <div class="shipped-tag ${s.risk ? 'tag-bug' : 'tag-progress'}">${s.status || 'In Progress'}</div>
+      </div>`).join('');
+    html += `</div></div>`;
+  }
+
+  // Bug summary
+  if (w.bugs) {
+    const b = w.bugs;
+    html += `<div class="card"><div class="card-header"><div class="card-title">🐛 Bug Summary</div></div><div class="card-body">
+      <div class="bug-grid">
+        <div class="bug-card"><div class="bug-card-num" style="color:var(--red)">${b.newThisWeek||0}</div><div class="bug-card-lbl">New This Week</div></div>
+        <div class="bug-card"><div class="bug-card-num" style="color:var(--green)">${b.resolved||0}</div><div class="bug-card-lbl">Resolved</div></div>
+        <div class="bug-card"><div class="bug-card-num" style="color:var(--amber)">${b.open||0}</div><div class="bug-card-lbl">Open</div></div>
+        <div class="bug-card"><div class="bug-card-num" style="color:var(--text-muted)">${b.deferred||0}</div><div class="bug-card-lbl">Deferred</div></div>
+      </div>
+    </div></div>`;
+  }
+
+  // Strategic Question
+  if (w.strategicQuestion) {
+    html += `<div class="card"><div class="card-header"><div class="card-title">❓ CEO Alignment Question</div></div><div class="card-body">
+      <div class="strategy-box">
+        <div class="strategy-q">"${w.strategicQuestion}"</div>
+        ${w.strategicMeta ? `<div class="strategy-meta">${w.strategicMeta}</div>` : ''}
+      </div>
+    </div></div>`;
+  }
+
+  if (!html) {
+    html = `<div class="empty-state">
+      <div class="empty-state-icon">📋</div>
+      <div class="empty-state-title">No brief published yet</div>
+      <div class="empty-state-sub">Update data.json with a <code>currentWeek</code> key and click 🚀 Publish.</div>
+    </div>`;
+  }
+
+  wrap.innerHTML = html;
+}
+
+/* ══════════════════════════════════════════════════════════
+   DATA LOADER
+══════════════════════════════════════════════════════════ */
+function loadData() {
+  fetch('data.json?v=' + Date.now())
+    .then(r => r.json())
+    .then(data => {
+      // Last updated
+      if (data.lastUpdated) {
+        const d = new Date(data.lastUpdated);
+        document.getElementById('last-updated').textContent =
+          d.toLocaleDateString('en-US', { month:'short', day:'numeric', hour:'2-digit', minute:'2-digit' });
+      }
+      // CEO Brief
+      if (data.currentWeek) {
+        renderBrief(data.currentWeek);
+      } else {
+        // Fallback: use top-level stats + build a minimal brief
+        const fallback = {
+          stats: data.stats || {},
+          bugs: data.bugs || {},
+        };
+        renderBrief(fallback);
+      }
+    })
+    .catch(() => {
+      document.getElementById('last-updated').textContent = 'offline';
+      document.getElementById('brief-content').innerHTML = `
+        <div class="empty-state">
+          <div class="empty-state-icon">📡</div>
+          <div class="empty-state-title">data.json not found</div>
+          <div class="empty-state-sub">Publish data.json to load the brief.</div>
+        </div>`;
+    });
+}
+
+/* ══════════════════════════════════════════════════════════
+   NAVIGATION
+══════════════════════════════════════════════════════════ */
+const PAGE_META = {
+  brief:       { title:'CEO Brief',      sub:'Current week summary' },
+  history:     { title:'Changelog',      sub:'Filter by week, month, or custom range' },
+  featurebase: { title:'FeatureBase',    sub:'Voice of customer — top requests' },
+  tanner:      { title:'#Tanner-Tickets', sub:'Full backlog tracker' },
+};
+
+function navigate(page, navEl) {
+  // Pages
+  document.querySelectorAll('.page, .page-tanner').forEach(p => p.classList.remove('active'));
+  const target = document.getElementById('page-' + page);
+  if (target) target.classList.add('active');
+  // Nav items
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  if (navEl) navEl.classList.add('active');
+  // Topbar
+  const meta = PAGE_META[page] || {};
+  document.getElementById('page-title').textContent   = meta.title || page;
+  document.getElementById('page-subtitle').textContent = meta.sub || '';
+}
+
+/* ══════════════════════════════════════════════════════════
+   THEME TOGGLE
+══════════════════════════════════════════════════════════ */
+function toggleTheme() {
+  const html = document.documentElement;
+  const dark = html.getAttribute('data-theme') !== 'light';
+  html.setAttribute('data-theme', dark ? 'light' : 'dark');
+  document.getElementById('theme-btn').textContent = dark ? '🌙' : '☀️';
+  try { localStorage.setItem('dj_theme', dark ? 'light' : 'dark'); } catch {}
+}
+
+/* ══════════════════════════════════════════════════════════
+   INIT
+══════════════════════════════════════════════════════════ */
+(function init() {
+  // Restore theme
+  try {
+    const saved = localStorage.getItem('dj_theme');
+    if (saved) {
+      document.documentElement.setAttribute('data-theme', saved);
+      document.getElementById('theme-btn').textContent = saved === 'light' ? '🌙' : '☀️';
+    }
+  } catch {}
+
+  // Load remote data
+  loadData();
+
+  // Populate area dropdown
+  populateAreaDropdown();
+
+  // Initialize History tab to current week
+  const weeks = uniqueWeeks();
+  if (weeks.length) selectChip(weeks[0], 'weekly');
+})();
+</script>
+</body>
+</html>
