@@ -198,6 +198,30 @@ body {
 }
 .page-tanner.active { display: flex; flex-direction: column; }
 
+/* ── BRIEF RANGE BAR ─────────────────────────────────────── */
+.brief-range-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.brief-range-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+.brief-range-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.brief-range-hint {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
 /* ── STAT CARDS ──────────────────────────────────────────── */
 .stat-grid {
   display: grid;
@@ -676,6 +700,25 @@ body {
 
 <!-- ══ PAGE: CEO BRIEF ═══════════════════════════════════ -->
 <div class="page active" id="page-brief">
+
+  <!-- Range selector -->
+  <div class="brief-range-bar">
+    <div id="brief-week-label" class="brief-range-label"></div>
+    <div class="brief-range-right">
+      <span class="brief-range-hint">Range</span>
+      <select id="brief-range" class="area-select" title="Select date range" aria-label="Date range" onchange="setBriefRange(this.value)">
+        <option value="thisWeek">This Week</option>
+        <option value="lastWeek">Last Week</option>
+        <option value="7d">Last 7 Days</option>
+        <option value="30d">Last 30 Days</option>
+        <option value="90d">Last 90 Days</option>
+        <option value="ytd">Year to Date</option>
+        <option value="lastYear">Last Year</option>
+        <option value="allTime">All Time</option>
+      </select>
+    </div>
+  </div>
+
   <!-- Stat Cards -->
   <div class="stat-grid">
     <div class="stat-card purple">
@@ -878,7 +921,7 @@ body {
    Add new entries at the top as weeks ship.
    Fields: date (YYYY-MM-DD), title, area, type (feature|fix|ux|perf)
 ══════════════════════════════════════════════════════════ */
-const CHANGELOG = [
+const CHANGELOG_SEED = [
   // ── March 2026 ──────────────────────────────────────────
   {date:"2026-03-03", title:"Quo Integration MVP — Live for Premium Painting pilot", area:"Integrations", type:"feature"},
   {date:"2026-03-03", title:"Zapier — Salesperson field regression fixed in Proposal Accepted trigger", area:"Zapier", type:"fix"},
@@ -944,6 +987,25 @@ const CHANGELOG = [
   {date:"2025-12-12", title:"Proposal template library — 3 new templates added", area:"Proposals", type:"feature"},
   {date:"2025-12-05", title:"API rate limit headers added to all endpoints", area:"API / Integrations", type:"perf"},
 ];
+
+// Working log — starts from seed, gets extended with remote ClickUp data on load
+let ACTIVE_LOG = [...CHANGELOG_SEED];
+
+/* ══════════════════════════════════════════════════════════
+   CEO BRIEF — RANGE DROPDOWN
+══════════════════════════════════════════════════════════ */
+let loadedRanges = null;
+
+function setBriefRange(range) {
+  if (!loadedRanges?.[range]) return;
+  const r = loadedRanges[range];
+  const set = (id, v) => { const el = document.getElementById(id); if (el && v != null) el.textContent = v; };
+  set('b-features', r.stats.featuresShipped);
+  set('b-qa',       r.stats.qaPassRate);
+  set('b-inflight', r.stats.inProgress);
+  set('b-bugs',     r.stats.openBugs);
+  set('b-tasks',    r.stats.tasksClosed);
+}
 
 /* ══════════════════════════════════════════════════════════
    HISTORY STATE
@@ -1011,7 +1073,7 @@ function fmtRangePill(from, to) {
    FILTERING
 ══════════════════════════════════════════════════════════ */
 function getFiltered() {
-  return CHANGELOG.filter(e => {
+  return ACTIVE_LOG.filter(e => {
     if (histFrom && e.date < histFrom) return false;
     if (histTo   && e.date > histTo)   return false;
     if (histType !== 'all' && e.type !== histType) return false;
@@ -1021,13 +1083,13 @@ function getFiltered() {
 }
 
 function uniqueWeeks()  {
-  return [...new Set(CHANGELOG.map(e => weekStart(e.date)))].sort().reverse();
+  return [...new Set(ACTIVE_LOG.map(e => weekStart(e.date)))].sort().reverse();
 }
 function uniqueMonths() {
-  return [...new Set(CHANGELOG.map(e => monthKey(e.date)))].sort().reverse();
+  return [...new Set(ACTIVE_LOG.map(e => monthKey(e.date)))].sort().reverse();
 }
 function uniqueAreas()  {
-  return [...new Set(CHANGELOG.map(e => e.area))].sort();
+  return [...new Set(ACTIVE_LOG.map(e => e.area))].sort();
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -1197,12 +1259,15 @@ function renderTable() {
 ══════════════════════════════════════════════════════════ */
 function populateAreaDropdown() {
   const sel = document.getElementById('area-select');
+  const current = sel.value;
+  while (sel.options.length > 1) sel.remove(1); // keep "All Areas" option
   uniqueAreas().forEach(a => {
     const opt = document.createElement('option');
     opt.value = a;
     opt.textContent = a;
     sel.appendChild(opt);
   });
+  if (current && current !== 'all') sel.value = current; // preserve selection
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -1306,16 +1371,36 @@ function loadData() {
         document.getElementById('last-updated').textContent =
           d.toLocaleDateString('en-US', { month:'short', day:'numeric', hour:'2-digit', minute:'2-digit' });
       }
-      // CEO Brief
+
+      // Store ranges for the dropdown
+      if (data.ranges) {
+        loadedRanges = data.ranges;
+        // Default to thisWeek if available, else 7d
+        const defaultRange = data.ranges.thisWeek ? 'thisWeek' : '7d';
+        const sel = document.getElementById('brief-range');
+        if (sel) sel.value = defaultRange;
+        setBriefRange(defaultRange);
+      }
+
+      // CEO Brief narrative
       if (data.currentWeek) {
         renderBrief(data.currentWeek);
+        const lbl = document.getElementById('brief-week-label');
+        if (lbl && data.currentWeek.label) lbl.textContent = `Week of ${data.currentWeek.label}`;
       } else {
-        // Fallback: use top-level stats + build a minimal brief
-        const fallback = {
-          stats: data.stats || {},
-          bugs: data.bugs || {},
-        };
-        renderBrief(fallback);
+        renderBrief({ stats: data.stats || {}, bugs: data.bugs || {} });
+      }
+
+      // Merge remote changelog (all ClickUp shipped tasks) into ACTIVE_LOG
+      if (Array.isArray(data.changelog) && data.changelog.length) {
+        const seedKeys = new Set(CHANGELOG_SEED.map(e => e.date + '|' + e.title));
+        const remoteOnly = data.changelog.filter(e => !seedKeys.has(e.date + '|' + e.title));
+        ACTIVE_LOG = [...CHANGELOG_SEED, ...remoteOnly].sort((a, b) => b.date.localeCompare(a.date));
+        // Refresh History tab with full dataset
+        populateAreaDropdown();
+        const weeks = uniqueWeeks();
+        if (weeks.length && histMode === 'weekly') selectChip(weeks[0], 'weekly');
+        else renderTable();
       }
     })
     .catch(() => {
