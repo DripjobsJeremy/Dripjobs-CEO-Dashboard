@@ -554,10 +554,11 @@
     "type": "enhancement",
     "sub": "missed",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-02-27",
     "area": "Proposals",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b7z94rq",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-042",
@@ -726,12 +727,13 @@
     "title": "Production rate duplication: allow user to set quantity of copies",
     "desc": "When duplicating an area in Production Rates, let the user specify how many copies they want in one action.",
     "type": "enhancement",
-    "sub": "nicetohave",
+    "sub": "considered",
     "priority": "normal",
-    "status": "open",
+    "status": "postponed",
     "date": "2025-03-05",
     "area": "Production Rates",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b2ryrw1",
+    "notes": "Jeremy started this ticket in Nov of 2024 "
   },
   {
     "id": "T-056",
@@ -1131,22 +1133,24 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-03-20",
     "area": "Billing / Payments",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b4deec4",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-088",
     "title": "Attachments/images on mobile should expand to full-screen view",
     "desc": "Tapping an attachment on mobile should open a full-screen view with a close button.",
     "type": "enhancement",
-    "sub": "nicetohave",
+    "sub": "na",
     "priority": "high",
-    "status": "open",
+    "status": "wont-fix",
     "date": "2025-02-28",
     "area": "Mobile / Attachments",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b455x5p",
+    "resolvedNote": "No Fix Needed: library for that editor was updated and seemed to fix the freezing and enabling the picture to go full screen"
   },
   {
     "id": "T-089",
@@ -1308,11 +1312,12 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-03-03",
     "area": "Job Costing / Production Rates / Zapier",
-    "clickup": "",
-    "notes": "Owner: Jeremy + Laura C. Calendly links needed from Laura before dev handoff."
+    "clickup": "https://app.clickup.com/t/86b42cjqm",
+    "notes": "Owner: Jeremy + Laura C. Calendly links needed from Laura before dev handoff.",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-102",
