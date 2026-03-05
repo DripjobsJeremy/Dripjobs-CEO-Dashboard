@@ -117,6 +117,14 @@ body {
   font-size: 11px;
   color: var(--text-dim);
 }
+.updated-label {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-dim);
+  margin-bottom: 2px;
+}
 .updated-pill {
   display: inline-flex;
   align-items: center;
@@ -620,7 +628,10 @@ body {
   <div class="sidebar-footer">
     <div class="updated-pill">
       <div class="updated-dot"></div>
-      <span id="last-updated">Loading…</span>
+      <div>
+        <div class="updated-label">ClickUp last synced</div>
+        <span id="last-updated">Loading…</span>
+      </div>
     </div>
   </div>
 </aside>
