@@ -962,15 +962,36 @@ let ACTIVE_LOG = [...CHANGELOG_SEED];
 ══════════════════════════════════════════════════════════ */
 let loadedRanges = null;
 
+const RANGE_NEW_LABEL = {
+  today:    'New Today',
+  thisWeek: 'New This Week',
+  lastWeek: 'New Last Week',
+  '7d':     'New (7 Days)',
+  '30d':    'New (30 Days)',
+  '90d':    'New (90 Days)',
+  ytd:      'New (YTD)',
+  lastYear: 'New (Last Year)',
+  allTime:  'New (All Time)',
+};
+
 function setBriefRange(range) {
   if (!loadedRanges?.[range]) return;
   const r = loadedRanges[range];
   const set = (id, v) => { const el = document.getElementById(id); if (el && v != null) el.textContent = v; };
+  // Stat cards
   set('b-features', r.stats.featuresShipped);
   set('b-qa',       r.stats.qaPassRate);
   set('b-inflight', r.stats.inProgress);
   set('b-bugs',     r.stats.openBugs);
   set('b-tasks',    r.stats.tasksClosed);
+  // Bug summary grid
+  if (r.bugs) {
+    set('b-bug-new',      r.bugs.newThisWeek);
+    set('b-bug-resolved', r.bugs.resolved);
+    set('b-bug-open',     r.bugs.open);
+    set('b-bug-deferred', r.bugs.deferred);
+    set('b-bug-new-lbl',  RANGE_NEW_LABEL[range] || 'New This Period');
+  }
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -1254,10 +1275,10 @@ function renderBrief(w) {
     const b = w.bugs;
     html += `<div class="card"><div class="card-header"><div class="card-title">🐛 Bug Summary</div></div><div class="card-body">
       <div class="bug-grid">
-        <div class="bug-card"><div class="bug-card-num" style="color:var(--red)">${b.newThisWeek||0}</div><div class="bug-card-lbl">New This Week</div></div>
-        <div class="bug-card"><div class="bug-card-num" style="color:var(--green)">${b.resolved||0}</div><div class="bug-card-lbl">Resolved</div></div>
-        <div class="bug-card"><div class="bug-card-num" style="color:var(--amber)">${b.open||0}</div><div class="bug-card-lbl">Open</div></div>
-        <div class="bug-card"><div class="bug-card-num" style="color:var(--text-muted)">${b.deferred||0}</div><div class="bug-card-lbl">Deferred</div></div>
+        <div class="bug-card"><div class="bug-card-num" id="b-bug-new" style="color:var(--red)">${b.newThisWeek||0}</div><div class="bug-card-lbl" id="b-bug-new-lbl">New This Period</div></div>
+        <div class="bug-card"><div class="bug-card-num" id="b-bug-resolved" style="color:var(--green)">${b.resolved||0}</div><div class="bug-card-lbl">Resolved</div></div>
+        <div class="bug-card"><div class="bug-card-num" id="b-bug-open" style="color:var(--amber)">${b.open||0}</div><div class="bug-card-lbl">Open</div></div>
+        <div class="bug-card"><div class="bug-card-num" id="b-bug-deferred" style="color:var(--text-muted)">${b.deferred||0}</div><div class="bug-card-lbl">Deferred</div></div>
       </div>
     </div></div>`;
   }
