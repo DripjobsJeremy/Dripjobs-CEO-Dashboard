@@ -567,10 +567,11 @@
     "type": "enhancement",
     "sub": "missed",
     "priority": "high",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-02-27",
     "area": "API / Deals",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b4g7mk8",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-043",
