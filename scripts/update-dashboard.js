@@ -90,6 +90,7 @@ async function getListTasks(listId, extraParams = {}) {
   while (true) {
     const data = await clickup(`/list/${listId}/task`, {
       include_closed: true,
+      archived: true,
       page,
       ...extraParams,
     });
