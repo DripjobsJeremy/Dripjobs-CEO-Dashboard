@@ -693,10 +693,11 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2025-02-24",
     "area": "SMS / UI",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b3ywvvd",
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-053",
@@ -705,10 +706,10 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "high",
-    "status": "open",
+    "status": "on-hold",
     "date": "2025-02-24",
     "area": "Onboarding / Drips",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b42uzrg"
   },
   {
     "id": "T-054",
@@ -1160,10 +1161,11 @@
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "open",
+    "status": "planned-v2",
     "date": "2025-02-27",
     "area": "Notifications / Settings",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b45huah",
+    "resolvedNote": "Planned for V2"
   },
   {
     "id": "T-090",
