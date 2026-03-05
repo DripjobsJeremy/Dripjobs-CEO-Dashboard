@@ -1,125 +1,125 @@
 {
-  "lastUpdated": "2026-03-04T14:56:36.099Z",
+  "lastUpdated": "2026-03-05T12:15:47.217Z",
   "stats": {
-    "featuresShipped": 11,
+    "featuresShipped": 15,
     "qaPassRate": 100,
-    "inProgress": 6,
-    "openBugs": 21,
-    "tasksClosed": 11
+    "inProgress": 0,
+    "openBugs": 22,
+    "tasksClosed": 15
   },
   "bugs": {
-    "newThisWeek": 10,
+    "newThisWeek": 11,
     "resolved": 0,
-    "open": 21,
+    "open": 22,
     "deferred": 0
   },
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 0,
+        "featuresShipped": 11,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 21,
-        "tasksClosed": 0
+        "inProgress": 0,
+        "openBugs": 22,
+        "tasksClosed": 11
       },
       "bugs": {
-        "newThisWeek": 7,
+        "newThisWeek": 4,
         "resolved": 0,
-        "open": 21,
+        "open": 22,
         "deferred": 0
       }
     },
     "7d": {
       "stats": {
-        "featuresShipped": 11,
+        "featuresShipped": 15,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 21,
-        "tasksClosed": 11
+        "inProgress": 0,
+        "openBugs": 22,
+        "tasksClosed": 15
       },
       "bugs": {
-        "newThisWeek": 10,
+        "newThisWeek": 11,
         "resolved": 0,
-        "open": 21,
+        "open": 22,
         "deferred": 0
       }
     },
     "30d": {
       "stats": {
-        "featuresShipped": 57,
+        "featuresShipped": 66,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 21,
-        "tasksClosed": 57
+        "inProgress": 0,
+        "openBugs": 22,
+        "tasksClosed": 66
       },
       "bugs": {
-        "newThisWeek": 16,
+        "newThisWeek": 17,
         "resolved": 0,
-        "open": 21,
+        "open": 22,
         "deferred": 0
       }
     },
     "90d": {
       "stats": {
-        "featuresShipped": 177,
+        "featuresShipped": 185,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 21,
-        "tasksClosed": 177
+        "inProgress": 0,
+        "openBugs": 22,
+        "tasksClosed": 185
       },
       "bugs": {
-        "newThisWeek": 18,
+        "newThisWeek": 19,
         "resolved": 0,
-        "open": 21,
+        "open": 22,
         "deferred": 0
       }
     },
     "ytd": {
       "stats": {
-        "featuresShipped": 143,
+        "featuresShipped": 154,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 21,
-        "tasksClosed": 143
+        "inProgress": 0,
+        "openBugs": 22,
+        "tasksClosed": 154
       },
       "bugs": {
-        "newThisWeek": 17,
+        "newThisWeek": 18,
         "resolved": 0,
-        "open": 21,
+        "open": 22,
         "deferred": 0
       }
     }
   },
   "recentActivity": [
     {
-      "title": "Salesperson Field Returns Null in \"Proposal Accepted\" Zapier Trigger Payload — Regression of #86b8829d8",
+      "title": "Tenant 15117 Prime Painting & Construction - QuickBooks Time records not syncing to DripJobs",
       "status": "pushed to production",
-      "closedAt": "2026-03-02T10:11:21.929Z",
-      "url": "https://app.clickup.com/t/86b8j9165"
+      "closedAt": "2026-03-05T10:10:34.659Z",
+      "url": "https://app.clickup.com/t/86b8ektfe"
     },
     {
-      "title": "Fix Appointments Tab Modal Issues in Contact Record",
+      "title": "Fix Blast Preview Missing Images - Tenant #16194 (Blast #11663)",
       "status": "pushed to production",
-      "closedAt": "2026-03-02T10:11:21.080Z",
-      "url": "https://app.clickup.com/t/86b8nuc8p"
+      "closedAt": "2026-03-05T10:10:34.205Z",
+      "url": "https://app.clickup.com/t/86b8ncb8h"
     },
     {
-      "title": "Allow $0 Package‑Only Proposals to Send (Move Validation to Customer Portal)",
+      "title": "#12157  - Superior Attic - Fix Zapier Lead Source Mapping",
       "status": "pushed to production",
-      "closedAt": "2026-03-02T10:11:20.523Z",
-      "url": "https://app.clickup.com/t/86b8p1j8b"
+      "closedAt": "2026-03-05T10:10:33.495Z",
+      "url": "https://app.clickup.com/t/86b8nd7du"
     },
     {
-      "title": "iOs - Dripjobs Chat - Fix  Duplicate Lightning Bolt Icon ",
+      "title": "Fix Missing Privacy Policy & Terms URLs in Twilio A2P Registration",
       "status": "pushed to production",
-      "closedAt": "2026-02-26T18:32:42.887Z",
-      "url": "https://app.clickup.com/t/86b8eh6p1"
+      "closedAt": "2026-03-05T10:10:32.991Z",
+      "url": "https://app.clickup.com/t/86b8nq3n3"
     },
     {
-      "title": "Terms and Conditions Generator Link Broken with Security Warning",
+      "title": "Invoice Displays \"Paid in Full\" When Stripe Payment Still Requires Customer Action",
       "status": "pushed to production",
-      "closedAt": "2026-02-26T10:02:49.525Z",
-      "url": "https://app.clickup.com/t/86b8128yt"
+      "closedAt": "2026-03-05T10:10:32.263Z",
+      "url": "https://app.clickup.com/t/86b8nve0r"
     }
   ]
 }
