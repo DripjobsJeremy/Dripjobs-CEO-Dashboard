@@ -1,5 +1,33 @@
 [
   {
+    "id": "T-115",
+    "title": "Dynamic time display not updating for scheduled sends",
+    "desc": "The UI shows incorrect relative time for scheduled sends - displaying 'tomorrow' when it should show 'today'. The time display needs to update dynamically based on current time.",
+    "type": "bug",
+    "sub": "na",
+    "priority": "normal",
+    "status": "open",
+    "date": "2026-03-06",
+    "area": "scheduling",
+    "source": "Slack #tanner-tickets",
+    "clickup": ""
+  },
+  {
+    "id": "T-114",
+    "title": "Package tiers description not showing in work order + whoops error",
+    "desc": "Work orders show a whoops error before acceptance and missing package descriptions after acceptance. This affects the core work order functionality.",
+    "type": "bug",
+    "sub": "na",
+    "priority": "high",
+    "status": "in-progress",
+    "date": "2026-03-06",
+    "area": "work orders",
+    "source": "Slack #tanner-tickets",
+    "clickup": "https://app.clickup.com/t/86b8t2aye",
+    "resolvedNote": "",
+    "notes": "Sent to Dev"
+  },
+  {
     "id": "T-113",
     "title": "Draft proposals visible in customer portal before being sent",
     "desc": "Customers can see draft proposals in their portal even when only one proposal has been sent. This appears to be a regression from the new customer portal rollout.",
