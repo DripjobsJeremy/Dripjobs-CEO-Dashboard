@@ -444,6 +444,48 @@ body {
 .area-select:focus { outline: none; border-color: var(--brand); }
 
 
+/* ── IN FLIGHT TABLE ─────────────────────────────────────── */
+.inflight-table { width:100%; border-collapse:collapse; font-size:13px; }
+.inflight-table thead th {
+  padding: 9px 14px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
+}
+.inflight-table tbody tr { border-bottom: 1px solid var(--border); transition: background 0.1s; }
+.inflight-table tbody tr:last-child { border-bottom: none; }
+.inflight-table tbody tr:hover { background: var(--surface-2); }
+.inflight-table td { padding: 10px 14px; vertical-align: middle; }
+.inflight-table a { color: var(--text); text-decoration: none; }
+.inflight-table a:hover { color: var(--brand-light); text-decoration: underline; }
+.due-pill {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.due-ok       { background: rgba(34,197,94,0.12);  color: var(--green); }
+.due-soon     { background: rgba(245,158,11,0.12); color: var(--amber); }
+.due-overdue  { background: rgba(239,68,68,0.15);  color: var(--red);   }
+.due-none     { background: var(--surface-3);       color: var(--text-muted); }
+.status-pill {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--surface-3);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
 /* ── HISTORY: SUMMARY BAR ────────────────────────────────── */
 .hist-summary {
   display: flex;
@@ -713,6 +755,9 @@ body {
       <div class="stat-label">Tasks Closed</div>
     </div>
   </div>
+
+  <!-- In Flight (live from ClickUp, renders from data.json.inProgress) -->
+  <div id="inflight-wrap"></div>
 
   <!-- Brief Content (renders from data.json) -->
   <div id="brief-content">
@@ -1177,7 +1222,9 @@ function renderTable() {
   const rows = sorted.map(e =>
     `<tr>
       <td class="td-date">${fmtDate(e.date)}</td>
-      <td class="td-title">${e.title}</td>
+      <td class="td-title">${e.url
+        ? `<a href="${e.url}" target="_blank" rel="noopener" style="color:inherit;text-decoration:none" onmouseover="this.style.color='var(--brand-light)'" onmouseout="this.style.color='inherit'">${e.title}</a>`
+        : e.title}</td>
       <td class="td-area">${e.area}</td>
       <td><span class="ct ct-${e.type}">${TYPE_LABELS[e.type]||e.type}</span></td>
     </tr>`
@@ -1307,6 +1354,56 @@ function renderBrief(w) {
 /* ══════════════════════════════════════════════════════════
    DATA LOADER
 ══════════════════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════════
+   IN FLIGHT: RENDER LIVE TASKS
+══════════════════════════════════════════════════════════ */
+function renderInFlight(tasks) {
+  const wrap = document.getElementById('inflight-wrap');
+  if (!wrap) return;
+  if (!tasks || tasks.length === 0) { wrap.innerHTML = ''; return; }
+
+  const today = new Date().toISOString().slice(0, 10);
+
+  function duePill(due) {
+    if (!due) return `<span class="due-pill due-none">No date</span>`;
+    const days = Math.round((new Date(due) - new Date(today)) / 86400000);
+    if (days < 0)  return `<span class="due-pill due-overdue">Overdue ${Math.abs(days)}d</span>`;
+    if (days <= 7) return `<span class="due-pill due-soon">Due in ${days}d</span>`;
+    return `<span class="due-pill due-ok">${fmtDate(due)}</span>`;
+  }
+
+  const rows = tasks.map(t => `
+    <tr>
+      <td>${t.url ? `<a href="${t.url}" target="_blank" rel="noopener">${t.title}</a>` : t.title}</td>
+      <td style="color:var(--text-muted);font-size:12px">${t.area}</td>
+      <td><span class="status-pill">${t.status}</span></td>
+      <td>${duePill(t.due)}</td>
+      ${t.assignees ? `<td style="color:var(--text-muted);font-size:12px">${t.assignees}</td>` : '<td></td>'}
+    </tr>`).join('');
+
+  wrap.innerHTML = `
+    <div class="card" style="margin-bottom:16px">
+      <div class="card-header">
+        <div class="card-title">🔄 In Flight — Live from ClickUp</div>
+        <span style="font-size:11px;color:var(--text-muted)">${tasks.length} task${tasks.length !== 1 ? 's' : ''}</span>
+      </div>
+      <div class="table-wrap">
+        <table class="inflight-table">
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th style="width:140px">Area</th>
+              <th style="width:130px">Status</th>
+              <th style="width:110px">Due</th>
+              <th style="width:120px">Assignee</th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+    </div>`;
+}
+
 function loadData() {
   fetch('data.json?v=' + Date.now())
     .then(r => r.json())
@@ -1336,6 +1433,9 @@ function loadData() {
       } else {
         renderBrief({ stats: data.stats || {}, bugs: data.bugs || {} });
       }
+
+      // In Flight live tasks
+      renderInFlight(data.inProgress || []);
 
       // Merge remote changelog (all ClickUp shipped tasks) into ACTIVE_LOG
       if (Array.isArray(data.changelog) && data.changelog.length) {
