@@ -170,7 +170,7 @@ async function main() {
       let type = isBug ? 'fix' : 'feature';
       if (/\b(ux|ui|design|layout|display|modal|button|icon|style)\b/.test(lower))  type = 'ux';
       if (/\b(perf|performance|speed|faster|pagination|load time|optimize)\b/.test(lower)) type = 'perf';
-      return { date, title: t.name, area: t.list?.name || 'General', type };
+      return { date, title: t.name, area: t.list?.name || 'General', type, url: t.url || null };
     });
 
   // ── Recent activity (last 5 completed tasks across both lists) ─────────────
@@ -185,6 +185,25 @@ async function main() {
       url: t.url,
     }));
 
+  // ── In-progress tasks: live snapshot for the In Flight view ────────────────
+  const isInProgressTask = t => IN_PROGRESS_STATUSES.includes(t.status?.status?.toLowerCase().trim());
+  const inProgress = allFeatureTasks
+    .filter(isInProgressTask)
+    .map(t => ({
+      title:    t.name,
+      area:     t.list?.name || 'General',
+      status:   t.status?.status || '',
+      url:      t.url || null,
+      due:      t.due_date ? new Date(Number(t.due_date)).toISOString().slice(0, 10) : null,
+      assignees: (t.assignees || []).map(a => a.username || a.email || '').filter(Boolean).join(', ') || null,
+    }))
+    .sort((a, b) => {
+      if (!a.due && !b.due) return 0;
+      if (!a.due) return 1;
+      if (!b.due) return -1;
+      return a.due.localeCompare(b.due);
+    });
+
   const data = {
     lastUpdated: new Date().toISOString(),
     // Default (7d) stats at the top level for backwards compatibility
@@ -194,6 +213,8 @@ async function main() {
     ranges,
     // Full changelog — all shipped tasks, used by custom date range search
     changelog,
+    // Live in-progress tasks for the In Flight view
+    inProgress,
     recentActivity: recent,
   };
 
