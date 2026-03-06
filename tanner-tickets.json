@@ -6,11 +6,12 @@
     "type": "bug",
     "sub": "na",
     "priority": "normal",
-    "status": "open",
+    "status": "in-progress",
     "date": "2026-03-06",
     "area": "scheduling",
     "source": "Slack #tanner-tickets",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b8t2h7a",
+    "notes": "Sent to Dev"
   },
   {
     "id": "T-114",
