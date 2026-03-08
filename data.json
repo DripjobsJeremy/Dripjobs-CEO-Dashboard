@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-07T12:10:13.541Z",
+  "lastUpdated": "2026-03-08T12:10:32.790Z",
   "stats": {
     "featuresShipped": 14,
     "qaPassRate": 100,
@@ -23,7 +23,7 @@
         "tasksClosed": 0
       },
       "bugs": {
-        "newThisWeek": 3,
+        "newThisWeek": 0,
         "resolved": 0,
         "open": 25,
         "deferred": 0
@@ -76,11 +76,11 @@
     },
     "30d": {
       "stats": {
-        "featuresShipped": 64,
+        "featuresShipped": 61,
         "qaPassRate": 100,
         "inProgress": 5,
         "openBugs": 25,
-        "tasksClosed": 64
+        "tasksClosed": 61
       },
       "bugs": {
         "newThisWeek": 20,
