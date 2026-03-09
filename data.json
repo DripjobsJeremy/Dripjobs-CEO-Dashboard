@@ -1,156 +1,191 @@
 {
-  "lastUpdated": "2026-03-08T12:10:32.790Z",
+  "lastUpdated": "2026-03-09T12:15:04.644Z",
   "stats": {
-    "featuresShipped": 14,
+    "featuresShipped": 16,
     "qaPassRate": 100,
-    "inProgress": 5,
-    "openBugs": 25,
-    "tasksClosed": 14
+    "inProgress": 4,
+    "openBugs": 22,
+    "tasksClosed": 16
   },
   "bugs": {
-    "newThisWeek": 13,
+    "newThisWeek": 11,
     "resolved": 0,
-    "open": 25,
+    "open": 22,
     "deferred": 0
   },
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 0,
+        "featuresShipped": 5,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 25,
-        "tasksClosed": 0
+        "inProgress": 4,
+        "openBugs": 22,
+        "tasksClosed": 5
       },
       "bugs": {
         "newThisWeek": 0,
         "resolved": 0,
-        "open": 25,
+        "open": 22,
         "deferred": 0
       }
     },
     "thisWeek": {
       "stats": {
-        "featuresShipped": 14,
+        "featuresShipped": 5,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 25,
-        "tasksClosed": 14
+        "inProgress": 4,
+        "openBugs": 22,
+        "tasksClosed": 5
       },
       "bugs": {
-        "newThisWeek": 13,
+        "newThisWeek": 0,
         "resolved": 0,
-        "open": 25,
+        "open": 22,
         "deferred": 0
       }
     },
     "lastWeek": {
       "stats": {
-        "featuresShipped": 35,
+        "featuresShipped": 19,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 25,
-        "tasksClosed": 21
+        "inProgress": 4,
+        "openBugs": 22,
+        "tasksClosed": 14
       },
       "bugs": {
-        "newThisWeek": 3,
+        "newThisWeek": 11,
         "resolved": 0,
-        "open": 25,
+        "open": 22,
         "deferred": 0
       }
     },
     "7d": {
       "stats": {
-        "featuresShipped": 14,
+        "featuresShipped": 16,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 25,
-        "tasksClosed": 14
+        "inProgress": 4,
+        "openBugs": 22,
+        "tasksClosed": 16
       },
       "bugs": {
-        "newThisWeek": 13,
+        "newThisWeek": 11,
         "resolved": 0,
-        "open": 25,
+        "open": 22,
         "deferred": 0
       }
     },
     "30d": {
       "stats": {
-        "featuresShipped": 61,
+        "featuresShipped": 66,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 25,
-        "tasksClosed": 61
+        "inProgress": 4,
+        "openBugs": 22,
+        "tasksClosed": 66
       },
       "bugs": {
-        "newThisWeek": 20,
+        "newThisWeek": 17,
         "resolved": 0,
-        "open": 25,
+        "open": 22,
         "deferred": 0
       }
     },
     "90d": {
       "stats": {
-        "featuresShipped": 185,
+        "featuresShipped": 189,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 25,
-        "tasksClosed": 185
+        "inProgress": 4,
+        "openBugs": 22,
+        "tasksClosed": 189
       },
       "bugs": {
-        "newThisWeek": 23,
+        "newThisWeek": 20,
         "resolved": 0,
-        "open": 25,
+        "open": 22,
         "deferred": 0
       }
     },
     "ytd": {
       "stats": {
-        "featuresShipped": 154,
+        "featuresShipped": 159,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 25,
-        "tasksClosed": 154
+        "inProgress": 4,
+        "openBugs": 22,
+        "tasksClosed": 159
       },
       "bugs": {
-        "newThisWeek": 22,
+        "newThisWeek": 19,
         "resolved": 0,
-        "open": 25,
+        "open": 22,
         "deferred": 0
       }
     },
     "lastYear": {
       "stats": {
-        "featuresShipped": 794,
+        "featuresShipped": 799,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 25,
+        "inProgress": 4,
+        "openBugs": 22,
         "tasksClosed": 643
       },
       "bugs": {
         "newThisWeek": 8,
         "resolved": 3,
-        "open": 25,
+        "open": 22,
         "deferred": 0
       }
     },
     "allTime": {
       "stats": {
-        "featuresShipped": 1129,
+        "featuresShipped": 1134,
         "qaPassRate": 99,
-        "inProgress": 5,
-        "openBugs": 25,
-        "tasksClosed": 1296
+        "inProgress": 4,
+        "openBugs": 22,
+        "tasksClosed": 1301
       },
       "bugs": {
-        "newThisWeek": 41,
+        "newThisWeek": 38,
         "resolved": 16,
-        "open": 25,
+        "open": 22,
         "deferred": 0
       }
     }
   },
   "changelog": [
+    {
+      "date": "2026-03-09",
+      "title": "Metrics - Proposals Sent  Fallback Warning for Proposal Sent ",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8gv5d9"
+    },
+    {
+      "date": "2026-03-09",
+      "title": "Discount Description Not Displayed to Customer in Proposal / Customer Portal View",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8qpdxu"
+    },
+    {
+      "date": "2026-03-09",
+      "title": "Fix Proposal Archive Wrongly Completing Deals Instead of Cancelling/Archiving",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8qu802"
+    },
+    {
+      "date": "2026-03-09",
+      "title": "Fix False \"$0 total\" Error Blocking Proposal Acceptance",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8r4thp"
+    },
+    {
+      "date": "2026-03-09",
+      "title": "Metrics - Fix Interior/Exterior Sales By Production Rates Missing Change Order Areas",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8rg332"
+    },
     {
       "date": "2026-03-05",
       "title": "Tenant 15117 Prime Painting & Construction - QuickBooks Time records not syncing to DripJobs",
@@ -8057,76 +8092,68 @@
   ],
   "inProgress": [
     {
-      "title": "Metrics - Fix Interior/Exterior Sales By Production Rates Missing Change Order Areas",
+      "title": "Dripjobs APP - In‑App Browser Schemas for New Onboarding Process",
       "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b8rg332",
+      "status": "testing complete",
+      "url": "https://app.clickup.com/t/86b8td5df",
       "due": null,
-      "assignees": "ali raza, Michael Adeoye"
+      "assignees": "Zee, Michael Adeoye"
     },
     {
-      "title": "Fix False \"$0 total\" Error Blocking Proposal Acceptance",
+      "title": "Proposal Package Description Not Carrying Over to Work Order and Viewing Error",
       "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b8r4thp",
+      "status": "testing complete",
+      "url": "https://app.clickup.com/t/86b8t2aye",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
     },
     {
-      "title": "Fix Proposal Archive Wrongly Completing Deals Instead of Cancelling/Archiving",
+      "title": "Hide Draft Status Proposals from Customer Portal “My Proposals” List",
       "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b8qu802",
+      "status": "testing complete",
+      "url": "https://app.clickup.com/t/86b8rrx2c",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
     },
     {
-      "title": "Discount Description Not Displayed to Customer in Proposal / Customer Portal View",
+      "title": "13794 Shark Epoxy - Proposal Not Auto-Selected and Modal Body Not Scrollable",
       "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b8qpdxu",
+      "status": "testing complete",
+      "url": "https://app.clickup.com/t/86b8m4wjq",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Metrics - Proposals Sent  Fallback Warning for Proposal Sent ",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b8gv5d9",
-      "due": null,
-      "assignees": "ali raza, Michael Adeoye"
     }
   ],
   "recentActivity": [
     {
-      "title": "Tenant 15117 Prime Painting & Construction - QuickBooks Time records not syncing to DripJobs",
+      "title": "Metrics - Proposals Sent  Fallback Warning for Proposal Sent ",
       "status": "pushed to production",
-      "closedAt": "2026-03-05T10:10:34.659Z",
-      "url": "https://app.clickup.com/t/86b8ektfe"
+      "closedAt": "2026-03-09T09:03:53.122Z",
+      "url": "https://app.clickup.com/t/86b8gv5d9"
     },
     {
-      "title": "Fix Blast Preview Missing Images - Tenant #16194 (Blast #11663)",
+      "title": "Discount Description Not Displayed to Customer in Proposal / Customer Portal View",
       "status": "pushed to production",
-      "closedAt": "2026-03-05T10:10:34.205Z",
-      "url": "https://app.clickup.com/t/86b8ncb8h"
+      "closedAt": "2026-03-09T09:03:51.965Z",
+      "url": "https://app.clickup.com/t/86b8qpdxu"
     },
     {
-      "title": "#12157  - Superior Attic - Fix Zapier Lead Source Mapping",
+      "title": "Fix Proposal Archive Wrongly Completing Deals Instead of Cancelling/Archiving",
       "status": "pushed to production",
-      "closedAt": "2026-03-05T10:10:33.495Z",
-      "url": "https://app.clickup.com/t/86b8nd7du"
+      "closedAt": "2026-03-09T09:03:51.150Z",
+      "url": "https://app.clickup.com/t/86b8qu802"
     },
     {
-      "title": "Fix Missing Privacy Policy & Terms URLs in Twilio A2P Registration",
+      "title": "Fix False \"$0 total\" Error Blocking Proposal Acceptance",
       "status": "pushed to production",
-      "closedAt": "2026-03-05T10:10:32.991Z",
-      "url": "https://app.clickup.com/t/86b8nq3n3"
+      "closedAt": "2026-03-09T09:03:50.243Z",
+      "url": "https://app.clickup.com/t/86b8r4thp"
     },
     {
-      "title": "Invoice Displays \"Paid in Full\" When Stripe Payment Still Requires Customer Action",
+      "title": "Metrics - Fix Interior/Exterior Sales By Production Rates Missing Change Order Areas",
       "status": "pushed to production",
-      "closedAt": "2026-03-05T10:10:32.263Z",
-      "url": "https://app.clickup.com/t/86b8nve0r"
+      "closedAt": "2026-03-09T09:03:49.568Z",
+      "url": "https://app.clickup.com/t/86b8rg332"
     }
   ]
 }
