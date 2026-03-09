@@ -53,7 +53,7 @@
 <body>
 <div id="root"></div>
 <script type="text/babel">
-const { useState, useEffect, useCallback } = React;
+const { useState, useEffect, useCallback, useRef } = React;
 
 const PURPLE = "#6E63E5";
 
@@ -271,6 +271,7 @@ function TannerTracker() {
   const [ghToken, setGhToken] = useState(() => { try { return localStorage.getItem("dj_gh_token")||""; } catch { return ""; } });
   const [publishing, setPublishing] = useState(false);
   const [showTokenInput, setShowTokenInput] = useState(false);
+  const tokenPanelRef = useRef(null);
   const [dark, setDark] = useState(() => {
     if (isEmbedded) return true; // parent will override via postMessage
     try { return localStorage.getItem("dj_tt_dark") === "1"; } catch { return false; }
@@ -485,8 +486,13 @@ function TannerTracker() {
     showToast("CSV exported ✓");
   };
 
+  const showTokenPanel = () => {
+    setShowTokenInput(true);
+    setTimeout(() => { if (tokenPanelRef.current) tokenPanelRef.current.scrollIntoView({behavior:"smooth",block:"nearest"}); }, 50);
+  };
+
   const publish = async () => {
-    if (!ghToken) { setShowTokenInput(true); return; }
+    if (!ghToken) { showTokenPanel(); return; }
     setPublishing(true);
     try {
       const REPO = "DripjobsJeremy/Dripjobs-CEO-Dashboard";
@@ -504,9 +510,18 @@ function TannerTracker() {
         headers: { Authorization: `token ${ghToken}`, "Content-Type": "application/json" },
         body: JSON.stringify(body)
       });
-      if (!r.ok) throw new Error();
+      if (!r.ok) {
+        const errData = await r.json().catch(() => ({}));
+        throw new Error(errData.message || r.status);
+      }
       showToast("Published ✓ · Live on CEO Dashboard in ~60s");
-    } catch { showToast("Publish failed — check GitHub token"); }
+    } catch(e) {
+      // Clear bad token so user is prompted to enter a fresh one
+      setGhToken("");
+      try { localStorage.removeItem("dj_gh_token"); } catch {}
+      showToast("Publish failed — enter a fresh GitHub token");
+      showTokenPanel();
+    }
     finally { setPublishing(false); }
   };
 
@@ -622,7 +637,7 @@ function TannerTracker() {
 
         {/* GitHub Token Panel */}
         {showTokenInput && !isEmbedded && (
-          <div style={{background:T.surface,border:`1.5px solid #10B981`,borderRadius:12,padding:"14px 18px",marginBottom:18,display:"flex",gap:10,alignItems:"center",flexWrap:"wrap"}}>
+          <div ref={tokenPanelRef} style={{background:T.surface,border:`1.5px solid #10B981`,borderRadius:12,padding:"14px 18px",marginBottom:18,display:"flex",gap:10,alignItems:"center",flexWrap:"wrap"}}>
             <span style={{fontSize:12,fontWeight:600,color:T.text}}>🔑 GitHub token needed to publish:</span>
             <input
               type="password"
