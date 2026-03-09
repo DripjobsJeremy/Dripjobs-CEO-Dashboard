@@ -307,15 +307,7 @@ function TannerTracker() {
       .catch(() => setTicketsRaw([...INITIAL_SEED]));
 
   useEffect(() => {
-    if (isEmbedded) { loadFromJSON(); return; }
-    try {
-      const sv = localStorage.getItem(SK);
-      if (sv) {
-        const parsed = JSON.parse(sv);
-        if (parsed.length < 110) { setTickets([...INITIAL_SEED]); }
-        else { setTicketsRaw(parsed); }
-      } else { setTickets([...INITIAL_SEED]); }
-    } catch { setTickets([...INITIAL_SEED]); }
+    loadFromJSON();
   }, []);
 
   const showToast = msg => {
