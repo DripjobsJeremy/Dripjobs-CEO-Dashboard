@@ -1,5 +1,18 @@
 [
   {
+    "id": "T-116",
+    "title": "AI line item description generator for proposal builder",
+    "desc": "Add AI-powered description generator for proposal line items using Claude API with custom prompting for contractor services. Include save as template functionality.",
+    "type": "enhancement",
+    "sub": "considered",
+    "priority": "high",
+    "status": "open",
+    "date": "2026-03-09",
+    "area": "proposals",
+    "source": "Slack #tanner-tickets",
+    "clickup": ""
+  },
+  {
     "id": "T-115",
     "title": "Dynamic time display not updating for scheduled sends",
     "desc": "The UI shows incorrect relative time for scheduled sends - displaying 'tomorrow' when it should show 'today'. The time display needs to update dynamically based on current time.",
