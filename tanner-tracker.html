@@ -301,7 +301,7 @@ function TannerTracker() {
   }, []);
 
   const loadFromJSON = () =>
-    fetch("https://amazing-tarsier-623a15.netlify.app/tanner-tickets.json?v=" + Date.now())
+    fetch("https://raw.githubusercontent.com/DripjobsJeremy/Dripjobs-CEO-Dashboard/main/tanner-tickets.json?v=" + Date.now())
       .then(r => r.ok ? r.json() : Promise.reject())
       .then(data => { if (Array.isArray(data) && data.length > 0) setTicketsRaw(data); else setTicketsRaw([...INITIAL_SEED]); })
       .catch(() => setTicketsRaw([...INITIAL_SEED]));
