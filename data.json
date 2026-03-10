@@ -1,156 +1,177 @@
 {
-  "lastUpdated": "2026-03-09T12:15:04.644Z",
+  "lastUpdated": "2026-03-10T12:15:03.143Z",
   "stats": {
-    "featuresShipped": 16,
+    "featuresShipped": 19,
     "qaPassRate": 100,
-    "inProgress": 4,
-    "openBugs": 22,
-    "tasksClosed": 16
+    "inProgress": 3,
+    "openBugs": 25,
+    "tasksClosed": 19
   },
   "bugs": {
-    "newThisWeek": 11,
+    "newThisWeek": 12,
     "resolved": 0,
-    "open": 22,
+    "open": 25,
     "deferred": 0
   },
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 5,
+        "featuresShipped": 3,
         "qaPassRate": 100,
-        "inProgress": 4,
-        "openBugs": 22,
-        "tasksClosed": 5
+        "inProgress": 3,
+        "openBugs": 25,
+        "tasksClosed": 3
       },
       "bugs": {
-        "newThisWeek": 0,
+        "newThisWeek": 2,
         "resolved": 0,
-        "open": 22,
+        "open": 25,
         "deferred": 0
       }
     },
     "thisWeek": {
       "stats": {
-        "featuresShipped": 5,
+        "featuresShipped": 8,
         "qaPassRate": 100,
-        "inProgress": 4,
-        "openBugs": 22,
-        "tasksClosed": 5
+        "inProgress": 3,
+        "openBugs": 25,
+        "tasksClosed": 8
       },
       "bugs": {
-        "newThisWeek": 0,
+        "newThisWeek": 2,
         "resolved": 0,
-        "open": 22,
+        "open": 25,
         "deferred": 0
       }
     },
     "lastWeek": {
       "stats": {
-        "featuresShipped": 19,
+        "featuresShipped": 22,
         "qaPassRate": 100,
-        "inProgress": 4,
-        "openBugs": 22,
+        "inProgress": 3,
+        "openBugs": 25,
         "tasksClosed": 14
       },
       "bugs": {
         "newThisWeek": 11,
         "resolved": 0,
-        "open": 22,
+        "open": 25,
         "deferred": 0
       }
     },
     "7d": {
       "stats": {
-        "featuresShipped": 16,
+        "featuresShipped": 19,
         "qaPassRate": 100,
-        "inProgress": 4,
-        "openBugs": 22,
-        "tasksClosed": 16
+        "inProgress": 3,
+        "openBugs": 25,
+        "tasksClosed": 19
       },
       "bugs": {
-        "newThisWeek": 11,
+        "newThisWeek": 12,
         "resolved": 0,
-        "open": 22,
+        "open": 25,
         "deferred": 0
       }
     },
     "30d": {
       "stats": {
-        "featuresShipped": 66,
+        "featuresShipped": 69,
         "qaPassRate": 100,
-        "inProgress": 4,
-        "openBugs": 22,
-        "tasksClosed": 66
+        "inProgress": 3,
+        "openBugs": 25,
+        "tasksClosed": 69
       },
       "bugs": {
-        "newThisWeek": 17,
+        "newThisWeek": 19,
         "resolved": 0,
-        "open": 22,
+        "open": 25,
         "deferred": 0
       }
     },
     "90d": {
       "stats": {
-        "featuresShipped": 189,
+        "featuresShipped": 185,
         "qaPassRate": 100,
-        "inProgress": 4,
-        "openBugs": 22,
-        "tasksClosed": 189
+        "inProgress": 3,
+        "openBugs": 25,
+        "tasksClosed": 185
       },
       "bugs": {
-        "newThisWeek": 20,
+        "newThisWeek": 22,
         "resolved": 0,
-        "open": 22,
+        "open": 25,
         "deferred": 0
       }
     },
     "ytd": {
       "stats": {
-        "featuresShipped": 159,
+        "featuresShipped": 162,
         "qaPassRate": 100,
-        "inProgress": 4,
-        "openBugs": 22,
-        "tasksClosed": 159
+        "inProgress": 3,
+        "openBugs": 25,
+        "tasksClosed": 162
       },
       "bugs": {
-        "newThisWeek": 19,
+        "newThisWeek": 21,
         "resolved": 0,
-        "open": 22,
+        "open": 25,
         "deferred": 0
       }
     },
     "lastYear": {
       "stats": {
-        "featuresShipped": 799,
+        "featuresShipped": 802,
         "qaPassRate": 100,
-        "inProgress": 4,
-        "openBugs": 22,
+        "inProgress": 3,
+        "openBugs": 25,
         "tasksClosed": 643
       },
       "bugs": {
         "newThisWeek": 8,
         "resolved": 3,
-        "open": 22,
+        "open": 25,
         "deferred": 0
       }
     },
     "allTime": {
       "stats": {
-        "featuresShipped": 1134,
+        "featuresShipped": 1137,
         "qaPassRate": 99,
-        "inProgress": 4,
-        "openBugs": 22,
-        "tasksClosed": 1301
+        "inProgress": 3,
+        "openBugs": 25,
+        "tasksClosed": 1304
       },
       "bugs": {
-        "newThisWeek": 38,
+        "newThisWeek": 41,
         "resolved": 16,
-        "open": 22,
+        "open": 25,
         "deferred": 0
       }
     }
   },
   "changelog": [
+    {
+      "date": "2026-03-10",
+      "title": "13794 Shark Epoxy - Proposal Not Auto-Selected and Modal Body Not Scrollable",
+      "area": "Active Development",
+      "type": "ux",
+      "url": "https://app.clickup.com/t/86b8m4wjq"
+    },
+    {
+      "date": "2026-03-10",
+      "title": "Hide Draft Status Proposals from Customer Portal “My Proposals” List",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8rrx2c"
+    },
+    {
+      "date": "2026-03-10",
+      "title": "Proposal Package Description Not Carrying Over to Work Order and Viewing Error",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8t2aye"
+    },
     {
       "date": "2026-03-09",
       "title": "Metrics - Proposals Sent  Fallback Warning for Proposal Sent ",
@@ -8092,6 +8113,14 @@
   ],
   "inProgress": [
     {
+      "title": "Complimentary Ticket - Proposal Not Auto-Selected and Modal Body Not Scrollable",
+      "area": "Active Development",
+      "status": "testing complete",
+      "url": "https://app.clickup.com/t/86b8twh3u",
+      "due": null,
+      "assignees": "Terry Bennett"
+    },
+    {
       "title": "Dripjobs APP - In‑App Browser Schemas for New Onboarding Process",
       "area": "Active Development",
       "status": "testing complete",
@@ -8100,31 +8129,33 @@
       "assignees": "Zee, Michael Adeoye"
     },
     {
-      "title": "Proposal Package Description Not Carrying Over to Work Order and Viewing Error",
+      "title": "Error When Adding Optional Items to Proposal - Add Multiple Items",
       "area": "Active Development",
       "status": "testing complete",
-      "url": "https://app.clickup.com/t/86b8t2aye",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Hide Draft Status Proposals from Customer Portal “My Proposals” List",
-      "area": "Active Development",
-      "status": "testing complete",
-      "url": "https://app.clickup.com/t/86b8rrx2c",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "13794 Shark Epoxy - Proposal Not Auto-Selected and Modal Body Not Scrollable",
-      "area": "Active Development",
-      "status": "testing complete",
-      "url": "https://app.clickup.com/t/86b8m4wjq",
+      "url": "https://app.clickup.com/t/86b8pwhev",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
     }
   ],
   "recentActivity": [
+    {
+      "title": "13794 Shark Epoxy - Proposal Not Auto-Selected and Modal Body Not Scrollable",
+      "status": "pushed to production",
+      "closedAt": "2026-03-10T09:02:35.027Z",
+      "url": "https://app.clickup.com/t/86b8m4wjq"
+    },
+    {
+      "title": "Hide Draft Status Proposals from Customer Portal “My Proposals” List",
+      "status": "pushed to production",
+      "closedAt": "2026-03-10T09:02:34.443Z",
+      "url": "https://app.clickup.com/t/86b8rrx2c"
+    },
+    {
+      "title": "Proposal Package Description Not Carrying Over to Work Order and Viewing Error",
+      "status": "pushed to production",
+      "closedAt": "2026-03-10T09:02:33.636Z",
+      "url": "https://app.clickup.com/t/86b8t2aye"
+    },
     {
       "title": "Metrics - Proposals Sent  Fallback Warning for Proposal Sent ",
       "status": "pushed to production",
@@ -8136,24 +8167,6 @@
       "status": "pushed to production",
       "closedAt": "2026-03-09T09:03:51.965Z",
       "url": "https://app.clickup.com/t/86b8qpdxu"
-    },
-    {
-      "title": "Fix Proposal Archive Wrongly Completing Deals Instead of Cancelling/Archiving",
-      "status": "pushed to production",
-      "closedAt": "2026-03-09T09:03:51.150Z",
-      "url": "https://app.clickup.com/t/86b8qu802"
-    },
-    {
-      "title": "Fix False \"$0 total\" Error Blocking Proposal Acceptance",
-      "status": "pushed to production",
-      "closedAt": "2026-03-09T09:03:50.243Z",
-      "url": "https://app.clickup.com/t/86b8r4thp"
-    },
-    {
-      "title": "Metrics - Fix Interior/Exterior Sales By Production Rates Missing Change Order Areas",
-      "status": "pushed to production",
-      "closedAt": "2026-03-09T09:03:49.568Z",
-      "url": "https://app.clickup.com/t/86b8rg332"
     }
   ]
 }
