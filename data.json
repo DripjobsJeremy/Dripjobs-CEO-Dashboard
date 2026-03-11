@@ -1,31 +1,31 @@
 {
-  "lastUpdated": "2026-03-10T12:15:03.143Z",
+  "lastUpdated": "2026-03-11T12:15:28.779Z",
   "stats": {
     "featuresShipped": 19,
     "qaPassRate": 100,
-    "inProgress": 3,
-    "openBugs": 25,
+    "inProgress": 10,
+    "openBugs": 27,
     "tasksClosed": 19
   },
   "bugs": {
-    "newThisWeek": 12,
+    "newThisWeek": 11,
     "resolved": 0,
-    "open": 25,
+    "open": 27,
     "deferred": 0
   },
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 3,
+        "featuresShipped": 0,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 25,
-        "tasksClosed": 3
+        "inProgress": 10,
+        "openBugs": 27,
+        "tasksClosed": 0
       },
       "bugs": {
         "newThisWeek": 2,
         "resolved": 0,
-        "open": 25,
+        "open": 27,
         "deferred": 0
       }
     },
@@ -33,14 +33,14 @@
       "stats": {
         "featuresShipped": 8,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 25,
+        "inProgress": 10,
+        "openBugs": 27,
         "tasksClosed": 8
       },
       "bugs": {
-        "newThisWeek": 2,
+        "newThisWeek": 4,
         "resolved": 0,
-        "open": 25,
+        "open": 27,
         "deferred": 0
       }
     },
@@ -48,14 +48,14 @@
       "stats": {
         "featuresShipped": 22,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 25,
+        "inProgress": 10,
+        "openBugs": 27,
         "tasksClosed": 14
       },
       "bugs": {
         "newThisWeek": 11,
         "resolved": 0,
-        "open": 25,
+        "open": 27,
         "deferred": 0
       }
     },
@@ -63,29 +63,29 @@
       "stats": {
         "featuresShipped": 19,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 25,
+        "inProgress": 10,
+        "openBugs": 27,
         "tasksClosed": 19
       },
       "bugs": {
-        "newThisWeek": 12,
+        "newThisWeek": 11,
         "resolved": 0,
-        "open": 25,
+        "open": 27,
         "deferred": 0
       }
     },
     "30d": {
       "stats": {
-        "featuresShipped": 69,
+        "featuresShipped": 62,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 25,
-        "tasksClosed": 69
+        "inProgress": 10,
+        "openBugs": 27,
+        "tasksClosed": 62
       },
       "bugs": {
-        "newThisWeek": 19,
+        "newThisWeek": 21,
         "resolved": 0,
-        "open": 25,
+        "open": 27,
         "deferred": 0
       }
     },
@@ -93,14 +93,14 @@
       "stats": {
         "featuresShipped": 185,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 25,
+        "inProgress": 10,
+        "openBugs": 27,
         "tasksClosed": 185
       },
       "bugs": {
-        "newThisWeek": 22,
+        "newThisWeek": 24,
         "resolved": 0,
-        "open": 25,
+        "open": 27,
         "deferred": 0
       }
     },
@@ -108,14 +108,14 @@
       "stats": {
         "featuresShipped": 162,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 25,
+        "inProgress": 10,
+        "openBugs": 27,
         "tasksClosed": 162
       },
       "bugs": {
-        "newThisWeek": 21,
+        "newThisWeek": 23,
         "resolved": 0,
-        "open": 25,
+        "open": 27,
         "deferred": 0
       }
     },
@@ -123,14 +123,14 @@
       "stats": {
         "featuresShipped": 802,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 25,
+        "inProgress": 10,
+        "openBugs": 27,
         "tasksClosed": 643
       },
       "bugs": {
         "newThisWeek": 8,
         "resolved": 3,
-        "open": 25,
+        "open": 27,
         "deferred": 0
       }
     },
@@ -138,14 +138,14 @@
       "stats": {
         "featuresShipped": 1137,
         "qaPassRate": 99,
-        "inProgress": 3,
-        "openBugs": 25,
+        "inProgress": 10,
+        "openBugs": 27,
         "tasksClosed": 1304
       },
       "bugs": {
-        "newThisWeek": 41,
+        "newThisWeek": 43,
         "resolved": 16,
-        "open": 25,
+        "open": 27,
         "deferred": 0
       }
     }
@@ -8115,10 +8115,26 @@
     {
       "title": "Complimentary Ticket - Proposal Not Auto-Selected and Modal Body Not Scrollable",
       "area": "Active Development",
-      "status": "testing complete",
+      "status": "pr created",
       "url": "https://app.clickup.com/t/86b8twh3u",
       "due": null,
       "assignees": "Terry Bennett"
+    },
+    {
+      "title": "Fix -  Invoices Subtotal / Total Mismatch",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b8tu6y6",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
+      "title": "Optional Substrate Price Not Displayed in Proposal Builder — Mobile App",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b8thj74",
+      "due": null,
+      "assignees": "Terry Bennett, Jesus Rubio"
     },
     {
       "title": "Dripjobs APP - In‑App Browser Schemas for New Onboarding Process",
@@ -8129,10 +8145,50 @@
       "assignees": "Zee, Michael Adeoye"
     },
     {
-      "title": "Error When Adding Optional Items to Proposal - Add Multiple Items",
+      "title": "Unify Sales Metrics Logic - Consistent Totals Across All Sales Reports",
       "area": "Active Development",
       "status": "testing complete",
+      "url": "https://app.clickup.com/t/86b8td04g",
+      "due": null,
+      "assignees": "ali raza, Michael Adeoye"
+    },
+    {
+      "title": "Metrics - Fix “Closing Ratio by Source” Total Jobs Won Mismatch",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b8rrq2v",
+      "due": null,
+      "assignees": "ali raza, Michael Adeoye"
+    },
+    {
+      "title": "Infinite Spin When Adding New Substrate in Proposal Builder",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b8rq8k2",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
+      "title": "Users Receiving Notifications Despite Disabled Settings",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b8q62x0",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
+      "title": "Error When Adding Optional Items to Proposal - Add Multiple Items",
+      "area": "Active Development",
+      "status": "pr created",
       "url": "https://app.clickup.com/t/86b8pwhev",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
+      "title": "Replace Default DripJobs Form with Brand Website in Text Messaging Setup",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b8fur78",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
     }
