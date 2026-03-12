@@ -1,5 +1,19 @@
 [
   {
+    "id": "T-118",
+    "title": "Inconsistencies in Proposal Display Settings in Customer Portal UI",
+    "desc": "The top proposal total display feature appears to be outdated and should be hidden or removed from the interface.\n\nUpdate: \nJeremy Harrison  [8:23 AM]\nIt looks like Jason's new UI missed a couple of things. I'll get a ticket put together for these:\nAcceptance Criteria\n\nChange 'Hide Top Proposal Total' to 'Hide Bottom Proposal Total' in the customer portal settings. (This is already correct and functioning in PBuilder)\nAdd toggle for 'Hide Bottom Proposal Deposit' is added to the global settings.\nVerify that the proposal builder and customer portal settings are consistent and function as intended.",
+    "type": "enhancement",
+    "sub": "missed",
+    "priority": "normal",
+    "status": "in-progress",
+    "date": "2026-03-12",
+    "area": "proposals",
+    "source": "Slack #tanner-tickets",
+    "clickup": "https://app.clickup.com/t/86b8v1qbw",
+    "notes": "Sent to Dev"
+  },
+  {
     "id": "T-117",
     "title": "Add gutter estimating functionality for v2 release",
     "desc": "CEO requesting gutter estimating feature as must-have for v2 release. Engineering team has previous work that can be referenced.",
