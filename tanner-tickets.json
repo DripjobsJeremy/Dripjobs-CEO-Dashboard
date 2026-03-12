@@ -6,12 +6,20 @@
     "type": "bug",
     "sub": "considered",
     "priority": "high",
-    "status": "open",
+    "status": "in-progress",
     "date": "2026-03-12",
     "area": "customer portal",
     "source": "Slack #tanner-tickets",
     "clickup": "",
-    "subposts": [],
+    "subposts": [
+      {
+        "id": "SP-1773326543569",
+        "text": "This enhancement enforces a clear rule: nothing appears in the Customer Portal until it has been formally sent. This applies to both proposals and invoices, across all access points, for both the customer and the user.\n\nTo preserve the user's ability to review their work before sending, a new \"Preview as Customer\" button is introduced in the Proposal Builder for In Draft proposals. This gives users a faithful rendering of the proposal exactly as the customer will see it — without surfacing it in the live Customer Portal.\n\nOnce a proposal or invoice has been formally sent, the existing Customer View button continues to open the live portal, where the sent record is now visible to both the user and the customer.\n\nThis change is also a prerequisite for Metrics accuracy: the cohort-based Closing Ratio is anchored to Proposals Sent date. Portal visibility must enforce the sent boundary to protect that data integrity.",
+        "clickup": "https://app.clickup.com/t/86b8v2uu6",
+        "date": "2026-03-12",
+        "isNewMetric": false
+      }
+    ],
     "relatedIds": [
       "T-113"
     ]
