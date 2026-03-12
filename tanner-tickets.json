@@ -1,17 +1,31 @@
 [
   {
+    "id": "T-117",
+    "title": "Add gutter estimating functionality for v2 release",
+    "desc": "CEO requesting gutter estimating feature as must-have for v2 release. Engineering team has previous work that can be referenced.",
+    "type": "enhancement",
+    "sub": "considered",
+    "priority": "high",
+    "status": "planned-v2",
+    "date": "2026-03-12",
+    "area": "estimating",
+    "source": "Slack #tanner-tickets",
+    "clickup": "https://app.clickup.com/8633445/v/dc/87f35-13134",
+    "notes": "Consider previous roofing discussion. "
+  },
+  {
     "id": "T-116",
     "title": "AI line item description generator for proposal builder",
     "desc": "Add AI-powered description generator for proposal line items using Claude API with custom prompting for contractor services. Include save as template functionality.",
     "type": "enhancement",
     "sub": "considered",
     "priority": "high",
-    "status": "open",
+    "status": "in-progress",
     "date": "2026-03-09",
     "area": "proposals",
     "source": "Slack #tanner-tickets",
     "clickup": "https://app.clickup.com/t/86b321euz",
-    "notes": "Updating original ticket... "
+    "notes": "Sent to Dev/ Prototype Updated"
   },
   {
     "id": "T-115",
@@ -25,7 +39,7 @@
     "area": "scheduling",
     "source": "Slack #tanner-tickets",
     "clickup": "https://app.clickup.com/t/86b8t2h7a",
-    "notes": "Sent to Dev"
+    "notes": "Testing ... "
   },
   {
     "id": "T-114",
@@ -34,12 +48,12 @@
     "type": "bug",
     "sub": "na",
     "priority": "high",
-    "status": "in-progress",
+    "status": "resolved",
     "date": "2026-03-06",
     "area": "work orders",
     "source": "Slack #tanner-tickets",
     "clickup": "https://app.clickup.com/t/86b8t2aye",
-    "resolvedNote": "",
+    "resolvedNote": "Pushed to Production",
     "notes": "Sent to Dev"
   },
   {
@@ -83,7 +97,7 @@
     "area": "Packaged Pricing",
     "source": "Slack #tanner-tickets",
     "clickup": "https://app.clickup.com/t/86b8r7be9",
-    "notes": "Decision: Enhance the Duplicate Package Flow with a Modal"
+    "notes": "Prototype built/ ticket updated"
   },
   {
     "id": "T-001",
