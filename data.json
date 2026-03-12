@@ -1,156 +1,219 @@
 {
-  "lastUpdated": "2026-03-11T12:15:28.779Z",
+  "lastUpdated": "2026-03-12T12:14:08.806Z",
   "stats": {
-    "featuresShipped": 19,
+    "featuresShipped": 17,
     "qaPassRate": 100,
-    "inProgress": 10,
-    "openBugs": 27,
-    "tasksClosed": 19
+    "inProgress": 3,
+    "openBugs": 25,
+    "tasksClosed": 17
   },
   "bugs": {
-    "newThisWeek": 11,
+    "newThisWeek": 7,
     "resolved": 0,
-    "open": 27,
+    "open": 25,
     "deferred": 0
   },
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 0,
+        "featuresShipped": 9,
         "qaPassRate": 100,
-        "inProgress": 10,
-        "openBugs": 27,
-        "tasksClosed": 0
+        "inProgress": 3,
+        "openBugs": 25,
+        "tasksClosed": 9
       },
       "bugs": {
-        "newThisWeek": 2,
+        "newThisWeek": 0,
         "resolved": 0,
-        "open": 27,
+        "open": 25,
         "deferred": 0
       }
     },
     "thisWeek": {
       "stats": {
-        "featuresShipped": 8,
+        "featuresShipped": 17,
         "qaPassRate": 100,
-        "inProgress": 10,
-        "openBugs": 27,
-        "tasksClosed": 8
+        "inProgress": 3,
+        "openBugs": 25,
+        "tasksClosed": 17
       },
       "bugs": {
         "newThisWeek": 4,
         "resolved": 0,
-        "open": 27,
+        "open": 25,
         "deferred": 0
       }
     },
     "lastWeek": {
       "stats": {
-        "featuresShipped": 22,
+        "featuresShipped": 31,
         "qaPassRate": 100,
-        "inProgress": 10,
-        "openBugs": 27,
+        "inProgress": 3,
+        "openBugs": 25,
         "tasksClosed": 14
       },
       "bugs": {
-        "newThisWeek": 11,
+        "newThisWeek": 10,
         "resolved": 0,
-        "open": 27,
+        "open": 25,
         "deferred": 0
       }
     },
     "7d": {
       "stats": {
-        "featuresShipped": 19,
+        "featuresShipped": 17,
         "qaPassRate": 100,
-        "inProgress": 10,
-        "openBugs": 27,
-        "tasksClosed": 19
+        "inProgress": 3,
+        "openBugs": 25,
+        "tasksClosed": 17
       },
       "bugs": {
-        "newThisWeek": 11,
+        "newThisWeek": 7,
         "resolved": 0,
-        "open": 27,
+        "open": 25,
         "deferred": 0
       }
     },
     "30d": {
       "stats": {
-        "featuresShipped": 62,
+        "featuresShipped": 71,
         "qaPassRate": 100,
-        "inProgress": 10,
-        "openBugs": 27,
-        "tasksClosed": 62
+        "inProgress": 3,
+        "openBugs": 25,
+        "tasksClosed": 71
       },
       "bugs": {
-        "newThisWeek": 21,
+        "newThisWeek": 20,
         "resolved": 0,
-        "open": 27,
+        "open": 25,
         "deferred": 0
       }
     },
     "90d": {
       "stats": {
-        "featuresShipped": 185,
+        "featuresShipped": 193,
         "qaPassRate": 100,
-        "inProgress": 10,
-        "openBugs": 27,
-        "tasksClosed": 185
+        "inProgress": 3,
+        "openBugs": 25,
+        "tasksClosed": 193
       },
       "bugs": {
-        "newThisWeek": 24,
+        "newThisWeek": 23,
         "resolved": 0,
-        "open": 27,
+        "open": 25,
         "deferred": 0
       }
     },
     "ytd": {
       "stats": {
-        "featuresShipped": 162,
+        "featuresShipped": 171,
         "qaPassRate": 100,
-        "inProgress": 10,
-        "openBugs": 27,
-        "tasksClosed": 162
+        "inProgress": 3,
+        "openBugs": 25,
+        "tasksClosed": 171
       },
       "bugs": {
-        "newThisWeek": 23,
+        "newThisWeek": 22,
         "resolved": 0,
-        "open": 27,
+        "open": 25,
         "deferred": 0
       }
     },
     "lastYear": {
       "stats": {
-        "featuresShipped": 802,
+        "featuresShipped": 811,
         "qaPassRate": 100,
-        "inProgress": 10,
-        "openBugs": 27,
+        "inProgress": 3,
+        "openBugs": 25,
         "tasksClosed": 643
       },
       "bugs": {
         "newThisWeek": 8,
         "resolved": 3,
-        "open": 27,
+        "open": 25,
         "deferred": 0
       }
     },
     "allTime": {
       "stats": {
-        "featuresShipped": 1137,
+        "featuresShipped": 1146,
         "qaPassRate": 99,
-        "inProgress": 10,
-        "openBugs": 27,
-        "tasksClosed": 1304
+        "inProgress": 3,
+        "openBugs": 25,
+        "tasksClosed": 1313
       },
       "bugs": {
-        "newThisWeek": 43,
+        "newThisWeek": 41,
         "resolved": 16,
-        "open": 27,
+        "open": 25,
         "deferred": 0
       }
     }
   },
   "changelog": [
+    {
+      "date": "2026-03-12",
+      "title": "Replace Default DripJobs Form with Brand Website in Text Messaging Setup",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8fur78"
+    },
+    {
+      "date": "2026-03-12",
+      "title": "Error When Adding Optional Items to Proposal - Add Multiple Items",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8pwhev"
+    },
+    {
+      "date": "2026-03-12",
+      "title": "Users Receiving Notifications Despite Disabled Settings",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8q62x0"
+    },
+    {
+      "date": "2026-03-12",
+      "title": "Infinite Spin When Adding New Substrate in Proposal Builder",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8rq8k2"
+    },
+    {
+      "date": "2026-03-12",
+      "title": "Metrics - Fix “Closing Ratio by Source” Total Jobs Won Mismatch",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8rrq2v"
+    },
+    {
+      "date": "2026-03-12",
+      "title": "Unify Sales Metrics Logic - Consistent Totals Across All Sales Reports",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8td04g"
+    },
+    {
+      "date": "2026-03-12",
+      "title": "Optional Substrate Price Not Displayed in Proposal Builder — Mobile App",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8thj74"
+    },
+    {
+      "date": "2026-03-12",
+      "title": "Fix -  Invoices Subtotal / Total Mismatch",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8tu6y6"
+    },
+    {
+      "date": "2026-03-12",
+      "title": "Complimentary Ticket - Proposal Not Auto-Selected and Modal Body Not Scrollable",
+      "area": "Active Development",
+      "type": "ux",
+      "url": "https://app.clickup.com/t/86b8twh3u"
+    },
     {
       "date": "2026-03-10",
       "title": "13794 Shark Epoxy - Proposal Not Auto-Selected and Modal Body Not Scrollable",
@@ -8113,28 +8176,20 @@
   ],
   "inProgress": [
     {
-      "title": "Complimentary Ticket - Proposal Not Auto-Selected and Modal Body Not Scrollable",
+      "title": "Mobile App Welcome Screen with In-App Chargebee Checkout",
       "area": "Active Development",
-      "status": "pr created",
-      "url": "https://app.clickup.com/t/86b8twh3u",
-      "due": null,
-      "assignees": "Terry Bennett"
+      "status": "testing complete",
+      "url": "https://app.clickup.com/t/86b7z64xt",
+      "due": "2026-03-14",
+      "assignees": "Abdul Basit, Michael Adeoye"
     },
     {
-      "title": "Fix -  Invoices Subtotal / Total Mismatch",
+      "title": "Fix Void Invoice Modal Stuck Loading (Tenant 13941)",
       "area": "Active Development",
       "status": "pr created",
-      "url": "https://app.clickup.com/t/86b8tu6y6",
+      "url": "https://app.clickup.com/t/86b8ua7hu",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Optional Substrate Price Not Displayed in Proposal Builder — Mobile App",
-      "area": "Active Development",
-      "status": "pr created",
-      "url": "https://app.clickup.com/t/86b8thj74",
-      "due": null,
-      "assignees": "Terry Bennett, Jesus Rubio"
     },
     {
       "title": "Dripjobs APP - In‑App Browser Schemas for New Onboarding Process",
@@ -8143,86 +8198,38 @@
       "url": "https://app.clickup.com/t/86b8td5df",
       "due": null,
       "assignees": "Zee, Michael Adeoye"
-    },
-    {
-      "title": "Unify Sales Metrics Logic - Consistent Totals Across All Sales Reports",
-      "area": "Active Development",
-      "status": "testing complete",
-      "url": "https://app.clickup.com/t/86b8td04g",
-      "due": null,
-      "assignees": "ali raza, Michael Adeoye"
-    },
-    {
-      "title": "Metrics - Fix “Closing Ratio by Source” Total Jobs Won Mismatch",
-      "area": "Active Development",
-      "status": "pr created",
-      "url": "https://app.clickup.com/t/86b8rrq2v",
-      "due": null,
-      "assignees": "ali raza, Michael Adeoye"
-    },
-    {
-      "title": "Infinite Spin When Adding New Substrate in Proposal Builder",
-      "area": "Active Development",
-      "status": "pr created",
-      "url": "https://app.clickup.com/t/86b8rq8k2",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Users Receiving Notifications Despite Disabled Settings",
-      "area": "Active Development",
-      "status": "pr created",
-      "url": "https://app.clickup.com/t/86b8q62x0",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Error When Adding Optional Items to Proposal - Add Multiple Items",
-      "area": "Active Development",
-      "status": "pr created",
-      "url": "https://app.clickup.com/t/86b8pwhev",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Replace Default DripJobs Form with Brand Website in Text Messaging Setup",
-      "area": "Active Development",
-      "status": "pr created",
-      "url": "https://app.clickup.com/t/86b8fur78",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
     }
   ],
   "recentActivity": [
     {
-      "title": "13794 Shark Epoxy - Proposal Not Auto-Selected and Modal Body Not Scrollable",
+      "title": "Replace Default DripJobs Form with Brand Website in Text Messaging Setup",
       "status": "pushed to production",
-      "closedAt": "2026-03-10T09:02:35.027Z",
-      "url": "https://app.clickup.com/t/86b8m4wjq"
+      "closedAt": "2026-03-12T09:10:10.320Z",
+      "url": "https://app.clickup.com/t/86b8fur78"
     },
     {
-      "title": "Hide Draft Status Proposals from Customer Portal “My Proposals” List",
+      "title": "Error When Adding Optional Items to Proposal - Add Multiple Items",
       "status": "pushed to production",
-      "closedAt": "2026-03-10T09:02:34.443Z",
-      "url": "https://app.clickup.com/t/86b8rrx2c"
+      "closedAt": "2026-03-12T09:10:09.743Z",
+      "url": "https://app.clickup.com/t/86b8pwhev"
     },
     {
-      "title": "Proposal Package Description Not Carrying Over to Work Order and Viewing Error",
+      "title": "Users Receiving Notifications Despite Disabled Settings",
       "status": "pushed to production",
-      "closedAt": "2026-03-10T09:02:33.636Z",
-      "url": "https://app.clickup.com/t/86b8t2aye"
+      "closedAt": "2026-03-12T09:10:09.287Z",
+      "url": "https://app.clickup.com/t/86b8q62x0"
     },
     {
-      "title": "Metrics - Proposals Sent  Fallback Warning for Proposal Sent ",
+      "title": "Infinite Spin When Adding New Substrate in Proposal Builder",
       "status": "pushed to production",
-      "closedAt": "2026-03-09T09:03:53.122Z",
-      "url": "https://app.clickup.com/t/86b8gv5d9"
+      "closedAt": "2026-03-12T09:10:08.677Z",
+      "url": "https://app.clickup.com/t/86b8rq8k2"
     },
     {
-      "title": "Discount Description Not Displayed to Customer in Proposal / Customer Portal View",
+      "title": "Metrics - Fix “Closing Ratio by Source” Total Jobs Won Mismatch",
       "status": "pushed to production",
-      "closedAt": "2026-03-09T09:03:51.965Z",
-      "url": "https://app.clickup.com/t/86b8qpdxu"
+      "closedAt": "2026-03-12T09:10:08.166Z",
+      "url": "https://app.clickup.com/t/86b8rrq2v"
     }
   ]
 }
