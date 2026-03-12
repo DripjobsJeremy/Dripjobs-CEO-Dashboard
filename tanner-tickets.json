@@ -1,5 +1,22 @@
 [
   {
+    "id": "T-119",
+    "title": "Hide unsent proposals from customer portal view",
+    "desc": "Customers can currently see unsent proposals in the portal when they're part of the same deal. The solution is to make all proposals inaccessible in Customer View until they are sent.",
+    "type": "bug",
+    "sub": "considered",
+    "priority": "high",
+    "status": "open",
+    "date": "2026-03-12",
+    "area": "customer portal",
+    "source": "Slack #tanner-tickets",
+    "clickup": "",
+    "subposts": [],
+    "relatedIds": [
+      "T-113"
+    ]
+  },
+  {
     "id": "T-118",
     "title": "Inconsistencies in Proposal Display Settings in Customer Portal UI",
     "desc": "The top proposal total display feature appears to be outdated and should be hidden or removed from the interface.\n\nUpdate: \nJeremy Harrison  [8:23 AM]\nIt looks like Jason's new UI missed a couple of things. I'll get a ticket put together for these:\nAcceptance Criteria\n\nChange 'Hide Top Proposal Total' to 'Hide Bottom Proposal Total' in the customer portal settings. (This is already correct and functioning in PBuilder)\nAdd toggle for 'Hide Bottom Proposal Deposit' is added to the global settings.\nVerify that the proposal builder and customer portal settings are consistent and function as intended.",
