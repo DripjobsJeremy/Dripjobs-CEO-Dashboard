@@ -1,76 +1,76 @@
 {
-  "lastUpdated": "2026-03-12T12:14:08.806Z",
+  "lastUpdated": "2026-03-13T12:14:16.672Z",
   "stats": {
-    "featuresShipped": 17,
+    "featuresShipped": 18,
     "qaPassRate": 100,
-    "inProgress": 3,
-    "openBugs": 25,
-    "tasksClosed": 17
+    "inProgress": 2,
+    "openBugs": 28,
+    "tasksClosed": 18
   },
   "bugs": {
-    "newThisWeek": 7,
+    "newThisWeek": 9,
     "resolved": 0,
-    "open": 25,
+    "open": 28,
     "deferred": 0
   },
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 9,
+        "featuresShipped": 1,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 25,
-        "tasksClosed": 9
+        "inProgress": 2,
+        "openBugs": 28,
+        "tasksClosed": 1
       },
       "bugs": {
-        "newThisWeek": 0,
+        "newThisWeek": 3,
         "resolved": 0,
-        "open": 25,
+        "open": 28,
         "deferred": 0
       }
     },
     "thisWeek": {
       "stats": {
-        "featuresShipped": 17,
+        "featuresShipped": 18,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 25,
-        "tasksClosed": 17
+        "inProgress": 2,
+        "openBugs": 28,
+        "tasksClosed": 18
       },
       "bugs": {
-        "newThisWeek": 4,
+        "newThisWeek": 7,
         "resolved": 0,
-        "open": 25,
+        "open": 28,
         "deferred": 0
       }
     },
     "lastWeek": {
       "stats": {
-        "featuresShipped": 31,
+        "featuresShipped": 32,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 25,
+        "inProgress": 2,
+        "openBugs": 28,
         "tasksClosed": 14
       },
       "bugs": {
         "newThisWeek": 10,
         "resolved": 0,
-        "open": 25,
+        "open": 28,
         "deferred": 0
       }
     },
     "7d": {
       "stats": {
-        "featuresShipped": 17,
+        "featuresShipped": 18,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 25,
-        "tasksClosed": 17
+        "inProgress": 2,
+        "openBugs": 28,
+        "tasksClosed": 18
       },
       "bugs": {
-        "newThisWeek": 7,
+        "newThisWeek": 9,
         "resolved": 0,
-        "open": 25,
+        "open": 28,
         "deferred": 0
       }
     },
@@ -78,79 +78,86 @@
       "stats": {
         "featuresShipped": 71,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 25,
+        "inProgress": 2,
+        "openBugs": 28,
         "tasksClosed": 71
       },
       "bugs": {
-        "newThisWeek": 20,
+        "newThisWeek": 23,
         "resolved": 0,
-        "open": 25,
+        "open": 28,
         "deferred": 0
       }
     },
     "90d": {
       "stats": {
-        "featuresShipped": 193,
+        "featuresShipped": 194,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 25,
-        "tasksClosed": 193
+        "inProgress": 2,
+        "openBugs": 28,
+        "tasksClosed": 194
       },
       "bugs": {
-        "newThisWeek": 23,
+        "newThisWeek": 26,
         "resolved": 0,
-        "open": 25,
+        "open": 28,
         "deferred": 0
       }
     },
     "ytd": {
       "stats": {
-        "featuresShipped": 171,
+        "featuresShipped": 172,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 25,
-        "tasksClosed": 171
+        "inProgress": 2,
+        "openBugs": 28,
+        "tasksClosed": 172
       },
       "bugs": {
-        "newThisWeek": 22,
+        "newThisWeek": 25,
         "resolved": 0,
-        "open": 25,
+        "open": 28,
         "deferred": 0
       }
     },
     "lastYear": {
       "stats": {
-        "featuresShipped": 811,
+        "featuresShipped": 812,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 25,
+        "inProgress": 2,
+        "openBugs": 28,
         "tasksClosed": 643
       },
       "bugs": {
         "newThisWeek": 8,
         "resolved": 3,
-        "open": 25,
+        "open": 28,
         "deferred": 0
       }
     },
     "allTime": {
       "stats": {
-        "featuresShipped": 1146,
+        "featuresShipped": 1147,
         "qaPassRate": 99,
-        "inProgress": 3,
-        "openBugs": 25,
-        "tasksClosed": 1313
+        "inProgress": 2,
+        "openBugs": 28,
+        "tasksClosed": 1314
       },
       "bugs": {
-        "newThisWeek": 41,
+        "newThisWeek": 44,
         "resolved": 16,
-        "open": 25,
+        "open": 28,
         "deferred": 0
       }
     }
   },
   "changelog": [
+    {
+      "date": "2026-03-12",
+      "title": "Dripjobs APP - In‑App Browser Schemas for New Onboarding Process",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8td5df"
+    },
     {
       "date": "2026-03-12",
       "title": "Replace Default DripJobs Form with Brand Website in Text Messaging Setup",
@@ -8178,7 +8185,7 @@
     {
       "title": "Mobile App Welcome Screen with In-App Chargebee Checkout",
       "area": "Active Development",
-      "status": "testing complete",
+      "status": "pr created",
       "url": "https://app.clickup.com/t/86b7z64xt",
       "due": "2026-03-14",
       "assignees": "Abdul Basit, Michael Adeoye"
@@ -8190,17 +8197,15 @@
       "url": "https://app.clickup.com/t/86b8ua7hu",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Dripjobs APP - In‑App Browser Schemas for New Onboarding Process",
-      "area": "Active Development",
-      "status": "testing complete",
-      "url": "https://app.clickup.com/t/86b8td5df",
-      "due": null,
-      "assignees": "Zee, Michael Adeoye"
     }
   ],
   "recentActivity": [
+    {
+      "title": "Dripjobs APP - In‑App Browser Schemas for New Onboarding Process",
+      "status": "pushed to production",
+      "closedAt": "2026-03-12T15:03:39.998Z",
+      "url": "https://app.clickup.com/t/86b8td5df"
+    },
     {
       "title": "Replace Default DripJobs Form with Brand Website in Text Messaging Setup",
       "status": "pushed to production",
@@ -8224,12 +8229,6 @@
       "status": "pushed to production",
       "closedAt": "2026-03-12T09:10:08.677Z",
       "url": "https://app.clickup.com/t/86b8rq8k2"
-    },
-    {
-      "title": "Metrics - Fix “Closing Ratio by Source” Total Jobs Won Mismatch",
-      "status": "pushed to production",
-      "closedAt": "2026-03-12T09:10:08.166Z",
-      "url": "https://app.clickup.com/t/86b8rrq2v"
     }
   ]
 }
