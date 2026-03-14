@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-03-13T12:14:16.672Z",
+  "lastUpdated": "2026-03-14T12:10:57.525Z",
   "stats": {
-    "featuresShipped": 18,
+    "featuresShipped": 17,
     "qaPassRate": 100,
-    "inProgress": 2,
+    "inProgress": 5,
     "openBugs": 28,
-    "tasksClosed": 18
+    "tasksClosed": 17
   },
   "bugs": {
-    "newThisWeek": 9,
+    "newThisWeek": 7,
     "resolved": 0,
     "open": 28,
     "deferred": 0
@@ -16,14 +16,14 @@
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 1,
+        "featuresShipped": 0,
         "qaPassRate": 100,
-        "inProgress": 2,
+        "inProgress": 5,
         "openBugs": 28,
-        "tasksClosed": 1
+        "tasksClosed": 0
       },
       "bugs": {
-        "newThisWeek": 3,
+        "newThisWeek": 0,
         "resolved": 0,
         "open": 28,
         "deferred": 0
@@ -31,11 +31,11 @@
     },
     "thisWeek": {
       "stats": {
-        "featuresShipped": 18,
+        "featuresShipped": 17,
         "qaPassRate": 100,
-        "inProgress": 2,
+        "inProgress": 5,
         "openBugs": 28,
-        "tasksClosed": 18
+        "tasksClosed": 17
       },
       "bugs": {
         "newThisWeek": 7,
@@ -46,9 +46,9 @@
     },
     "lastWeek": {
       "stats": {
-        "featuresShipped": 32,
+        "featuresShipped": 31,
         "qaPassRate": 100,
-        "inProgress": 2,
+        "inProgress": 5,
         "openBugs": 28,
         "tasksClosed": 14
       },
@@ -61,14 +61,14 @@
     },
     "7d": {
       "stats": {
-        "featuresShipped": 18,
+        "featuresShipped": 17,
         "qaPassRate": 100,
-        "inProgress": 2,
+        "inProgress": 5,
         "openBugs": 28,
-        "tasksClosed": 18
+        "tasksClosed": 17
       },
       "bugs": {
-        "newThisWeek": 9,
+        "newThisWeek": 7,
         "resolved": 0,
         "open": 28,
         "deferred": 0
@@ -76,14 +76,14 @@
     },
     "30d": {
       "stats": {
-        "featuresShipped": 71,
+        "featuresShipped": 66,
         "qaPassRate": 100,
-        "inProgress": 2,
+        "inProgress": 5,
         "openBugs": 28,
-        "tasksClosed": 71
+        "tasksClosed": 66
       },
       "bugs": {
-        "newThisWeek": 23,
+        "newThisWeek": 21,
         "resolved": 0,
         "open": 28,
         "deferred": 0
@@ -91,11 +91,11 @@
     },
     "90d": {
       "stats": {
-        "featuresShipped": 194,
+        "featuresShipped": 193,
         "qaPassRate": 100,
-        "inProgress": 2,
+        "inProgress": 5,
         "openBugs": 28,
-        "tasksClosed": 194
+        "tasksClosed": 193
       },
       "bugs": {
         "newThisWeek": 26,
@@ -106,11 +106,11 @@
     },
     "ytd": {
       "stats": {
-        "featuresShipped": 172,
+        "featuresShipped": 171,
         "qaPassRate": 100,
-        "inProgress": 2,
+        "inProgress": 5,
         "openBugs": 28,
-        "tasksClosed": 172
+        "tasksClosed": 171
       },
       "bugs": {
         "newThisWeek": 25,
@@ -121,9 +121,9 @@
     },
     "lastYear": {
       "stats": {
-        "featuresShipped": 812,
+        "featuresShipped": 811,
         "qaPassRate": 100,
-        "inProgress": 2,
+        "inProgress": 5,
         "openBugs": 28,
         "tasksClosed": 643
       },
@@ -136,11 +136,11 @@
     },
     "allTime": {
       "stats": {
-        "featuresShipped": 1147,
+        "featuresShipped": 1146,
         "qaPassRate": 99,
-        "inProgress": 2,
+        "inProgress": 5,
         "openBugs": 28,
-        "tasksClosed": 1314
+        "tasksClosed": 1313
       },
       "bugs": {
         "newThisWeek": 44,
@@ -206,13 +206,6 @@
       "area": "Active Development",
       "type": "feature",
       "url": "https://app.clickup.com/t/86b8thj74"
-    },
-    {
-      "date": "2026-03-12",
-      "title": "Fix -  Invoices Subtotal / Total Mismatch",
-      "area": "Active Development",
-      "type": "feature",
-      "url": "https://app.clickup.com/t/86b8tu6y6"
     },
     {
       "date": "2026-03-12",
@@ -8191,10 +8184,34 @@
       "assignees": "Abdul Basit, Michael Adeoye"
     },
     {
+      "title": "Update Booking Form SMS Helper Text",
+      "area": "Active Development",
+      "status": "testing complete",
+      "url": "https://app.clickup.com/t/86b8vup04",
+      "due": null,
+      "assignees": "ali raza, Michael Adeoye"
+    },
+    {
+      "title": "Revert Changes from ClickUp Ticket #86b8tu6y6",
+      "area": "Active Development",
+      "status": "code complete",
+      "url": "https://app.clickup.com/t/86b8v40yd",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
       "title": "Fix Void Invoice Modal Stuck Loading (Tenant 13941)",
       "area": "Active Development",
       "status": "pr created",
       "url": "https://app.clickup.com/t/86b8ua7hu",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
+      "title": "Fix -  Invoices Subtotal / Total Mismatch",
+      "area": "Active Development",
+      "status": "code complete",
+      "url": "https://app.clickup.com/t/86b8tu6y6",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
     }
