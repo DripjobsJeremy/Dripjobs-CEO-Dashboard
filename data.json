@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2026-03-15T12:12:38.699Z",
+  "lastUpdated": "2026-03-16T12:20:50.129Z",
   "stats": {
-    "featuresShipped": 17,
+    "featuresShipped": 12,
     "qaPassRate": 100,
     "inProgress": 5,
     "openBugs": 28,
-    "tasksClosed": 17
+    "tasksClosed": 12
   },
   "bugs": {
     "newThisWeek": 7,
@@ -31,6 +31,21 @@
     },
     "thisWeek": {
       "stats": {
+        "featuresShipped": 0,
+        "qaPassRate": 100,
+        "inProgress": 5,
+        "openBugs": 28,
+        "tasksClosed": 0
+      },
+      "bugs": {
+        "newThisWeek": 0,
+        "resolved": 0,
+        "open": 28,
+        "deferred": 0
+      }
+    },
+    "lastWeek": {
+      "stats": {
         "featuresShipped": 17,
         "qaPassRate": 100,
         "inProgress": 5,
@@ -44,28 +59,13 @@
         "deferred": 0
       }
     },
-    "lastWeek": {
-      "stats": {
-        "featuresShipped": 31,
-        "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 28,
-        "tasksClosed": 14
-      },
-      "bugs": {
-        "newThisWeek": 10,
-        "resolved": 0,
-        "open": 28,
-        "deferred": 0
-      }
-    },
     "7d": {
       "stats": {
-        "featuresShipped": 17,
+        "featuresShipped": 12,
         "qaPassRate": 100,
         "inProgress": 5,
         "openBugs": 28,
-        "tasksClosed": 17
+        "tasksClosed": 12
       },
       "bugs": {
         "newThisWeek": 7,
