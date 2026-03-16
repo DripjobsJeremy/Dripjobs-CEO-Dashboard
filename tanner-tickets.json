@@ -1,5 +1,18 @@
 [
   {
+    "id": "T-120",
+    "title": "Event end time not syncing to Google Calendar for non-estimate events",
+    "desc": "The end time of events that are not on-site estimates is failing to update properly in Google Calendar integration.",
+    "type": "bug",
+    "sub": "na",
+    "priority": "high",
+    "status": "open",
+    "date": "2026-03-16",
+    "area": "calendar integration",
+    "source": "Slack #tanner-tickets",
+    "clickup": ""
+  },
+  {
     "id": "T-119",
     "title": "Hide unsent proposals from customer portal view",
     "desc": "Customers can currently see unsent proposals in the portal when they're part of the same deal. The solution is to make all proposals inaccessible in Customer View until they are sent.",
