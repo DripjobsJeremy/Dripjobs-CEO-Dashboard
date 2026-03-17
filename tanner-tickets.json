@@ -155,7 +155,9 @@
     "area": "Packaged Pricing",
     "source": "Slack #tanner-tickets",
     "clickup": "https://app.clickup.com/t/86b8r7be9",
-    "notes": "Prototype built/ ticket updated"
+    "notes": "Prototype built/ ticket updated. (Decisions on changes made 3/17 (J,J,& J)",
+    "subposts": [],
+    "relatedIds": []
   },
   {
     "id": "T-001",
