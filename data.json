@@ -1,156 +1,233 @@
 {
-  "lastUpdated": "2026-03-18T12:20:30.711Z",
+  "lastUpdated": "2026-03-19T12:15:34.700Z",
   "stats": {
-    "featuresShipped": 15,
+    "featuresShipped": 18,
     "qaPassRate": 100,
-    "inProgress": 6,
-    "openBugs": 25,
-    "tasksClosed": 15
+    "inProgress": 1,
+    "openBugs": 29,
+    "tasksClosed": 18
   },
   "bugs": {
-    "newThisWeek": 5,
+    "newThisWeek": 9,
     "resolved": 0,
-    "open": 25,
+    "open": 29,
     "deferred": 0
   },
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 0,
+        "featuresShipped": 11,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 25,
-        "tasksClosed": 0
+        "inProgress": 1,
+        "openBugs": 29,
+        "tasksClosed": 11
       },
       "bugs": {
-        "newThisWeek": 2,
+        "newThisWeek": 4,
         "resolved": 0,
-        "open": 25,
+        "open": 29,
         "deferred": 0
       }
     },
     "thisWeek": {
       "stats": {
-        "featuresShipped": 6,
+        "featuresShipped": 17,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 25,
-        "tasksClosed": 6
+        "inProgress": 1,
+        "openBugs": 29,
+        "tasksClosed": 17
       },
       "bugs": {
-        "newThisWeek": 2,
+        "newThisWeek": 6,
         "resolved": 0,
-        "open": 25,
+        "open": 29,
         "deferred": 0
       }
     },
     "lastWeek": {
       "stats": {
-        "featuresShipped": 23,
+        "featuresShipped": 34,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 25,
+        "inProgress": 1,
+        "openBugs": 29,
         "tasksClosed": 17
       },
       "bugs": {
         "newThisWeek": 4,
         "resolved": 0,
-        "open": 25,
+        "open": 29,
         "deferred": 0
       }
     },
     "7d": {
       "stats": {
-        "featuresShipped": 15,
+        "featuresShipped": 18,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 25,
-        "tasksClosed": 15
+        "inProgress": 1,
+        "openBugs": 29,
+        "tasksClosed": 18
       },
       "bugs": {
-        "newThisWeek": 5,
+        "newThisWeek": 9,
         "resolved": 0,
-        "open": 25,
+        "open": 29,
         "deferred": 0
       }
     },
     "30d": {
       "stats": {
-        "featuresShipped": 72,
+        "featuresShipped": 79,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 25,
-        "tasksClosed": 72
+        "inProgress": 1,
+        "openBugs": 29,
+        "tasksClosed": 79
       },
       "bugs": {
-        "newThisWeek": 19,
+        "newThisWeek": 23,
         "resolved": 0,
-        "open": 25,
+        "open": 29,
         "deferred": 0
       }
     },
     "90d": {
       "stats": {
-        "featuresShipped": 188,
+        "featuresShipped": 199,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 25,
-        "tasksClosed": 188
+        "inProgress": 1,
+        "openBugs": 29,
+        "tasksClosed": 199
       },
       "bugs": {
-        "newThisWeek": 24,
+        "newThisWeek": 28,
         "resolved": 0,
-        "open": 25,
+        "open": 29,
         "deferred": 0
       }
     },
     "ytd": {
       "stats": {
-        "featuresShipped": 177,
+        "featuresShipped": 188,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 25,
-        "tasksClosed": 177
+        "inProgress": 1,
+        "openBugs": 29,
+        "tasksClosed": 188
       },
       "bugs": {
-        "newThisWeek": 24,
+        "newThisWeek": 28,
         "resolved": 0,
-        "open": 25,
+        "open": 29,
         "deferred": 0
       }
     },
     "lastYear": {
       "stats": {
-        "featuresShipped": 817,
+        "featuresShipped": 828,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 25,
+        "inProgress": 1,
+        "openBugs": 29,
         "tasksClosed": 643
       },
       "bugs": {
         "newThisWeek": 7,
         "resolved": 3,
-        "open": 25,
+        "open": 29,
         "deferred": 0
       }
     },
     "allTime": {
       "stats": {
-        "featuresShipped": 1152,
+        "featuresShipped": 1163,
         "qaPassRate": 99,
-        "inProgress": 6,
-        "openBugs": 25,
-        "tasksClosed": 1320
+        "inProgress": 1,
+        "openBugs": 29,
+        "tasksClosed": 1331
       },
       "bugs": {
-        "newThisWeek": 42,
+        "newThisWeek": 46,
         "resolved": 17,
-        "open": 25,
+        "open": 29,
         "deferred": 0
       }
     }
   },
   "changelog": [
+    {
+      "date": "2026-03-19",
+      "title": "Make Entire Package Rectangle Clickable in Proposal Builder",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8tcyqk"
+    },
+    {
+      "date": "2026-03-19",
+      "title": "\"Recalculate Substrates\" Modal Loops and Cannot Be Dismissed — Mobile App Proposal Builder",
+      "area": "Active Development",
+      "type": "ux",
+      "url": "https://app.clickup.com/t/86b8thjbk"
+    },
+    {
+      "date": "2026-03-19",
+      "title": "Fix Optional Area Toggle Missing Despite Existing Items (Tenant 13949)",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8u4fe8"
+    },
+    {
+      "date": "2026-03-19",
+      "title": "Proposal Builder Change Order Display Issues",
+      "area": "Active Development",
+      "type": "ux",
+      "url": "https://app.clickup.com/t/86b8u5q4b"
+    },
+    {
+      "date": "2026-03-19",
+      "title": "Update \"Schedule Refresher\" Link in User Dropdown Menu",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8u9bm0"
+    },
+    {
+      "date": "2026-03-19",
+      "title": "Fix Template Creation & Access Errors - Tenant #17601",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8uurb0"
+    },
+    {
+      "date": "2026-03-19",
+      "title": "Inconsistencies in Proposal Display Settings in Customer Portal UI",
+      "area": "Active Development",
+      "type": "ux",
+      "url": "https://app.clickup.com/t/86b8v1qbw"
+    },
+    {
+      "date": "2026-03-19",
+      "title": "Fix “Whoops Error” on Deal Delete with Jobi AI Data",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8v7xyv"
+    },
+    {
+      "date": "2026-03-19",
+      "title": "Jobi AI — Description Assistant for Products & Services",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8x42m7"
+    },
+    {
+      "date": "2026-03-19",
+      "title": "Event end time not syncing to Google Calendar for non-estimate events",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8x713n"
+    },
+    {
+      "date": "2026-03-19",
+      "title": "Add Users to OBCSS Dropdown - Company Settings",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8xn9a8"
+    },
     {
       "date": "2026-03-17",
       "title": "AI-Assisted Line Item Description Generator — Proposal Builder",
@@ -8224,78 +8301,38 @@
       "url": "https://app.clickup.com/t/86b7z64xt",
       "due": "2026-03-14",
       "assignees": "Abdul Basit, Michael Adeoye"
-    },
-    {
-      "title": "Inconsistencies in Proposal Display Settings in Customer Portal UI",
-      "area": "Active Development",
-      "status": "pr created",
-      "url": "https://app.clickup.com/t/86b8v1qbw",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Fix Template Creation & Access Errors - Tenant #17601",
-      "area": "Active Development",
-      "status": "pr created",
-      "url": "https://app.clickup.com/t/86b8uurb0",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Proposal Builder Change Order Display Issues",
-      "area": "Active Development",
-      "status": "pr created",
-      "url": "https://app.clickup.com/t/86b8u5q4b",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Fix Optional Area Toggle Missing Despite Existing Items (Tenant 13949)",
-      "area": "Active Development",
-      "status": "pr created",
-      "url": "https://app.clickup.com/t/86b8u4fe8",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "\"Recalculate Substrates\" Modal Loops and Cannot Be Dismissed — Mobile App Proposal Builder",
-      "area": "Active Development",
-      "status": "pr created",
-      "url": "https://app.clickup.com/t/86b8thjbk",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
     }
   ],
   "recentActivity": [
     {
-      "title": "AI-Assisted Line Item Description Generator — Proposal Builder",
+      "title": "Make Entire Package Rectangle Clickable in Proposal Builder",
       "status": "pushed to production",
-      "closedAt": "2026-03-17T09:02:35.464Z",
-      "url": "https://app.clickup.com/t/86b321euz"
+      "closedAt": "2026-03-19T09:09:44.118Z",
+      "url": "https://app.clickup.com/t/86b8tcyqk"
     },
     {
-      "title": "Booking Forms — Add Duplicate Form Functionality",
+      "title": "\"Recalculate Substrates\" Modal Loops and Cannot Be Dismissed — Mobile App Proposal Builder",
       "status": "pushed to production",
-      "closedAt": "2026-03-17T09:02:31.614Z",
-      "url": "https://app.clickup.com/t/86b8p1uwt"
+      "closedAt": "2026-03-19T09:09:43.574Z",
+      "url": "https://app.clickup.com/t/86b8thjbk"
     },
     {
-      "title": "Fix -  Invoices Subtotal / Total Mismatch",
+      "title": "Fix Optional Area Toggle Missing Despite Existing Items (Tenant 13949)",
       "status": "pushed to production",
-      "closedAt": "2026-03-17T09:02:27.626Z",
-      "url": "https://app.clickup.com/t/86b8tu6y6"
+      "closedAt": "2026-03-19T09:09:42.918Z",
+      "url": "https://app.clickup.com/t/86b8u4fe8"
     },
     {
-      "title": "Fix Void Invoice Modal Stuck Loading (Tenant 13941)",
+      "title": "Proposal Builder Change Order Display Issues",
       "status": "pushed to production",
-      "closedAt": "2026-03-17T09:02:27.091Z",
-      "url": "https://app.clickup.com/t/86b8ua7hu"
+      "closedAt": "2026-03-19T09:09:42.258Z",
+      "url": "https://app.clickup.com/t/86b8u5q4b"
     },
     {
-      "title": "Revert Changes from ClickUp Ticket #86b8tu6y6",
+      "title": "Update \"Schedule Refresher\" Link in User Dropdown Menu",
       "status": "pushed to production",
-      "closedAt": "2026-03-17T09:02:26.587Z",
-      "url": "https://app.clickup.com/t/86b8v40yd"
+      "closedAt": "2026-03-19T09:09:41.586Z",
+      "url": "https://app.clickup.com/t/86b8u9bm0"
     }
   ]
 }
