@@ -1,5 +1,20 @@
 [
   {
+    "id": "T-121",
+    "title": "Add two entry points for bulk product changer in area header",
+    "desc": "Implement a cog icon and callout banner in the area header to make the bulk product changing feature more discoverable for contractors.",
+    "type": "enhancement",
+    "sub": "considered",
+    "priority": "normal",
+    "status": "open",
+    "date": "2026-03-19",
+    "area": "product management",
+    "source": "Slack #tanner-tickets",
+    "clickup": "https://app.clickup.com/t/86b3fm30n",
+    "subposts": [],
+    "relatedIds": []
+  },
+  {
     "id": "T-120",
     "title": "Event end time not syncing to Google Calendar for non-estimate events",
     "desc": "The end time of events that are not on-site estimates is failing to update properly in Google Calendar integration.",
