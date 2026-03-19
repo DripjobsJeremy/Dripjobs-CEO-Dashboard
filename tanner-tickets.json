@@ -1451,17 +1451,19 @@
   },
   {
     "id": "T-101",
-    "title": "In-app Calendly demo booking buttons for Job Costing, Production Rates & Zapier",
+    "title": "Schedule a Demo Button: Job Costing, Production Rates & Zapier",
     "desc": "Add a 'Book a Free Demo' button within Job Costing UI, Production Rates UI, and Zapier integration area linking to Calendly. Greenlit by Tanner; coordinated between Jeremy and Laura C. Calendly links TBD.",
     "type": "enhancement",
     "sub": "nicetohave",
     "priority": "normal",
-    "status": "resolved",
+    "status": "in-progress",
     "date": "2025-03-03",
     "area": "Job Costing / Production Rates / Zapier",
-    "clickup": "https://app.clickup.com/t/86b42cjqm",
+    "clickup": "https://app.clickup.com/t/86b8z6hv0",
     "notes": "Owner: Jeremy + Laura C. Calendly links needed from Laura before dev handoff.",
-    "resolvedNote": "Pushed to Production"
+    "resolvedNote": "",
+    "subposts": [],
+    "relatedIds": []
   },
   {
     "id": "T-102",
