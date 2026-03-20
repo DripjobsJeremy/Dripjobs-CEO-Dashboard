@@ -116,7 +116,9 @@
     "area": "scheduling",
     "source": "Slack #tanner-tickets",
     "clickup": "https://app.clickup.com/t/86b8t2h7a",
-    "notes": "Testing ... "
+    "notes": "Testing resumed after QA kick-back (3/17/26)",
+    "subposts": [],
+    "relatedIds": []
   },
   {
     "id": "T-114",
