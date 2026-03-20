@@ -6,13 +6,14 @@
     "type": "enhancement",
     "sub": "considered",
     "priority": "normal",
-    "status": "open",
+    "status": "in-progress",
     "date": "2026-03-19",
     "area": "product management",
     "source": "Slack #tanner-tickets",
     "clickup": "https://app.clickup.com/t/86b3fm30n",
     "subposts": [],
-    "relatedIds": []
+    "relatedIds": [],
+    "notes": "ticket updated/ prototype approved (3/20/26)"
   },
   {
     "id": "T-120",
