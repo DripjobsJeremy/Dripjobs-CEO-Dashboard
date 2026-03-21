@@ -1,16 +1,16 @@
 {
-  "lastUpdated": "2026-03-20T12:14:18.159Z",
+  "lastUpdated": "2026-03-21T12:10:26.284Z",
   "stats": {
     "featuresShipped": 17,
     "qaPassRate": 100,
-    "inProgress": 3,
-    "openBugs": 32,
+    "inProgress": 6,
+    "openBugs": 35,
     "tasksClosed": 17
   },
   "bugs": {
-    "newThisWeek": 8,
+    "newThisWeek": 11,
     "resolved": 0,
-    "open": 32,
+    "open": 35,
     "deferred": 0
   },
   "ranges": {
@@ -18,14 +18,14 @@
       "stats": {
         "featuresShipped": 0,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 32,
+        "inProgress": 6,
+        "openBugs": 35,
         "tasksClosed": 0
       },
       "bugs": {
-        "newThisWeek": 2,
+        "newThisWeek": 3,
         "resolved": 0,
-        "open": 32,
+        "open": 35,
         "deferred": 0
       }
     },
@@ -33,14 +33,14 @@
       "stats": {
         "featuresShipped": 17,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 32,
+        "inProgress": 6,
+        "openBugs": 35,
         "tasksClosed": 17
       },
       "bugs": {
-        "newThisWeek": 8,
+        "newThisWeek": 11,
         "resolved": 0,
-        "open": 32,
+        "open": 35,
         "deferred": 0
       }
     },
@@ -48,14 +48,14 @@
       "stats": {
         "featuresShipped": 34,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 32,
+        "inProgress": 6,
+        "openBugs": 35,
         "tasksClosed": 17
       },
       "bugs": {
         "newThisWeek": 4,
         "resolved": 0,
-        "open": 32,
+        "open": 35,
         "deferred": 0
       }
     },
@@ -63,29 +63,29 @@
       "stats": {
         "featuresShipped": 17,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 32,
+        "inProgress": 6,
+        "openBugs": 35,
         "tasksClosed": 17
       },
       "bugs": {
-        "newThisWeek": 8,
+        "newThisWeek": 11,
         "resolved": 0,
-        "open": 32,
+        "open": 35,
         "deferred": 0
       }
     },
     "30d": {
       "stats": {
-        "featuresShipped": 78,
+        "featuresShipped": 76,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 32,
-        "tasksClosed": 78
+        "inProgress": 6,
+        "openBugs": 35,
+        "tasksClosed": 76
       },
       "bugs": {
-        "newThisWeek": 25,
+        "newThisWeek": 28,
         "resolved": 0,
-        "open": 32,
+        "open": 35,
         "deferred": 0
       }
     },
@@ -93,14 +93,14 @@
       "stats": {
         "featuresShipped": 199,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 32,
+        "inProgress": 6,
+        "openBugs": 35,
         "tasksClosed": 199
       },
       "bugs": {
-        "newThisWeek": 30,
+        "newThisWeek": 33,
         "resolved": 0,
-        "open": 32,
+        "open": 35,
         "deferred": 0
       }
     },
@@ -108,14 +108,14 @@
       "stats": {
         "featuresShipped": 188,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 32,
+        "inProgress": 6,
+        "openBugs": 35,
         "tasksClosed": 188
       },
       "bugs": {
-        "newThisWeek": 30,
+        "newThisWeek": 33,
         "resolved": 0,
-        "open": 32,
+        "open": 35,
         "deferred": 0
       }
     },
@@ -123,14 +123,14 @@
       "stats": {
         "featuresShipped": 828,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 32,
+        "inProgress": 6,
+        "openBugs": 35,
         "tasksClosed": 643
       },
       "bugs": {
         "newThisWeek": 8,
         "resolved": 3,
-        "open": 32,
+        "open": 35,
         "deferred": 0
       }
     },
@@ -138,14 +138,14 @@
       "stats": {
         "featuresShipped": 1163,
         "qaPassRate": 99,
-        "inProgress": 3,
-        "openBugs": 32,
+        "inProgress": 6,
+        "openBugs": 35,
         "tasksClosed": 1331
       },
       "bugs": {
-        "newThisWeek": 49,
+        "newThisWeek": 52,
         "resolved": 17,
-        "open": 32,
+        "open": 35,
         "deferred": 0
       }
     }
@@ -8313,8 +8313,32 @@
     {
       "title": "Fix Invoice Viewed Notification Not Triggering on Scroll",
       "area": "Active Development",
-      "status": "testing complete",
+      "status": "pr created",
       "url": "https://app.clickup.com/t/86b8u3enu",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
+      "title": "Auto Compress Logo Pictures upon upload.",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b8rt189",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
+      "title": "Missing Save and Delete Buttons in Manual Invoice Creation",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b8r4cz0",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
+      "title": "Line Item Title — Prevent Inconsistent Wrapping on Mobile",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b8p20me",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
     }
