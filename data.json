@@ -1,16 +1,16 @@
 {
-  "lastUpdated": "2026-03-21T12:10:26.284Z",
+  "lastUpdated": "2026-03-22T12:11:15.839Z",
   "stats": {
     "featuresShipped": 17,
     "qaPassRate": 100,
     "inProgress": 6,
-    "openBugs": 35,
+    "openBugs": 34,
     "tasksClosed": 17
   },
   "bugs": {
-    "newThisWeek": 11,
+    "newThisWeek": 10,
     "resolved": 0,
-    "open": 35,
+    "open": 34,
     "deferred": 0
   },
   "ranges": {
@@ -19,13 +19,13 @@
         "featuresShipped": 0,
         "qaPassRate": 100,
         "inProgress": 6,
-        "openBugs": 35,
+        "openBugs": 34,
         "tasksClosed": 0
       },
       "bugs": {
-        "newThisWeek": 3,
+        "newThisWeek": 0,
         "resolved": 0,
-        "open": 35,
+        "open": 34,
         "deferred": 0
       }
     },
@@ -34,13 +34,13 @@
         "featuresShipped": 17,
         "qaPassRate": 100,
         "inProgress": 6,
-        "openBugs": 35,
+        "openBugs": 34,
         "tasksClosed": 17
       },
       "bugs": {
-        "newThisWeek": 11,
+        "newThisWeek": 10,
         "resolved": 0,
-        "open": 35,
+        "open": 34,
         "deferred": 0
       }
     },
@@ -49,13 +49,13 @@
         "featuresShipped": 34,
         "qaPassRate": 100,
         "inProgress": 6,
-        "openBugs": 35,
+        "openBugs": 34,
         "tasksClosed": 17
       },
       "bugs": {
         "newThisWeek": 4,
         "resolved": 0,
-        "open": 35,
+        "open": 34,
         "deferred": 0
       }
     },
@@ -64,28 +64,28 @@
         "featuresShipped": 17,
         "qaPassRate": 100,
         "inProgress": 6,
-        "openBugs": 35,
+        "openBugs": 34,
         "tasksClosed": 17
       },
       "bugs": {
-        "newThisWeek": 11,
+        "newThisWeek": 10,
         "resolved": 0,
-        "open": 35,
+        "open": 34,
         "deferred": 0
       }
     },
     "30d": {
       "stats": {
-        "featuresShipped": 76,
+        "featuresShipped": 75,
         "qaPassRate": 100,
         "inProgress": 6,
-        "openBugs": 35,
-        "tasksClosed": 76
+        "openBugs": 34,
+        "tasksClosed": 75
       },
       "bugs": {
-        "newThisWeek": 28,
+        "newThisWeek": 27,
         "resolved": 0,
-        "open": 35,
+        "open": 34,
         "deferred": 0
       }
     },
@@ -94,13 +94,13 @@
         "featuresShipped": 199,
         "qaPassRate": 100,
         "inProgress": 6,
-        "openBugs": 35,
+        "openBugs": 34,
         "tasksClosed": 199
       },
       "bugs": {
-        "newThisWeek": 33,
+        "newThisWeek": 32,
         "resolved": 0,
-        "open": 35,
+        "open": 34,
         "deferred": 0
       }
     },
@@ -109,13 +109,13 @@
         "featuresShipped": 188,
         "qaPassRate": 100,
         "inProgress": 6,
-        "openBugs": 35,
+        "openBugs": 34,
         "tasksClosed": 188
       },
       "bugs": {
-        "newThisWeek": 33,
+        "newThisWeek": 32,
         "resolved": 0,
-        "open": 35,
+        "open": 34,
         "deferred": 0
       }
     },
@@ -124,13 +124,13 @@
         "featuresShipped": 828,
         "qaPassRate": 100,
         "inProgress": 6,
-        "openBugs": 35,
+        "openBugs": 34,
         "tasksClosed": 643
       },
       "bugs": {
         "newThisWeek": 8,
         "resolved": 3,
-        "open": 35,
+        "open": 34,
         "deferred": 0
       }
     },
@@ -139,13 +139,13 @@
         "featuresShipped": 1163,
         "qaPassRate": 99,
         "inProgress": 6,
-        "openBugs": 35,
+        "openBugs": 34,
         "tasksClosed": 1331
       },
       "bugs": {
-        "newThisWeek": 52,
+        "newThisWeek": 51,
         "resolved": 17,
-        "open": 35,
+        "open": 34,
         "deferred": 0
       }
     }
