@@ -1,5 +1,21 @@
 [
   {
+    "id": "T-122",
+    "title": "Create DripJobs-Growth pricing plan with chat and job costing features",
+    "desc": "Add a new Growth plan tier that includes all Advanced plan features plus DripJobs chat functionality and job costing capabilities.",
+    "type": "enhancement",
+    "sub": "nicetohave",
+    "priority": "normal",
+    "status": "in-progress",
+    "date": "2026-03-23",
+    "area": "pricing",
+    "source": "Slack #tanner-tickets",
+    "clickup": "https://app.clickup.com/t/86b90vaqz",
+    "subposts": [],
+    "relatedIds": [],
+    "notes": "Open Questions (see ticket)"
+  },
+  {
     "id": "T-121",
     "title": "Add two entry points for bulk product changer in area header",
     "desc": "Implement a cog icon and callout banner in the area header to make the bulk product changing feature more discoverable for contractors.",
