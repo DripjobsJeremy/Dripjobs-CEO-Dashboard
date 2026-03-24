@@ -1,156 +1,177 @@
 {
-  "lastUpdated": "2026-03-23T12:19:17.712Z",
+  "lastUpdated": "2026-03-24T12:20:24.610Z",
   "stats": {
-    "featuresShipped": 17,
+    "featuresShipped": 14,
     "qaPassRate": 100,
-    "inProgress": 6,
-    "openBugs": 34,
-    "tasksClosed": 17
+    "inProgress": 7,
+    "openBugs": 36,
+    "tasksClosed": 14
   },
   "bugs": {
-    "newThisWeek": 10,
+    "newThisWeek": 13,
     "resolved": 0,
-    "open": 34,
+    "open": 36,
     "deferred": 0
   },
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 0,
+        "featuresShipped": 3,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 34,
-        "tasksClosed": 0
+        "inProgress": 7,
+        "openBugs": 36,
+        "tasksClosed": 3
       },
       "bugs": {
-        "newThisWeek": 0,
+        "newThisWeek": 3,
         "resolved": 0,
-        "open": 34,
+        "open": 36,
         "deferred": 0
       }
     },
     "thisWeek": {
       "stats": {
-        "featuresShipped": 0,
+        "featuresShipped": 3,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 34,
-        "tasksClosed": 0
+        "inProgress": 7,
+        "openBugs": 36,
+        "tasksClosed": 3
       },
       "bugs": {
-        "newThisWeek": 0,
+        "newThisWeek": 3,
         "resolved": 0,
-        "open": 34,
+        "open": 36,
         "deferred": 0
       }
     },
     "lastWeek": {
       "stats": {
-        "featuresShipped": 17,
+        "featuresShipped": 20,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 34,
+        "inProgress": 7,
+        "openBugs": 36,
         "tasksClosed": 17
       },
       "bugs": {
         "newThisWeek": 10,
         "resolved": 0,
-        "open": 34,
+        "open": 36,
         "deferred": 0
       }
     },
     "7d": {
       "stats": {
-        "featuresShipped": 17,
+        "featuresShipped": 14,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 34,
-        "tasksClosed": 17
+        "inProgress": 7,
+        "openBugs": 36,
+        "tasksClosed": 14
       },
       "bugs": {
-        "newThisWeek": 10,
+        "newThisWeek": 13,
         "resolved": 0,
-        "open": 34,
+        "open": 36,
         "deferred": 0
       }
     },
     "30d": {
       "stats": {
-        "featuresShipped": 69,
+        "featuresShipped": 72,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 34,
-        "tasksClosed": 69
+        "inProgress": 7,
+        "openBugs": 36,
+        "tasksClosed": 72
       },
       "bugs": {
-        "newThisWeek": 27,
+        "newThisWeek": 29,
         "resolved": 0,
-        "open": 34,
+        "open": 36,
         "deferred": 0
       }
     },
     "90d": {
       "stats": {
-        "featuresShipped": 193,
+        "featuresShipped": 196,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 34,
-        "tasksClosed": 193
+        "inProgress": 7,
+        "openBugs": 36,
+        "tasksClosed": 196
       },
       "bugs": {
-        "newThisWeek": 32,
+        "newThisWeek": 34,
         "resolved": 0,
-        "open": 34,
+        "open": 36,
         "deferred": 0
       }
     },
     "ytd": {
       "stats": {
-        "featuresShipped": 188,
+        "featuresShipped": 191,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 34,
-        "tasksClosed": 188
+        "inProgress": 7,
+        "openBugs": 36,
+        "tasksClosed": 191
       },
       "bugs": {
-        "newThisWeek": 32,
+        "newThisWeek": 34,
         "resolved": 0,
-        "open": 34,
+        "open": 36,
         "deferred": 0
       }
     },
     "lastYear": {
       "stats": {
-        "featuresShipped": 828,
+        "featuresShipped": 831,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 34,
+        "inProgress": 7,
+        "openBugs": 36,
         "tasksClosed": 643
       },
       "bugs": {
         "newThisWeek": 8,
         "resolved": 3,
-        "open": 34,
+        "open": 36,
         "deferred": 0
       }
     },
     "allTime": {
       "stats": {
-        "featuresShipped": 1163,
+        "featuresShipped": 1166,
         "qaPassRate": 99,
-        "inProgress": 6,
-        "openBugs": 34,
-        "tasksClosed": 1331
+        "inProgress": 7,
+        "openBugs": 36,
+        "tasksClosed": 1334
       },
       "bugs": {
-        "newThisWeek": 51,
+        "newThisWeek": 53,
         "resolved": 17,
-        "open": 34,
+        "open": 36,
         "deferred": 0
       }
     }
   },
   "changelog": [
+    {
+      "date": "2026-03-23",
+      "title": "Mobile App Welcome Screen with In-App Chargebee Checkout",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b7z64xt"
+    },
+    {
+      "date": "2026-03-23",
+      "title": "New Zapier Action: “Update Appointment” (Nearest Scheduled)",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8xwrma"
+    },
+    {
+      "date": "2026-03-23",
+      "title": "Remove subscription_id Param + Session Screen Logic",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b910m53"
+    },
     {
       "date": "2026-03-19",
       "title": "Make Entire Package Rectangle Clickable in Proposal Builder",
@@ -8295,26 +8316,34 @@
   ],
   "inProgress": [
     {
-      "title": "Mobile App Welcome Screen with In-App Chargebee Checkout",
+      "title": "Fix Chat Message Received Notification Not Triggering",
       "area": "Active Development",
       "status": "pr created",
-      "url": "https://app.clickup.com/t/86b7z64xt",
-      "due": "2026-03-14",
-      "assignees": "Abdul Basit, Michael Adeoye"
-    },
-    {
-      "title": "New Zapier Action: “Update Appointment” (Nearest Scheduled)",
-      "area": "Active Development",
-      "status": "code complete",
-      "url": "https://app.clickup.com/t/86b8xwrma",
+      "url": "https://app.clickup.com/t/86b8u55n1",
       "due": null,
-      "assignees": "Abdul Basit, Jesus Rubio"
+      "assignees": "Terry Bennett, Michael Adeoye"
     },
     {
       "title": "Fix Invoice Viewed Notification Not Triggering on Scroll",
       "area": "Active Development",
       "status": "pr created",
       "url": "https://app.clickup.com/t/86b8u3enu",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
+      "title": "Skip A2P Registration & Enable SMS for Canadian Customers (Account #14530)",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b8t36jh",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
+      "title": "Pipeline Deal Card — Scheduled Proposal Send Label Displays Static Date Reference Instead of Dynamic Relative Date",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b8t2h7a",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
     },
@@ -8345,6 +8374,24 @@
   ],
   "recentActivity": [
     {
+      "title": "Mobile App Welcome Screen with In-App Chargebee Checkout",
+      "status": "pushed to production",
+      "closedAt": "2026-03-23T19:33:19.653Z",
+      "url": "https://app.clickup.com/t/86b7z64xt"
+    },
+    {
+      "title": "New Zapier Action: “Update Appointment” (Nearest Scheduled)",
+      "status": "pushed to production",
+      "closedAt": "2026-03-23T19:33:18.941Z",
+      "url": "https://app.clickup.com/t/86b8xwrma"
+    },
+    {
+      "title": "Remove subscription_id Param + Session Screen Logic",
+      "status": "pushed to production",
+      "closedAt": "2026-03-23T19:33:18.066Z",
+      "url": "https://app.clickup.com/t/86b910m53"
+    },
+    {
       "title": "Make Entire Package Rectangle Clickable in Proposal Builder",
       "status": "pushed to production",
       "closedAt": "2026-03-19T09:09:44.118Z",
@@ -8355,24 +8402,6 @@
       "status": "pushed to production",
       "closedAt": "2026-03-19T09:09:43.574Z",
       "url": "https://app.clickup.com/t/86b8thjbk"
-    },
-    {
-      "title": "Fix Optional Area Toggle Missing Despite Existing Items (Tenant 13949)",
-      "status": "pushed to production",
-      "closedAt": "2026-03-19T09:09:42.918Z",
-      "url": "https://app.clickup.com/t/86b8u4fe8"
-    },
-    {
-      "title": "Proposal Builder Change Order Display Issues",
-      "status": "pushed to production",
-      "closedAt": "2026-03-19T09:09:42.258Z",
-      "url": "https://app.clickup.com/t/86b8u5q4b"
-    },
-    {
-      "title": "Update \"Schedule Refresher\" Link in User Dropdown Menu",
-      "status": "pushed to production",
-      "closedAt": "2026-03-19T09:09:41.586Z",
-      "url": "https://app.clickup.com/t/86b8u9bm0"
     }
   ]
 }
