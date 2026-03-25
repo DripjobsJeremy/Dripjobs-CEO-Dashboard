@@ -1,156 +1,219 @@
 {
-  "lastUpdated": "2026-03-24T12:20:24.610Z",
+  "lastUpdated": "2026-03-25T12:19:31.479Z",
   "stats": {
-    "featuresShipped": 14,
+    "featuresShipped": 23,
     "qaPassRate": 100,
-    "inProgress": 7,
-    "openBugs": 36,
-    "tasksClosed": 14
+    "inProgress": 3,
+    "openBugs": 38,
+    "tasksClosed": 23
   },
   "bugs": {
     "newThisWeek": 13,
     "resolved": 0,
-    "open": 36,
+    "open": 38,
     "deferred": 0
   },
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 3,
+        "featuresShipped": 9,
         "qaPassRate": 100,
-        "inProgress": 7,
-        "openBugs": 36,
-        "tasksClosed": 3
+        "inProgress": 3,
+        "openBugs": 38,
+        "tasksClosed": 9
       },
       "bugs": {
-        "newThisWeek": 3,
+        "newThisWeek": 2,
         "resolved": 0,
-        "open": 36,
+        "open": 38,
         "deferred": 0
       }
     },
     "thisWeek": {
       "stats": {
-        "featuresShipped": 3,
+        "featuresShipped": 12,
         "qaPassRate": 100,
-        "inProgress": 7,
-        "openBugs": 36,
-        "tasksClosed": 3
+        "inProgress": 3,
+        "openBugs": 38,
+        "tasksClosed": 12
       },
       "bugs": {
-        "newThisWeek": 3,
+        "newThisWeek": 5,
         "resolved": 0,
-        "open": 36,
+        "open": 38,
         "deferred": 0
       }
     },
     "lastWeek": {
       "stats": {
-        "featuresShipped": 20,
+        "featuresShipped": 29,
         "qaPassRate": 100,
-        "inProgress": 7,
-        "openBugs": 36,
+        "inProgress": 3,
+        "openBugs": 38,
         "tasksClosed": 17
       },
       "bugs": {
         "newThisWeek": 10,
         "resolved": 0,
-        "open": 36,
+        "open": 38,
         "deferred": 0
       }
     },
     "7d": {
       "stats": {
-        "featuresShipped": 14,
+        "featuresShipped": 23,
         "qaPassRate": 100,
-        "inProgress": 7,
-        "openBugs": 36,
-        "tasksClosed": 14
+        "inProgress": 3,
+        "openBugs": 38,
+        "tasksClosed": 23
       },
       "bugs": {
         "newThisWeek": 13,
         "resolved": 0,
-        "open": 36,
+        "open": 38,
         "deferred": 0
       }
     },
     "30d": {
       "stats": {
-        "featuresShipped": 72,
+        "featuresShipped": 73,
         "qaPassRate": 100,
-        "inProgress": 7,
-        "openBugs": 36,
-        "tasksClosed": 72
+        "inProgress": 3,
+        "openBugs": 38,
+        "tasksClosed": 73
       },
       "bugs": {
-        "newThisWeek": 29,
+        "newThisWeek": 31,
         "resolved": 0,
-        "open": 36,
+        "open": 38,
         "deferred": 0
       }
     },
     "90d": {
       "stats": {
-        "featuresShipped": 196,
+        "featuresShipped": 205,
         "qaPassRate": 100,
-        "inProgress": 7,
-        "openBugs": 36,
-        "tasksClosed": 196
+        "inProgress": 3,
+        "openBugs": 38,
+        "tasksClosed": 205
       },
       "bugs": {
-        "newThisWeek": 34,
+        "newThisWeek": 36,
         "resolved": 0,
-        "open": 36,
+        "open": 38,
         "deferred": 0
       }
     },
     "ytd": {
       "stats": {
-        "featuresShipped": 191,
+        "featuresShipped": 200,
         "qaPassRate": 100,
-        "inProgress": 7,
-        "openBugs": 36,
-        "tasksClosed": 191
+        "inProgress": 3,
+        "openBugs": 38,
+        "tasksClosed": 200
       },
       "bugs": {
-        "newThisWeek": 34,
+        "newThisWeek": 36,
         "resolved": 0,
-        "open": 36,
+        "open": 38,
         "deferred": 0
       }
     },
     "lastYear": {
       "stats": {
-        "featuresShipped": 831,
+        "featuresShipped": 840,
         "qaPassRate": 100,
-        "inProgress": 7,
-        "openBugs": 36,
+        "inProgress": 3,
+        "openBugs": 38,
         "tasksClosed": 643
       },
       "bugs": {
         "newThisWeek": 8,
         "resolved": 3,
-        "open": 36,
+        "open": 38,
         "deferred": 0
       }
     },
     "allTime": {
       "stats": {
-        "featuresShipped": 1166,
+        "featuresShipped": 1175,
         "qaPassRate": 99,
-        "inProgress": 7,
-        "openBugs": 36,
-        "tasksClosed": 1334
+        "inProgress": 3,
+        "openBugs": 38,
+        "tasksClosed": 1343
       },
       "bugs": {
-        "newThisWeek": 53,
+        "newThisWeek": 55,
         "resolved": 17,
-        "open": 36,
+        "open": 38,
         "deferred": 0
       }
     }
   },
   "changelog": [
+    {
+      "date": "2026-03-25",
+      "title": "Line Item Title — Prevent Inconsistent Wrapping on Mobile",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8p20me"
+    },
+    {
+      "date": "2026-03-25",
+      "title": "Missing Save and Delete Buttons in Manual Invoice Creation",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8r4cz0"
+    },
+    {
+      "date": "2026-03-25",
+      "title": "Auto Compress Logo Pictures upon upload.",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8rt189"
+    },
+    {
+      "date": "2026-03-25",
+      "title": "Pipeline Deal Card — Scheduled Proposal Send Label Displays Static Date Reference Instead of Dynamic Relative Date",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8t2h7a"
+    },
+    {
+      "date": "2026-03-25",
+      "title": "Skip A2P Registration & Enable SMS for Canadian Customers (Account #14530)",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8t36jh"
+    },
+    {
+      "date": "2026-03-25",
+      "title": "Fix Oversized Notifications Modal After Command Center Usage",
+      "area": "Active Development",
+      "type": "ux",
+      "url": "https://app.clickup.com/t/86b8u3bky"
+    },
+    {
+      "date": "2026-03-25",
+      "title": "Fix Invoice Viewed Notification Not Triggering on Scroll",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8u3enu"
+    },
+    {
+      "date": "2026-03-25",
+      "title": "Fix Chat Message Received Notification Not Triggering",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8u55n1"
+    },
+    {
+      "date": "2026-03-25",
+      "title": "TENANT #12341 Incorrect Deposit Amount on Invoice #401143",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8z5593"
+    },
     {
       "date": "2026-03-23",
       "title": "Mobile App Welcome Screen with In-App Chargebee Checkout",
@@ -8316,92 +8379,60 @@
   ],
   "inProgress": [
     {
-      "title": "Fix Chat Message Received Notification Not Triggering",
+      "title": "New Automations Menu (Zapier Embed Integration)",
+      "area": "Active Development",
+      "status": "testing complete",
+      "url": "https://app.clickup.com/t/86b91u6q4",
+      "due": null,
+      "assignees": "Ammad Islam, Jesus Rubio"
+    },
+    {
+      "title": "Fix Pipeline Time Mismatch - Shows Wrong Time (Expected 11 AM)",
       "area": "Active Development",
       "status": "pr created",
-      "url": "https://app.clickup.com/t/86b8u55n1",
+      "url": "https://app.clickup.com/t/86b91rp3w",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
     },
     {
-      "title": "Fix Invoice Viewed Notification Not Triggering on Scroll",
+      "title": "Remove “Cody” from OBCSS Dropdown in Company Settings",
       "area": "Active Development",
-      "status": "pr created",
-      "url": "https://app.clickup.com/t/86b8u3enu",
+      "status": "testing complete",
+      "url": "https://app.clickup.com/t/86b90w8xv",
       "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Skip A2P Registration & Enable SMS for Canadian Customers (Account #14530)",
-      "area": "Active Development",
-      "status": "pr created",
-      "url": "https://app.clickup.com/t/86b8t36jh",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Pipeline Deal Card — Scheduled Proposal Send Label Displays Static Date Reference Instead of Dynamic Relative Date",
-      "area": "Active Development",
-      "status": "pr created",
-      "url": "https://app.clickup.com/t/86b8t2h7a",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Auto Compress Logo Pictures upon upload.",
-      "area": "Active Development",
-      "status": "pr created",
-      "url": "https://app.clickup.com/t/86b8rt189",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Missing Save and Delete Buttons in Manual Invoice Creation",
-      "area": "Active Development",
-      "status": "pr created",
-      "url": "https://app.clickup.com/t/86b8r4cz0",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Line Item Title — Prevent Inconsistent Wrapping on Mobile",
-      "area": "Active Development",
-      "status": "pr created",
-      "url": "https://app.clickup.com/t/86b8p20me",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
+      "assignees": "ali raza, Michael Adeoye"
     }
   ],
   "recentActivity": [
     {
-      "title": "Mobile App Welcome Screen with In-App Chargebee Checkout",
+      "title": "Line Item Title — Prevent Inconsistent Wrapping on Mobile",
       "status": "pushed to production",
-      "closedAt": "2026-03-23T19:33:19.653Z",
-      "url": "https://app.clickup.com/t/86b7z64xt"
+      "closedAt": "2026-03-25T09:05:32.654Z",
+      "url": "https://app.clickup.com/t/86b8p20me"
     },
     {
-      "title": "New Zapier Action: “Update Appointment” (Nearest Scheduled)",
+      "title": "Missing Save and Delete Buttons in Manual Invoice Creation",
       "status": "pushed to production",
-      "closedAt": "2026-03-23T19:33:18.941Z",
-      "url": "https://app.clickup.com/t/86b8xwrma"
+      "closedAt": "2026-03-25T09:05:32.143Z",
+      "url": "https://app.clickup.com/t/86b8r4cz0"
     },
     {
-      "title": "Remove subscription_id Param + Session Screen Logic",
+      "title": "Auto Compress Logo Pictures upon upload.",
       "status": "pushed to production",
-      "closedAt": "2026-03-23T19:33:18.066Z",
-      "url": "https://app.clickup.com/t/86b910m53"
+      "closedAt": "2026-03-25T09:05:31.612Z",
+      "url": "https://app.clickup.com/t/86b8rt189"
     },
     {
-      "title": "Make Entire Package Rectangle Clickable in Proposal Builder",
+      "title": "Pipeline Deal Card — Scheduled Proposal Send Label Displays Static Date Reference Instead of Dynamic Relative Date",
       "status": "pushed to production",
-      "closedAt": "2026-03-19T09:09:44.118Z",
-      "url": "https://app.clickup.com/t/86b8tcyqk"
+      "closedAt": "2026-03-25T09:05:30.909Z",
+      "url": "https://app.clickup.com/t/86b8t2h7a"
     },
     {
-      "title": "\"Recalculate Substrates\" Modal Loops and Cannot Be Dismissed — Mobile App Proposal Builder",
+      "title": "Skip A2P Registration & Enable SMS for Canadian Customers (Account #14530)",
       "status": "pushed to production",
-      "closedAt": "2026-03-19T09:09:43.574Z",
-      "url": "https://app.clickup.com/t/86b8thjbk"
+      "closedAt": "2026-03-25T09:05:30.306Z",
+      "url": "https://app.clickup.com/t/86b8t36jh"
     }
   ]
 }
