@@ -128,14 +128,15 @@
     "type": "bug",
     "sub": "na",
     "priority": "normal",
-    "status": "in-progress",
+    "status": "resolved",
     "date": "2026-03-06",
     "area": "scheduling",
     "source": "Slack #tanner-tickets",
     "clickup": "https://app.clickup.com/t/86b8t2h7a",
-    "notes": "Testing resumed after QA kick-back (3/17/26)",
+    "notes": "",
     "subposts": [],
-    "relatedIds": []
+    "relatedIds": [],
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-114",
@@ -1494,7 +1495,7 @@
     "date": "2025-03-03",
     "area": "Job Costing / Production Rates / Zapier",
     "clickup": "https://app.clickup.com/t/86b8z6hv0",
-    "notes": "Ticket updated with links & design (3/20/26)",
+    "notes": "Ready for Dev (3/21/26)",
     "resolvedNote": "",
     "subposts": [],
     "relatedIds": []
