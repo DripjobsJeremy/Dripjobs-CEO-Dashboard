@@ -1,5 +1,20 @@
 [
   {
+    "id": "T-123",
+    "title": "Implement v2 gutter estimating functionality",
+    "desc": "Add gutter estimating capabilities as a must-have feature for the v2 release. This appears to be a core functionality requirement for contractor workflows.",
+    "type": "enhancement",
+    "sub": "considered",
+    "priority": "high",
+    "status": "planned-v2",
+    "date": "2026-03-11",
+    "area": "estimating",
+    "source": "Slack #tanner-tickets",
+    "clickup": "https://app.clickup.com/t/86b92y1t5",
+    "subposts": [],
+    "relatedIds": []
+  },
+  {
     "id": "T-122",
     "title": "Create DripJobs-Growth pricing plan with chat and job costing features",
     "desc": "Add a new Growth plan tier that includes all Advanced plan features plus DripJobs chat functionality and job costing capabilities.",
