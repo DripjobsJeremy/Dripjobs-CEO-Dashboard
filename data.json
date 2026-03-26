@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-03-25T12:19:31.479Z",
+  "lastUpdated": "2026-03-26T12:22:49.313Z",
   "stats": {
-    "featuresShipped": 23,
+    "featuresShipped": 15,
     "qaPassRate": 100,
-    "inProgress": 3,
+    "inProgress": 5,
     "openBugs": 38,
-    "tasksClosed": 23
+    "tasksClosed": 15
   },
   "bugs": {
-    "newThisWeek": 13,
+    "newThisWeek": 9,
     "resolved": 0,
     "open": 38,
     "deferred": 0
@@ -16,14 +16,14 @@
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 9,
+        "featuresShipped": 3,
         "qaPassRate": 100,
-        "inProgress": 3,
+        "inProgress": 5,
         "openBugs": 38,
-        "tasksClosed": 9
+        "tasksClosed": 3
       },
       "bugs": {
-        "newThisWeek": 2,
+        "newThisWeek": 3,
         "resolved": 0,
         "open": 38,
         "deferred": 0
@@ -31,11 +31,11 @@
     },
     "thisWeek": {
       "stats": {
-        "featuresShipped": 12,
+        "featuresShipped": 15,
         "qaPassRate": 100,
-        "inProgress": 3,
+        "inProgress": 5,
         "openBugs": 38,
-        "tasksClosed": 12
+        "tasksClosed": 15
       },
       "bugs": {
         "newThisWeek": 5,
@@ -46,14 +46,14 @@
     },
     "lastWeek": {
       "stats": {
-        "featuresShipped": 29,
+        "featuresShipped": 32,
         "qaPassRate": 100,
-        "inProgress": 3,
+        "inProgress": 5,
         "openBugs": 38,
         "tasksClosed": 17
       },
       "bugs": {
-        "newThisWeek": 10,
+        "newThisWeek": 9,
         "resolved": 0,
         "open": 38,
         "deferred": 0
@@ -61,14 +61,14 @@
     },
     "7d": {
       "stats": {
-        "featuresShipped": 23,
+        "featuresShipped": 15,
         "qaPassRate": 100,
-        "inProgress": 3,
+        "inProgress": 5,
         "openBugs": 38,
-        "tasksClosed": 23
+        "tasksClosed": 15
       },
       "bugs": {
-        "newThisWeek": 13,
+        "newThisWeek": 9,
         "resolved": 0,
         "open": 38,
         "deferred": 0
@@ -76,14 +76,14 @@
     },
     "30d": {
       "stats": {
-        "featuresShipped": 73,
+        "featuresShipped": 71,
         "qaPassRate": 100,
-        "inProgress": 3,
+        "inProgress": 5,
         "openBugs": 38,
-        "tasksClosed": 73
+        "tasksClosed": 71
       },
       "bugs": {
-        "newThisWeek": 31,
+        "newThisWeek": 29,
         "resolved": 0,
         "open": 38,
         "deferred": 0
@@ -91,14 +91,14 @@
     },
     "90d": {
       "stats": {
-        "featuresShipped": 205,
+        "featuresShipped": 208,
         "qaPassRate": 100,
-        "inProgress": 3,
+        "inProgress": 5,
         "openBugs": 38,
-        "tasksClosed": 205
+        "tasksClosed": 208
       },
       "bugs": {
-        "newThisWeek": 36,
+        "newThisWeek": 35,
         "resolved": 0,
         "open": 38,
         "deferred": 0
@@ -106,14 +106,14 @@
     },
     "ytd": {
       "stats": {
-        "featuresShipped": 200,
+        "featuresShipped": 203,
         "qaPassRate": 100,
-        "inProgress": 3,
+        "inProgress": 5,
         "openBugs": 38,
-        "tasksClosed": 200
+        "tasksClosed": 203
       },
       "bugs": {
-        "newThisWeek": 36,
+        "newThisWeek": 35,
         "resolved": 0,
         "open": 38,
         "deferred": 0
@@ -121,9 +121,9 @@
     },
     "lastYear": {
       "stats": {
-        "featuresShipped": 840,
+        "featuresShipped": 843,
         "qaPassRate": 100,
-        "inProgress": 3,
+        "inProgress": 5,
         "openBugs": 38,
         "tasksClosed": 643
       },
@@ -136,11 +136,11 @@
     },
     "allTime": {
       "stats": {
-        "featuresShipped": 1175,
+        "featuresShipped": 1178,
         "qaPassRate": 99,
-        "inProgress": 3,
+        "inProgress": 5,
         "openBugs": 38,
-        "tasksClosed": 1343
+        "tasksClosed": 1346
       },
       "bugs": {
         "newThisWeek": 55,
@@ -151,6 +151,27 @@
     }
   },
   "changelog": [
+    {
+      "date": "2026-03-26",
+      "title": "Remove “Cody” from OBCSS Dropdown in Company Settings",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b90w8xv"
+    },
+    {
+      "date": "2026-03-26",
+      "title": "Fix Pipeline Time Mismatch - Shows Wrong Time (Expected 11 AM)",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b91rp3w"
+    },
+    {
+      "date": "2026-03-26",
+      "title": "New Automations Menu (Zapier Embed Integration)",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b91u6q4"
+    },
     {
       "date": "2026-03-25",
       "title": "Line Item Title — Prevent Inconsistent Wrapping on Mobile",
@@ -8379,31 +8400,65 @@
   ],
   "inProgress": [
     {
-      "title": "New Automations Menu (Zapier Embed Integration)",
+      "title": "Information Icon Click Causes Package Selection",
       "area": "Active Development",
       "status": "testing complete",
-      "url": "https://app.clickup.com/t/86b91u6q4",
-      "due": null,
-      "assignees": "Ammad Islam, Jesus Rubio"
-    },
-    {
-      "title": "Fix Pipeline Time Mismatch - Shows Wrong Time (Expected 11 AM)",
-      "area": "Active Development",
-      "status": "pr created",
-      "url": "https://app.clickup.com/t/86b91rp3w",
+      "url": "https://app.clickup.com/t/86b901ek7",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
     },
     {
-      "title": "Remove “Cody” from OBCSS Dropdown in Company Settings",
+      "title": "Fix Line Item Flickering on Hover - Proposal/Template Builder (Multi‑Row Names)",
       "area": "Active Development",
       "status": "testing complete",
-      "url": "https://app.clickup.com/t/86b90w8xv",
+      "url": "https://app.clickup.com/t/86b8rrne6",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
+      "title": "Job Costing - Add Prompt for Manual Invoices",
+      "area": "Active Development",
+      "status": "testing complete",
+      "url": "https://app.clickup.com/t/86b8qtyxn",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
+      "title": "Enhance Appointments Tab Display - Contact Record (Scheduled + Preferred Dates)",
+      "area": "Active Development",
+      "status": "testing complete",
+      "url": "https://app.clickup.com/t/86b8p1en2",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
+      "title": "Display SMS Opt Status Across DripJobs UI (Contact Record, Command Center, Deal Card, Job Card)",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b7eqfqm",
       "due": null,
       "assignees": "ali raza, Michael Adeoye"
     }
   ],
   "recentActivity": [
+    {
+      "title": "Remove “Cody” from OBCSS Dropdown in Company Settings",
+      "status": "pushed to production",
+      "closedAt": "2026-03-26T09:09:03.236Z",
+      "url": "https://app.clickup.com/t/86b90w8xv"
+    },
+    {
+      "title": "Fix Pipeline Time Mismatch - Shows Wrong Time (Expected 11 AM)",
+      "status": "pushed to production",
+      "closedAt": "2026-03-26T09:09:02.577Z",
+      "url": "https://app.clickup.com/t/86b91rp3w"
+    },
+    {
+      "title": "New Automations Menu (Zapier Embed Integration)",
+      "status": "pushed to production",
+      "closedAt": "2026-03-26T09:09:01.305Z",
+      "url": "https://app.clickup.com/t/86b91u6q4"
+    },
     {
       "title": "Line Item Title — Prevent Inconsistent Wrapping on Mobile",
       "status": "pushed to production",
@@ -8415,24 +8470,6 @@
       "status": "pushed to production",
       "closedAt": "2026-03-25T09:05:32.143Z",
       "url": "https://app.clickup.com/t/86b8r4cz0"
-    },
-    {
-      "title": "Auto Compress Logo Pictures upon upload.",
-      "status": "pushed to production",
-      "closedAt": "2026-03-25T09:05:31.612Z",
-      "url": "https://app.clickup.com/t/86b8rt189"
-    },
-    {
-      "title": "Pipeline Deal Card — Scheduled Proposal Send Label Displays Static Date Reference Instead of Dynamic Relative Date",
-      "status": "pushed to production",
-      "closedAt": "2026-03-25T09:05:30.909Z",
-      "url": "https://app.clickup.com/t/86b8t2h7a"
-    },
-    {
-      "title": "Skip A2P Registration & Enable SMS for Canadian Customers (Account #14530)",
-      "status": "pushed to production",
-      "closedAt": "2026-03-25T09:05:30.306Z",
-      "url": "https://app.clickup.com/t/86b8t36jh"
     }
   ]
 }
