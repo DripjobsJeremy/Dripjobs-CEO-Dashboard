@@ -1,31 +1,31 @@
 {
-  "lastUpdated": "2026-03-26T12:22:49.313Z",
+  "lastUpdated": "2026-03-27T12:18:27.464Z",
   "stats": {
     "featuresShipped": 15,
     "qaPassRate": 100,
-    "inProgress": 5,
-    "openBugs": 38,
+    "inProgress": 7,
+    "openBugs": 39,
     "tasksClosed": 15
   },
   "bugs": {
-    "newThisWeek": 9,
+    "newThisWeek": 15,
     "resolved": 0,
-    "open": 38,
+    "open": 39,
     "deferred": 0
   },
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 3,
+        "featuresShipped": 0,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 38,
-        "tasksClosed": 3
+        "inProgress": 7,
+        "openBugs": 39,
+        "tasksClosed": 0
       },
       "bugs": {
-        "newThisWeek": 3,
+        "newThisWeek": 8,
         "resolved": 0,
-        "open": 38,
+        "open": 39,
         "deferred": 0
       }
     },
@@ -33,14 +33,14 @@
       "stats": {
         "featuresShipped": 15,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 38,
+        "inProgress": 7,
+        "openBugs": 39,
         "tasksClosed": 15
       },
       "bugs": {
-        "newThisWeek": 5,
+        "newThisWeek": 12,
         "resolved": 0,
-        "open": 38,
+        "open": 39,
         "deferred": 0
       }
     },
@@ -48,14 +48,14 @@
       "stats": {
         "featuresShipped": 32,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 38,
+        "inProgress": 7,
+        "openBugs": 39,
         "tasksClosed": 17
       },
       "bugs": {
-        "newThisWeek": 9,
+        "newThisWeek": 8,
         "resolved": 0,
-        "open": 38,
+        "open": 39,
         "deferred": 0
       }
     },
@@ -63,14 +63,14 @@
       "stats": {
         "featuresShipped": 15,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 38,
+        "inProgress": 7,
+        "openBugs": 39,
         "tasksClosed": 15
       },
       "bugs": {
-        "newThisWeek": 9,
+        "newThisWeek": 15,
         "resolved": 0,
-        "open": 38,
+        "open": 39,
         "deferred": 0
       }
     },
@@ -78,14 +78,14 @@
       "stats": {
         "featuresShipped": 71,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 38,
+        "inProgress": 7,
+        "openBugs": 39,
         "tasksClosed": 71
       },
       "bugs": {
-        "newThisWeek": 29,
+        "newThisWeek": 32,
         "resolved": 0,
-        "open": 38,
+        "open": 39,
         "deferred": 0
       }
     },
@@ -93,14 +93,14 @@
       "stats": {
         "featuresShipped": 208,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 38,
+        "inProgress": 7,
+        "openBugs": 39,
         "tasksClosed": 208
       },
       "bugs": {
-        "newThisWeek": 35,
+        "newThisWeek": 39,
         "resolved": 0,
-        "open": 38,
+        "open": 39,
         "deferred": 0
       }
     },
@@ -108,14 +108,14 @@
       "stats": {
         "featuresShipped": 203,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 38,
+        "inProgress": 7,
+        "openBugs": 39,
         "tasksClosed": 203
       },
       "bugs": {
-        "newThisWeek": 35,
+        "newThisWeek": 39,
         "resolved": 0,
-        "open": 38,
+        "open": 39,
         "deferred": 0
       }
     },
@@ -123,29 +123,29 @@
       "stats": {
         "featuresShipped": 843,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 38,
+        "inProgress": 7,
+        "openBugs": 39,
         "tasksClosed": 643
       },
       "bugs": {
-        "newThisWeek": 8,
+        "newThisWeek": 7,
         "resolved": 3,
-        "open": 38,
+        "open": 39,
         "deferred": 0
       }
     },
     "allTime": {
       "stats": {
         "featuresShipped": 1178,
-        "qaPassRate": 99,
-        "inProgress": 5,
-        "openBugs": 38,
-        "tasksClosed": 1346
+        "qaPassRate": 98,
+        "inProgress": 7,
+        "openBugs": 39,
+        "tasksClosed": 1348
       },
       "bugs": {
-        "newThisWeek": 55,
-        "resolved": 17,
-        "open": 38,
+        "newThisWeek": 58,
+        "resolved": 19,
+        "open": 39,
         "deferred": 0
       }
     }
@@ -8400,17 +8400,33 @@
   ],
   "inProgress": [
     {
+      "title": "Fix Deactivated Account Reactivation in Chargebee API Calls",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b91wke6",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
       "title": "Information Icon Click Causes Package Selection",
       "area": "Active Development",
-      "status": "testing complete",
+      "status": "pr created",
       "url": "https://app.clickup.com/t/86b901ek7",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
+      "title": "Sync Chargebee Add‑On Removal / Addition to DripJobs Subscriptions ",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b8vhufe",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
     },
     {
       "title": "Fix Line Item Flickering on Hover - Proposal/Template Builder (Multi‑Row Names)",
       "area": "Active Development",
-      "status": "testing complete",
+      "status": "pr created",
       "url": "https://app.clickup.com/t/86b8rrne6",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
@@ -8418,7 +8434,7 @@
     {
       "title": "Job Costing - Add Prompt for Manual Invoices",
       "area": "Active Development",
-      "status": "testing complete",
+      "status": "pr created",
       "url": "https://app.clickup.com/t/86b8qtyxn",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
@@ -8426,7 +8442,7 @@
     {
       "title": "Enhance Appointments Tab Display - Contact Record (Scheduled + Preferred Dates)",
       "area": "Active Development",
-      "status": "testing complete",
+      "status": "pr created",
       "url": "https://app.clickup.com/t/86b8p1en2",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
