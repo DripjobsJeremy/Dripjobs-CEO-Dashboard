@@ -176,13 +176,15 @@
     "type": "bug",
     "sub": "na",
     "priority": "high",
-    "status": "in-progress",
+    "status": "resolved",
     "date": "2026-03-05",
     "area": "customer portal",
     "source": "Slack #tanner-tickets",
     "clickup": "https://app.clickup.com/t/86b03uvug",
     "notes": "Jesus Rubio  [2:54 PM] I think this is part of the rollout of the new customer portal. Probably that check wasn't implemented.",
-    "resolvedNote": "Pushed to Production (but looks to have resurfaced)"
+    "resolvedNote": "Pushed to Production ",
+    "subposts": [],
+    "relatedIds": []
   },
   {
     "id": "T-112",
