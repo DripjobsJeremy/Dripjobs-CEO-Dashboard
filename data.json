@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2026-03-29T12:13:47.299Z",
+  "lastUpdated": "2026-03-30T12:22:46.854Z",
   "stats": {
-    "featuresShipped": 15,
+    "featuresShipped": 24,
     "qaPassRate": 100,
-    "inProgress": 10,
+    "inProgress": 1,
     "openBugs": 38,
-    "tasksClosed": 15
+    "tasksClosed": 24
   },
   "bugs": {
     "newThisWeek": 13,
@@ -16,14 +16,14 @@
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 0,
+        "featuresShipped": 9,
         "qaPassRate": 100,
-        "inProgress": 10,
+        "inProgress": 1,
         "openBugs": 38,
-        "tasksClosed": 0
+        "tasksClosed": 9
       },
       "bugs": {
-        "newThisWeek": 1,
+        "newThisWeek": 0,
         "resolved": 0,
         "open": 38,
         "deferred": 0
@@ -31,9 +31,24 @@
     },
     "thisWeek": {
       "stats": {
-        "featuresShipped": 15,
+        "featuresShipped": 9,
         "qaPassRate": 100,
-        "inProgress": 10,
+        "inProgress": 1,
+        "openBugs": 38,
+        "tasksClosed": 9
+      },
+      "bugs": {
+        "newThisWeek": 0,
+        "resolved": 0,
+        "open": 38,
+        "deferred": 0
+      }
+    },
+    "lastWeek": {
+      "stats": {
+        "featuresShipped": 24,
+        "qaPassRate": 100,
+        "inProgress": 1,
         "openBugs": 38,
         "tasksClosed": 15
       },
@@ -44,28 +59,13 @@
         "deferred": 0
       }
     },
-    "lastWeek": {
-      "stats": {
-        "featuresShipped": 32,
-        "qaPassRate": 100,
-        "inProgress": 10,
-        "openBugs": 38,
-        "tasksClosed": 17
-      },
-      "bugs": {
-        "newThisWeek": 7,
-        "resolved": 0,
-        "open": 38,
-        "deferred": 0
-      }
-    },
     "7d": {
       "stats": {
-        "featuresShipped": 15,
+        "featuresShipped": 24,
         "qaPassRate": 100,
-        "inProgress": 10,
+        "inProgress": 1,
         "openBugs": 38,
-        "tasksClosed": 15
+        "tasksClosed": 24
       },
       "bugs": {
         "newThisWeek": 13,
@@ -76,11 +76,11 @@
     },
     "30d": {
       "stats": {
-        "featuresShipped": 63,
+        "featuresShipped": 72,
         "qaPassRate": 100,
-        "inProgress": 10,
+        "inProgress": 1,
         "openBugs": 38,
-        "tasksClosed": 63
+        "tasksClosed": 72
       },
       "bugs": {
         "newThisWeek": 30,
@@ -91,11 +91,11 @@
     },
     "90d": {
       "stats": {
-        "featuresShipped": 203,
+        "featuresShipped": 212,
         "qaPassRate": 100,
-        "inProgress": 10,
+        "inProgress": 1,
         "openBugs": 38,
-        "tasksClosed": 203
+        "tasksClosed": 212
       },
       "bugs": {
         "newThisWeek": 39,
@@ -106,11 +106,11 @@
     },
     "ytd": {
       "stats": {
-        "featuresShipped": 203,
+        "featuresShipped": 212,
         "qaPassRate": 100,
-        "inProgress": 10,
+        "inProgress": 1,
         "openBugs": 38,
-        "tasksClosed": 203
+        "tasksClosed": 212
       },
       "bugs": {
         "newThisWeek": 39,
@@ -121,9 +121,9 @@
     },
     "lastYear": {
       "stats": {
-        "featuresShipped": 843,
+        "featuresShipped": 852,
         "qaPassRate": 100,
-        "inProgress": 10,
+        "inProgress": 1,
         "openBugs": 38,
         "tasksClosed": 643
       },
@@ -136,11 +136,11 @@
     },
     "allTime": {
       "stats": {
-        "featuresShipped": 1178,
+        "featuresShipped": 1187,
         "qaPassRate": 98,
-        "inProgress": 10,
+        "inProgress": 1,
         "openBugs": 38,
-        "tasksClosed": 1348
+        "tasksClosed": 1357
       },
       "bugs": {
         "newThisWeek": 57,
@@ -151,6 +151,69 @@
     }
   },
   "changelog": [
+    {
+      "date": "2026-03-30",
+      "title": "Display SMS Opt Status Across DripJobs UI (Contact Record, Command Center, Deal Card, Job Card)",
+      "area": "Active Development",
+      "type": "ux",
+      "url": "https://app.clickup.com/t/86b7eqfqm"
+    },
+    {
+      "date": "2026-03-30",
+      "title": "Enhance Appointments Tab Display - Contact Record (Scheduled + Preferred Dates)",
+      "area": "Active Development",
+      "type": "ux",
+      "url": "https://app.clickup.com/t/86b8p1en2"
+    },
+    {
+      "date": "2026-03-30",
+      "title": "Job Costing - Add Prompt for Manual Invoices",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8qtyxn"
+    },
+    {
+      "date": "2026-03-30",
+      "title": "Fix Line Item Flickering on Hover - Proposal/Template Builder (Multi‑Row Names)",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8rrne6"
+    },
+    {
+      "date": "2026-03-30",
+      "title": "Sync Chargebee Add‑On Removal / Addition to DripJobs Subscriptions ",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8vhufe"
+    },
+    {
+      "date": "2026-03-30",
+      "title": "Information Icon Click Causes Package Selection",
+      "area": "Active Development",
+      "type": "ux",
+      "url": "https://app.clickup.com/t/86b901ek7"
+    },
+    {
+      "date": "2026-03-30",
+      "title": "Proposal Templates — Auto-Create Default Template for New Accounts",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b90xjpd"
+    },
+    {
+      "date": "2026-03-30",
+      "title": "Fix Deactivated Account Reactivation in Chargebee API Calls",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b91wke6"
+    },
+    {
+      "date": "2026-03-30",
+      "title": "Update Calendly Link for \"Schedule Setup\" Dropdown Option",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b9312fc"
+    },
     {
       "date": "2026-03-26",
       "title": "Remove “Cody” from OBCSS Dropdown in Company Settings",
@@ -8406,110 +8469,38 @@
       "url": "https://app.clickup.com/t/86b8qu3hn",
       "due": "2026-04-11",
       "assignees": "ali raza, Michael Adeoye"
-    },
-    {
-      "title": "Update Calendly Link for \"Schedule Setup\" Dropdown Option",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b9312fc",
-      "due": null,
-      "assignees": "ali raza, Michael Adeoye"
-    },
-    {
-      "title": "Fix Deactivated Account Reactivation in Chargebee API Calls",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b91wke6",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Proposal Templates — Auto-Create Default Template for New Accounts",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b90xjpd",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Information Icon Click Causes Package Selection",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b901ek7",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Sync Chargebee Add‑On Removal / Addition to DripJobs Subscriptions ",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b8vhufe",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Fix Line Item Flickering on Hover - Proposal/Template Builder (Multi‑Row Names)",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b8rrne6",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Job Costing - Add Prompt for Manual Invoices",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b8qtyxn",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Enhance Appointments Tab Display - Contact Record (Scheduled + Preferred Dates)",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b8p1en2",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Display SMS Opt Status Across DripJobs UI (Contact Record, Command Center, Deal Card, Job Card)",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b7eqfqm",
-      "due": null,
-      "assignees": "ali raza, Michael Adeoye"
     }
   ],
   "recentActivity": [
     {
-      "title": "Remove “Cody” from OBCSS Dropdown in Company Settings",
+      "title": "Display SMS Opt Status Across DripJobs UI (Contact Record, Command Center, Deal Card, Job Card)",
       "status": "pushed to production",
-      "closedAt": "2026-03-26T09:09:03.236Z",
-      "url": "https://app.clickup.com/t/86b90w8xv"
+      "closedAt": "2026-03-30T09:08:44.833Z",
+      "url": "https://app.clickup.com/t/86b7eqfqm"
     },
     {
-      "title": "Fix Pipeline Time Mismatch - Shows Wrong Time (Expected 11 AM)",
+      "title": "Enhance Appointments Tab Display - Contact Record (Scheduled + Preferred Dates)",
       "status": "pushed to production",
-      "closedAt": "2026-03-26T09:09:02.577Z",
-      "url": "https://app.clickup.com/t/86b91rp3w"
+      "closedAt": "2026-03-30T09:08:43.186Z",
+      "url": "https://app.clickup.com/t/86b8p1en2"
     },
     {
-      "title": "New Automations Menu (Zapier Embed Integration)",
+      "title": "Job Costing - Add Prompt for Manual Invoices",
       "status": "pushed to production",
-      "closedAt": "2026-03-26T09:09:01.305Z",
-      "url": "https://app.clickup.com/t/86b91u6q4"
+      "closedAt": "2026-03-30T09:08:42.393Z",
+      "url": "https://app.clickup.com/t/86b8qtyxn"
     },
     {
-      "title": "Line Item Title — Prevent Inconsistent Wrapping on Mobile",
+      "title": "Fix Line Item Flickering on Hover - Proposal/Template Builder (Multi‑Row Names)",
       "status": "pushed to production",
-      "closedAt": "2026-03-25T09:05:32.654Z",
-      "url": "https://app.clickup.com/t/86b8p20me"
+      "closedAt": "2026-03-30T09:08:41.726Z",
+      "url": "https://app.clickup.com/t/86b8rrne6"
     },
     {
-      "title": "Missing Save and Delete Buttons in Manual Invoice Creation",
+      "title": "Sync Chargebee Add‑On Removal / Addition to DripJobs Subscriptions ",
       "status": "pushed to production",
-      "closedAt": "2026-03-25T09:05:32.143Z",
-      "url": "https://app.clickup.com/t/86b8r4cz0"
+      "closedAt": "2026-03-30T09:08:41.101Z",
+      "url": "https://app.clickup.com/t/86b8vhufe"
     }
   ]
 }
