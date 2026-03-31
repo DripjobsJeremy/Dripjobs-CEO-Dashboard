@@ -1,31 +1,31 @@
 {
-  "lastUpdated": "2026-03-30T12:22:46.854Z",
+  "lastUpdated": "2026-03-31T12:23:24.040Z",
   "stats": {
-    "featuresShipped": 24,
+    "featuresShipped": 21,
     "qaPassRate": 100,
-    "inProgress": 1,
-    "openBugs": 38,
-    "tasksClosed": 24
+    "inProgress": 2,
+    "openBugs": 40,
+    "tasksClosed": 21
   },
   "bugs": {
-    "newThisWeek": 13,
+    "newThisWeek": 17,
     "resolved": 0,
-    "open": 38,
+    "open": 40,
     "deferred": 0
   },
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 9,
+        "featuresShipped": 0,
         "qaPassRate": 100,
-        "inProgress": 1,
-        "openBugs": 38,
-        "tasksClosed": 9
+        "inProgress": 2,
+        "openBugs": 40,
+        "tasksClosed": 0
       },
       "bugs": {
-        "newThisWeek": 0,
+        "newThisWeek": 4,
         "resolved": 0,
-        "open": 38,
+        "open": 40,
         "deferred": 0
       }
     },
@@ -33,14 +33,14 @@
       "stats": {
         "featuresShipped": 9,
         "qaPassRate": 100,
-        "inProgress": 1,
-        "openBugs": 38,
+        "inProgress": 2,
+        "openBugs": 40,
         "tasksClosed": 9
       },
       "bugs": {
-        "newThisWeek": 0,
+        "newThisWeek": 4,
         "resolved": 0,
-        "open": 38,
+        "open": 40,
         "deferred": 0
       }
     },
@@ -48,29 +48,29 @@
       "stats": {
         "featuresShipped": 24,
         "qaPassRate": 100,
-        "inProgress": 1,
-        "openBugs": 38,
+        "inProgress": 2,
+        "openBugs": 40,
         "tasksClosed": 15
       },
       "bugs": {
         "newThisWeek": 13,
         "resolved": 0,
-        "open": 38,
+        "open": 40,
         "deferred": 0
       }
     },
     "7d": {
       "stats": {
-        "featuresShipped": 24,
+        "featuresShipped": 21,
         "qaPassRate": 100,
-        "inProgress": 1,
-        "openBugs": 38,
-        "tasksClosed": 24
+        "inProgress": 2,
+        "openBugs": 40,
+        "tasksClosed": 21
       },
       "bugs": {
-        "newThisWeek": 13,
+        "newThisWeek": 17,
         "resolved": 0,
-        "open": 38,
+        "open": 40,
         "deferred": 0
       }
     },
@@ -78,14 +78,14 @@
       "stats": {
         "featuresShipped": 72,
         "qaPassRate": 100,
-        "inProgress": 1,
-        "openBugs": 38,
+        "inProgress": 2,
+        "openBugs": 40,
         "tasksClosed": 72
       },
       "bugs": {
-        "newThisWeek": 30,
+        "newThisWeek": 33,
         "resolved": 0,
-        "open": 38,
+        "open": 40,
         "deferred": 0
       }
     },
@@ -93,14 +93,14 @@
       "stats": {
         "featuresShipped": 212,
         "qaPassRate": 100,
-        "inProgress": 1,
-        "openBugs": 38,
+        "inProgress": 2,
+        "openBugs": 40,
         "tasksClosed": 212
       },
       "bugs": {
-        "newThisWeek": 39,
+        "newThisWeek": 42,
         "resolved": 0,
-        "open": 38,
+        "open": 40,
         "deferred": 0
       }
     },
@@ -108,14 +108,14 @@
       "stats": {
         "featuresShipped": 212,
         "qaPassRate": 100,
-        "inProgress": 1,
-        "openBugs": 38,
+        "inProgress": 2,
+        "openBugs": 40,
         "tasksClosed": 212
       },
       "bugs": {
-        "newThisWeek": 39,
+        "newThisWeek": 42,
         "resolved": 0,
-        "open": 38,
+        "open": 40,
         "deferred": 0
       }
     },
@@ -123,14 +123,14 @@
       "stats": {
         "featuresShipped": 852,
         "qaPassRate": 100,
-        "inProgress": 1,
-        "openBugs": 38,
+        "inProgress": 2,
+        "openBugs": 40,
         "tasksClosed": 643
       },
       "bugs": {
         "newThisWeek": 6,
         "resolved": 3,
-        "open": 38,
+        "open": 40,
         "deferred": 0
       }
     },
@@ -138,14 +138,14 @@
       "stats": {
         "featuresShipped": 1187,
         "qaPassRate": 98,
-        "inProgress": 1,
-        "openBugs": 38,
-        "tasksClosed": 1357
+        "inProgress": 2,
+        "openBugs": 40,
+        "tasksClosed": 1358
       },
       "bugs": {
-        "newThisWeek": 57,
-        "resolved": 19,
-        "open": 38,
+        "newThisWeek": 60,
+        "resolved": 20,
+        "open": 40,
         "deferred": 0
       }
     }
@@ -8465,10 +8465,18 @@
     {
       "title": "Metrics Dashboard — KPI Banner Redesign, Date Range Consistency & Section Cards",
       "area": "Active Development",
-      "status": "pr created",
+      "status": "code complete",
       "url": "https://app.clickup.com/t/86b8qu3hn",
       "due": "2026-04-11",
       "assignees": "ali raza, Michael Adeoye"
+    },
+    {
+      "title": "Discount Display Bug in Customer Portal",
+      "area": "Active Development",
+      "status": "testing complete",
+      "url": "https://app.clickup.com/t/86b93jpmz",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
     }
   ],
   "recentActivity": [
