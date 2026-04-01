@@ -1,16 +1,16 @@
 {
-  "lastUpdated": "2026-03-31T12:23:24.040Z",
+  "lastUpdated": "2026-04-01T12:23:17.131Z",
   "stats": {
-    "featuresShipped": 21,
+    "featuresShipped": 12,
     "qaPassRate": 100,
-    "inProgress": 2,
-    "openBugs": 40,
-    "tasksClosed": 21
+    "inProgress": 4,
+    "openBugs": 43,
+    "tasksClosed": 12
   },
   "bugs": {
-    "newThisWeek": 17,
+    "newThisWeek": 19,
     "resolved": 0,
-    "open": 40,
+    "open": 43,
     "deferred": 0
   },
   "ranges": {
@@ -18,14 +18,14 @@
       "stats": {
         "featuresShipped": 0,
         "qaPassRate": 100,
-        "inProgress": 2,
-        "openBugs": 40,
+        "inProgress": 4,
+        "openBugs": 43,
         "tasksClosed": 0
       },
       "bugs": {
-        "newThisWeek": 4,
+        "newThisWeek": 5,
         "resolved": 0,
-        "open": 40,
+        "open": 43,
         "deferred": 0
       }
     },
@@ -33,14 +33,14 @@
       "stats": {
         "featuresShipped": 9,
         "qaPassRate": 100,
-        "inProgress": 2,
-        "openBugs": 40,
+        "inProgress": 4,
+        "openBugs": 43,
         "tasksClosed": 9
       },
       "bugs": {
-        "newThisWeek": 4,
+        "newThisWeek": 7,
         "resolved": 0,
-        "open": 40,
+        "open": 43,
         "deferred": 0
       }
     },
@@ -48,44 +48,44 @@
       "stats": {
         "featuresShipped": 24,
         "qaPassRate": 100,
-        "inProgress": 2,
-        "openBugs": 40,
+        "inProgress": 4,
+        "openBugs": 43,
         "tasksClosed": 15
       },
       "bugs": {
         "newThisWeek": 13,
         "resolved": 0,
-        "open": 40,
+        "open": 43,
         "deferred": 0
       }
     },
     "7d": {
       "stats": {
-        "featuresShipped": 21,
+        "featuresShipped": 12,
         "qaPassRate": 100,
-        "inProgress": 2,
-        "openBugs": 40,
-        "tasksClosed": 21
+        "inProgress": 4,
+        "openBugs": 43,
+        "tasksClosed": 12
       },
       "bugs": {
-        "newThisWeek": 17,
+        "newThisWeek": 19,
         "resolved": 0,
-        "open": 40,
+        "open": 43,
         "deferred": 0
       }
     },
     "30d": {
       "stats": {
-        "featuresShipped": 72,
+        "featuresShipped": 69,
         "qaPassRate": 100,
-        "inProgress": 2,
-        "openBugs": 40,
-        "tasksClosed": 72
+        "inProgress": 4,
+        "openBugs": 43,
+        "tasksClosed": 69
       },
       "bugs": {
-        "newThisWeek": 33,
+        "newThisWeek": 36,
         "resolved": 0,
-        "open": 40,
+        "open": 43,
         "deferred": 0
       }
     },
@@ -93,14 +93,14 @@
       "stats": {
         "featuresShipped": 212,
         "qaPassRate": 100,
-        "inProgress": 2,
-        "openBugs": 40,
+        "inProgress": 4,
+        "openBugs": 43,
         "tasksClosed": 212
       },
       "bugs": {
-        "newThisWeek": 42,
+        "newThisWeek": 45,
         "resolved": 0,
-        "open": 40,
+        "open": 43,
         "deferred": 0
       }
     },
@@ -108,14 +108,14 @@
       "stats": {
         "featuresShipped": 212,
         "qaPassRate": 100,
-        "inProgress": 2,
-        "openBugs": 40,
+        "inProgress": 4,
+        "openBugs": 43,
         "tasksClosed": 212
       },
       "bugs": {
-        "newThisWeek": 42,
+        "newThisWeek": 45,
         "resolved": 0,
-        "open": 40,
+        "open": 43,
         "deferred": 0
       }
     },
@@ -123,14 +123,14 @@
       "stats": {
         "featuresShipped": 852,
         "qaPassRate": 100,
-        "inProgress": 2,
-        "openBugs": 40,
+        "inProgress": 4,
+        "openBugs": 43,
         "tasksClosed": 643
       },
       "bugs": {
         "newThisWeek": 6,
         "resolved": 3,
-        "open": 40,
+        "open": 43,
         "deferred": 0
       }
     },
@@ -138,14 +138,14 @@
       "stats": {
         "featuresShipped": 1187,
         "qaPassRate": 98,
-        "inProgress": 2,
-        "openBugs": 40,
+        "inProgress": 4,
+        "openBugs": 43,
         "tasksClosed": 1358
       },
       "bugs": {
-        "newThisWeek": 60,
+        "newThisWeek": 63,
         "resolved": 20,
-        "open": 40,
+        "open": 43,
         "deferred": 0
       }
     }
@@ -8471,9 +8471,25 @@
       "assignees": "ali raza, Michael Adeoye"
     },
     {
+      "title": "Fix “Update Appointment” Zap - Google Calendar Not Syncing",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b94hzze",
+      "due": null,
+      "assignees": "Abdul Basit, Michael Adeoye"
+    },
+    {
+      "title": "Relocate Portal Accent Color to Customer Portal Settings",
+      "area": "Active Development",
+      "status": "code complete",
+      "url": "https://app.clickup.com/t/86b93zknm",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
       "title": "Discount Display Bug in Customer Portal",
       "area": "Active Development",
-      "status": "testing complete",
+      "status": "code complete",
       "url": "https://app.clickup.com/t/86b93jpmz",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
