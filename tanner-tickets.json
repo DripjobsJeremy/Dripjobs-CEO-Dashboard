@@ -1,5 +1,20 @@
 [
   {
+    "id": "T-124",
+    "title": "Proposal Builder mobile UI alignment issues on iPad and Android",
+    "desc": "Bottom action buttons are misaligned on iPad and Add Package/How it Works buttons overlap with positioning issues on Android in Proposal Builder.",
+    "type": "bug",
+    "sub": "na",
+    "priority": "high",
+    "status": "open",
+    "date": "2026-04-02",
+    "area": "Proposal Builder",
+    "source": "Slack #tanner-tickets",
+    "clickup": "",
+    "subposts": [],
+    "relatedIds": []
+  },
+  {
     "id": "T-123",
     "title": "Implement v2 gutter estimating functionality",
     "desc": "Add gutter estimating capabilities as a must-have feature for the v2 release. This appears to be a core functionality requirement for contractor workflows.",
