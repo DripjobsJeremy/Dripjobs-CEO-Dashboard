@@ -1,5 +1,29 @@
 [
   {
+    "id": "T-125",
+    "title": "Outbound Reply-To: Use assigned salesperson email for automated sends",
+    "desc": "When a salesperson is assigned to a deal, automated communications (drips, proposals) should use their email as reply-to instead of generic company address. Falls back to company reply-to if no salesperson assigned.",
+    "type": "enhancement",
+    "sub": "considered",
+    "priority": "high",
+    "status": "open",
+    "date": "2026-04-03",
+    "area": "communications",
+    "source": "Slack #tanner-tickets",
+    "clickup": "https://app.clickup.com/t/86b8g71qz",
+    "subposts": [
+      {
+        "id": "SP-1775221425620",
+        "text": "Inbound Reply Routing (assessment needed) - Part 2\nThe second piece — routing a contact's reply back to the assigned salesperson inside DripJobs — is more involved. (Craig) had started building this out with Postmark infrastructure and some thread UI before he left. Jason's direction is to have engineering assess Craig's branch first and decide whether to continue it or rebuild. That work is gated until we get that assessment back.",
+        "clickup": "https://app.clickup.com/t/86b4kmrru",
+        "date": "2026-04-03",
+        "isNewMetric": false
+      }
+    ],
+    "relatedIds": [],
+    "notes": "Ready for Dev"
+  },
+  {
     "id": "T-124",
     "title": "Proposal Builder mobile UI alignment issues on iPad and Android",
     "desc": "Bottom action buttons are misaligned on iPad and Add Package/How it Works buttons overlap with positioning issues on Android in Proposal Builder.",
