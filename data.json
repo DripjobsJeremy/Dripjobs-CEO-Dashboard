@@ -1,156 +1,191 @@
 {
-  "lastUpdated": "2026-04-02T12:22:29.055Z",
+  "lastUpdated": "2026-04-03T12:17:03.833Z",
   "stats": {
-    "featuresShipped": 9,
+    "featuresShipped": 14,
     "qaPassRate": 100,
-    "inProgress": 6,
-    "openBugs": 42,
-    "tasksClosed": 9
+    "inProgress": 5,
+    "openBugs": 44,
+    "tasksClosed": 14
   },
   "bugs": {
-    "newThisWeek": 17,
+    "newThisWeek": 12,
     "resolved": 0,
-    "open": 42,
+    "open": 44,
     "deferred": 0
   },
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 0,
+        "featuresShipped": 5,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 42,
-        "tasksClosed": 0
+        "inProgress": 5,
+        "openBugs": 44,
+        "tasksClosed": 5
       },
       "bugs": {
         "newThisWeek": 2,
         "resolved": 0,
-        "open": 42,
+        "open": 44,
         "deferred": 0
       }
     },
     "thisWeek": {
       "stats": {
-        "featuresShipped": 9,
+        "featuresShipped": 14,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 42,
-        "tasksClosed": 9
+        "inProgress": 5,
+        "openBugs": 44,
+        "tasksClosed": 14
       },
       "bugs": {
-        "newThisWeek": 8,
+        "newThisWeek": 10,
         "resolved": 0,
-        "open": 42,
+        "open": 44,
         "deferred": 0
       }
     },
     "lastWeek": {
       "stats": {
-        "featuresShipped": 24,
+        "featuresShipped": 29,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 42,
+        "inProgress": 5,
+        "openBugs": 44,
         "tasksClosed": 15
       },
       "bugs": {
         "newThisWeek": 13,
         "resolved": 0,
-        "open": 42,
+        "open": 44,
         "deferred": 0
       }
     },
     "7d": {
       "stats": {
-        "featuresShipped": 9,
+        "featuresShipped": 14,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 42,
-        "tasksClosed": 9
+        "inProgress": 5,
+        "openBugs": 44,
+        "tasksClosed": 14
       },
       "bugs": {
-        "newThisWeek": 17,
+        "newThisWeek": 12,
         "resolved": 0,
-        "open": 42,
+        "open": 44,
         "deferred": 0
       }
     },
     "30d": {
       "stats": {
-        "featuresShipped": 69,
+        "featuresShipped": 74,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 42,
-        "tasksClosed": 69
+        "inProgress": 5,
+        "openBugs": 44,
+        "tasksClosed": 74
       },
       "bugs": {
         "newThisWeek": 36,
         "resolved": 0,
-        "open": 42,
+        "open": 44,
         "deferred": 0
       }
     },
     "90d": {
       "stats": {
-        "featuresShipped": 212,
+        "featuresShipped": 217,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 42,
-        "tasksClosed": 212
+        "inProgress": 5,
+        "openBugs": 44,
+        "tasksClosed": 217
       },
       "bugs": {
-        "newThisWeek": 46,
+        "newThisWeek": 48,
         "resolved": 0,
-        "open": 42,
+        "open": 44,
         "deferred": 0
       }
     },
     "ytd": {
       "stats": {
-        "featuresShipped": 212,
+        "featuresShipped": 217,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 42,
-        "tasksClosed": 212
+        "inProgress": 5,
+        "openBugs": 44,
+        "tasksClosed": 217
       },
       "bugs": {
-        "newThisWeek": 46,
+        "newThisWeek": 48,
         "resolved": 0,
-        "open": 42,
+        "open": 44,
         "deferred": 0
       }
     },
     "lastYear": {
       "stats": {
-        "featuresShipped": 852,
+        "featuresShipped": 857,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 42,
+        "inProgress": 5,
+        "openBugs": 44,
         "tasksClosed": 643
       },
       "bugs": {
         "newThisWeek": 6,
         "resolved": 3,
-        "open": 42,
+        "open": 44,
         "deferred": 0
       }
     },
     "allTime": {
       "stats": {
-        "featuresShipped": 1187,
+        "featuresShipped": 1192,
         "qaPassRate": 98,
-        "inProgress": 6,
-        "openBugs": 42,
-        "tasksClosed": 1360
+        "inProgress": 5,
+        "openBugs": 44,
+        "tasksClosed": 1366
       },
       "bugs": {
-        "newThisWeek": 64,
+        "newThisWeek": 66,
         "resolved": 22,
-        "open": 42,
+        "open": 44,
         "deferred": 0
       }
     }
   },
   "changelog": [
+    {
+      "date": "2026-04-03",
+      "title": "Metrics Dashboard — KPI Banner Redesign, Date Range Consistency & Section Cards",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8qu3hn"
+    },
+    {
+      "date": "2026-04-03",
+      "title": "Fix Siding Selection Adds \"Siding and Trim Repair\" Instead - Proposal Bug",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b93b3r6"
+    },
+    {
+      "date": "2026-04-03",
+      "title": "Discount Display Bug in Customer Portal",
+      "area": "Active Development",
+      "type": "ux",
+      "url": "https://app.clickup.com/t/86b93jpmz"
+    },
+    {
+      "date": "2026-04-03",
+      "title": "Relocate Portal Accent Color to Customer Portal Settings",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b93zknm"
+    },
+    {
+      "date": "2026-04-03",
+      "title": "Block SMS Add-On Access for Pro Plan Users",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b95k9w6"
+    },
     {
       "date": "2026-03-30",
       "title": "Display SMS Opt Status Across DripJobs UI (Contact Record, Command Center, Deal Card, Job Card)",
@@ -8463,20 +8498,28 @@
   ],
   "inProgress": [
     {
-      "title": "Metrics Dashboard — KPI Banner Redesign, Date Range Consistency & Section Cards",
+      "title": "Job Schedule — Mobile Form Controls Malfunction: Dropdowns and Time Inputs Trigger Keyboard Instead of Native Pickers",
       "area": "Active Development",
-      "status": "code complete",
-      "url": "https://app.clickup.com/t/86b8qu3hn",
-      "due": "2026-04-11",
-      "assignees": "ali raza, Michael Adeoye"
-    },
-    {
-      "title": "Block SMS Add-On Access for Pro Plan Users",
-      "area": "Active Development",
-      "status": "code complete",
-      "url": "https://app.clickup.com/t/86b95k9w6",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b967t9y",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
+      "title": "Edited Job Address Not Reflected in Command Center or Contact Deals List",
+      "area": "Active Development",
+      "status": "testing complete",
+      "url": "https://app.clickup.com/t/86b95zrby",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
+      "title": "Fix Booking Form Opt-In Checkbox Pre-Checked for Rejected/Pending Twilio Apps",
+      "area": "Active Development",
+      "status": "code complete",
+      "url": "https://app.clickup.com/t/86b95m7je",
+      "due": null,
+      "assignees": "Terry Bennett"
     },
     {
       "title": "Fix “Update Appointment” Zap - Google Calendar Not Syncing",
@@ -8487,60 +8530,44 @@
       "assignees": "Abdul Basit, Michael Adeoye"
     },
     {
-      "title": "Relocate Portal Accent Color to Customer Portal Settings",
+      "title": "Package Duplication — Percentage-Based Price Adjustment Modal",
       "area": "Active Development",
-      "status": "code complete",
-      "url": "https://app.clickup.com/t/86b93zknm",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Discount Display Bug in Customer Portal",
-      "area": "Active Development",
-      "status": "code complete",
-      "url": "https://app.clickup.com/t/86b93jpmz",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Fix Siding Selection Adds \"Siding and Trim Repair\" Instead - Proposal Bug",
-      "area": "Active Development",
-      "status": "code complete",
-      "url": "https://app.clickup.com/t/86b93b3r6",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b8r7be9",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
     }
   ],
   "recentActivity": [
     {
-      "title": "Display SMS Opt Status Across DripJobs UI (Contact Record, Command Center, Deal Card, Job Card)",
+      "title": "Metrics Dashboard — KPI Banner Redesign, Date Range Consistency & Section Cards",
       "status": "pushed to production",
-      "closedAt": "2026-03-30T09:08:44.833Z",
-      "url": "https://app.clickup.com/t/86b7eqfqm"
+      "closedAt": "2026-04-03T09:08:05.991Z",
+      "url": "https://app.clickup.com/t/86b8qu3hn"
     },
     {
-      "title": "Enhance Appointments Tab Display - Contact Record (Scheduled + Preferred Dates)",
+      "title": "Fix Siding Selection Adds \"Siding and Trim Repair\" Instead - Proposal Bug",
       "status": "pushed to production",
-      "closedAt": "2026-03-30T09:08:43.186Z",
-      "url": "https://app.clickup.com/t/86b8p1en2"
+      "closedAt": "2026-04-03T09:08:05.416Z",
+      "url": "https://app.clickup.com/t/86b93b3r6"
     },
     {
-      "title": "Job Costing - Add Prompt for Manual Invoices",
+      "title": "Discount Display Bug in Customer Portal",
       "status": "pushed to production",
-      "closedAt": "2026-03-30T09:08:42.393Z",
-      "url": "https://app.clickup.com/t/86b8qtyxn"
+      "closedAt": "2026-04-03T09:08:04.859Z",
+      "url": "https://app.clickup.com/t/86b93jpmz"
     },
     {
-      "title": "Fix Line Item Flickering on Hover - Proposal/Template Builder (Multi‑Row Names)",
+      "title": "Relocate Portal Accent Color to Customer Portal Settings",
       "status": "pushed to production",
-      "closedAt": "2026-03-30T09:08:41.726Z",
-      "url": "https://app.clickup.com/t/86b8rrne6"
+      "closedAt": "2026-04-03T09:08:03.896Z",
+      "url": "https://app.clickup.com/t/86b93zknm"
     },
     {
-      "title": "Sync Chargebee Add‑On Removal / Addition to DripJobs Subscriptions ",
+      "title": "Block SMS Add-On Access for Pro Plan Users",
       "status": "pushed to production",
-      "closedAt": "2026-03-30T09:08:41.101Z",
-      "url": "https://app.clickup.com/t/86b8vhufe"
+      "closedAt": "2026-04-03T09:08:03.175Z",
+      "url": "https://app.clickup.com/t/86b95k9w6"
     }
   ]
 }
