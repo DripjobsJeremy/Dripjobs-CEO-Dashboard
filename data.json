@@ -1,31 +1,31 @@
 {
-  "lastUpdated": "2026-04-03T12:17:03.833Z",
+  "lastUpdated": "2026-04-04T12:13:50.894Z",
   "stats": {
     "featuresShipped": 14,
     "qaPassRate": 100,
-    "inProgress": 5,
-    "openBugs": 44,
+    "inProgress": 6,
+    "openBugs": 46,
     "tasksClosed": 14
   },
   "bugs": {
-    "newThisWeek": 12,
+    "newThisWeek": 13,
     "resolved": 0,
-    "open": 44,
+    "open": 46,
     "deferred": 0
   },
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 5,
+        "featuresShipped": 0,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 44,
-        "tasksClosed": 5
+        "inProgress": 6,
+        "openBugs": 46,
+        "tasksClosed": 0
       },
       "bugs": {
         "newThisWeek": 2,
         "resolved": 0,
-        "open": 44,
+        "open": 46,
         "deferred": 0
       }
     },
@@ -33,14 +33,14 @@
       "stats": {
         "featuresShipped": 14,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 44,
+        "inProgress": 6,
+        "openBugs": 46,
         "tasksClosed": 14
       },
       "bugs": {
-        "newThisWeek": 10,
+        "newThisWeek": 12,
         "resolved": 0,
-        "open": 44,
+        "open": 46,
         "deferred": 0
       }
     },
@@ -48,14 +48,14 @@
       "stats": {
         "featuresShipped": 29,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 44,
+        "inProgress": 6,
+        "openBugs": 46,
         "tasksClosed": 15
       },
       "bugs": {
         "newThisWeek": 13,
         "resolved": 0,
-        "open": 44,
+        "open": 46,
         "deferred": 0
       }
     },
@@ -63,29 +63,29 @@
       "stats": {
         "featuresShipped": 14,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 44,
+        "inProgress": 6,
+        "openBugs": 46,
         "tasksClosed": 14
       },
       "bugs": {
-        "newThisWeek": 12,
+        "newThisWeek": 13,
         "resolved": 0,
-        "open": 44,
+        "open": 46,
         "deferred": 0
       }
     },
     "30d": {
       "stats": {
-        "featuresShipped": 74,
+        "featuresShipped": 63,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 44,
-        "tasksClosed": 74
+        "inProgress": 6,
+        "openBugs": 46,
+        "tasksClosed": 63
       },
       "bugs": {
-        "newThisWeek": 36,
+        "newThisWeek": 35,
         "resolved": 0,
-        "open": 44,
+        "open": 46,
         "deferred": 0
       }
     },
@@ -93,14 +93,14 @@
       "stats": {
         "featuresShipped": 217,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 44,
+        "inProgress": 6,
+        "openBugs": 46,
         "tasksClosed": 217
       },
       "bugs": {
-        "newThisWeek": 48,
+        "newThisWeek": 50,
         "resolved": 0,
-        "open": 44,
+        "open": 46,
         "deferred": 0
       }
     },
@@ -108,14 +108,14 @@
       "stats": {
         "featuresShipped": 217,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 44,
+        "inProgress": 6,
+        "openBugs": 46,
         "tasksClosed": 217
       },
       "bugs": {
-        "newThisWeek": 48,
+        "newThisWeek": 50,
         "resolved": 0,
-        "open": 44,
+        "open": 46,
         "deferred": 0
       }
     },
@@ -123,14 +123,14 @@
       "stats": {
         "featuresShipped": 857,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 44,
+        "inProgress": 6,
+        "openBugs": 46,
         "tasksClosed": 643
       },
       "bugs": {
         "newThisWeek": 6,
         "resolved": 3,
-        "open": 44,
+        "open": 46,
         "deferred": 0
       }
     },
@@ -138,14 +138,14 @@
       "stats": {
         "featuresShipped": 1192,
         "qaPassRate": 98,
-        "inProgress": 5,
-        "openBugs": 44,
+        "inProgress": 6,
+        "openBugs": 46,
         "tasksClosed": 1366
       },
       "bugs": {
-        "newThisWeek": 66,
+        "newThisWeek": 68,
         "resolved": 22,
-        "open": 44,
+        "open": 46,
         "deferred": 0
       }
     }
@@ -8498,6 +8498,14 @@
   ],
   "inProgress": [
     {
+      "title": "Restore Disconnected Text Messaging Add-On",
+      "area": "Active Development",
+      "status": "branch ready",
+      "url": "https://app.clickup.com/t/86b96ax1t",
+      "due": null,
+      "assignees": "Terry Bennett"
+    },
+    {
       "title": "Job Schedule — Mobile Form Controls Malfunction: Dropdowns and Time Inputs Trigger Keyboard Instead of Native Pickers",
       "area": "Active Development",
       "status": "pr created",
@@ -8508,7 +8516,7 @@
     {
       "title": "Edited Job Address Not Reflected in Command Center or Contact Deals List",
       "area": "Active Development",
-      "status": "testing complete",
+      "status": "pr created",
       "url": "https://app.clickup.com/t/86b95zrby",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
@@ -8516,7 +8524,7 @@
     {
       "title": "Fix Booking Form Opt-In Checkbox Pre-Checked for Rejected/Pending Twilio Apps",
       "area": "Active Development",
-      "status": "code complete",
+      "status": "branch ready",
       "url": "https://app.clickup.com/t/86b95m7je",
       "due": null,
       "assignees": "Terry Bennett"
@@ -8524,7 +8532,7 @@
     {
       "title": "Fix “Update Appointment” Zap - Google Calendar Not Syncing",
       "area": "Active Development",
-      "status": "pr created",
+      "status": "branch ready",
       "url": "https://app.clickup.com/t/86b94hzze",
       "due": null,
       "assignees": "Abdul Basit, Michael Adeoye"
