@@ -1,156 +1,177 @@
 {
-  "lastUpdated": "2026-04-04T12:13:50.894Z",
+  "lastUpdated": "2026-04-05T12:14:15.562Z",
   "stats": {
-    "featuresShipped": 14,
+    "featuresShipped": 17,
     "qaPassRate": 100,
-    "inProgress": 6,
-    "openBugs": 46,
-    "tasksClosed": 14
+    "inProgress": 3,
+    "openBugs": 45,
+    "tasksClosed": 17
   },
   "bugs": {
-    "newThisWeek": 13,
+    "newThisWeek": 11,
     "resolved": 0,
-    "open": 46,
+    "open": 45,
     "deferred": 0
   },
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 0,
+        "featuresShipped": 3,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 46,
-        "tasksClosed": 0
+        "inProgress": 3,
+        "openBugs": 45,
+        "tasksClosed": 3
       },
       "bugs": {
-        "newThisWeek": 2,
+        "newThisWeek": 0,
         "resolved": 0,
-        "open": 46,
+        "open": 45,
         "deferred": 0
       }
     },
     "thisWeek": {
       "stats": {
-        "featuresShipped": 14,
+        "featuresShipped": 17,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 46,
-        "tasksClosed": 14
+        "inProgress": 3,
+        "openBugs": 45,
+        "tasksClosed": 17
       },
       "bugs": {
-        "newThisWeek": 12,
+        "newThisWeek": 11,
         "resolved": 0,
-        "open": 46,
+        "open": 45,
         "deferred": 0
       }
     },
     "lastWeek": {
       "stats": {
-        "featuresShipped": 29,
+        "featuresShipped": 32,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 46,
+        "inProgress": 3,
+        "openBugs": 45,
         "tasksClosed": 15
       },
       "bugs": {
         "newThisWeek": 13,
         "resolved": 0,
-        "open": 46,
+        "open": 45,
         "deferred": 0
       }
     },
     "7d": {
       "stats": {
-        "featuresShipped": 14,
+        "featuresShipped": 17,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 46,
-        "tasksClosed": 14
+        "inProgress": 3,
+        "openBugs": 45,
+        "tasksClosed": 17
       },
       "bugs": {
-        "newThisWeek": 13,
+        "newThisWeek": 11,
         "resolved": 0,
-        "open": 46,
+        "open": 45,
         "deferred": 0
       }
     },
     "30d": {
       "stats": {
-        "featuresShipped": 63,
+        "featuresShipped": 66,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 46,
-        "tasksClosed": 63
+        "inProgress": 3,
+        "openBugs": 45,
+        "tasksClosed": 66
       },
       "bugs": {
-        "newThisWeek": 35,
+        "newThisWeek": 33,
         "resolved": 0,
-        "open": 46,
+        "open": 45,
         "deferred": 0
       }
     },
     "90d": {
       "stats": {
-        "featuresShipped": 217,
+        "featuresShipped": 220,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 46,
-        "tasksClosed": 217
+        "inProgress": 3,
+        "openBugs": 45,
+        "tasksClosed": 220
       },
       "bugs": {
-        "newThisWeek": 50,
+        "newThisWeek": 49,
         "resolved": 0,
-        "open": 46,
+        "open": 45,
         "deferred": 0
       }
     },
     "ytd": {
       "stats": {
-        "featuresShipped": 217,
+        "featuresShipped": 220,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 46,
-        "tasksClosed": 217
+        "inProgress": 3,
+        "openBugs": 45,
+        "tasksClosed": 220
       },
       "bugs": {
-        "newThisWeek": 50,
+        "newThisWeek": 49,
         "resolved": 0,
-        "open": 46,
+        "open": 45,
         "deferred": 0
       }
     },
     "lastYear": {
       "stats": {
-        "featuresShipped": 857,
+        "featuresShipped": 860,
         "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 46,
+        "inProgress": 3,
+        "openBugs": 45,
         "tasksClosed": 643
       },
       "bugs": {
         "newThisWeek": 6,
         "resolved": 3,
-        "open": 46,
+        "open": 45,
         "deferred": 0
       }
     },
     "allTime": {
       "stats": {
-        "featuresShipped": 1192,
+        "featuresShipped": 1195,
         "qaPassRate": 98,
-        "inProgress": 6,
-        "openBugs": 46,
-        "tasksClosed": 1366
+        "inProgress": 3,
+        "openBugs": 45,
+        "tasksClosed": 1369
       },
       "bugs": {
-        "newThisWeek": 68,
+        "newThisWeek": 67,
         "resolved": 22,
-        "open": 46,
+        "open": 45,
         "deferred": 0
       }
     }
   },
   "changelog": [
+    {
+      "date": "2026-04-04",
+      "title": "Restore Disconnected Text Messaging Add-On",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b96ax1t"
+    },
+    {
+      "date": "2026-04-04",
+      "title": "Fix Booking Form Opt-In Checkbox Pre-Checked for Rejected/Pending Twilio Apps",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b95m7je"
+    },
+    {
+      "date": "2026-04-04",
+      "title": "Fix “Update Appointment” Zap - Google Calendar Not Syncing",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b94hzze"
+    },
     {
       "date": "2026-04-03",
       "title": "Metrics Dashboard — KPI Banner Redesign, Date Range Consistency & Section Cards",
@@ -8498,14 +8519,6 @@
   ],
   "inProgress": [
     {
-      "title": "Restore Disconnected Text Messaging Add-On",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b96ax1t",
-      "due": null,
-      "assignees": "Terry Bennett"
-    },
-    {
       "title": "Job Schedule — Mobile Form Controls Malfunction: Dropdowns and Time Inputs Trigger Keyboard Instead of Native Pickers",
       "area": "Active Development",
       "status": "pr created",
@@ -8522,22 +8535,6 @@
       "assignees": "Terry Bennett, Michael Adeoye"
     },
     {
-      "title": "Fix Booking Form Opt-In Checkbox Pre-Checked for Rejected/Pending Twilio Apps",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b95m7je",
-      "due": null,
-      "assignees": "Terry Bennett"
-    },
-    {
-      "title": "Fix “Update Appointment” Zap - Google Calendar Not Syncing",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b94hzze",
-      "due": null,
-      "assignees": "Abdul Basit, Michael Adeoye"
-    },
-    {
       "title": "Package Duplication — Percentage-Based Price Adjustment Modal",
       "area": "Active Development",
       "status": "pr created",
@@ -8547,6 +8544,24 @@
     }
   ],
   "recentActivity": [
+    {
+      "title": "Restore Disconnected Text Messaging Add-On",
+      "status": "pushed to production",
+      "closedAt": "2026-04-04T18:02:47.732Z",
+      "url": "https://app.clickup.com/t/86b96ax1t"
+    },
+    {
+      "title": "Fix Booking Form Opt-In Checkbox Pre-Checked for Rejected/Pending Twilio Apps",
+      "status": "pushed to production",
+      "closedAt": "2026-04-04T18:02:47.732Z",
+      "url": "https://app.clickup.com/t/86b95m7je"
+    },
+    {
+      "title": "Fix “Update Appointment” Zap - Google Calendar Not Syncing",
+      "status": "pushed to production",
+      "closedAt": "2026-04-04T18:02:47.732Z",
+      "url": "https://app.clickup.com/t/86b94hzze"
+    },
     {
       "title": "Metrics Dashboard — KPI Banner Redesign, Date Range Consistency & Section Cards",
       "status": "pushed to production",
@@ -8558,24 +8573,6 @@
       "status": "pushed to production",
       "closedAt": "2026-04-03T09:08:05.416Z",
       "url": "https://app.clickup.com/t/86b93b3r6"
-    },
-    {
-      "title": "Discount Display Bug in Customer Portal",
-      "status": "pushed to production",
-      "closedAt": "2026-04-03T09:08:04.859Z",
-      "url": "https://app.clickup.com/t/86b93jpmz"
-    },
-    {
-      "title": "Relocate Portal Accent Color to Customer Portal Settings",
-      "status": "pushed to production",
-      "closedAt": "2026-04-03T09:08:03.896Z",
-      "url": "https://app.clickup.com/t/86b93zknm"
-    },
-    {
-      "title": "Block SMS Add-On Access for Pro Plan Users",
-      "status": "pushed to production",
-      "closedAt": "2026-04-03T09:08:03.175Z",
-      "url": "https://app.clickup.com/t/86b95k9w6"
     }
   ]
 }
