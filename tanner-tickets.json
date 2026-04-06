@@ -1,5 +1,18 @@
 [
   {
+    "id": "T-126",
+    "title": "Support exact times and 5-minute increments for scheduled appointments",
+    "desc": "When Routemize sends appointments with exact times (e.g. 10:29), the system defaults to 7:00am and creates all-day events in Google Calendar instead of preserving the scheduled time.",
+    "type": "bug",
+    "sub": "na",
+    "priority": "high",
+    "status": "open",
+    "date": "2026-04-06",
+    "area": "scheduling",
+    "source": "Slack #tanner-tickets",
+    "clickup": ""
+  },
+  {
     "id": "T-125",
     "title": "Outbound Reply-To: Use assigned salesperson email for automated sends",
     "desc": "When a salesperson is assigned to a deal, automated communications (drips, proposals) should use their email as reply-to instead of generic company address. Falls back to company reply-to if no salesperson assigned.",
