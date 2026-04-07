@@ -11,7 +11,15 @@
     "area": "invoicing",
     "source": "Slack #tanner-tickets",
     "clickup": "https://app.clickup.com/t/86b9a92px",
-    "subposts": [],
+    "subposts": [
+      {
+        "id": "SP-1775590998450",
+        "text": "Smart Invoice Due Dates: Net Terms Default, Quick-Select Picker, Progressive Customer Portal Banners",
+        "clickup": "https://app.clickup.com/t/86b9abbcc",
+        "date": "2026-04-07",
+        "isNewMetric": false
+      }
+    ],
     "relatedIds": [],
     "notes": "Ready for Dev"
   },
