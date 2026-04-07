@@ -1,156 +1,163 @@
 {
-  "lastUpdated": "2026-04-06T12:21:49.411Z",
+  "lastUpdated": "2026-04-07T12:23:29.970Z",
   "stats": {
-    "featuresShipped": 8,
+    "featuresShipped": 9,
     "qaPassRate": 100,
-    "inProgress": 3,
-    "openBugs": 45,
-    "tasksClosed": 8
+    "inProgress": 6,
+    "openBugs": 48,
+    "tasksClosed": 9
   },
   "bugs": {
-    "newThisWeek": 11,
+    "newThisWeek": 12,
     "resolved": 0,
-    "open": 45,
+    "open": 48,
     "deferred": 0
   },
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 0,
+        "featuresShipped": 1,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 45,
-        "tasksClosed": 0
+        "inProgress": 6,
+        "openBugs": 48,
+        "tasksClosed": 1
       },
       "bugs": {
-        "newThisWeek": 0,
+        "newThisWeek": 4,
         "resolved": 0,
-        "open": 45,
+        "open": 48,
         "deferred": 0
       }
     },
     "thisWeek": {
       "stats": {
-        "featuresShipped": 0,
+        "featuresShipped": 1,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 45,
-        "tasksClosed": 0
+        "inProgress": 6,
+        "openBugs": 48,
+        "tasksClosed": 1
       },
       "bugs": {
-        "newThisWeek": 0,
+        "newThisWeek": 4,
         "resolved": 0,
-        "open": 45,
+        "open": 48,
         "deferred": 0
       }
     },
     "lastWeek": {
       "stats": {
-        "featuresShipped": 17,
+        "featuresShipped": 18,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 45,
+        "inProgress": 6,
+        "openBugs": 48,
         "tasksClosed": 17
       },
       "bugs": {
-        "newThisWeek": 11,
+        "newThisWeek": 10,
         "resolved": 0,
-        "open": 45,
+        "open": 48,
         "deferred": 0
       }
     },
     "7d": {
       "stats": {
-        "featuresShipped": 8,
+        "featuresShipped": 9,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 45,
-        "tasksClosed": 8
+        "inProgress": 6,
+        "openBugs": 48,
+        "tasksClosed": 9
       },
       "bugs": {
-        "newThisWeek": 11,
+        "newThisWeek": 12,
         "resolved": 0,
-        "open": 45,
+        "open": 48,
         "deferred": 0
       }
     },
     "30d": {
       "stats": {
-        "featuresShipped": 66,
+        "featuresShipped": 67,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 45,
-        "tasksClosed": 66
+        "inProgress": 6,
+        "openBugs": 48,
+        "tasksClosed": 67
       },
       "bugs": {
-        "newThisWeek": 33,
+        "newThisWeek": 36,
         "resolved": 0,
-        "open": 45,
+        "open": 48,
         "deferred": 0
       }
     },
     "90d": {
       "stats": {
-        "featuresShipped": 217,
+        "featuresShipped": 215,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 45,
-        "tasksClosed": 217
+        "inProgress": 6,
+        "openBugs": 48,
+        "tasksClosed": 215
       },
       "bugs": {
-        "newThisWeek": 49,
+        "newThisWeek": 52,
         "resolved": 0,
-        "open": 45,
+        "open": 48,
         "deferred": 0
       }
     },
     "ytd": {
       "stats": {
-        "featuresShipped": 220,
+        "featuresShipped": 221,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 45,
-        "tasksClosed": 220
+        "inProgress": 6,
+        "openBugs": 48,
+        "tasksClosed": 221
       },
       "bugs": {
-        "newThisWeek": 49,
+        "newThisWeek": 52,
         "resolved": 0,
-        "open": 45,
+        "open": 48,
         "deferred": 0
       }
     },
     "lastYear": {
       "stats": {
-        "featuresShipped": 860,
+        "featuresShipped": 861,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 45,
+        "inProgress": 6,
+        "openBugs": 48,
         "tasksClosed": 643
       },
       "bugs": {
         "newThisWeek": 6,
         "resolved": 3,
-        "open": 45,
+        "open": 48,
         "deferred": 0
       }
     },
     "allTime": {
       "stats": {
-        "featuresShipped": 1195,
+        "featuresShipped": 1196,
         "qaPassRate": 98,
-        "inProgress": 3,
-        "openBugs": 45,
-        "tasksClosed": 1369
+        "inProgress": 6,
+        "openBugs": 48,
+        "tasksClosed": 1370
       },
       "bugs": {
-        "newThisWeek": 67,
+        "newThisWeek": 70,
         "resolved": 22,
-        "open": 45,
+        "open": 48,
         "deferred": 0
       }
     }
   },
   "changelog": [
+    {
+      "date": "2026-04-06",
+      "title": "Roll Back Chargebee Service Change from Ticket #86b8vhufe",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b99h83q"
+    },
     {
       "date": "2026-04-04",
       "title": "Restore Disconnected Text Messaging Add-On",
@@ -8519,6 +8526,14 @@
   ],
   "inProgress": [
     {
+      "title": "Customer Portal Hero Image Cropped and Not Scrollable on Android",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b96x5p4",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
       "title": "Job Schedule — Mobile Form Controls Malfunction: Dropdowns and Time Inputs Trigger Keyboard Instead of Native Pickers",
       "area": "Active Development",
       "status": "pr created",
@@ -8535,6 +8550,22 @@
       "assignees": "Terry Bennett, Michael Adeoye"
     },
     {
+      "title": "Fix \"No Lead Source\" Filter - Palm Beach Painters (Tenant #16355)",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b94p6ut",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
+      "title": "Pricing Restructure: Launch Growth ($197/m) & Scale ($297/m) — Retire Advanced, $0 Price Override for Bundled Add-Ons",
+      "area": "Active Development",
+      "status": "testing complete",
+      "url": "https://app.clickup.com/t/86b90vaqz",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
       "title": "Package Duplication — Percentage-Based Price Adjustment Modal",
       "area": "Active Development",
       "status": "pr created",
@@ -8544,6 +8575,12 @@
     }
   ],
   "recentActivity": [
+    {
+      "title": "Roll Back Chargebee Service Change from Ticket #86b8vhufe",
+      "status": "pushed to production",
+      "closedAt": "2026-04-06T14:19:50.842Z",
+      "url": "https://app.clickup.com/t/86b99h83q"
+    },
     {
       "title": "Restore Disconnected Text Messaging Add-On",
       "status": "pushed to production",
@@ -8567,12 +8604,6 @@
       "status": "pushed to production",
       "closedAt": "2026-04-03T09:08:05.991Z",
       "url": "https://app.clickup.com/t/86b8qu3hn"
-    },
-    {
-      "title": "Fix Siding Selection Adds \"Siding and Trim Repair\" Instead - Proposal Bug",
-      "status": "pushed to production",
-      "closedAt": "2026-04-03T09:08:05.416Z",
-      "url": "https://app.clickup.com/t/86b93b3r6"
     }
   ]
 }
