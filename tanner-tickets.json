@@ -1,5 +1,20 @@
 [
   {
+    "id": "T-127",
+    "title": "Fix invoice overdue status calculation for same-day invoices",
+    "desc": "Same-day invoices incorrectly show as overdue when created and due on the same date. Need to improve the logic for determining overdue status.",
+    "type": "bug",
+    "sub": "na",
+    "priority": "normal",
+    "status": "open",
+    "date": "2026-04-07",
+    "area": "invoicing",
+    "source": "Slack #tanner-tickets",
+    "clickup": "https://app.clickup.com/t/86b9a92px",
+    "subposts": [],
+    "relatedIds": []
+  },
+  {
     "id": "T-126",
     "title": "Exact Time Support & 5-Minute Increments for Scheduled Appointments",
     "desc": "When Routemize sends appointments with exact times (e.g. 10:29), the system defaults to 7:00am and creates all-day events in Google Calendar instead of preserving the scheduled time.",
