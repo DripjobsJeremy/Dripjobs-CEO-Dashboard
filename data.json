@@ -1,129 +1,129 @@
 {
-  "lastUpdated": "2026-04-08T12:23:02.798Z",
+  "lastUpdated": "2026-04-09T12:26:04.295Z",
   "stats": {
-    "featuresShipped": 15,
+    "featuresShipped": 16,
     "qaPassRate": 100,
-    "inProgress": 1,
+    "inProgress": 3,
     "openBugs": 51,
-    "tasksClosed": 15
+    "tasksClosed": 16
   },
   "bugs": {
     "newThisWeek": 10,
     "resolved": 0,
     "open": 51,
-    "deferred": 0
+    "deferred": 1
   },
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 6,
+        "featuresShipped": 1,
         "qaPassRate": 100,
-        "inProgress": 1,
+        "inProgress": 3,
         "openBugs": 51,
-        "tasksClosed": 6
+        "tasksClosed": 1
       },
       "bugs": {
         "newThisWeek": 2,
         "resolved": 0,
         "open": 51,
-        "deferred": 0
+        "deferred": 1
       }
     },
     "thisWeek": {
       "stats": {
-        "featuresShipped": 7,
+        "featuresShipped": 8,
         "qaPassRate": 100,
-        "inProgress": 1,
+        "inProgress": 3,
         "openBugs": 51,
-        "tasksClosed": 7
+        "tasksClosed": 8
       },
       "bugs": {
-        "newThisWeek": 6,
+        "newThisWeek": 8,
         "resolved": 0,
         "open": 51,
-        "deferred": 0
+        "deferred": 1
       }
     },
     "lastWeek": {
       "stats": {
-        "featuresShipped": 24,
+        "featuresShipped": 25,
         "qaPassRate": 100,
-        "inProgress": 1,
+        "inProgress": 3,
         "openBugs": 51,
         "tasksClosed": 17
       },
       "bugs": {
-        "newThisWeek": 10,
+        "newThisWeek": 9,
         "resolved": 0,
         "open": 51,
-        "deferred": 0
+        "deferred": 1
       }
     },
     "7d": {
       "stats": {
-        "featuresShipped": 15,
+        "featuresShipped": 16,
         "qaPassRate": 100,
-        "inProgress": 1,
+        "inProgress": 3,
         "openBugs": 51,
-        "tasksClosed": 15
+        "tasksClosed": 16
       },
       "bugs": {
         "newThisWeek": 10,
         "resolved": 0,
         "open": 51,
-        "deferred": 0
+        "deferred": 1
       }
     },
     "30d": {
       "stats": {
-        "featuresShipped": 68,
+        "featuresShipped": 66,
         "qaPassRate": 100,
-        "inProgress": 1,
+        "inProgress": 3,
         "openBugs": 51,
-        "tasksClosed": 68
+        "tasksClosed": 66
       },
       "bugs": {
         "newThisWeek": 38,
         "resolved": 0,
         "open": 51,
-        "deferred": 0
+        "deferred": 1
       }
     },
     "90d": {
       "stats": {
-        "featuresShipped": 212,
+        "featuresShipped": 213,
         "qaPassRate": 100,
-        "inProgress": 1,
+        "inProgress": 3,
         "openBugs": 51,
-        "tasksClosed": 212
+        "tasksClosed": 213
       },
       "bugs": {
-        "newThisWeek": 54,
+        "newThisWeek": 55,
         "resolved": 0,
         "open": 51,
-        "deferred": 0
+        "deferred": 1
       }
     },
     "ytd": {
       "stats": {
-        "featuresShipped": 227,
+        "featuresShipped": 228,
         "qaPassRate": 100,
-        "inProgress": 1,
+        "inProgress": 3,
         "openBugs": 51,
-        "tasksClosed": 227
+        "tasksClosed": 228
       },
       "bugs": {
-        "newThisWeek": 54,
+        "newThisWeek": 55,
         "resolved": 0,
         "open": 51,
-        "deferred": 0
+        "deferred": 1
       }
     },
     "lastYear": {
       "stats": {
-        "featuresShipped": 867,
+        "featuresShipped": 868,
         "qaPassRate": 100,
-        "inProgress": 1,
+        "inProgress": 3,
         "openBugs": 51,
         "tasksClosed": 643
       },
@@ -131,26 +131,33 @@
         "newThisWeek": 7,
         "resolved": 3,
         "open": 51,
-        "deferred": 0
+        "deferred": 1
       }
     },
     "allTime": {
       "stats": {
-        "featuresShipped": 1202,
+        "featuresShipped": 1203,
         "qaPassRate": 98,
-        "inProgress": 1,
+        "inProgress": 3,
         "openBugs": 51,
-        "tasksClosed": 1376
+        "tasksClosed": 1378
       },
       "bugs": {
-        "newThisWeek": 73,
-        "resolved": 22,
+        "newThisWeek": 74,
+        "resolved": 23,
         "open": 51,
-        "deferred": 0
+        "deferred": 1
       }
     }
   },
   "changelog": [
+    {
+      "date": "2026-04-09",
+      "title": "Fix Mobile Proposal View Zoom Issue on Certain Screen Sizes",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b9aqw5d"
+    },
     {
       "date": "2026-04-08",
       "title": "Fix \"No Lead Source\" Filter - Palm Beach Painters (Tenant #16355)",
@@ -8568,15 +8575,37 @@
   ],
   "inProgress": [
     {
+      "title": "Job Schedule — \"Edit Event\" Button Non-Functional on Mobile",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b967tmp",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
       "title": "Pricing Restructure: Launch Growth ($197/m) & Scale ($297/m) — Retire Advanced, $0 Price Override for Bundled Add-Ons",
       "area": "Active Development",
       "status": "testing complete",
       "url": "https://app.clickup.com/t/86b90vaqz",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
+      "title": "Package Duplication — Percentage-Based Price Adjustment Modal",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b8r7be9",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
     }
   ],
   "recentActivity": [
+    {
+      "title": "Fix Mobile Proposal View Zoom Issue on Certain Screen Sizes",
+      "status": "pushed to production",
+      "closedAt": "2026-04-09T09:02:16.707Z",
+      "url": "https://app.clickup.com/t/86b9aqw5d"
+    },
     {
       "title": "Fix \"No Lead Source\" Filter - Palm Beach Painters (Tenant #16355)",
       "status": "pushed to production",
@@ -8600,12 +8629,6 @@
       "status": "pushed to production",
       "closedAt": "2026-04-08T09:10:10.199Z",
       "url": "https://app.clickup.com/t/86b96u3x8"
-    },
-    {
-      "title": "Customer Portal Hero Image Cropped and Not Scrollable on Android",
-      "status": "pushed to production",
-      "closedAt": "2026-04-08T09:10:09.721Z",
-      "url": "https://app.clickup.com/t/86b96x5p4"
     }
   ]
 }
