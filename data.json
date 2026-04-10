@@ -1,16 +1,16 @@
 {
-  "lastUpdated": "2026-04-09T12:26:04.295Z",
+  "lastUpdated": "2026-04-10T12:20:14.040Z",
   "stats": {
-    "featuresShipped": 16,
+    "featuresShipped": 12,
     "qaPassRate": 100,
-    "inProgress": 3,
-    "openBugs": 51,
-    "tasksClosed": 16
+    "inProgress": 4,
+    "openBugs": 49,
+    "tasksClosed": 12
   },
   "bugs": {
     "newThisWeek": 10,
     "resolved": 0,
-    "open": 51,
+    "open": 49,
     "deferred": 1
   },
   "ranges": {
@@ -18,139 +18,146 @@
       "stats": {
         "featuresShipped": 1,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 51,
+        "inProgress": 4,
+        "openBugs": 49,
         "tasksClosed": 1
       },
       "bugs": {
-        "newThisWeek": 2,
+        "newThisWeek": 3,
         "resolved": 0,
-        "open": 51,
+        "open": 49,
         "deferred": 1
       }
     },
     "thisWeek": {
       "stats": {
-        "featuresShipped": 8,
+        "featuresShipped": 9,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 51,
-        "tasksClosed": 8
+        "inProgress": 4,
+        "openBugs": 49,
+        "tasksClosed": 9
       },
       "bugs": {
-        "newThisWeek": 8,
+        "newThisWeek": 9,
         "resolved": 0,
-        "open": 51,
+        "open": 49,
         "deferred": 1
       }
     },
     "lastWeek": {
       "stats": {
-        "featuresShipped": 25,
+        "featuresShipped": 26,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 51,
+        "inProgress": 4,
+        "openBugs": 49,
         "tasksClosed": 17
       },
       "bugs": {
-        "newThisWeek": 9,
+        "newThisWeek": 8,
         "resolved": 0,
-        "open": 51,
+        "open": 49,
         "deferred": 1
       }
     },
     "7d": {
       "stats": {
-        "featuresShipped": 16,
+        "featuresShipped": 12,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 51,
-        "tasksClosed": 16
+        "inProgress": 4,
+        "openBugs": 49,
+        "tasksClosed": 12
       },
       "bugs": {
         "newThisWeek": 10,
         "resolved": 0,
-        "open": 51,
+        "open": 49,
         "deferred": 1
       }
     },
     "30d": {
       "stats": {
-        "featuresShipped": 66,
+        "featuresShipped": 67,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 51,
-        "tasksClosed": 66
+        "inProgress": 4,
+        "openBugs": 49,
+        "tasksClosed": 67
       },
       "bugs": {
-        "newThisWeek": 38,
+        "newThisWeek": 36,
         "resolved": 0,
-        "open": 51,
+        "open": 49,
         "deferred": 1
       }
     },
     "90d": {
       "stats": {
-        "featuresShipped": 213,
+        "featuresShipped": 214,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 51,
-        "tasksClosed": 213
+        "inProgress": 4,
+        "openBugs": 49,
+        "tasksClosed": 214
       },
       "bugs": {
-        "newThisWeek": 55,
+        "newThisWeek": 53,
         "resolved": 0,
-        "open": 51,
+        "open": 49,
         "deferred": 1
       }
     },
     "ytd": {
       "stats": {
-        "featuresShipped": 228,
+        "featuresShipped": 229,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 51,
-        "tasksClosed": 228
+        "inProgress": 4,
+        "openBugs": 49,
+        "tasksClosed": 229
       },
       "bugs": {
-        "newThisWeek": 55,
+        "newThisWeek": 53,
         "resolved": 0,
-        "open": 51,
+        "open": 49,
         "deferred": 1
       }
     },
     "lastYear": {
       "stats": {
-        "featuresShipped": 868,
+        "featuresShipped": 869,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 51,
+        "inProgress": 4,
+        "openBugs": 49,
         "tasksClosed": 643
       },
       "bugs": {
         "newThisWeek": 7,
         "resolved": 3,
-        "open": 51,
+        "open": 49,
         "deferred": 1
       }
     },
     "allTime": {
       "stats": {
-        "featuresShipped": 1203,
+        "featuresShipped": 1204,
         "qaPassRate": 98,
-        "inProgress": 3,
-        "openBugs": 51,
-        "tasksClosed": 1378
+        "inProgress": 4,
+        "openBugs": 49,
+        "tasksClosed": 1379
       },
       "bugs": {
-        "newThisWeek": 74,
+        "newThisWeek": 72,
         "resolved": 23,
-        "open": 51,
+        "open": 49,
         "deferred": 1
       }
     }
   },
   "changelog": [
+    {
+      "date": "2026-04-09",
+      "title": "GetStream API Audit — Excessive UpdateUsers Calls & Contact-to-Channel Registration Gap",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b9aqt4q"
+    },
     {
       "date": "2026-04-09",
       "title": "Fix Mobile Proposal View Zoom Issue on Certain Screen Sizes",
@@ -8575,6 +8582,14 @@
   ],
   "inProgress": [
     {
+      "title": "Force Lead Source Assignment on Contact Creation - Contacts Page",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b96r6xh",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
       "title": "Job Schedule — \"Edit Event\" Button Non-Functional on Mobile",
       "area": "Active Development",
       "status": "pr created",
@@ -8601,6 +8616,12 @@
   ],
   "recentActivity": [
     {
+      "title": "GetStream API Audit — Excessive UpdateUsers Calls & Contact-to-Channel Registration Gap",
+      "status": "pushed to production",
+      "closedAt": "2026-04-09T19:00:43.529Z",
+      "url": "https://app.clickup.com/t/86b9aqt4q"
+    },
+    {
       "title": "Fix Mobile Proposal View Zoom Issue on Certain Screen Sizes",
       "status": "pushed to production",
       "closedAt": "2026-04-09T09:02:16.707Z",
@@ -8623,12 +8644,6 @@
       "status": "pushed to production",
       "closedAt": "2026-04-08T09:10:10.739Z",
       "url": "https://app.clickup.com/t/86b967t9y"
-    },
-    {
-      "title": "Metrics KPI Banner: Dedicated Mobile Layout",
-      "status": "pushed to production",
-      "closedAt": "2026-04-08T09:10:10.199Z",
-      "url": "https://app.clickup.com/t/86b96u3x8"
     }
   ]
 }
