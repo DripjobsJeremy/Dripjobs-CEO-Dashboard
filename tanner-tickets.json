@@ -1,5 +1,21 @@
 [
   {
+    "id": "T-132",
+    "title": "Fix grey rectangular UI artifacts in DJ Chat mobile app",
+    "desc": "Grey rectangular boxes are appearing as visual artifacts next to contact names and overlaid on message text in the DJ Chat mobile app. These UI elements appear to be rendering without content or correct styling.",
+    "type": "bug",
+    "sub": "na",
+    "priority": "normal",
+    "status": "open",
+    "date": "2026-04-10",
+    "area": "Chat",
+    "source": "Slack #tanner-tickets",
+    "clickup": "https://app.clickup.com/t/86b9c8pk8",
+    "subposts": [],
+    "relatedIds": [],
+    "notes": "Ready for Dev"
+  },
+  {
     "id": "T-131",
     "title": "Fix error when adding new Administrator role user",
     "desc": "Users cannot add new users with Administrator role due to incorrect error message 'Must have at least one user an Admin role.' This breaks user management functionality.",
