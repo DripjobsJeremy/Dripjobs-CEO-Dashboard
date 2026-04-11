@@ -1,31 +1,31 @@
 {
-  "lastUpdated": "2026-04-10T12:20:14.040Z",
+  "lastUpdated": "2026-04-11T12:13:56.497Z",
   "stats": {
     "featuresShipped": 12,
     "qaPassRate": 100,
-    "inProgress": 4,
-    "openBugs": 49,
+    "inProgress": 6,
+    "openBugs": 51,
     "tasksClosed": 12
   },
   "bugs": {
-    "newThisWeek": 10,
+    "newThisWeek": 11,
     "resolved": 0,
-    "open": 49,
+    "open": 51,
     "deferred": 1
   },
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 1,
+        "featuresShipped": 0,
         "qaPassRate": 100,
-        "inProgress": 4,
-        "openBugs": 49,
-        "tasksClosed": 1
+        "inProgress": 6,
+        "openBugs": 51,
+        "tasksClosed": 0
       },
       "bugs": {
-        "newThisWeek": 3,
+        "newThisWeek": 2,
         "resolved": 0,
-        "open": 49,
+        "open": 51,
         "deferred": 1
       }
     },
@@ -33,14 +33,14 @@
       "stats": {
         "featuresShipped": 9,
         "qaPassRate": 100,
-        "inProgress": 4,
-        "openBugs": 49,
+        "inProgress": 6,
+        "openBugs": 51,
         "tasksClosed": 9
       },
       "bugs": {
-        "newThisWeek": 9,
+        "newThisWeek": 11,
         "resolved": 0,
-        "open": 49,
+        "open": 51,
         "deferred": 1
       }
     },
@@ -48,14 +48,14 @@
       "stats": {
         "featuresShipped": 26,
         "qaPassRate": 100,
-        "inProgress": 4,
-        "openBugs": 49,
+        "inProgress": 6,
+        "openBugs": 51,
         "tasksClosed": 17
       },
       "bugs": {
         "newThisWeek": 8,
         "resolved": 0,
-        "open": 49,
+        "open": 51,
         "deferred": 1
       }
     },
@@ -63,29 +63,29 @@
       "stats": {
         "featuresShipped": 12,
         "qaPassRate": 100,
-        "inProgress": 4,
-        "openBugs": 49,
+        "inProgress": 6,
+        "openBugs": 51,
         "tasksClosed": 12
       },
       "bugs": {
-        "newThisWeek": 10,
+        "newThisWeek": 11,
         "resolved": 0,
-        "open": 49,
+        "open": 51,
         "deferred": 1
       }
     },
     "30d": {
       "stats": {
-        "featuresShipped": 67,
+        "featuresShipped": 59,
         "qaPassRate": 100,
-        "inProgress": 4,
-        "openBugs": 49,
-        "tasksClosed": 67
+        "inProgress": 6,
+        "openBugs": 51,
+        "tasksClosed": 59
       },
       "bugs": {
-        "newThisWeek": 36,
+        "newThisWeek": 38,
         "resolved": 0,
-        "open": 49,
+        "open": 51,
         "deferred": 1
       }
     },
@@ -93,14 +93,14 @@
       "stats": {
         "featuresShipped": 214,
         "qaPassRate": 100,
-        "inProgress": 4,
-        "openBugs": 49,
+        "inProgress": 6,
+        "openBugs": 51,
         "tasksClosed": 214
       },
       "bugs": {
-        "newThisWeek": 53,
+        "newThisWeek": 55,
         "resolved": 0,
-        "open": 49,
+        "open": 51,
         "deferred": 1
       }
     },
@@ -108,14 +108,14 @@
       "stats": {
         "featuresShipped": 229,
         "qaPassRate": 100,
-        "inProgress": 4,
-        "openBugs": 49,
+        "inProgress": 6,
+        "openBugs": 51,
         "tasksClosed": 229
       },
       "bugs": {
-        "newThisWeek": 53,
+        "newThisWeek": 55,
         "resolved": 0,
-        "open": 49,
+        "open": 51,
         "deferred": 1
       }
     },
@@ -123,29 +123,29 @@
       "stats": {
         "featuresShipped": 869,
         "qaPassRate": 100,
-        "inProgress": 4,
-        "openBugs": 49,
-        "tasksClosed": 643
+        "inProgress": 6,
+        "openBugs": 51,
+        "tasksClosed": 640
       },
       "bugs": {
-        "newThisWeek": 7,
-        "resolved": 3,
-        "open": 49,
+        "newThisWeek": 4,
+        "resolved": 0,
+        "open": 51,
         "deferred": 1
       }
     },
     "allTime": {
       "stats": {
         "featuresShipped": 1204,
-        "qaPassRate": 98,
-        "inProgress": 4,
-        "openBugs": 49,
-        "tasksClosed": 1379
+        "qaPassRate": 99,
+        "inProgress": 6,
+        "openBugs": 51,
+        "tasksClosed": 1365
       },
       "bugs": {
-        "newThisWeek": 72,
-        "resolved": 23,
-        "open": 49,
+        "newThisWeek": 60,
+        "resolved": 9,
+        "open": 51,
         "deferred": 1
       }
     }
@@ -8581,6 +8581,22 @@
     }
   ],
   "inProgress": [
+    {
+      "title": "Enable Acorn Financing for Eligible Canadian Provinces (Fig / Canada Fig)",
+      "area": "Active Development",
+      "status": "testing complete",
+      "url": "https://app.clickup.com/t/86b8ycdz8",
+      "due": "2026-04-13",
+      "assignees": "ali raza, Michael Adeoye"
+    },
+    {
+      "title": "Incoming SMS Delivered but Missing from DripJobs Chat Interface",
+      "area": "Active Development",
+      "status": "testing complete",
+      "url": "https://app.clickup.com/t/86b9c1ecj",
+      "due": null,
+      "assignees": "Terry Bennett"
+    },
     {
       "title": "Force Lead Source Assignment on Contact Creation - Contacts Page",
       "area": "Active Development",
