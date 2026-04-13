@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-12T12:15:29.063Z",
+  "lastUpdated": "2026-04-13T12:27:14.422Z",
   "stats": {
     "featuresShipped": 9,
     "qaPassRate": 100,
@@ -23,13 +23,28 @@
         "tasksClosed": 0
       },
       "bugs": {
-        "newThisWeek": 1,
+        "newThisWeek": 0,
         "resolved": 0,
         "open": 51,
         "deferred": 1
       }
     },
     "thisWeek": {
+      "stats": {
+        "featuresShipped": 0,
+        "qaPassRate": 100,
+        "inProgress": 6,
+        "openBugs": 51,
+        "tasksClosed": 0
+      },
+      "bugs": {
+        "newThisWeek": 0,
+        "resolved": 0,
+        "open": 51,
+        "deferred": 1
+      }
+    },
+    "lastWeek": {
       "stats": {
         "featuresShipped": 9,
         "qaPassRate": 100,
@@ -39,21 +54,6 @@
       },
       "bugs": {
         "newThisWeek": 12,
-        "resolved": 0,
-        "open": 51,
-        "deferred": 1
-      }
-    },
-    "lastWeek": {
-      "stats": {
-        "featuresShipped": 26,
-        "qaPassRate": 100,
-        "inProgress": 6,
-        "openBugs": 51,
-        "tasksClosed": 17
-      },
-      "bugs": {
-        "newThisWeek": 8,
         "resolved": 0,
         "open": 51,
         "deferred": 1
@@ -91,14 +91,14 @@
     },
     "90d": {
       "stats": {
-        "featuresShipped": 199,
+        "featuresShipped": 196,
         "qaPassRate": 100,
         "inProgress": 6,
         "openBugs": 51,
-        "tasksClosed": 199
+        "tasksClosed": 196
       },
       "bugs": {
-        "newThisWeek": 55,
+        "newThisWeek": 54,
         "resolved": 0,
         "open": 51,
         "deferred": 1
