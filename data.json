@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-04-13T12:27:14.422Z",
+  "lastUpdated": "2026-04-14T12:25:49.093Z",
   "stats": {
-    "featuresShipped": 9,
+    "featuresShipped": 16,
     "qaPassRate": 100,
-    "inProgress": 6,
+    "inProgress": 3,
     "openBugs": 51,
-    "tasksClosed": 9
+    "tasksClosed": 16
   },
   "bugs": {
-    "newThisWeek": 12,
+    "newThisWeek": 9,
     "resolved": 0,
     "open": 51,
     "deferred": 1
@@ -16,11 +16,11 @@
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 0,
+        "featuresShipped": 8,
         "qaPassRate": 100,
-        "inProgress": 6,
+        "inProgress": 3,
         "openBugs": 51,
-        "tasksClosed": 0
+        "tasksClosed": 8
       },
       "bugs": {
         "newThisWeek": 0,
@@ -31,11 +31,11 @@
     },
     "thisWeek": {
       "stats": {
-        "featuresShipped": 0,
+        "featuresShipped": 8,
         "qaPassRate": 100,
-        "inProgress": 6,
+        "inProgress": 3,
         "openBugs": 51,
-        "tasksClosed": 0
+        "tasksClosed": 8
       },
       "bugs": {
         "newThisWeek": 0,
@@ -46,9 +46,9 @@
     },
     "lastWeek": {
       "stats": {
-        "featuresShipped": 9,
+        "featuresShipped": 17,
         "qaPassRate": 100,
-        "inProgress": 6,
+        "inProgress": 3,
         "openBugs": 51,
         "tasksClosed": 9
       },
@@ -61,14 +61,14 @@
     },
     "7d": {
       "stats": {
-        "featuresShipped": 9,
+        "featuresShipped": 16,
         "qaPassRate": 100,
-        "inProgress": 6,
+        "inProgress": 3,
         "openBugs": 51,
-        "tasksClosed": 9
+        "tasksClosed": 16
       },
       "bugs": {
-        "newThisWeek": 12,
+        "newThisWeek": 9,
         "resolved": 0,
         "open": 51,
         "deferred": 1
@@ -76,11 +76,11 @@
     },
     "30d": {
       "stats": {
-        "featuresShipped": 58,
+        "featuresShipped": 66,
         "qaPassRate": 100,
-        "inProgress": 6,
+        "inProgress": 3,
         "openBugs": 51,
-        "tasksClosed": 58
+        "tasksClosed": 66
       },
       "bugs": {
         "newThisWeek": 37,
@@ -91,11 +91,11 @@
     },
     "90d": {
       "stats": {
-        "featuresShipped": 196,
+        "featuresShipped": 200,
         "qaPassRate": 100,
-        "inProgress": 6,
+        "inProgress": 3,
         "openBugs": 51,
-        "tasksClosed": 196
+        "tasksClosed": 200
       },
       "bugs": {
         "newThisWeek": 54,
@@ -106,11 +106,11 @@
     },
     "ytd": {
       "stats": {
-        "featuresShipped": 229,
+        "featuresShipped": 237,
         "qaPassRate": 100,
-        "inProgress": 6,
+        "inProgress": 3,
         "openBugs": 51,
-        "tasksClosed": 229
+        "tasksClosed": 237
       },
       "bugs": {
         "newThisWeek": 55,
@@ -121,9 +121,9 @@
     },
     "lastYear": {
       "stats": {
-        "featuresShipped": 869,
+        "featuresShipped": 877,
         "qaPassRate": 100,
-        "inProgress": 6,
+        "inProgress": 3,
         "openBugs": 51,
         "tasksClosed": 640
       },
@@ -136,11 +136,11 @@
     },
     "allTime": {
       "stats": {
-        "featuresShipped": 1204,
+        "featuresShipped": 1212,
         "qaPassRate": 99,
-        "inProgress": 6,
+        "inProgress": 3,
         "openBugs": 51,
-        "tasksClosed": 1365
+        "tasksClosed": 1373
       },
       "bugs": {
         "newThisWeek": 60,
@@ -151,6 +151,62 @@
     }
   },
   "changelog": [
+    {
+      "date": "2026-04-14",
+      "title": "Package Duplication — Percentage-Based Price Adjustment Modal",
+      "area": "Active Development",
+      "type": "ux",
+      "url": "https://app.clickup.com/t/86b8r7be9"
+    },
+    {
+      "date": "2026-04-14",
+      "title": "Job Schedule — \"Edit Event\" Button Non-Functional on Mobile",
+      "area": "Active Development",
+      "type": "ux",
+      "url": "https://app.clickup.com/t/86b967tmp"
+    },
+    {
+      "date": "2026-04-14",
+      "title": "Force Lead Source Assignment on Contact Creation - Contacts Page",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b96r6xh"
+    },
+    {
+      "date": "2026-04-14",
+      "title": "A2P Application Success Screen — Update \"10-15 Business Days\" Copy",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b9bdum5"
+    },
+    {
+      "date": "2026-04-14",
+      "title": "Incoming SMS Delivered but Missing from DripJobs Chat Interface",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b9c1ecj"
+    },
+    {
+      "date": "2026-04-14",
+      "title": "Booking Form: SMS Opt-In Pre-Checked & Terms Checkbox Missing for Pending/Non-Approved A2P Tenants",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b9c4wrd"
+    },
+    {
+      "date": "2026-04-14",
+      "title": "Update Proposal Hero Image Link - Customer Portal Settings",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b9d1dde"
+    },
+    {
+      "date": "2026-04-14",
+      "title": "Fix error on job start modal",
+      "area": "Active Development",
+      "type": "ux",
+      "url": "https://app.clickup.com/t/86b9d6n9t"
+    },
     {
       "date": "2026-04-09",
       "title": "GetStream API Audit — Excessive UpdateUsers Calls & Contact-to-Channel Registration Gap",
@@ -8584,34 +8640,10 @@
     {
       "title": "Enable Acorn Financing for Eligible Canadian Provinces (Fig / Canada Fig)",
       "area": "Active Development",
-      "status": "testing complete",
+      "status": "pr created",
       "url": "https://app.clickup.com/t/86b8ycdz8",
       "due": "2026-04-13",
       "assignees": "ali raza, Michael Adeoye"
-    },
-    {
-      "title": "Incoming SMS Delivered but Missing from DripJobs Chat Interface",
-      "area": "Active Development",
-      "status": "testing complete",
-      "url": "https://app.clickup.com/t/86b9c1ecj",
-      "due": null,
-      "assignees": "Terry Bennett"
-    },
-    {
-      "title": "Force Lead Source Assignment on Contact Creation - Contacts Page",
-      "area": "Active Development",
-      "status": "pr created",
-      "url": "https://app.clickup.com/t/86b96r6xh",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Job Schedule — \"Edit Event\" Button Non-Functional on Mobile",
-      "area": "Active Development",
-      "status": "pr created",
-      "url": "https://app.clickup.com/t/86b967tmp",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
     },
     {
       "title": "Pricing Restructure: Launch Growth ($197/m) & Scale ($297/m) — Retire Advanced, $0 Price Override for Bundled Add-Ons",
@@ -8622,44 +8654,44 @@
       "assignees": "Terry Bennett, Michael Adeoye"
     },
     {
-      "title": "Package Duplication — Percentage-Based Price Adjustment Modal",
+      "title": "Bulk Product Changer — Cost Summary Area Entry Points & Change Products Modal",
       "area": "Active Development",
       "status": "pr created",
-      "url": "https://app.clickup.com/t/86b8r7be9",
+      "url": "https://app.clickup.com/t/86b3fm30n",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
     }
   ],
   "recentActivity": [
     {
-      "title": "GetStream API Audit — Excessive UpdateUsers Calls & Contact-to-Channel Registration Gap",
+      "title": "Package Duplication — Percentage-Based Price Adjustment Modal",
       "status": "pushed to production",
-      "closedAt": "2026-04-09T19:00:43.529Z",
-      "url": "https://app.clickup.com/t/86b9aqt4q"
+      "closedAt": "2026-04-14T09:05:40.669Z",
+      "url": "https://app.clickup.com/t/86b8r7be9"
     },
     {
-      "title": "Fix Mobile Proposal View Zoom Issue on Certain Screen Sizes",
+      "title": "Job Schedule — \"Edit Event\" Button Non-Functional on Mobile",
       "status": "pushed to production",
-      "closedAt": "2026-04-09T09:02:16.707Z",
-      "url": "https://app.clickup.com/t/86b9aqw5d"
+      "closedAt": "2026-04-14T09:05:40.088Z",
+      "url": "https://app.clickup.com/t/86b967tmp"
     },
     {
-      "title": "Fix \"No Lead Source\" Filter - Palm Beach Painters (Tenant #16355)",
+      "title": "Force Lead Source Assignment on Contact Creation - Contacts Page",
       "status": "pushed to production",
-      "closedAt": "2026-04-08T09:10:11.917Z",
-      "url": "https://app.clickup.com/t/86b94p6ut"
+      "closedAt": "2026-04-14T09:05:39.645Z",
+      "url": "https://app.clickup.com/t/86b96r6xh"
     },
     {
-      "title": "Edited Job Address Not Reflected in Command Center or Contact Deals List",
+      "title": "A2P Application Success Screen — Update \"10-15 Business Days\" Copy",
       "status": "pushed to production",
-      "closedAt": "2026-04-08T09:10:11.422Z",
-      "url": "https://app.clickup.com/t/86b95zrby"
+      "closedAt": "2026-04-14T09:05:38.834Z",
+      "url": "https://app.clickup.com/t/86b9bdum5"
     },
     {
-      "title": "Job Schedule — Mobile Form Controls Malfunction: Dropdowns and Time Inputs Trigger Keyboard Instead of Native Pickers",
+      "title": "Incoming SMS Delivered but Missing from DripJobs Chat Interface",
       "status": "pushed to production",
-      "closedAt": "2026-04-08T09:10:10.739Z",
-      "url": "https://app.clickup.com/t/86b967t9y"
+      "closedAt": "2026-04-14T09:05:38.218Z",
+      "url": "https://app.clickup.com/t/86b9c1ecj"
     }
   ]
 }
