@@ -1,31 +1,31 @@
 {
-  "lastUpdated": "2026-04-14T12:25:49.093Z",
+  "lastUpdated": "2026-04-15T12:26:00.674Z",
   "stats": {
-    "featuresShipped": 16,
+    "featuresShipped": 10,
     "qaPassRate": 100,
     "inProgress": 3,
-    "openBugs": 51,
-    "tasksClosed": 16
+    "openBugs": 53,
+    "tasksClosed": 10
   },
   "bugs": {
     "newThisWeek": 9,
     "resolved": 0,
-    "open": 51,
+    "open": 53,
     "deferred": 1
   },
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 8,
+        "featuresShipped": 0,
         "qaPassRate": 100,
         "inProgress": 3,
-        "openBugs": 51,
-        "tasksClosed": 8
+        "openBugs": 53,
+        "tasksClosed": 0
       },
       "bugs": {
-        "newThisWeek": 0,
+        "newThisWeek": 2,
         "resolved": 0,
-        "open": 51,
+        "open": 53,
         "deferred": 1
       }
     },
@@ -34,13 +34,13 @@
         "featuresShipped": 8,
         "qaPassRate": 100,
         "inProgress": 3,
-        "openBugs": 51,
+        "openBugs": 53,
         "tasksClosed": 8
       },
       "bugs": {
-        "newThisWeek": 0,
+        "newThisWeek": 2,
         "resolved": 0,
-        "open": 51,
+        "open": 53,
         "deferred": 1
       }
     },
@@ -49,28 +49,28 @@
         "featuresShipped": 17,
         "qaPassRate": 100,
         "inProgress": 3,
-        "openBugs": 51,
+        "openBugs": 53,
         "tasksClosed": 9
       },
       "bugs": {
         "newThisWeek": 12,
         "resolved": 0,
-        "open": 51,
+        "open": 53,
         "deferred": 1
       }
     },
     "7d": {
       "stats": {
-        "featuresShipped": 16,
+        "featuresShipped": 10,
         "qaPassRate": 100,
         "inProgress": 3,
-        "openBugs": 51,
-        "tasksClosed": 16
+        "openBugs": 53,
+        "tasksClosed": 10
       },
       "bugs": {
         "newThisWeek": 9,
         "resolved": 0,
-        "open": 51,
+        "open": 53,
         "deferred": 1
       }
     },
@@ -79,28 +79,28 @@
         "featuresShipped": 66,
         "qaPassRate": 100,
         "inProgress": 3,
-        "openBugs": 51,
+        "openBugs": 53,
         "tasksClosed": 66
       },
       "bugs": {
-        "newThisWeek": 37,
+        "newThisWeek": 39,
         "resolved": 0,
-        "open": 51,
+        "open": 53,
         "deferred": 1
       }
     },
     "90d": {
       "stats": {
-        "featuresShipped": 200,
+        "featuresShipped": 196,
         "qaPassRate": 100,
         "inProgress": 3,
-        "openBugs": 51,
-        "tasksClosed": 200
+        "openBugs": 53,
+        "tasksClosed": 196
       },
       "bugs": {
-        "newThisWeek": 54,
+        "newThisWeek": 56,
         "resolved": 0,
-        "open": 51,
+        "open": 53,
         "deferred": 1
       }
     },
@@ -109,13 +109,13 @@
         "featuresShipped": 237,
         "qaPassRate": 100,
         "inProgress": 3,
-        "openBugs": 51,
+        "openBugs": 53,
         "tasksClosed": 237
       },
       "bugs": {
-        "newThisWeek": 55,
+        "newThisWeek": 57,
         "resolved": 0,
-        "open": 51,
+        "open": 53,
         "deferred": 1
       }
     },
@@ -124,13 +124,13 @@
         "featuresShipped": 877,
         "qaPassRate": 100,
         "inProgress": 3,
-        "openBugs": 51,
+        "openBugs": 53,
         "tasksClosed": 640
       },
       "bugs": {
         "newThisWeek": 4,
         "resolved": 0,
-        "open": 51,
+        "open": 53,
         "deferred": 1
       }
     },
@@ -139,13 +139,13 @@
         "featuresShipped": 1212,
         "qaPassRate": 99,
         "inProgress": 3,
-        "openBugs": 51,
+        "openBugs": 53,
         "tasksClosed": 1373
       },
       "bugs": {
-        "newThisWeek": 60,
+        "newThisWeek": 62,
         "resolved": 9,
-        "open": 51,
+        "open": 53,
         "deferred": 1
       }
     }
@@ -8640,24 +8640,24 @@
     {
       "title": "Enable Acorn Financing for Eligible Canadian Provinces (Fig / Canada Fig)",
       "area": "Active Development",
-      "status": "pr created",
+      "status": "in progress",
       "url": "https://app.clickup.com/t/86b8ycdz8",
       "due": "2026-04-13",
       "assignees": "ali raza, Michael Adeoye"
+    },
+    {
+      "title": "Bug: Invoice Due Date — Overdue Logic Fires Same Day, Calendar Blocks Today's Date & Proposal Auto-Assignment",
+      "area": "Active Development",
+      "status": "testing complete",
+      "url": "https://app.clickup.com/t/86b9a92px",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
     },
     {
       "title": "Pricing Restructure: Launch Growth ($197/m) & Scale ($297/m) — Retire Advanced, $0 Price Override for Bundled Add-Ons",
       "area": "Active Development",
       "status": "testing complete",
       "url": "https://app.clickup.com/t/86b90vaqz",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Bulk Product Changer — Cost Summary Area Entry Points & Change Products Modal",
-      "area": "Active Development",
-      "status": "pr created",
-      "url": "https://app.clickup.com/t/86b3fm30n",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
     }
