@@ -184,8 +184,8 @@
     "clickup": "https://app.clickup.com/t/86b90vaqz",
     "subposts": [],
     "relatedIds": [],
-    "notes": "New verbiage updated/deployed to rick.dripjobs 4/1/26",
-    "resolvedNote": "Testing Complete: Apr 6 2026"
+    "notes": "Clarification to existing BR-8 /BR-9 added (4/14/26)",
+    "resolvedNote": ""
   },
   {
     "id": "T-121",
@@ -364,7 +364,7 @@
     "type": "enhancement",
     "sub": "considered",
     "priority": "normal",
-    "status": "in-progress",
+    "status": "resolved",
     "date": "2026-03-03",
     "area": "Packaged Pricing",
     "source": "Slack #tanner-tickets",
@@ -372,7 +372,7 @@
     "notes": "Prototype built/ ticket updated. (Decisions on changes made 3/17 (J,J,& J)",
     "subposts": [],
     "relatedIds": [],
-    "resolvedNote": "PR Created: Apr 8 2026 "
+    "resolvedNote": "Pushed to Production (4/14/26)"
   },
   {
     "id": "T-001",
