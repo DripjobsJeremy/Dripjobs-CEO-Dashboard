@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-04-15T12:26:00.674Z",
+  "lastUpdated": "2026-04-16T12:27:51.073Z",
   "stats": {
-    "featuresShipped": 10,
+    "featuresShipped": 9,
     "qaPassRate": 100,
     "inProgress": 3,
     "openBugs": 53,
-    "tasksClosed": 10
+    "tasksClosed": 9
   },
   "bugs": {
-    "newThisWeek": 9,
+    "newThisWeek": 10,
     "resolved": 0,
     "open": 53,
     "deferred": 1
@@ -23,7 +23,7 @@
         "tasksClosed": 0
       },
       "bugs": {
-        "newThisWeek": 2,
+        "newThisWeek": 3,
         "resolved": 0,
         "open": 53,
         "deferred": 1
@@ -38,7 +38,7 @@
         "tasksClosed": 8
       },
       "bugs": {
-        "newThisWeek": 2,
+        "newThisWeek": 5,
         "resolved": 0,
         "open": 53,
         "deferred": 1
@@ -53,7 +53,7 @@
         "tasksClosed": 9
       },
       "bugs": {
-        "newThisWeek": 12,
+        "newThisWeek": 10,
         "resolved": 0,
         "open": 53,
         "deferred": 1
@@ -61,14 +61,14 @@
     },
     "7d": {
       "stats": {
-        "featuresShipped": 10,
+        "featuresShipped": 9,
         "qaPassRate": 100,
         "inProgress": 3,
         "openBugs": 53,
-        "tasksClosed": 10
+        "tasksClosed": 9
       },
       "bugs": {
-        "newThisWeek": 9,
+        "newThisWeek": 10,
         "resolved": 0,
         "open": 53,
         "deferred": 1
@@ -76,14 +76,14 @@
     },
     "30d": {
       "stats": {
-        "featuresShipped": 66,
+        "featuresShipped": 60,
         "qaPassRate": 100,
         "inProgress": 3,
         "openBugs": 53,
-        "tasksClosed": 66
+        "tasksClosed": 60
       },
       "bugs": {
-        "newThisWeek": 39,
+        "newThisWeek": 40,
         "resolved": 0,
         "open": 53,
         "deferred": 1
@@ -8640,7 +8640,7 @@
     {
       "title": "Enable Acorn Financing for Eligible Canadian Provinces (Fig / Canada Fig)",
       "area": "Active Development",
-      "status": "in progress",
+      "status": "testing complete",
       "url": "https://app.clickup.com/t/86b8ycdz8",
       "due": "2026-04-13",
       "assignees": "ali raza, Michael Adeoye"
@@ -8648,15 +8648,15 @@
     {
       "title": "Bug: Invoice Due Date — Overdue Logic Fires Same Day, Calendar Blocks Today's Date & Proposal Auto-Assignment",
       "area": "Active Development",
-      "status": "testing complete",
+      "status": "pr created",
       "url": "https://app.clickup.com/t/86b9a92px",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
     },
     {
-      "title": "Pricing Restructure: Launch Growth ($197/m) & Scale ($297/m) — Retire Advanced, $0 Price Override for Bundled Add-Ons",
+      "title": "Pricing Restructure: Launch Growth ($197/m) Retire Advanced, $0 Price Override for Bundled Add-Ons",
       "area": "Active Development",
-      "status": "testing complete",
+      "status": "in progress",
       "url": "https://app.clickup.com/t/86b90vaqz",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
