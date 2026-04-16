@@ -10,7 +10,9 @@
     "date": "2026-04-16",
     "area": "appointment scheduling",
     "source": "Slack #tanner-tickets",
-    "clickup": ""
+    "clickup": "https://app.clickup.com/t/86b9f20my",
+    "subposts": [],
+    "relatedIds": []
   },
   {
     "id": "T-133",
