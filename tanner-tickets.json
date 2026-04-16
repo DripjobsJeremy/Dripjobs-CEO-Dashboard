@@ -1,5 +1,33 @@
 [
   {
+    "id": "T-134",
+    "title": "Enhance appointment edit modal with smart notifications and field hiding",
+    "desc": "Add logic to hide drip time field on scheduled appointment edits and allow users to choose between update vs reschedule notifications with auto-detection.",
+    "type": "enhancement",
+    "sub": "nicetohave",
+    "priority": "normal",
+    "status": "open",
+    "date": "2026-04-16",
+    "area": "appointment scheduling",
+    "source": "Slack #tanner-tickets",
+    "clickup": ""
+  },
+  {
+    "id": "T-133",
+    "title": "Notification Template Keyword Set Restoration & SMS Composer Quality Improvements",
+    "desc": "User Story\nAs a DripJobs user composing or reviewing notification templates,\nI want the full set of applicable salesperson keywords to be available, a real-time character and segment count when editing SMS templates, immediate feedback when I type a keyword that doesn't match the valid list, and a warning when two keyword tokens are placed directly adjacent to each other without a space,\nSo that my customer-facing notifications are accurate, properly sized for SMS delivery, and won't silently send broken or unresolved keyword strings to customers.",
+    "type": "enhancement",
+    "sub": "considered",
+    "priority": "high",
+    "status": "open",
+    "date": "2026-04-16",
+    "area": "Company Settings > Templates",
+    "source": "Slack #tanner-tickets",
+    "clickup": "https://app.clickup.com/t/86b9f1ay7",
+    "subposts": [],
+    "relatedIds": []
+  },
+  {
     "id": "T-132",
     "title": "Fix grey rectangular UI artifacts in DJ Chat mobile app",
     "desc": "Grey rectangular boxes are appearing as visual artifacts next to contact names and overlaid on message text in the DJ Chat mobile app. These UI elements appear to be rendering without content or correct styling.",
