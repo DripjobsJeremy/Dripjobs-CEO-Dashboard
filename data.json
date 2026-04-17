@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-04-16T12:27:51.073Z",
+  "lastUpdated": "2026-04-17T12:24:17.521Z",
   "stats": {
-    "featuresShipped": 9,
+    "featuresShipped": 8,
     "qaPassRate": 100,
-    "inProgress": 3,
+    "inProgress": 6,
     "openBugs": 53,
-    "tasksClosed": 9
+    "tasksClosed": 8
   },
   "bugs": {
-    "newThisWeek": 10,
+    "newThisWeek": 12,
     "resolved": 0,
     "open": 53,
     "deferred": 1
@@ -18,12 +18,12 @@
       "stats": {
         "featuresShipped": 0,
         "qaPassRate": 100,
-        "inProgress": 3,
+        "inProgress": 6,
         "openBugs": 53,
         "tasksClosed": 0
       },
       "bugs": {
-        "newThisWeek": 3,
+        "newThisWeek": 4,
         "resolved": 0,
         "open": 53,
         "deferred": 1
@@ -33,12 +33,12 @@
       "stats": {
         "featuresShipped": 8,
         "qaPassRate": 100,
-        "inProgress": 3,
+        "inProgress": 6,
         "openBugs": 53,
         "tasksClosed": 8
       },
       "bugs": {
-        "newThisWeek": 5,
+        "newThisWeek": 9,
         "resolved": 0,
         "open": 53,
         "deferred": 1
@@ -48,7 +48,7 @@
       "stats": {
         "featuresShipped": 17,
         "qaPassRate": 100,
-        "inProgress": 3,
+        "inProgress": 6,
         "openBugs": 53,
         "tasksClosed": 9
       },
@@ -61,14 +61,14 @@
     },
     "7d": {
       "stats": {
-        "featuresShipped": 9,
+        "featuresShipped": 8,
         "qaPassRate": 100,
-        "inProgress": 3,
+        "inProgress": 6,
         "openBugs": 53,
-        "tasksClosed": 9
+        "tasksClosed": 8
       },
       "bugs": {
-        "newThisWeek": 10,
+        "newThisWeek": 12,
         "resolved": 0,
         "open": 53,
         "deferred": 1
@@ -78,12 +78,12 @@
       "stats": {
         "featuresShipped": 60,
         "qaPassRate": 100,
-        "inProgress": 3,
+        "inProgress": 6,
         "openBugs": 53,
         "tasksClosed": 60
       },
       "bugs": {
-        "newThisWeek": 40,
+        "newThisWeek": 44,
         "resolved": 0,
         "open": 53,
         "deferred": 1
@@ -93,12 +93,12 @@
       "stats": {
         "featuresShipped": 196,
         "qaPassRate": 100,
-        "inProgress": 3,
+        "inProgress": 6,
         "openBugs": 53,
         "tasksClosed": 196
       },
       "bugs": {
-        "newThisWeek": 56,
+        "newThisWeek": 60,
         "resolved": 0,
         "open": 53,
         "deferred": 1
@@ -108,12 +108,12 @@
       "stats": {
         "featuresShipped": 237,
         "qaPassRate": 100,
-        "inProgress": 3,
+        "inProgress": 6,
         "openBugs": 53,
         "tasksClosed": 237
       },
       "bugs": {
-        "newThisWeek": 57,
+        "newThisWeek": 61,
         "resolved": 0,
         "open": 53,
         "deferred": 1
@@ -123,7 +123,7 @@
       "stats": {
         "featuresShipped": 877,
         "qaPassRate": 100,
-        "inProgress": 3,
+        "inProgress": 6,
         "openBugs": 53,
         "tasksClosed": 640
       },
@@ -138,13 +138,13 @@
       "stats": {
         "featuresShipped": 1212,
         "qaPassRate": 99,
-        "inProgress": 3,
+        "inProgress": 6,
         "openBugs": 53,
-        "tasksClosed": 1373
+        "tasksClosed": 1377
       },
       "bugs": {
-        "newThisWeek": 62,
-        "resolved": 9,
+        "newThisWeek": 66,
+        "resolved": 13,
         "open": 53,
         "deferred": 1
       }
@@ -8640,9 +8640,17 @@
     {
       "title": "Enable Acorn Financing for Eligible Canadian Provinces (Fig / Canada Fig)",
       "area": "Active Development",
-      "status": "testing complete",
+      "status": "pr created",
       "url": "https://app.clickup.com/t/86b8ycdz8",
       "due": "2026-04-13",
+      "assignees": "ali raza, Michael Adeoye"
+    },
+    {
+      "title": "Metrics Dashboard — Closing Ratio Breakdown Cards Displaying Share of Won Deals Instead of Cohort-Based Closing Rate",
+      "area": "Active Development",
+      "status": "testing complete",
+      "url": "https://app.clickup.com/t/86b9bd07g",
+      "due": null,
       "assignees": "ali raza, Michael Adeoye"
     },
     {
@@ -8654,10 +8662,26 @@
       "assignees": "Terry Bennett, Michael Adeoye"
     },
     {
-      "title": "Pricing Restructure: Launch Growth ($197/m) Retire Advanced, $0 Price Override for Bundled Add-Ons",
+      "title": "Package Duplication Causes $0 Area Pricing in Copied Packages + Work Order Hour Totals Incorrect",
       "area": "Active Development",
-      "status": "in progress",
-      "url": "https://app.clickup.com/t/86b90vaqz",
+      "status": "testing complete",
+      "url": "https://app.clickup.com/t/86b94h4v7",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
+      "title": "Fix Notes Section Spinning Wheel - Proposal #2505739 (T&J Painting #14139)",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b94cnay",
+      "due": null,
+      "assignees": "Terry Bennett"
+    },
+    {
+      "title": "Bulk Product Changer — Cost Summary Area Entry Points & Change Products Modal",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b3fm30n",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
     }
