@@ -1,5 +1,21 @@
 [
   {
+    "id": "T-135",
+    "title": "Bulk Change Report jobs fail to generate after product swap",
+    "desc": "Report jobs do not generate after product swap in new Bulk Change Report deployment, causing indefinite loading hang.",
+    "type": "bug",
+    "sub": "na",
+    "priority": "urgent",
+    "status": "open",
+    "date": "2026-04-20",
+    "area": "reporting",
+    "source": "Slack #tanner-tickets",
+    "clickup": "https://app.clickup.com/t/86b9gkeun",
+    "subposts": [],
+    "relatedIds": [],
+    "notes": "Ready for Dev"
+  },
+  {
     "id": "T-134",
     "title": "Enhance appointment edit modal with smart notifications and field hiding",
     "desc": "Add logic to hide drip time field on scheduled appointment edits and allow users to choose between update vs reschedule notifications with auto-detection.",
