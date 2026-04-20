@@ -100,13 +100,14 @@
     "type": "bug",
     "sub": "na",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2026-04-04",
     "area": "messaging",
     "source": "Slack #tanner-tickets",
     "clickup": "https://app.clickup.com/t/86b9bdum5",
     "subposts": [],
-    "relatedIds": []
+    "relatedIds": [],
+    "resolvedNote": "Pushed to Production (4/14/26)"
   },
   {
     "id": "T-128",
@@ -121,7 +122,8 @@
     "source": "Slack #tanner-tickets",
     "clickup": "https://app.clickup.com/t/86b9bdpew",
     "subposts": [],
-    "relatedIds": []
+    "relatedIds": [],
+    "notes": "Ready for Dev"
   },
   {
     "id": "T-127",
