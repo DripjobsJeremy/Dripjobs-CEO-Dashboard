@@ -74,7 +74,8 @@
     "source": "Slack #tanner-tickets",
     "clickup": "https://app.clickup.com/t/86b9be77d",
     "subposts": [],
-    "relatedIds": []
+    "relatedIds": [],
+    "notes": "Ready for Dev"
   },
   {
     "id": "T-130",
