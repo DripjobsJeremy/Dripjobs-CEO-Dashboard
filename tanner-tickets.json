@@ -130,7 +130,7 @@
     "type": "bug",
     "sub": "na",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2026-04-07",
     "area": "invoicing",
     "source": "Slack #tanner-tickets",
@@ -145,7 +145,8 @@
       }
     ],
     "relatedIds": [],
-    "notes": "PR Created (04/15/26)"
+    "notes": "",
+    "resolvedNote": "Pushed to Production (4/20/26)"
   },
   {
     "id": "T-126",
