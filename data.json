@@ -1,31 +1,31 @@
 {
-  "lastUpdated": "2026-04-20T12:29:29.450Z",
+  "lastUpdated": "2026-04-21T12:26:52.478Z",
   "stats": {
-    "featuresShipped": 16,
+    "featuresShipped": 8,
     "qaPassRate": 100,
-    "inProgress": 0,
-    "openBugs": 55,
-    "tasksClosed": 16
+    "inProgress": 1,
+    "openBugs": 56,
+    "tasksClosed": 8
   },
   "bugs": {
-    "newThisWeek": 11,
+    "newThisWeek": 12,
     "resolved": 0,
-    "open": 55,
+    "open": 56,
     "deferred": 1
   },
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 8,
+        "featuresShipped": 0,
         "qaPassRate": 100,
-        "inProgress": 0,
-        "openBugs": 55,
-        "tasksClosed": 8
+        "inProgress": 1,
+        "openBugs": 56,
+        "tasksClosed": 0
       },
       "bugs": {
-        "newThisWeek": 0,
+        "newThisWeek": 1,
         "resolved": 0,
-        "open": 55,
+        "open": 56,
         "deferred": 1
       }
     },
@@ -33,14 +33,14 @@
       "stats": {
         "featuresShipped": 8,
         "qaPassRate": 100,
-        "inProgress": 0,
-        "openBugs": 55,
+        "inProgress": 1,
+        "openBugs": 56,
         "tasksClosed": 8
       },
       "bugs": {
-        "newThisWeek": 0,
+        "newThisWeek": 1,
         "resolved": 0,
-        "open": 55,
+        "open": 56,
         "deferred": 1
       }
     },
@@ -48,29 +48,29 @@
       "stats": {
         "featuresShipped": 16,
         "qaPassRate": 100,
-        "inProgress": 0,
-        "openBugs": 55,
+        "inProgress": 1,
+        "openBugs": 56,
         "tasksClosed": 8
       },
       "bugs": {
         "newThisWeek": 11,
         "resolved": 0,
-        "open": 55,
+        "open": 56,
         "deferred": 1
       }
     },
     "7d": {
       "stats": {
-        "featuresShipped": 16,
+        "featuresShipped": 8,
         "qaPassRate": 100,
-        "inProgress": 0,
-        "openBugs": 55,
-        "tasksClosed": 16
+        "inProgress": 1,
+        "openBugs": 56,
+        "tasksClosed": 8
       },
       "bugs": {
-        "newThisWeek": 11,
+        "newThisWeek": 12,
         "resolved": 0,
-        "open": 55,
+        "open": 56,
         "deferred": 1
       }
     },
@@ -78,29 +78,29 @@
       "stats": {
         "featuresShipped": 57,
         "qaPassRate": 100,
-        "inProgress": 0,
-        "openBugs": 55,
+        "inProgress": 1,
+        "openBugs": 56,
         "tasksClosed": 57
       },
       "bugs": {
-        "newThisWeek": 40,
+        "newThisWeek": 41,
         "resolved": 0,
-        "open": 55,
+        "open": 56,
         "deferred": 1
       }
     },
     "90d": {
       "stats": {
-        "featuresShipped": 198,
+        "featuresShipped": 197,
         "qaPassRate": 100,
-        "inProgress": 0,
-        "openBugs": 55,
-        "tasksClosed": 198
+        "inProgress": 1,
+        "openBugs": 56,
+        "tasksClosed": 197
       },
       "bugs": {
-        "newThisWeek": 62,
+        "newThisWeek": 63,
         "resolved": 0,
-        "open": 55,
+        "open": 56,
         "deferred": 1
       }
     },
@@ -108,14 +108,14 @@
       "stats": {
         "featuresShipped": 245,
         "qaPassRate": 100,
-        "inProgress": 0,
-        "openBugs": 55,
+        "inProgress": 1,
+        "openBugs": 56,
         "tasksClosed": 245
       },
       "bugs": {
-        "newThisWeek": 63,
+        "newThisWeek": 64,
         "resolved": 0,
-        "open": 55,
+        "open": 56,
         "deferred": 1
       }
     },
@@ -123,14 +123,14 @@
       "stats": {
         "featuresShipped": 885,
         "qaPassRate": 100,
-        "inProgress": 0,
-        "openBugs": 55,
+        "inProgress": 1,
+        "openBugs": 56,
         "tasksClosed": 640
       },
       "bugs": {
         "newThisWeek": 4,
         "resolved": 0,
-        "open": 55,
+        "open": 56,
         "deferred": 1
       }
     },
@@ -138,14 +138,14 @@
       "stats": {
         "featuresShipped": 1220,
         "qaPassRate": 99,
-        "inProgress": 0,
-        "openBugs": 55,
+        "inProgress": 1,
+        "openBugs": 56,
         "tasksClosed": 1385
       },
       "bugs": {
-        "newThisWeek": 68,
+        "newThisWeek": 69,
         "resolved": 13,
-        "open": 55,
+        "open": 56,
         "deferred": 1
       }
     }
@@ -8692,7 +8692,16 @@
       "url": "https://app.clickup.com/t/86aycct1y"
     }
   ],
-  "inProgress": [],
+  "inProgress": [
+    {
+      "title": "Bulk Change Report Job Not Generating After Product Swap",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b9gkeun",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    }
+  ],
   "recentActivity": [
     {
       "title": "Bulk Product Changer — Cost Summary Area Entry Points & Change Products Modal",
