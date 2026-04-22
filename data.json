@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-04-21T12:26:52.478Z",
+  "lastUpdated": "2026-04-22T12:26:01.013Z",
   "stats": {
     "featuresShipped": 8,
     "qaPassRate": 100,
-    "inProgress": 1,
+    "inProgress": 4,
     "openBugs": 56,
     "tasksClosed": 8
   },
   "bugs": {
-    "newThisWeek": 12,
+    "newThisWeek": 10,
     "resolved": 0,
     "open": 56,
     "deferred": 1
@@ -18,12 +18,12 @@
       "stats": {
         "featuresShipped": 0,
         "qaPassRate": 100,
-        "inProgress": 1,
+        "inProgress": 4,
         "openBugs": 56,
         "tasksClosed": 0
       },
       "bugs": {
-        "newThisWeek": 1,
+        "newThisWeek": 0,
         "resolved": 0,
         "open": 56,
         "deferred": 1
@@ -33,7 +33,7 @@
       "stats": {
         "featuresShipped": 8,
         "qaPassRate": 100,
-        "inProgress": 1,
+        "inProgress": 4,
         "openBugs": 56,
         "tasksClosed": 8
       },
@@ -48,7 +48,7 @@
       "stats": {
         "featuresShipped": 16,
         "qaPassRate": 100,
-        "inProgress": 1,
+        "inProgress": 4,
         "openBugs": 56,
         "tasksClosed": 8
       },
@@ -63,12 +63,12 @@
       "stats": {
         "featuresShipped": 8,
         "qaPassRate": 100,
-        "inProgress": 1,
+        "inProgress": 4,
         "openBugs": 56,
         "tasksClosed": 8
       },
       "bugs": {
-        "newThisWeek": 12,
+        "newThisWeek": 10,
         "resolved": 0,
         "open": 56,
         "deferred": 1
@@ -78,7 +78,7 @@
       "stats": {
         "featuresShipped": 57,
         "qaPassRate": 100,
-        "inProgress": 1,
+        "inProgress": 4,
         "openBugs": 56,
         "tasksClosed": 57
       },
@@ -91,11 +91,11 @@
     },
     "90d": {
       "stats": {
-        "featuresShipped": 197,
+        "featuresShipped": 187,
         "qaPassRate": 100,
-        "inProgress": 1,
+        "inProgress": 4,
         "openBugs": 56,
-        "tasksClosed": 197
+        "tasksClosed": 187
       },
       "bugs": {
         "newThisWeek": 63,
@@ -108,7 +108,7 @@
       "stats": {
         "featuresShipped": 245,
         "qaPassRate": 100,
-        "inProgress": 1,
+        "inProgress": 4,
         "openBugs": 56,
         "tasksClosed": 245
       },
@@ -123,7 +123,7 @@
       "stats": {
         "featuresShipped": 885,
         "qaPassRate": 100,
-        "inProgress": 1,
+        "inProgress": 4,
         "openBugs": 56,
         "tasksClosed": 640
       },
@@ -138,7 +138,7 @@
       "stats": {
         "featuresShipped": 1220,
         "qaPassRate": 99,
-        "inProgress": 1,
+        "inProgress": 4,
         "openBugs": 56,
         "tasksClosed": 1385
       },
@@ -8700,6 +8700,30 @@
       "url": "https://app.clickup.com/t/86b9gkeun",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
+      "title": "Factory Direct Renovations (#16351) - Cancelled Deal #1780555 Won't Open (Spinning Wheel)",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b9eme5t",
+      "due": null,
+      "assignees": "Terry Bennett"
+    },
+    {
+      "title": "Fix CSV Import Stuck at 15 Contacts - Fails to Import 1200 New Contacts",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b9bhz5p",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
+      "title": "Add-On Modal: Rename \"Coupon Code\" to \"Access Code\"",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b9be000",
+      "due": null,
+      "assignees": "ali raza, Michael Adeoye"
     }
   ],
   "recentActivity": [
