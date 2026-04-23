@@ -21,14 +21,15 @@
     "type": "bug",
     "sub": "na",
     "priority": "urgent",
-    "status": "open",
+    "status": "resolved",
     "date": "2026-04-20",
     "area": "reporting",
     "source": "Slack #tanner-tickets",
     "clickup": "https://app.clickup.com/t/86b9gkeun",
     "subposts": [],
     "relatedIds": [],
-    "notes": "Ready for Dev"
+    "notes": "",
+    "resolvedNote": "Pushed to Production (4/23/26)"
   },
   {
     "id": "T-134",
@@ -99,14 +100,15 @@
     "type": "enhancement",
     "sub": "missed",
     "priority": "normal",
-    "status": "open",
+    "status": "resolved",
     "date": "2026-04-04",
     "area": "add-ons",
     "source": "Slack #tanner-tickets",
     "clickup": "https://app.clickup.com/t/86b9be000",
     "subposts": [],
     "relatedIds": [],
-    "notes": "Ready for Dev"
+    "notes": "",
+    "resolvedNote": "Pushed to Production (4/23/26)"
   },
   {
     "id": "T-129",
