@@ -1,31 +1,31 @@
 {
-  "lastUpdated": "2026-04-23T12:26:10.685Z",
+  "lastUpdated": "2026-04-24T12:25:32.454Z",
   "stats": {
     "featuresShipped": 12,
     "qaPassRate": 100,
-    "inProgress": 1,
-    "openBugs": 56,
+    "inProgress": 3,
+    "openBugs": 50,
     "tasksClosed": 12
   },
   "bugs": {
-    "newThisWeek": 7,
+    "newThisWeek": 2,
     "resolved": 0,
-    "open": 56,
+    "open": 50,
     "deferred": 1
   },
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 4,
+        "featuresShipped": 0,
         "qaPassRate": 100,
-        "inProgress": 1,
-        "openBugs": 56,
-        "tasksClosed": 4
+        "inProgress": 3,
+        "openBugs": 50,
+        "tasksClosed": 0
       },
       "bugs": {
         "newThisWeek": 0,
         "resolved": 0,
-        "open": 56,
+        "open": 50,
         "deferred": 1
       }
     },
@@ -33,14 +33,14 @@
       "stats": {
         "featuresShipped": 12,
         "qaPassRate": 100,
-        "inProgress": 1,
-        "openBugs": 56,
+        "inProgress": 3,
+        "openBugs": 50,
         "tasksClosed": 12
       },
       "bugs": {
-        "newThisWeek": 1,
+        "newThisWeek": 0,
         "resolved": 0,
-        "open": 56,
+        "open": 50,
         "deferred": 1
       }
     },
@@ -48,14 +48,14 @@
       "stats": {
         "featuresShipped": 20,
         "qaPassRate": 100,
-        "inProgress": 1,
-        "openBugs": 56,
+        "inProgress": 3,
+        "openBugs": 50,
         "tasksClosed": 8
       },
       "bugs": {
-        "newThisWeek": 11,
+        "newThisWeek": 9,
         "resolved": 0,
-        "open": 56,
+        "open": 50,
         "deferred": 1
       }
     },
@@ -63,29 +63,29 @@
       "stats": {
         "featuresShipped": 12,
         "qaPassRate": 100,
-        "inProgress": 1,
-        "openBugs": 56,
+        "inProgress": 3,
+        "openBugs": 50,
         "tasksClosed": 12
       },
       "bugs": {
-        "newThisWeek": 7,
+        "newThisWeek": 2,
         "resolved": 0,
-        "open": 56,
+        "open": 50,
         "deferred": 1
       }
     },
     "30d": {
       "stats": {
-        "featuresShipped": 58,
+        "featuresShipped": 49,
         "qaPassRate": 100,
-        "inProgress": 1,
-        "openBugs": 56,
-        "tasksClosed": 58
+        "inProgress": 3,
+        "openBugs": 50,
+        "tasksClosed": 49
       },
       "bugs": {
-        "newThisWeek": 41,
+        "newThisWeek": 36,
         "resolved": 0,
-        "open": 56,
+        "open": 50,
         "deferred": 1
       }
     },
@@ -93,14 +93,14 @@
       "stats": {
         "featuresShipped": 190,
         "qaPassRate": 100,
-        "inProgress": 1,
-        "openBugs": 56,
+        "inProgress": 3,
+        "openBugs": 50,
         "tasksClosed": 190
       },
       "bugs": {
-        "newThisWeek": 63,
+        "newThisWeek": 57,
         "resolved": 0,
-        "open": 56,
+        "open": 50,
         "deferred": 1
       }
     },
@@ -108,14 +108,14 @@
       "stats": {
         "featuresShipped": 249,
         "qaPassRate": 100,
-        "inProgress": 1,
-        "openBugs": 56,
+        "inProgress": 3,
+        "openBugs": 50,
         "tasksClosed": 249
       },
       "bugs": {
-        "newThisWeek": 64,
+        "newThisWeek": 58,
         "resolved": 0,
-        "open": 56,
+        "open": 50,
         "deferred": 1
       }
     },
@@ -123,14 +123,14 @@
       "stats": {
         "featuresShipped": 889,
         "qaPassRate": 100,
-        "inProgress": 1,
-        "openBugs": 56,
+        "inProgress": 3,
+        "openBugs": 50,
         "tasksClosed": 640
       },
       "bugs": {
         "newThisWeek": 4,
         "resolved": 0,
-        "open": 56,
+        "open": 50,
         "deferred": 1
       }
     },
@@ -138,14 +138,14 @@
       "stats": {
         "featuresShipped": 1224,
         "qaPassRate": 99,
-        "inProgress": 1,
-        "openBugs": 56,
+        "inProgress": 3,
+        "openBugs": 50,
         "tasksClosed": 1389
       },
       "bugs": {
-        "newThisWeek": 69,
+        "newThisWeek": 63,
         "resolved": 13,
-        "open": 56,
+        "open": 50,
         "deferred": 1
       }
     }
@@ -8724,10 +8724,26 @@
     {
       "title": "Line Item Detail Modal — No Scroll & No Dismissal in Customer Portal (Package View)",
       "area": "Active Development",
-      "status": "testing complete",
+      "status": "pr created",
       "url": "https://app.clickup.com/t/86b9dmp1f",
       "due": null,
       "assignees": "Terry Bennett"
+    },
+    {
+      "title": "Proposal View — Area Item Detail Modal",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b92vna8",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
+      "title": "Update Reply‑To Email Logic for Scheduled Communications (Salesperson → Company Fallback)",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b8g71qz",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
     }
   ],
   "recentActivity": [
