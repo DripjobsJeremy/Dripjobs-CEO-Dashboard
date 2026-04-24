@@ -1365,7 +1365,10 @@
     "date": "2026-03-03",
     "area": "Packaged Pricing",
     "clickup": "https://app.clickup.com/t/86b8r7be9",
-    "notes": "Decision: Enhance the Duplicate Package Flow with a Modal"
+    "notes": "Decision: Enhance the Duplicate Package Flow with a Modal",
+    "subposts": [],
+    "relatedIds": [],
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-112",
@@ -1421,7 +1424,10 @@
     "date": "2026-03-06",
     "area": "Scheduling",
     "clickup": "https://app.clickup.com/t/86b8t2h7a",
-    "notes": "Sent to Dev"
+    "notes": "Sent to Dev",
+    "subposts": [],
+    "relatedIds": [],
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-116",
