@@ -1405,7 +1405,10 @@
     "date": "2026-03-06",
     "area": "Work Orders",
     "clickup": "https://app.clickup.com/t/86b8t2aye",
-    "notes": "Sent to Dev"
+    "notes": "",
+    "subposts": [],
+    "relatedIds": [],
+    "resolvedNote": "Pushed to Production"
   },
   {
     "id": "T-115",
@@ -1431,6 +1434,9 @@
     "date": "2026-03-09",
     "area": "Proposal Builder",
     "clickup": "https://app.clickup.com/t/86b321euz",
-    "notes": "Updating original ticket..."
+    "notes": "",
+    "subposts": [],
+    "relatedIds": [],
+    "resolvedNote": "Pushed to Production"
   }
 ]
