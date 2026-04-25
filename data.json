@@ -1,16 +1,16 @@
 {
-  "lastUpdated": "2026-04-24T12:25:32.454Z",
+  "lastUpdated": "2026-04-25T12:17:14.017Z",
   "stats": {
     "featuresShipped": 12,
     "qaPassRate": 100,
-    "inProgress": 3,
-    "openBugs": 50,
+    "inProgress": 8,
+    "openBugs": 51,
     "tasksClosed": 12
   },
   "bugs": {
-    "newThisWeek": 2,
+    "newThisWeek": 0,
     "resolved": 0,
-    "open": 50,
+    "open": 51,
     "deferred": 1
   },
   "ranges": {
@@ -18,14 +18,14 @@
       "stats": {
         "featuresShipped": 0,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 50,
+        "inProgress": 8,
+        "openBugs": 51,
         "tasksClosed": 0
       },
       "bugs": {
         "newThisWeek": 0,
         "resolved": 0,
-        "open": 50,
+        "open": 51,
         "deferred": 1
       }
     },
@@ -33,14 +33,14 @@
       "stats": {
         "featuresShipped": 12,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 50,
+        "inProgress": 8,
+        "openBugs": 51,
         "tasksClosed": 12
       },
       "bugs": {
         "newThisWeek": 0,
         "resolved": 0,
-        "open": 50,
+        "open": 51,
         "deferred": 1
       }
     },
@@ -48,14 +48,14 @@
       "stats": {
         "featuresShipped": 20,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 50,
+        "inProgress": 8,
+        "openBugs": 51,
         "tasksClosed": 8
       },
       "bugs": {
         "newThisWeek": 9,
         "resolved": 0,
-        "open": 50,
+        "open": 51,
         "deferred": 1
       }
     },
@@ -63,29 +63,29 @@
       "stats": {
         "featuresShipped": 12,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 50,
+        "inProgress": 8,
+        "openBugs": 51,
         "tasksClosed": 12
       },
       "bugs": {
-        "newThisWeek": 2,
+        "newThisWeek": 0,
         "resolved": 0,
-        "open": 50,
+        "open": 51,
         "deferred": 1
       }
     },
     "30d": {
       "stats": {
-        "featuresShipped": 49,
+        "featuresShipped": 46,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 50,
-        "tasksClosed": 49
+        "inProgress": 8,
+        "openBugs": 51,
+        "tasksClosed": 46
       },
       "bugs": {
-        "newThisWeek": 36,
+        "newThisWeek": 33,
         "resolved": 0,
-        "open": 50,
+        "open": 51,
         "deferred": 1
       }
     },
@@ -93,14 +93,14 @@
       "stats": {
         "featuresShipped": 190,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 50,
+        "inProgress": 8,
+        "openBugs": 51,
         "tasksClosed": 190
       },
       "bugs": {
         "newThisWeek": 57,
         "resolved": 0,
-        "open": 50,
+        "open": 51,
         "deferred": 1
       }
     },
@@ -108,14 +108,14 @@
       "stats": {
         "featuresShipped": 249,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 50,
+        "inProgress": 8,
+        "openBugs": 51,
         "tasksClosed": 249
       },
       "bugs": {
-        "newThisWeek": 58,
+        "newThisWeek": 59,
         "resolved": 0,
-        "open": 50,
+        "open": 51,
         "deferred": 1
       }
     },
@@ -123,14 +123,14 @@
       "stats": {
         "featuresShipped": 889,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 50,
+        "inProgress": 8,
+        "openBugs": 51,
         "tasksClosed": 640
       },
       "bugs": {
         "newThisWeek": 4,
         "resolved": 0,
-        "open": 50,
+        "open": 51,
         "deferred": 1
       }
     },
@@ -138,14 +138,14 @@
       "stats": {
         "featuresShipped": 1224,
         "qaPassRate": 99,
-        "inProgress": 3,
-        "openBugs": 50,
+        "inProgress": 8,
+        "openBugs": 51,
         "tasksClosed": 1389
       },
       "bugs": {
-        "newThisWeek": 63,
+        "newThisWeek": 64,
         "resolved": 13,
-        "open": 50,
+        "open": 51,
         "deferred": 1
       }
     }
@@ -8722,6 +8722,22 @@
   ],
   "inProgress": [
     {
+      "title": "Metrics Drill-Down — Reports Page Navigation for All Section Cards",
+      "area": "Active Development",
+      "status": "in progress",
+      "url": "https://app.clickup.com/t/86b8bg2yk",
+      "due": "2026-04-11",
+      "assignees": "ali raza, Michael Adeoye"
+    },
+    {
+      "title": "Discount Description Shows Raw HTML Code in Proposal",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b9fwgm6",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
       "title": "Line Item Detail Modal — No Scroll & No Dismissal in Customer Portal (Package View)",
       "area": "Active Development",
       "status": "pr created",
@@ -8738,12 +8754,36 @@
       "assignees": "Terry Bennett, Michael Adeoye"
     },
     {
+      "title": "Update Change Order Acceptance Modal to Match New Proposal Acceptance UI",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b8zg0cz",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
+      "title": "Schedule a Demo Button: Job Costing, Production Rates & Zapier",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b8z6hv0",
+      "due": null,
+      "assignees": "ali raza, Michael Adeoye"
+    },
+    {
       "title": "Update Reply‑To Email Logic for Scheduled Communications (Salesperson → Company Fallback)",
       "area": "Active Development",
       "status": "pr created",
       "url": "https://app.clickup.com/t/86b8g71qz",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
+      "title": "Notification Trigger for Manual Change Order Acceptance",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b3xmuw4",
+      "due": null,
+      "assignees": "ali raza, Michael Adeoye"
     }
   ],
   "recentActivity": [
