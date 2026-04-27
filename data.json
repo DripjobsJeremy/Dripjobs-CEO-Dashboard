@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2026-04-26T12:19:11.369Z",
+  "lastUpdated": "2026-04-27T12:36:56.935Z",
   "stats": {
-    "featuresShipped": 12,
+    "featuresShipped": 4,
     "qaPassRate": 100,
     "inProgress": 8,
     "openBugs": 51,
-    "tasksClosed": 12
+    "tasksClosed": 4
   },
   "bugs": {
     "newThisWeek": 0,
@@ -31,6 +31,21 @@
     },
     "thisWeek": {
       "stats": {
+        "featuresShipped": 0,
+        "qaPassRate": 100,
+        "inProgress": 8,
+        "openBugs": 51,
+        "tasksClosed": 0
+      },
+      "bugs": {
+        "newThisWeek": 0,
+        "resolved": 0,
+        "open": 51,
+        "deferred": 1
+      }
+    },
+    "lastWeek": {
+      "stats": {
         "featuresShipped": 12,
         "qaPassRate": 100,
         "inProgress": 8,
@@ -44,28 +59,13 @@
         "deferred": 1
       }
     },
-    "lastWeek": {
-      "stats": {
-        "featuresShipped": 20,
-        "qaPassRate": 100,
-        "inProgress": 8,
-        "openBugs": 51,
-        "tasksClosed": 8
-      },
-      "bugs": {
-        "newThisWeek": 9,
-        "resolved": 0,
-        "open": 51,
-        "deferred": 1
-      }
-    },
     "7d": {
       "stats": {
-        "featuresShipped": 12,
+        "featuresShipped": 4,
         "qaPassRate": 100,
         "inProgress": 8,
         "openBugs": 51,
-        "tasksClosed": 12
+        "tasksClosed": 4
       },
       "bugs": {
         "newThisWeek": 0,
@@ -83,7 +83,7 @@
         "tasksClosed": 46
       },
       "bugs": {
-        "newThisWeek": 27,
+        "newThisWeek": 26,
         "resolved": 0,
         "open": 51,
         "deferred": 1
@@ -91,14 +91,14 @@
     },
     "90d": {
       "stats": {
-        "featuresShipped": 184,
+        "featuresShipped": 176,
         "qaPassRate": 100,
         "inProgress": 8,
         "openBugs": 51,
-        "tasksClosed": 184
+        "tasksClosed": 176
       },
       "bugs": {
-        "newThisWeek": 57,
+        "newThisWeek": 56,
         "resolved": 0,
         "open": 51,
         "deferred": 1
