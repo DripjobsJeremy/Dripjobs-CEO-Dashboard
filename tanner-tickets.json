@@ -1,5 +1,20 @@
 [
   {
+    "id": "T-117",
+    "title": "Filter out cancelled & unsent proposals from Customer Portal My Proposals",
+    "desc": "Customer Portal currently shows cancelled and unsent proposals in the My Proposals section, which should be excluded to show only relevant active proposals.",
+    "type": "enhancement",
+    "sub": "considered",
+    "priority": "normal",
+    "status": "open",
+    "date": "2026-04-28",
+    "area": "customer portal",
+    "source": "Slack #tanner-tickets",
+    "clickup": "https://app.clickup.com/t/86b9ncym1",
+    "subposts": [],
+    "relatedIds": []
+  },
+  {
     "id": "T-001",
     "title": "Google Maps API missing on Edit Deal address field",
     "desc": "When editing a deal from the Deal Command Center, the address field has no Google Maps API — autocomplete unavailable.",
