@@ -1,16 +1,16 @@
 {
-  "lastUpdated": "2026-04-27T12:36:56.935Z",
+  "lastUpdated": "2026-04-28T12:40:24.965Z",
   "stats": {
     "featuresShipped": 4,
     "qaPassRate": 100,
-    "inProgress": 8,
-    "openBugs": 51,
+    "inProgress": 11,
+    "openBugs": 52,
     "tasksClosed": 4
   },
   "bugs": {
     "newThisWeek": 0,
     "resolved": 0,
-    "open": 51,
+    "open": 52,
     "deferred": 1
   },
   "ranges": {
@@ -18,14 +18,14 @@
       "stats": {
         "featuresShipped": 0,
         "qaPassRate": 100,
-        "inProgress": 8,
-        "openBugs": 51,
+        "inProgress": 11,
+        "openBugs": 52,
         "tasksClosed": 0
       },
       "bugs": {
         "newThisWeek": 0,
         "resolved": 0,
-        "open": 51,
+        "open": 52,
         "deferred": 1
       }
     },
@@ -33,14 +33,14 @@
       "stats": {
         "featuresShipped": 0,
         "qaPassRate": 100,
-        "inProgress": 8,
-        "openBugs": 51,
+        "inProgress": 11,
+        "openBugs": 52,
         "tasksClosed": 0
       },
       "bugs": {
         "newThisWeek": 0,
         "resolved": 0,
-        "open": 51,
+        "open": 52,
         "deferred": 1
       }
     },
@@ -48,14 +48,14 @@
       "stats": {
         "featuresShipped": 12,
         "qaPassRate": 100,
-        "inProgress": 8,
-        "openBugs": 51,
+        "inProgress": 11,
+        "openBugs": 52,
         "tasksClosed": 12
       },
       "bugs": {
         "newThisWeek": 0,
         "resolved": 0,
-        "open": 51,
+        "open": 52,
         "deferred": 1
       }
     },
@@ -63,14 +63,14 @@
       "stats": {
         "featuresShipped": 4,
         "qaPassRate": 100,
-        "inProgress": 8,
-        "openBugs": 51,
+        "inProgress": 11,
+        "openBugs": 52,
         "tasksClosed": 4
       },
       "bugs": {
         "newThisWeek": 0,
         "resolved": 0,
-        "open": 51,
+        "open": 52,
         "deferred": 1
       }
     },
@@ -78,29 +78,29 @@
       "stats": {
         "featuresShipped": 46,
         "qaPassRate": 100,
-        "inProgress": 8,
-        "openBugs": 51,
+        "inProgress": 11,
+        "openBugs": 52,
         "tasksClosed": 46
       },
       "bugs": {
-        "newThisWeek": 26,
+        "newThisWeek": 25,
         "resolved": 0,
-        "open": 51,
+        "open": 52,
         "deferred": 1
       }
     },
     "90d": {
       "stats": {
-        "featuresShipped": 176,
+        "featuresShipped": 171,
         "qaPassRate": 100,
-        "inProgress": 8,
-        "openBugs": 51,
-        "tasksClosed": 176
+        "inProgress": 11,
+        "openBugs": 52,
+        "tasksClosed": 171
       },
       "bugs": {
         "newThisWeek": 56,
         "resolved": 0,
-        "open": 51,
+        "open": 52,
         "deferred": 1
       }
     },
@@ -108,14 +108,14 @@
       "stats": {
         "featuresShipped": 249,
         "qaPassRate": 100,
-        "inProgress": 8,
-        "openBugs": 51,
+        "inProgress": 11,
+        "openBugs": 52,
         "tasksClosed": 249
       },
       "bugs": {
         "newThisWeek": 59,
         "resolved": 0,
-        "open": 51,
+        "open": 52,
         "deferred": 1
       }
     },
@@ -123,14 +123,14 @@
       "stats": {
         "featuresShipped": 889,
         "qaPassRate": 100,
-        "inProgress": 8,
-        "openBugs": 51,
+        "inProgress": 11,
+        "openBugs": 52,
         "tasksClosed": 640
       },
       "bugs": {
-        "newThisWeek": 4,
+        "newThisWeek": 5,
         "resolved": 0,
-        "open": 51,
+        "open": 52,
         "deferred": 1
       }
     },
@@ -138,14 +138,14 @@
       "stats": {
         "featuresShipped": 1224,
         "qaPassRate": 99,
-        "inProgress": 8,
-        "openBugs": 51,
+        "inProgress": 11,
+        "openBugs": 52,
         "tasksClosed": 1389
       },
       "bugs": {
-        "newThisWeek": 64,
+        "newThisWeek": 65,
         "resolved": 13,
-        "open": 51,
+        "open": 52,
         "deferred": 1
       }
     }
@@ -8730,6 +8730,14 @@
       "assignees": "ali raza, Michael Adeoye"
     },
     {
+      "title": "Contact Import Fails Silently After \"Ready to Import\"",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b9md1da",
+      "due": null,
+      "assignees": "Terry Bennett"
+    },
+    {
       "title": "Discount Description Shows Raw HTML Code in Proposal",
       "area": "Active Development",
       "status": "pr created",
@@ -8754,6 +8762,14 @@
       "assignees": "Terry Bennett, Michael Adeoye"
     },
     {
+      "title": "Pricing Restructure: Launch Growth ($197/m) Retire Advanced, $0 Price Override for Bundled Add-Ons",
+      "area": "Active Development",
+      "status": "testing complete",
+      "url": "https://app.clickup.com/t/86b90vaqz",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
       "title": "Update Change Order Acceptance Modal to Match New Proposal Acceptance UI",
       "area": "Active Development",
       "status": "pr created",
@@ -8768,6 +8784,14 @@
       "url": "https://app.clickup.com/t/86b8z6hv0",
       "due": null,
       "assignees": "ali raza, Michael Adeoye"
+    },
+    {
+      "title": "Show/Hide Archived Deals & Jobs — Sales List, Jobs List (Admin + Super Admin)",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b8xtxym",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
     },
     {
       "title": "Update Reply‑To Email Logic for Scheduled Communications (Salesperson → Company Fallback)",
