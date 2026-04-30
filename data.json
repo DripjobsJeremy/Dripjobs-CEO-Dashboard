@@ -1,16 +1,16 @@
 {
-  "lastUpdated": "2026-04-29T12:37:16.364Z",
+  "lastUpdated": "2026-04-30T12:36:48.224Z",
   "stats": {
-    "featuresShipped": 4,
+    "featuresShipped": 0,
     "qaPassRate": 100,
-    "inProgress": 12,
-    "openBugs": 55,
-    "tasksClosed": 4
+    "inProgress": 13,
+    "openBugs": 57,
+    "tasksClosed": 0
   },
   "bugs": {
-    "newThisWeek": 4,
+    "newThisWeek": 7,
     "resolved": 0,
-    "open": 55,
+    "open": 57,
     "deferred": 1
   },
   "ranges": {
@@ -18,14 +18,14 @@
       "stats": {
         "featuresShipped": 0,
         "qaPassRate": 100,
-        "inProgress": 12,
-        "openBugs": 55,
+        "inProgress": 13,
+        "openBugs": 57,
         "tasksClosed": 0
       },
       "bugs": {
         "newThisWeek": 4,
         "resolved": 0,
-        "open": 55,
+        "open": 57,
         "deferred": 1
       }
     },
@@ -33,14 +33,14 @@
       "stats": {
         "featuresShipped": 0,
         "qaPassRate": 100,
-        "inProgress": 12,
-        "openBugs": 55,
+        "inProgress": 13,
+        "openBugs": 57,
         "tasksClosed": 0
       },
       "bugs": {
-        "newThisWeek": 4,
+        "newThisWeek": 7,
         "resolved": 0,
-        "open": 55,
+        "open": 57,
         "deferred": 1
       }
     },
@@ -48,29 +48,29 @@
       "stats": {
         "featuresShipped": 12,
         "qaPassRate": 100,
-        "inProgress": 12,
-        "openBugs": 55,
+        "inProgress": 13,
+        "openBugs": 57,
         "tasksClosed": 12
       },
       "bugs": {
         "newThisWeek": 0,
         "resolved": 0,
-        "open": 55,
+        "open": 57,
         "deferred": 1
       }
     },
     "7d": {
       "stats": {
-        "featuresShipped": 4,
+        "featuresShipped": 0,
         "qaPassRate": 100,
-        "inProgress": 12,
-        "openBugs": 55,
-        "tasksClosed": 4
+        "inProgress": 13,
+        "openBugs": 57,
+        "tasksClosed": 0
       },
       "bugs": {
-        "newThisWeek": 4,
+        "newThisWeek": 7,
         "resolved": 0,
-        "open": 55,
+        "open": 57,
         "deferred": 1
       }
     },
@@ -78,29 +78,29 @@
       "stats": {
         "featuresShipped": 37,
         "qaPassRate": 100,
-        "inProgress": 12,
-        "openBugs": 55,
+        "inProgress": 13,
+        "openBugs": 57,
         "tasksClosed": 37
       },
       "bugs": {
-        "newThisWeek": 29,
+        "newThisWeek": 31,
         "resolved": 0,
-        "open": 55,
+        "open": 57,
         "deferred": 1
       }
     },
     "90d": {
       "stats": {
-        "featuresShipped": 170,
+        "featuresShipped": 169,
         "qaPassRate": 100,
-        "inProgress": 12,
-        "openBugs": 55,
-        "tasksClosed": 170
+        "inProgress": 13,
+        "openBugs": 57,
+        "tasksClosed": 169
       },
       "bugs": {
-        "newThisWeek": 60,
+        "newThisWeek": 63,
         "resolved": 0,
-        "open": 55,
+        "open": 57,
         "deferred": 1
       }
     },
@@ -108,14 +108,14 @@
       "stats": {
         "featuresShipped": 249,
         "qaPassRate": 100,
-        "inProgress": 12,
-        "openBugs": 55,
+        "inProgress": 13,
+        "openBugs": 57,
         "tasksClosed": 249
       },
       "bugs": {
-        "newThisWeek": 63,
+        "newThisWeek": 66,
         "resolved": 0,
-        "open": 55,
+        "open": 57,
         "deferred": 1
       }
     },
@@ -123,14 +123,14 @@
       "stats": {
         "featuresShipped": 889,
         "qaPassRate": 100,
-        "inProgress": 12,
-        "openBugs": 55,
+        "inProgress": 13,
+        "openBugs": 57,
         "tasksClosed": 640
       },
       "bugs": {
         "newThisWeek": 5,
         "resolved": 0,
-        "open": 55,
+        "open": 57,
         "deferred": 1
       }
     },
@@ -138,14 +138,14 @@
       "stats": {
         "featuresShipped": 1224,
         "qaPassRate": 99,
-        "inProgress": 12,
-        "openBugs": 55,
-        "tasksClosed": 1390
+        "inProgress": 13,
+        "openBugs": 57,
+        "tasksClosed": 1391
       },
       "bugs": {
-        "newThisWeek": 69,
-        "resolved": 14,
-        "open": 55,
+        "newThisWeek": 72,
+        "resolved": 15,
+        "open": 57,
         "deferred": 1
       }
     }
@@ -8721,6 +8721,14 @@
     }
   ],
   "inProgress": [
+    {
+      "title": "Rounded Gallon Pricing Toggle (PARENT)",
+      "area": "Active Development",
+      "status": "testing complete",
+      "url": "https://app.clickup.com/t/86azcxv4c",
+      "due": "2026-03-28",
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
     {
       "title": "Metrics Drill-Down — Reports Page Navigation for All Section Cards",
       "area": "Active Development",
