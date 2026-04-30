@@ -1,5 +1,20 @@
 [
   {
+    "id": "T-119",
+    "title": "Google Local Services Ads (LSA) Lead Integration",
+    "desc": "Build OAuth-based integration to automatically import LSA leads from Google Ads API into DripJobs as contacts and deals with automated follow-up.",
+    "type": "enhancement",
+    "sub": "nicetohave",
+    "priority": "high",
+    "status": "open",
+    "date": "2026-04-30",
+    "area": "integrations",
+    "source": "Slack #tanner-tickets",
+    "clickup": "https://app.clickup.com/t/86b9peg42",
+    "subposts": [],
+    "relatedIds": []
+  },
+  {
     "id": "T-118",
     "title": "Call from Quo — Deep Link Integration for Phone Numbers (Mobile)",
     "desc": "Enable one-tap calling by integrating Quo deep links when users tap phone numbers in the mobile app, auto-dialing with pre-filled numbers.",
