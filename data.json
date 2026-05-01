@@ -1,152 +1,152 @@
 {
-  "lastUpdated": "2026-04-30T12:36:48.224Z",
+  "lastUpdated": "2026-05-01T12:24:35.437Z",
   "stats": {
     "featuresShipped": 0,
     "qaPassRate": 100,
-    "inProgress": 13,
-    "openBugs": 57,
+    "inProgress": 12,
+    "openBugs": 56,
     "tasksClosed": 0
   },
   "bugs": {
     "newThisWeek": 7,
     "resolved": 0,
-    "open": 57,
-    "deferred": 1
+    "open": 56,
+    "deferred": 0
   },
   "ranges": {
     "today": {
       "stats": {
         "featuresShipped": 0,
         "qaPassRate": 100,
-        "inProgress": 13,
-        "openBugs": 57,
+        "inProgress": 12,
+        "openBugs": 56,
         "tasksClosed": 0
       },
       "bugs": {
-        "newThisWeek": 4,
+        "newThisWeek": 1,
         "resolved": 0,
-        "open": 57,
-        "deferred": 1
+        "open": 56,
+        "deferred": 0
       }
     },
     "thisWeek": {
       "stats": {
         "featuresShipped": 0,
         "qaPassRate": 100,
-        "inProgress": 13,
-        "openBugs": 57,
+        "inProgress": 12,
+        "openBugs": 56,
         "tasksClosed": 0
       },
       "bugs": {
         "newThisWeek": 7,
         "resolved": 0,
-        "open": 57,
-        "deferred": 1
+        "open": 56,
+        "deferred": 0
       }
     },
     "lastWeek": {
       "stats": {
         "featuresShipped": 12,
         "qaPassRate": 100,
-        "inProgress": 13,
-        "openBugs": 57,
+        "inProgress": 12,
+        "openBugs": 56,
         "tasksClosed": 12
       },
       "bugs": {
         "newThisWeek": 0,
         "resolved": 0,
-        "open": 57,
-        "deferred": 1
+        "open": 56,
+        "deferred": 0
       }
     },
     "7d": {
       "stats": {
         "featuresShipped": 0,
         "qaPassRate": 100,
-        "inProgress": 13,
-        "openBugs": 57,
+        "inProgress": 12,
+        "openBugs": 56,
         "tasksClosed": 0
       },
       "bugs": {
         "newThisWeek": 7,
         "resolved": 0,
-        "open": 57,
-        "deferred": 1
+        "open": 56,
+        "deferred": 0
       }
     },
     "30d": {
       "stats": {
         "featuresShipped": 37,
         "qaPassRate": 100,
-        "inProgress": 13,
-        "openBugs": 57,
+        "inProgress": 12,
+        "openBugs": 56,
         "tasksClosed": 37
       },
       "bugs": {
-        "newThisWeek": 31,
+        "newThisWeek": 28,
         "resolved": 0,
-        "open": 57,
-        "deferred": 1
+        "open": 56,
+        "deferred": 0
       }
     },
     "90d": {
       "stats": {
         "featuresShipped": 169,
         "qaPassRate": 100,
-        "inProgress": 13,
-        "openBugs": 57,
+        "inProgress": 12,
+        "openBugs": 56,
         "tasksClosed": 169
       },
       "bugs": {
         "newThisWeek": 63,
         "resolved": 0,
-        "open": 57,
-        "deferred": 1
+        "open": 56,
+        "deferred": 0
       }
     },
     "ytd": {
       "stats": {
         "featuresShipped": 249,
         "qaPassRate": 100,
-        "inProgress": 13,
-        "openBugs": 57,
+        "inProgress": 12,
+        "openBugs": 56,
         "tasksClosed": 249
       },
       "bugs": {
-        "newThisWeek": 66,
+        "newThisWeek": 65,
         "resolved": 0,
-        "open": 57,
-        "deferred": 1
+        "open": 56,
+        "deferred": 0
       }
     },
     "lastYear": {
       "stats": {
         "featuresShipped": 889,
         "qaPassRate": 100,
-        "inProgress": 13,
-        "openBugs": 57,
+        "inProgress": 12,
+        "openBugs": 56,
         "tasksClosed": 640
       },
       "bugs": {
         "newThisWeek": 5,
         "resolved": 0,
-        "open": 57,
-        "deferred": 1
+        "open": 56,
+        "deferred": 0
       }
     },
     "allTime": {
       "stats": {
         "featuresShipped": 1224,
         "qaPassRate": 99,
-        "inProgress": 13,
-        "openBugs": 57,
+        "inProgress": 12,
+        "openBugs": 56,
         "tasksClosed": 1391
       },
       "bugs": {
-        "newThisWeek": 72,
+        "newThisWeek": 71,
         "resolved": 15,
-        "open": 57,
-        "deferred": 1
+        "open": 56,
+        "deferred": 0
       }
     }
   },
@@ -8728,14 +8728,6 @@
       "url": "https://app.clickup.com/t/86azcxv4c",
       "due": "2026-03-28",
       "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Metrics Drill-Down — Reports Page Navigation for All Section Cards",
-      "area": "Active Development",
-      "status": "in progress",
-      "url": "https://app.clickup.com/t/86b8bg2yk",
-      "due": "2026-04-11",
-      "assignees": "ali raza, Michael Adeoye"
     },
     {
       "title": "Contact Import Fails Silently After \"Ready to Import\"",
