@@ -1,16 +1,16 @@
 {
-  "lastUpdated": "2026-05-01T12:24:35.437Z",
+  "lastUpdated": "2026-05-02T12:21:51.282Z",
   "stats": {
     "featuresShipped": 0,
     "qaPassRate": 100,
-    "inProgress": 12,
-    "openBugs": 56,
+    "inProgress": 15,
+    "openBugs": 57,
     "tasksClosed": 0
   },
   "bugs": {
-    "newThisWeek": 7,
+    "newThisWeek": 8,
     "resolved": 0,
-    "open": 56,
+    "open": 57,
     "deferred": 0
   },
   "ranges": {
@@ -18,14 +18,14 @@
       "stats": {
         "featuresShipped": 0,
         "qaPassRate": 100,
-        "inProgress": 12,
-        "openBugs": 56,
+        "inProgress": 15,
+        "openBugs": 57,
         "tasksClosed": 0
       },
       "bugs": {
         "newThisWeek": 1,
         "resolved": 0,
-        "open": 56,
+        "open": 57,
         "deferred": 0
       }
     },
@@ -33,14 +33,14 @@
       "stats": {
         "featuresShipped": 0,
         "qaPassRate": 100,
-        "inProgress": 12,
-        "openBugs": 56,
+        "inProgress": 15,
+        "openBugs": 57,
         "tasksClosed": 0
       },
       "bugs": {
-        "newThisWeek": 7,
+        "newThisWeek": 8,
         "resolved": 0,
-        "open": 56,
+        "open": 57,
         "deferred": 0
       }
     },
@@ -48,14 +48,14 @@
       "stats": {
         "featuresShipped": 12,
         "qaPassRate": 100,
-        "inProgress": 12,
-        "openBugs": 56,
+        "inProgress": 15,
+        "openBugs": 57,
         "tasksClosed": 12
       },
       "bugs": {
         "newThisWeek": 0,
         "resolved": 0,
-        "open": 56,
+        "open": 57,
         "deferred": 0
       }
     },
@@ -63,14 +63,14 @@
       "stats": {
         "featuresShipped": 0,
         "qaPassRate": 100,
-        "inProgress": 12,
-        "openBugs": 56,
+        "inProgress": 15,
+        "openBugs": 57,
         "tasksClosed": 0
       },
       "bugs": {
-        "newThisWeek": 7,
+        "newThisWeek": 8,
         "resolved": 0,
-        "open": 56,
+        "open": 57,
         "deferred": 0
       }
     },
@@ -78,14 +78,14 @@
       "stats": {
         "featuresShipped": 37,
         "qaPassRate": 100,
-        "inProgress": 12,
-        "openBugs": 56,
+        "inProgress": 15,
+        "openBugs": 57,
         "tasksClosed": 37
       },
       "bugs": {
-        "newThisWeek": 28,
+        "newThisWeek": 27,
         "resolved": 0,
-        "open": 56,
+        "open": 57,
         "deferred": 0
       }
     },
@@ -93,14 +93,14 @@
       "stats": {
         "featuresShipped": 169,
         "qaPassRate": 100,
-        "inProgress": 12,
-        "openBugs": 56,
+        "inProgress": 15,
+        "openBugs": 57,
         "tasksClosed": 169
       },
       "bugs": {
-        "newThisWeek": 63,
+        "newThisWeek": 64,
         "resolved": 0,
-        "open": 56,
+        "open": 57,
         "deferred": 0
       }
     },
@@ -108,14 +108,14 @@
       "stats": {
         "featuresShipped": 249,
         "qaPassRate": 100,
-        "inProgress": 12,
-        "openBugs": 56,
+        "inProgress": 15,
+        "openBugs": 57,
         "tasksClosed": 249
       },
       "bugs": {
-        "newThisWeek": 65,
+        "newThisWeek": 66,
         "resolved": 0,
-        "open": 56,
+        "open": 57,
         "deferred": 0
       }
     },
@@ -123,14 +123,14 @@
       "stats": {
         "featuresShipped": 889,
         "qaPassRate": 100,
-        "inProgress": 12,
-        "openBugs": 56,
+        "inProgress": 15,
+        "openBugs": 57,
         "tasksClosed": 640
       },
       "bugs": {
         "newThisWeek": 5,
         "resolved": 0,
-        "open": 56,
+        "open": 57,
         "deferred": 0
       }
     },
@@ -138,14 +138,14 @@
       "stats": {
         "featuresShipped": 1224,
         "qaPassRate": 99,
-        "inProgress": 12,
-        "openBugs": 56,
+        "inProgress": 15,
+        "openBugs": 57,
         "tasksClosed": 1391
       },
       "bugs": {
-        "newThisWeek": 71,
+        "newThisWeek": 72,
         "resolved": 15,
-        "open": 56,
+        "open": 57,
         "deferred": 0
       }
     }
@@ -8730,9 +8730,33 @@
       "assignees": "Terry Bennett, Michael Adeoye"
     },
     {
+      "title": "Update Angi Leads Integration Link - Company Settings",
+      "area": "Active Development",
+      "status": "branch ready",
+      "url": "https://app.clickup.com/t/86b9dv7t2",
+      "due": "2026-04-29",
+      "assignees": "ali raza, Michael Adeoye"
+    },
+    {
+      "title": "Company Settings UI Update",
+      "area": "Active Development",
+      "status": "branch ready",
+      "url": "https://app.clickup.com/t/86b9q0uux",
+      "due": null,
+      "assignees": "Jason Warford"
+    },
+    {
+      "title": "Customer portal change orders do not expand correctly for proposal 2636792",
+      "area": "Active Development",
+      "status": "testing complete",
+      "url": "https://app.clickup.com/t/86b9p298f",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
       "title": "Contact Import Fails Silently After \"Ready to Import\"",
       "area": "Active Development",
-      "status": "pr created",
+      "status": "branch ready",
       "url": "https://app.clickup.com/t/86b9md1da",
       "due": null,
       "assignees": "Terry Bennett"
@@ -8740,7 +8764,7 @@
     {
       "title": "Discount Description Shows Raw HTML Code in Proposal",
       "area": "Active Development",
-      "status": "pr created",
+      "status": "branch ready",
       "url": "https://app.clickup.com/t/86b9fwgm6",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
@@ -8748,7 +8772,7 @@
     {
       "title": "Line Item Detail Modal — No Scroll & No Dismissal in Customer Portal (Package View)",
       "area": "Active Development",
-      "status": "pr created",
+      "status": "branch ready",
       "url": "https://app.clickup.com/t/86b9dmp1f",
       "due": null,
       "assignees": "Terry Bennett"
@@ -8764,7 +8788,7 @@
     {
       "title": "Proposal View — Area Item Detail Modal",
       "area": "Active Development",
-      "status": "pr created",
+      "status": "branch ready",
       "url": "https://app.clickup.com/t/86b92vna8",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
@@ -8780,7 +8804,7 @@
     {
       "title": "Update Change Order Acceptance Modal to Match New Proposal Acceptance UI",
       "area": "Active Development",
-      "status": "pr created",
+      "status": "branch ready",
       "url": "https://app.clickup.com/t/86b8zg0cz",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
@@ -8788,7 +8812,7 @@
     {
       "title": "Schedule a Demo Button: Job Costing, Production Rates & Zapier",
       "area": "Active Development",
-      "status": "pr created",
+      "status": "branch ready",
       "url": "https://app.clickup.com/t/86b8z6hv0",
       "due": null,
       "assignees": "ali raza, Michael Adeoye"
@@ -8796,7 +8820,7 @@
     {
       "title": "Show/Hide Archived Deals & Jobs — Sales List, Jobs List (Admin + Super Admin)",
       "area": "Active Development",
-      "status": "pr created",
+      "status": "branch ready",
       "url": "https://app.clickup.com/t/86b8xtxym",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
@@ -8812,7 +8836,7 @@
     {
       "title": "Notification Trigger for Manual Change Order Acceptance",
       "area": "Active Development",
-      "status": "pr created",
+      "status": "branch ready",
       "url": "https://app.clickup.com/t/86b3xmuw4",
       "due": null,
       "assignees": "ali raza, Michael Adeoye"
