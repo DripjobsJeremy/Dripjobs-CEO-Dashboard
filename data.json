@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-02T12:21:51.282Z",
+  "lastUpdated": "2026-05-03T12:21:24.088Z",
   "stats": {
     "featuresShipped": 0,
     "qaPassRate": 100,
@@ -23,7 +23,7 @@
         "tasksClosed": 0
       },
       "bugs": {
-        "newThisWeek": 1,
+        "newThisWeek": 0,
         "resolved": 0,
         "open": 57,
         "deferred": 0
@@ -76,14 +76,14 @@
     },
     "30d": {
       "stats": {
-        "featuresShipped": 37,
+        "featuresShipped": 32,
         "qaPassRate": 100,
         "inProgress": 15,
         "openBugs": 57,
-        "tasksClosed": 37
+        "tasksClosed": 32
       },
       "bugs": {
-        "newThisWeek": 27,
+        "newThisWeek": 26,
         "resolved": 0,
         "open": 57,
         "deferred": 0
@@ -91,11 +91,11 @@
     },
     "90d": {
       "stats": {
-        "featuresShipped": 169,
+        "featuresShipped": 163,
         "qaPassRate": 100,
         "inProgress": 15,
         "openBugs": 57,
-        "tasksClosed": 169
+        "tasksClosed": 163
       },
       "bugs": {
         "newThisWeek": 64,
