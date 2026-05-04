@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2026-05-03T12:21:24.088Z",
+  "lastUpdated": "2026-05-04T12:38:33.066Z",
   "stats": {
-    "featuresShipped": 0,
+    "featuresShipped": 10,
     "qaPassRate": 100,
-    "inProgress": 15,
+    "inProgress": 5,
     "openBugs": 57,
-    "tasksClosed": 0
+    "tasksClosed": 10
   },
   "bugs": {
     "newThisWeek": 8,
@@ -16,11 +16,11 @@
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 0,
+        "featuresShipped": 10,
         "qaPassRate": 100,
-        "inProgress": 15,
+        "inProgress": 5,
         "openBugs": 57,
-        "tasksClosed": 0
+        "tasksClosed": 10
       },
       "bugs": {
         "newThisWeek": 0,
@@ -31,9 +31,24 @@
     },
     "thisWeek": {
       "stats": {
-        "featuresShipped": 0,
+        "featuresShipped": 10,
         "qaPassRate": 100,
-        "inProgress": 15,
+        "inProgress": 5,
+        "openBugs": 57,
+        "tasksClosed": 10
+      },
+      "bugs": {
+        "newThisWeek": 0,
+        "resolved": 0,
+        "open": 57,
+        "deferred": 0
+      }
+    },
+    "lastWeek": {
+      "stats": {
+        "featuresShipped": 10,
+        "qaPassRate": 100,
+        "inProgress": 5,
         "openBugs": 57,
         "tasksClosed": 0
       },
@@ -44,28 +59,13 @@
         "deferred": 0
       }
     },
-    "lastWeek": {
-      "stats": {
-        "featuresShipped": 12,
-        "qaPassRate": 100,
-        "inProgress": 15,
-        "openBugs": 57,
-        "tasksClosed": 12
-      },
-      "bugs": {
-        "newThisWeek": 0,
-        "resolved": 0,
-        "open": 57,
-        "deferred": 0
-      }
-    },
     "7d": {
       "stats": {
-        "featuresShipped": 0,
+        "featuresShipped": 10,
         "qaPassRate": 100,
-        "inProgress": 15,
+        "inProgress": 5,
         "openBugs": 57,
-        "tasksClosed": 0
+        "tasksClosed": 10
       },
       "bugs": {
         "newThisWeek": 8,
@@ -76,11 +76,11 @@
     },
     "30d": {
       "stats": {
-        "featuresShipped": 32,
+        "featuresShipped": 42,
         "qaPassRate": 100,
-        "inProgress": 15,
+        "inProgress": 5,
         "openBugs": 57,
-        "tasksClosed": 32
+        "tasksClosed": 42
       },
       "bugs": {
         "newThisWeek": 26,
@@ -91,11 +91,11 @@
     },
     "90d": {
       "stats": {
-        "featuresShipped": 163,
+        "featuresShipped": 171,
         "qaPassRate": 100,
-        "inProgress": 15,
+        "inProgress": 5,
         "openBugs": 57,
-        "tasksClosed": 163
+        "tasksClosed": 171
       },
       "bugs": {
         "newThisWeek": 64,
@@ -106,11 +106,11 @@
     },
     "ytd": {
       "stats": {
-        "featuresShipped": 249,
+        "featuresShipped": 259,
         "qaPassRate": 100,
-        "inProgress": 15,
+        "inProgress": 5,
         "openBugs": 57,
-        "tasksClosed": 249
+        "tasksClosed": 259
       },
       "bugs": {
         "newThisWeek": 66,
@@ -121,9 +121,9 @@
     },
     "lastYear": {
       "stats": {
-        "featuresShipped": 889,
+        "featuresShipped": 899,
         "qaPassRate": 100,
-        "inProgress": 15,
+        "inProgress": 5,
         "openBugs": 57,
         "tasksClosed": 640
       },
@@ -136,11 +136,11 @@
     },
     "allTime": {
       "stats": {
-        "featuresShipped": 1224,
+        "featuresShipped": 1234,
         "qaPassRate": 99,
-        "inProgress": 15,
+        "inProgress": 5,
         "openBugs": 57,
-        "tasksClosed": 1391
+        "tasksClosed": 1401
       },
       "bugs": {
         "newThisWeek": 72,
@@ -151,6 +151,76 @@
     }
   },
   "changelog": [
+    {
+      "date": "2026-05-04",
+      "title": "Company Settings UI Update",
+      "area": "Active Development",
+      "type": "ux",
+      "url": "https://app.clickup.com/t/86b9q0uux"
+    },
+    {
+      "date": "2026-05-04",
+      "title": "Update Change Order Acceptance Modal to Match New Proposal Acceptance UI",
+      "area": "Active Development",
+      "type": "ux",
+      "url": "https://app.clickup.com/t/86b8zg0cz"
+    },
+    {
+      "date": "2026-05-04",
+      "title": "Notification Trigger for Manual Change Order Acceptance",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b3xmuw4"
+    },
+    {
+      "date": "2026-05-04",
+      "title": "Schedule a Demo Button: Job Costing, Production Rates & Zapier",
+      "area": "Active Development",
+      "type": "ux",
+      "url": "https://app.clickup.com/t/86b8z6hv0"
+    },
+    {
+      "date": "2026-05-04",
+      "title": "Update Angi Leads Integration Link - Company Settings",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b9dv7t2"
+    },
+    {
+      "date": "2026-05-04",
+      "title": "Contact Import Fails Silently After \"Ready to Import\"",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b9md1da"
+    },
+    {
+      "date": "2026-05-04",
+      "title": "Show/Hide Archived Deals & Jobs — Sales List, Jobs List (Admin + Super Admin)",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8xtxym"
+    },
+    {
+      "date": "2026-05-04",
+      "title": "Proposal View — Area Item Detail Modal",
+      "area": "Active Development",
+      "type": "ux",
+      "url": "https://app.clickup.com/t/86b92vna8"
+    },
+    {
+      "date": "2026-05-04",
+      "title": "Discount Description Shows Raw HTML Code in Proposal",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b9fwgm6"
+    },
+    {
+      "date": "2026-05-04",
+      "title": "Line Item Detail Modal — No Scroll & No Dismissal in Customer Portal (Package View)",
+      "area": "Active Development",
+      "type": "ux",
+      "url": "https://app.clickup.com/t/86b9dmp1f"
+    },
     {
       "date": "2026-04-23",
       "title": "Add-On Modal: Rename \"Coupon Code\" to \"Access Code\"",
@@ -8730,22 +8800,6 @@
       "assignees": "Terry Bennett, Michael Adeoye"
     },
     {
-      "title": "Update Angi Leads Integration Link - Company Settings",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b9dv7t2",
-      "due": "2026-04-29",
-      "assignees": "ali raza, Michael Adeoye"
-    },
-    {
-      "title": "Company Settings UI Update",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b9q0uux",
-      "due": null,
-      "assignees": "Jason Warford"
-    },
-    {
       "title": "Customer portal change orders do not expand correctly for proposal 2636792",
       "area": "Active Development",
       "status": "testing complete",
@@ -8754,42 +8808,10 @@
       "assignees": "Terry Bennett, Michael Adeoye"
     },
     {
-      "title": "Contact Import Fails Silently After \"Ready to Import\"",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b9md1da",
-      "due": null,
-      "assignees": "Terry Bennett"
-    },
-    {
-      "title": "Discount Description Shows Raw HTML Code in Proposal",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b9fwgm6",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Line Item Detail Modal — No Scroll & No Dismissal in Customer Portal (Package View)",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b9dmp1f",
-      "due": null,
-      "assignees": "Terry Bennett"
-    },
-    {
       "title": "Exact Time Support & 5-Minute Increments for Scheduled Appointments",
       "area": "Active Development",
       "status": "pr created",
       "url": "https://app.clickup.com/t/86b99gajp",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Proposal View — Area Item Detail Modal",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b92vna8",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
     },
@@ -8802,76 +8824,44 @@
       "assignees": "Terry Bennett, Michael Adeoye"
     },
     {
-      "title": "Update Change Order Acceptance Modal to Match New Proposal Acceptance UI",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b8zg0cz",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Schedule a Demo Button: Job Costing, Production Rates & Zapier",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b8z6hv0",
-      "due": null,
-      "assignees": "ali raza, Michael Adeoye"
-    },
-    {
-      "title": "Show/Hide Archived Deals & Jobs — Sales List, Jobs List (Admin + Super Admin)",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b8xtxym",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
       "title": "Update Reply‑To Email Logic for Scheduled Communications (Salesperson → Company Fallback)",
       "area": "Active Development",
-      "status": "pr created",
+      "status": "code complete",
       "url": "https://app.clickup.com/t/86b8g71qz",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Notification Trigger for Manual Change Order Acceptance",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b3xmuw4",
-      "due": null,
-      "assignees": "ali raza, Michael Adeoye"
     }
   ],
   "recentActivity": [
     {
-      "title": "Add-On Modal: Rename \"Coupon Code\" to \"Access Code\"",
+      "title": "Company Settings UI Update",
       "status": "pushed to production",
-      "closedAt": "2026-04-23T09:04:11.086Z",
-      "url": "https://app.clickup.com/t/86b9be000"
+      "closedAt": "2026-05-04T10:05:02.985Z",
+      "url": "https://app.clickup.com/t/86b9q0uux"
     },
     {
-      "title": "Fix CSV Import Stuck at 15 Contacts - Fails to Import 1200 New Contacts",
+      "title": "Update Change Order Acceptance Modal to Match New Proposal Acceptance UI",
       "status": "pushed to production",
-      "closedAt": "2026-04-23T09:04:10.366Z",
-      "url": "https://app.clickup.com/t/86b9bhz5p"
+      "closedAt": "2026-05-04T10:04:57.497Z",
+      "url": "https://app.clickup.com/t/86b8zg0cz"
     },
     {
-      "title": "Factory Direct Renovations (#16351) - Cancelled Deal #1780555 Won't Open (Spinning Wheel)",
+      "title": "Notification Trigger for Manual Change Order Acceptance",
       "status": "pushed to production",
-      "closedAt": "2026-04-23T09:04:09.740Z",
-      "url": "https://app.clickup.com/t/86b9eme5t"
+      "closedAt": "2026-05-04T10:04:50.731Z",
+      "url": "https://app.clickup.com/t/86b3xmuw4"
     },
     {
-      "title": "Bulk Change Report Job Not Generating After Product Swap",
+      "title": "Schedule a Demo Button: Job Costing, Production Rates & Zapier",
       "status": "pushed to production",
-      "closedAt": "2026-04-23T09:04:09.127Z",
-      "url": "https://app.clickup.com/t/86b9gkeun"
+      "closedAt": "2026-05-04T10:04:45.403Z",
+      "url": "https://app.clickup.com/t/86b8z6hv0"
     },
     {
-      "title": "Bulk Product Changer — Cost Summary Area Entry Points & Change Products Modal",
+      "title": "Update Angi Leads Integration Link - Company Settings",
       "status": "pushed to production",
-      "closedAt": "2026-04-20T09:04:56.563Z",
-      "url": "https://app.clickup.com/t/86b3fm30n"
+      "closedAt": "2026-05-04T10:04:36.701Z",
+      "url": "https://app.clickup.com/t/86b9dv7t2"
     }
   ]
 }
