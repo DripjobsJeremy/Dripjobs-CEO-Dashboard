@@ -1,156 +1,163 @@
 {
-  "lastUpdated": "2026-05-04T12:38:33.066Z",
+  "lastUpdated": "2026-05-05T12:29:56.166Z",
   "stats": {
-    "featuresShipped": 10,
+    "featuresShipped": 11,
     "qaPassRate": 100,
-    "inProgress": 5,
-    "openBugs": 57,
-    "tasksClosed": 10
+    "inProgress": 4,
+    "openBugs": 59,
+    "tasksClosed": 11
   },
   "bugs": {
-    "newThisWeek": 8,
+    "newThisWeek": 10,
     "resolved": 0,
-    "open": 57,
+    "open": 59,
     "deferred": 0
   },
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 10,
+        "featuresShipped": 1,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 57,
-        "tasksClosed": 10
+        "inProgress": 4,
+        "openBugs": 59,
+        "tasksClosed": 1
       },
       "bugs": {
-        "newThisWeek": 0,
+        "newThisWeek": 2,
         "resolved": 0,
-        "open": 57,
+        "open": 59,
         "deferred": 0
       }
     },
     "thisWeek": {
       "stats": {
-        "featuresShipped": 10,
+        "featuresShipped": 11,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 57,
-        "tasksClosed": 10
+        "inProgress": 4,
+        "openBugs": 59,
+        "tasksClosed": 11
       },
       "bugs": {
-        "newThisWeek": 0,
+        "newThisWeek": 2,
         "resolved": 0,
-        "open": 57,
+        "open": 59,
         "deferred": 0
       }
     },
     "lastWeek": {
       "stats": {
-        "featuresShipped": 10,
+        "featuresShipped": 11,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 57,
+        "inProgress": 4,
+        "openBugs": 59,
         "tasksClosed": 0
       },
       "bugs": {
         "newThisWeek": 8,
         "resolved": 0,
-        "open": 57,
+        "open": 59,
         "deferred": 0
       }
     },
     "7d": {
       "stats": {
-        "featuresShipped": 10,
+        "featuresShipped": 11,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 57,
-        "tasksClosed": 10
+        "inProgress": 4,
+        "openBugs": 59,
+        "tasksClosed": 11
       },
       "bugs": {
-        "newThisWeek": 8,
+        "newThisWeek": 10,
         "resolved": 0,
-        "open": 57,
+        "open": 59,
         "deferred": 0
       }
     },
     "30d": {
       "stats": {
-        "featuresShipped": 42,
+        "featuresShipped": 40,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 57,
-        "tasksClosed": 42
+        "inProgress": 4,
+        "openBugs": 59,
+        "tasksClosed": 40
       },
       "bugs": {
-        "newThisWeek": 26,
+        "newThisWeek": 27,
         "resolved": 0,
-        "open": 57,
+        "open": 59,
         "deferred": 0
       }
     },
     "90d": {
       "stats": {
-        "featuresShipped": 171,
+        "featuresShipped": 170,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 57,
-        "tasksClosed": 171
+        "inProgress": 4,
+        "openBugs": 59,
+        "tasksClosed": 170
       },
       "bugs": {
-        "newThisWeek": 64,
+        "newThisWeek": 65,
         "resolved": 0,
-        "open": 57,
+        "open": 59,
         "deferred": 0
       }
     },
     "ytd": {
       "stats": {
-        "featuresShipped": 259,
+        "featuresShipped": 260,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 57,
-        "tasksClosed": 259
+        "inProgress": 4,
+        "openBugs": 59,
+        "tasksClosed": 260
       },
       "bugs": {
-        "newThisWeek": 66,
+        "newThisWeek": 67,
         "resolved": 0,
-        "open": 57,
+        "open": 59,
         "deferred": 0
       }
     },
     "lastYear": {
       "stats": {
-        "featuresShipped": 899,
+        "featuresShipped": 900,
         "qaPassRate": 100,
-        "inProgress": 5,
-        "openBugs": 57,
+        "inProgress": 4,
+        "openBugs": 59,
         "tasksClosed": 640
       },
       "bugs": {
         "newThisWeek": 5,
         "resolved": 0,
-        "open": 57,
+        "open": 59,
         "deferred": 0
       }
     },
     "allTime": {
       "stats": {
-        "featuresShipped": 1234,
+        "featuresShipped": 1235,
         "qaPassRate": 99,
-        "inProgress": 5,
-        "openBugs": 57,
+        "inProgress": 4,
+        "openBugs": 59,
         "tasksClosed": 1401
       },
       "bugs": {
-        "newThisWeek": 72,
-        "resolved": 15,
-        "open": 57,
+        "newThisWeek": 73,
+        "resolved": 14,
+        "open": 59,
         "deferred": 0
       }
     }
   },
   "changelog": [
+    {
+      "date": "2026-05-04",
+      "title": "Update Reply‑To Email Logic for Scheduled Communications (Salesperson → Company Fallback)",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b8g71qz"
+    },
     {
       "date": "2026-05-04",
       "title": "Company Settings UI Update",
@@ -8802,7 +8809,7 @@
     {
       "title": "Customer portal change orders do not expand correctly for proposal 2636792",
       "area": "Active Development",
-      "status": "testing complete",
+      "status": "pr created",
       "url": "https://app.clickup.com/t/86b9p298f",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
@@ -8822,17 +8829,15 @@
       "url": "https://app.clickup.com/t/86b90vaqz",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Update Reply‑To Email Logic for Scheduled Communications (Salesperson → Company Fallback)",
-      "area": "Active Development",
-      "status": "code complete",
-      "url": "https://app.clickup.com/t/86b8g71qz",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
     }
   ],
   "recentActivity": [
+    {
+      "title": "Update Reply‑To Email Logic for Scheduled Communications (Salesperson → Company Fallback)",
+      "status": "pushed to production",
+      "closedAt": "2026-05-04T23:10:45.784Z",
+      "url": "https://app.clickup.com/t/86b8g71qz"
+    },
     {
       "title": "Company Settings UI Update",
       "status": "pushed to production",
@@ -8856,12 +8861,6 @@
       "status": "pushed to production",
       "closedAt": "2026-05-04T10:04:45.403Z",
       "url": "https://app.clickup.com/t/86b8z6hv0"
-    },
-    {
-      "title": "Update Angi Leads Integration Link - Company Settings",
-      "status": "pushed to production",
-      "closedAt": "2026-05-04T10:04:36.701Z",
-      "url": "https://app.clickup.com/t/86b9dv7t2"
     }
   ]
 }
