@@ -1,16 +1,16 @@
 {
-  "lastUpdated": "2026-05-07T12:42:27.619Z",
+  "lastUpdated": "2026-05-08T12:33:21.976Z",
   "stats": {
     "featuresShipped": 11,
     "qaPassRate": 100,
-    "inProgress": 8,
-    "openBugs": 64,
+    "inProgress": 12,
+    "openBugs": 65,
     "tasksClosed": 11
   },
   "bugs": {
     "newThisWeek": 9,
     "resolved": 0,
-    "open": 64,
+    "open": 65,
     "deferred": 0
   },
   "ranges": {
@@ -18,14 +18,14 @@
       "stats": {
         "featuresShipped": 0,
         "qaPassRate": 100,
-        "inProgress": 8,
-        "openBugs": 64,
+        "inProgress": 12,
+        "openBugs": 65,
         "tasksClosed": 0
       },
       "bugs": {
         "newThisWeek": 1,
         "resolved": 0,
-        "open": 64,
+        "open": 65,
         "deferred": 0
       }
     },
@@ -33,14 +33,14 @@
       "stats": {
         "featuresShipped": 11,
         "qaPassRate": 100,
-        "inProgress": 8,
-        "openBugs": 64,
+        "inProgress": 12,
+        "openBugs": 65,
         "tasksClosed": 11
       },
       "bugs": {
-        "newThisWeek": 8,
+        "newThisWeek": 9,
         "resolved": 0,
-        "open": 64,
+        "open": 65,
         "deferred": 0
       }
     },
@@ -48,14 +48,14 @@
       "stats": {
         "featuresShipped": 11,
         "qaPassRate": 100,
-        "inProgress": 8,
-        "openBugs": 64,
+        "inProgress": 12,
+        "openBugs": 65,
         "tasksClosed": 0
       },
       "bugs": {
         "newThisWeek": 7,
         "resolved": 0,
-        "open": 64,
+        "open": 65,
         "deferred": 0
       }
     },
@@ -63,29 +63,29 @@
       "stats": {
         "featuresShipped": 11,
         "qaPassRate": 100,
-        "inProgress": 8,
-        "openBugs": 64,
+        "inProgress": 12,
+        "openBugs": 65,
         "tasksClosed": 11
       },
       "bugs": {
         "newThisWeek": 9,
         "resolved": 0,
-        "open": 64,
+        "open": 65,
         "deferred": 0
       }
     },
     "30d": {
       "stats": {
-        "featuresShipped": 39,
+        "featuresShipped": 33,
         "qaPassRate": 100,
-        "inProgress": 8,
-        "openBugs": 64,
-        "tasksClosed": 39
+        "inProgress": 12,
+        "openBugs": 65,
+        "tasksClosed": 33
       },
       "bugs": {
         "newThisWeek": 30,
         "resolved": 0,
-        "open": 64,
+        "open": 65,
         "deferred": 0
       }
     },
@@ -93,14 +93,14 @@
       "stats": {
         "featuresShipped": 167,
         "qaPassRate": 100,
-        "inProgress": 8,
-        "openBugs": 64,
+        "inProgress": 12,
+        "openBugs": 65,
         "tasksClosed": 167
       },
       "bugs": {
-        "newThisWeek": 69,
+        "newThisWeek": 70,
         "resolved": 0,
-        "open": 64,
+        "open": 65,
         "deferred": 0
       }
     },
@@ -108,14 +108,14 @@
       "stats": {
         "featuresShipped": 260,
         "qaPassRate": 100,
-        "inProgress": 8,
-        "openBugs": 64,
+        "inProgress": 12,
+        "openBugs": 65,
         "tasksClosed": 260
       },
       "bugs": {
-        "newThisWeek": 72,
+        "newThisWeek": 73,
         "resolved": 0,
-        "open": 64,
+        "open": 65,
         "deferred": 0
       }
     },
@@ -123,14 +123,14 @@
       "stats": {
         "featuresShipped": 900,
         "qaPassRate": 100,
-        "inProgress": 8,
-        "openBugs": 64,
+        "inProgress": 12,
+        "openBugs": 65,
         "tasksClosed": 640
       },
       "bugs": {
         "newThisWeek": 5,
         "resolved": 0,
-        "open": 64,
+        "open": 65,
         "deferred": 0
       }
     },
@@ -138,14 +138,14 @@
       "stats": {
         "featuresShipped": 1235,
         "qaPassRate": 99,
-        "inProgress": 8,
-        "openBugs": 64,
+        "inProgress": 12,
+        "openBugs": 65,
         "tasksClosed": 1401
       },
       "bugs": {
-        "newThisWeek": 78,
+        "newThisWeek": 79,
         "resolved": 14,
-        "open": 64,
+        "open": 65,
         "deferred": 0
       }
     }
@@ -8807,12 +8807,44 @@
       "assignees": "Terry Bennett, Michael Adeoye"
     },
     {
+      "title": "Proposal Builder UI update",
+      "area": "Active Development",
+      "status": "in progress",
+      "url": "https://app.clickup.com/t/86b9u5vm7",
+      "due": null,
+      "assignees": "Jason Warford"
+    },
+    {
+      "title": "Fix Deactivated Account Reactivation in Chargebee API Calls",
+      "area": "Active Development",
+      "status": "code complete",
+      "url": "https://app.clickup.com/t/86b9thr47",
+      "due": null,
+      "assignees": "Jason Warford"
+    },
+    {
+      "title": "\"Show Archived\" Large Accounts + Behavior Correction",
+      "area": "Active Development",
+      "status": "testing complete",
+      "url": "https://app.clickup.com/t/86b9rxx1z",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
       "title": "Drips Menu UI Update",
       "area": "Active Development",
       "status": "code complete",
       "url": "https://app.clickup.com/t/86b9rw9gd",
       "due": null,
       "assignees": "Jason Warford"
+    },
+    {
+      "title": "Add helper text & tooltip for Reply-To email behavior",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b9rvnkk",
+      "due": null,
+      "assignees": "ali raza, Michael Adeoye"
     },
     {
       "title": "Customer portal change orders do not expand correctly for proposal 2636792",
@@ -8849,7 +8881,7 @@
     {
       "title": "Exact Time Support & 5-Minute Increments for Scheduled Appointments",
       "area": "Active Development",
-      "status": "pr created",
+      "status": "code complete",
       "url": "https://app.clickup.com/t/86b99gajp",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
