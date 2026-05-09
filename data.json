@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-05-08T12:33:21.976Z",
+  "lastUpdated": "2026-05-09T12:23:19.161Z",
   "stats": {
     "featuresShipped": 11,
     "qaPassRate": 100,
-    "inProgress": 12,
+    "inProgress": 17,
     "openBugs": 65,
     "tasksClosed": 11
   },
   "bugs": {
-    "newThisWeek": 9,
+    "newThisWeek": 10,
     "resolved": 0,
     "open": 65,
     "deferred": 0
@@ -18,12 +18,12 @@
       "stats": {
         "featuresShipped": 0,
         "qaPassRate": 100,
-        "inProgress": 12,
+        "inProgress": 17,
         "openBugs": 65,
         "tasksClosed": 0
       },
       "bugs": {
-        "newThisWeek": 1,
+        "newThisWeek": 2,
         "resolved": 0,
         "open": 65,
         "deferred": 0
@@ -33,12 +33,12 @@
       "stats": {
         "featuresShipped": 11,
         "qaPassRate": 100,
-        "inProgress": 12,
+        "inProgress": 17,
         "openBugs": 65,
         "tasksClosed": 11
       },
       "bugs": {
-        "newThisWeek": 9,
+        "newThisWeek": 10,
         "resolved": 0,
         "open": 65,
         "deferred": 0
@@ -48,7 +48,7 @@
       "stats": {
         "featuresShipped": 11,
         "qaPassRate": 100,
-        "inProgress": 12,
+        "inProgress": 17,
         "openBugs": 65,
         "tasksClosed": 0
       },
@@ -63,12 +63,12 @@
       "stats": {
         "featuresShipped": 11,
         "qaPassRate": 100,
-        "inProgress": 12,
+        "inProgress": 17,
         "openBugs": 65,
         "tasksClosed": 11
       },
       "bugs": {
-        "newThisWeek": 9,
+        "newThisWeek": 10,
         "resolved": 0,
         "open": 65,
         "deferred": 0
@@ -76,14 +76,14 @@
     },
     "30d": {
       "stats": {
-        "featuresShipped": 33,
+        "featuresShipped": 32,
         "qaPassRate": 100,
-        "inProgress": 12,
+        "inProgress": 17,
         "openBugs": 65,
-        "tasksClosed": 33
+        "tasksClosed": 32
       },
       "bugs": {
-        "newThisWeek": 30,
+        "newThisWeek": 31,
         "resolved": 0,
         "open": 65,
         "deferred": 0
@@ -93,12 +93,12 @@
       "stats": {
         "featuresShipped": 167,
         "qaPassRate": 100,
-        "inProgress": 12,
+        "inProgress": 17,
         "openBugs": 65,
         "tasksClosed": 167
       },
       "bugs": {
-        "newThisWeek": 70,
+        "newThisWeek": 71,
         "resolved": 0,
         "open": 65,
         "deferred": 0
@@ -108,12 +108,12 @@
       "stats": {
         "featuresShipped": 260,
         "qaPassRate": 100,
-        "inProgress": 12,
+        "inProgress": 17,
         "openBugs": 65,
         "tasksClosed": 260
       },
       "bugs": {
-        "newThisWeek": 73,
+        "newThisWeek": 74,
         "resolved": 0,
         "open": 65,
         "deferred": 0
@@ -123,7 +123,7 @@
       "stats": {
         "featuresShipped": 900,
         "qaPassRate": 100,
-        "inProgress": 12,
+        "inProgress": 17,
         "openBugs": 65,
         "tasksClosed": 640
       },
@@ -138,13 +138,13 @@
       "stats": {
         "featuresShipped": 1235,
         "qaPassRate": 99,
-        "inProgress": 12,
+        "inProgress": 17,
         "openBugs": 65,
-        "tasksClosed": 1401
+        "tasksClosed": 1402
       },
       "bugs": {
-        "newThisWeek": 79,
-        "resolved": 14,
+        "newThisWeek": 80,
+        "resolved": 15,
         "open": 65,
         "deferred": 0
       }
@@ -8801,10 +8801,34 @@
     {
       "title": "Rounded Gallon Pricing Toggle (PARENT)",
       "area": "Active Development",
-      "status": "pr created",
+      "status": "branch ready",
       "url": "https://app.clickup.com/t/86azcxv4c",
       "due": "2026-03-28",
       "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
+      "title": "Fix issue with scrolling in the customer portal",
+      "area": "Active Development",
+      "status": "branch ready",
+      "url": "https://app.clickup.com/t/86b9v7d2n",
+      "due": null,
+      "assignees": "Terry Bennett"
+    },
+    {
+      "title": "Fix bug where completed jobs dont show in jobs pipeline",
+      "area": "Active Development",
+      "status": "branch ready",
+      "url": "https://app.clickup.com/t/86b9v71c3",
+      "due": null,
+      "assignees": "Terry Bennett"
+    },
+    {
+      "title": "Add rounded gallon script to project",
+      "area": "Active Development",
+      "status": "branch ready",
+      "url": "https://app.clickup.com/t/86b9v62f4",
+      "due": null,
+      "assignees": "Terry Bennett"
     },
     {
       "title": "Proposal Builder UI update",
@@ -8815,9 +8839,17 @@
       "assignees": "Jason Warford"
     },
     {
+      "title": "Improve Command Center Layout to Show Key Information at a Glance",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b9tpff0",
+      "due": null,
+      "assignees": "Michael Adeoye, Terry Bennett"
+    },
+    {
       "title": "Fix Deactivated Account Reactivation in Chargebee API Calls",
       "area": "Active Development",
-      "status": "code complete",
+      "status": "branch ready",
       "url": "https://app.clickup.com/t/86b9thr47",
       "due": null,
       "assignees": "Jason Warford"
@@ -8825,7 +8857,7 @@
     {
       "title": "\"Show Archived\" Large Accounts + Behavior Correction",
       "area": "Active Development",
-      "status": "testing complete",
+      "status": "branch ready",
       "url": "https://app.clickup.com/t/86b9rxx1z",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
@@ -8833,7 +8865,7 @@
     {
       "title": "Drips Menu UI Update",
       "area": "Active Development",
-      "status": "code complete",
+      "status": "branch ready",
       "url": "https://app.clickup.com/t/86b9rw9gd",
       "due": null,
       "assignees": "Jason Warford"
@@ -8841,7 +8873,7 @@
     {
       "title": "Add helper text & tooltip for Reply-To email behavior",
       "area": "Active Development",
-      "status": "pr created",
+      "status": "branch ready",
       "url": "https://app.clickup.com/t/86b9rvnkk",
       "due": null,
       "assignees": "ali raza, Michael Adeoye"
@@ -8849,15 +8881,23 @@
     {
       "title": "Customer portal change orders do not expand correctly for proposal 2636792",
       "area": "Active Development",
-      "status": "pr created",
+      "status": "branch ready",
       "url": "https://app.clickup.com/t/86b9p298f",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
+      "title": "Customer Portal: Exclude Cancelled & Unsent Proposals from My Proposals",
+      "area": "Active Development",
+      "status": "branch ready",
+      "url": "https://app.clickup.com/t/86b9ncym1",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
     },
     {
       "title": "Enhance Contact Import to Require and Map Lead Source",
       "area": "Active Development",
-      "status": "pr created",
+      "status": "branch ready",
       "url": "https://app.clickup.com/t/86b9h0pdd",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
@@ -8865,7 +8905,7 @@
     {
       "title": "Top Shelf Painting (#13680) - Work Order Shows Multiple Packages (Proposal #2653829)",
       "area": "Active Development",
-      "status": "pr created",
+      "status": "branch ready",
       "url": "https://app.clickup.com/t/86b9c8x3f",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
@@ -8873,7 +8913,7 @@
     {
       "title": "Error When Adding New User",
       "area": "Active Development",
-      "status": "pr created",
+      "status": "branch ready",
       "url": "https://app.clickup.com/t/86b9be77d",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
@@ -8881,7 +8921,7 @@
     {
       "title": "Exact Time Support & 5-Minute Increments for Scheduled Appointments",
       "area": "Active Development",
-      "status": "code complete",
+      "status": "branch ready",
       "url": "https://app.clickup.com/t/86b99gajp",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
