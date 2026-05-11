@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2026-05-10T12:22:40.173Z",
+  "lastUpdated": "2026-05-11T13:04:25.497Z",
   "stats": {
-    "featuresShipped": 11,
+    "featuresShipped": 15,
     "qaPassRate": 100,
-    "inProgress": 17,
+    "inProgress": 3,
     "openBugs": 65,
-    "tasksClosed": 11
+    "tasksClosed": 15
   },
   "bugs": {
     "newThisWeek": 10,
@@ -16,11 +16,11 @@
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 0,
+        "featuresShipped": 14,
         "qaPassRate": 100,
-        "inProgress": 17,
+        "inProgress": 3,
         "openBugs": 65,
-        "tasksClosed": 0
+        "tasksClosed": 14
       },
       "bugs": {
         "newThisWeek": 0,
@@ -31,9 +31,24 @@
     },
     "thisWeek": {
       "stats": {
-        "featuresShipped": 11,
+        "featuresShipped": 14,
         "qaPassRate": 100,
-        "inProgress": 17,
+        "inProgress": 3,
+        "openBugs": 65,
+        "tasksClosed": 14
+      },
+      "bugs": {
+        "newThisWeek": 0,
+        "resolved": 0,
+        "open": 65,
+        "deferred": 0
+      }
+    },
+    "lastWeek": {
+      "stats": {
+        "featuresShipped": 25,
+        "qaPassRate": 100,
+        "inProgress": 3,
         "openBugs": 65,
         "tasksClosed": 11
       },
@@ -44,28 +59,13 @@
         "deferred": 0
       }
     },
-    "lastWeek": {
-      "stats": {
-        "featuresShipped": 11,
-        "qaPassRate": 100,
-        "inProgress": 17,
-        "openBugs": 65,
-        "tasksClosed": 0
-      },
-      "bugs": {
-        "newThisWeek": 7,
-        "resolved": 0,
-        "open": 65,
-        "deferred": 0
-      }
-    },
     "7d": {
       "stats": {
-        "featuresShipped": 11,
+        "featuresShipped": 15,
         "qaPassRate": 100,
-        "inProgress": 17,
+        "inProgress": 3,
         "openBugs": 65,
-        "tasksClosed": 11
+        "tasksClosed": 15
       },
       "bugs": {
         "newThisWeek": 10,
@@ -76,14 +76,14 @@
     },
     "30d": {
       "stats": {
-        "featuresShipped": 31,
+        "featuresShipped": 45,
         "qaPassRate": 100,
-        "inProgress": 17,
+        "inProgress": 3,
         "openBugs": 65,
-        "tasksClosed": 31
+        "tasksClosed": 45
       },
       "bugs": {
-        "newThisWeek": 28,
+        "newThisWeek": 27,
         "resolved": 0,
         "open": 65,
         "deferred": 0
@@ -91,11 +91,11 @@
     },
     "90d": {
       "stats": {
-        "featuresShipped": 160,
+        "featuresShipped": 174,
         "qaPassRate": 100,
-        "inProgress": 17,
+        "inProgress": 3,
         "openBugs": 65,
-        "tasksClosed": 160
+        "tasksClosed": 174
       },
       "bugs": {
         "newThisWeek": 71,
@@ -106,11 +106,11 @@
     },
     "ytd": {
       "stats": {
-        "featuresShipped": 260,
+        "featuresShipped": 274,
         "qaPassRate": 100,
-        "inProgress": 17,
+        "inProgress": 3,
         "openBugs": 65,
-        "tasksClosed": 260
+        "tasksClosed": 274
       },
       "bugs": {
         "newThisWeek": 74,
@@ -121,9 +121,9 @@
     },
     "lastYear": {
       "stats": {
-        "featuresShipped": 900,
+        "featuresShipped": 914,
         "qaPassRate": 100,
-        "inProgress": 17,
+        "inProgress": 3,
         "openBugs": 65,
         "tasksClosed": 640
       },
@@ -136,11 +136,11 @@
     },
     "allTime": {
       "stats": {
-        "featuresShipped": 1235,
+        "featuresShipped": 1249,
         "qaPassRate": 99,
-        "inProgress": 17,
+        "inProgress": 3,
         "openBugs": 65,
-        "tasksClosed": 1402
+        "tasksClosed": 1416
       },
       "bugs": {
         "newThisWeek": 80,
@@ -151,6 +151,104 @@
     }
   },
   "changelog": [
+    {
+      "date": "2026-05-11",
+      "title": "Rounded Gallon Pricing Toggle (PARENT)",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86azcxv4c"
+    },
+    {
+      "date": "2026-05-11",
+      "title": "Exact Time Support & 5-Minute Increments for Scheduled Appointments",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b99gajp"
+    },
+    {
+      "date": "2026-05-11",
+      "title": "Error When Adding New User",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b9be77d"
+    },
+    {
+      "date": "2026-05-11",
+      "title": "Top Shelf Painting (#13680) - Work Order Shows Multiple Packages (Proposal #2653829)",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b9c8x3f"
+    },
+    {
+      "date": "2026-05-11",
+      "title": "Enhance Contact Import to Require and Map Lead Source",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b9h0pdd"
+    },
+    {
+      "date": "2026-05-11",
+      "title": "Customer Portal: Exclude Cancelled & Unsent Proposals from My Proposals",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b9ncym1"
+    },
+    {
+      "date": "2026-05-11",
+      "title": "Customer portal change orders do not expand correctly for proposal 2636792",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b9p298f"
+    },
+    {
+      "date": "2026-05-11",
+      "title": "Add helper text & tooltip for Reply-To email behavior",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b9rvnkk"
+    },
+    {
+      "date": "2026-05-11",
+      "title": "Drips Menu UI Update",
+      "area": "Active Development",
+      "type": "ux",
+      "url": "https://app.clickup.com/t/86b9rw9gd"
+    },
+    {
+      "date": "2026-05-11",
+      "title": "\"Show Archived\" Large Accounts + Behavior Correction",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b9rxx1z"
+    },
+    {
+      "date": "2026-05-11",
+      "title": "Fix Deactivated Account Reactivation in Chargebee API Calls",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b9thr47"
+    },
+    {
+      "date": "2026-05-11",
+      "title": "Add rounded gallon script to project",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b9v62f4"
+    },
+    {
+      "date": "2026-05-11",
+      "title": "Fix bug where completed jobs dont show in jobs pipeline",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b9v71c3"
+    },
+    {
+      "date": "2026-05-11",
+      "title": "Fix issue with scrolling in the customer portal",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b9v7d2n"
+    },
     {
       "date": "2026-05-04",
       "title": "Update Reply‑To Email Logic for Scheduled Communications (Salesperson → Company Fallback)",
@@ -8799,38 +8897,6 @@
   ],
   "inProgress": [
     {
-      "title": "Rounded Gallon Pricing Toggle (PARENT)",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86azcxv4c",
-      "due": "2026-03-28",
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Fix issue with scrolling in the customer portal",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b9v7d2n",
-      "due": null,
-      "assignees": "Terry Bennett"
-    },
-    {
-      "title": "Fix bug where completed jobs dont show in jobs pipeline",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b9v71c3",
-      "due": null,
-      "assignees": "Terry Bennett"
-    },
-    {
-      "title": "Add rounded gallon script to project",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b9v62f4",
-      "due": null,
-      "assignees": "Terry Bennett"
-    },
-    {
       "title": "Proposal Builder UI update",
       "area": "Active Development",
       "status": "in progress",
@@ -8847,86 +8913,6 @@
       "assignees": "Michael Adeoye, Terry Bennett"
     },
     {
-      "title": "Fix Deactivated Account Reactivation in Chargebee API Calls",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b9thr47",
-      "due": null,
-      "assignees": "Jason Warford"
-    },
-    {
-      "title": "\"Show Archived\" Large Accounts + Behavior Correction",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b9rxx1z",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Drips Menu UI Update",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b9rw9gd",
-      "due": null,
-      "assignees": "Jason Warford"
-    },
-    {
-      "title": "Add helper text & tooltip for Reply-To email behavior",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b9rvnkk",
-      "due": null,
-      "assignees": "ali raza, Michael Adeoye"
-    },
-    {
-      "title": "Customer portal change orders do not expand correctly for proposal 2636792",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b9p298f",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Customer Portal: Exclude Cancelled & Unsent Proposals from My Proposals",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b9ncym1",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Enhance Contact Import to Require and Map Lead Source",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b9h0pdd",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Top Shelf Painting (#13680) - Work Order Shows Multiple Packages (Proposal #2653829)",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b9c8x3f",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Error When Adding New User",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b9be77d",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Exact Time Support & 5-Minute Increments for Scheduled Appointments",
-      "area": "Active Development",
-      "status": "branch ready",
-      "url": "https://app.clickup.com/t/86b99gajp",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
       "title": "Pricing Restructure: Launch Growth ($197/m) Retire Advanced, $0 Price Override for Bundled Add-Ons",
       "area": "Active Development",
       "status": "testing complete",
@@ -8937,34 +8923,34 @@
   ],
   "recentActivity": [
     {
-      "title": "Update Reply‑To Email Logic for Scheduled Communications (Salesperson → Company Fallback)",
+      "title": "Rounded Gallon Pricing Toggle (PARENT)",
       "status": "pushed to production",
-      "closedAt": "2026-05-04T23:10:45.784Z",
-      "url": "https://app.clickup.com/t/86b8g71qz"
+      "closedAt": "2026-05-11T09:11:33.069Z",
+      "url": "https://app.clickup.com/t/86azcxv4c"
     },
     {
-      "title": "Company Settings UI Update",
+      "title": "Exact Time Support & 5-Minute Increments for Scheduled Appointments",
       "status": "pushed to production",
-      "closedAt": "2026-05-04T10:05:02.985Z",
-      "url": "https://app.clickup.com/t/86b9q0uux"
+      "closedAt": "2026-05-11T09:11:31.977Z",
+      "url": "https://app.clickup.com/t/86b99gajp"
     },
     {
-      "title": "Update Change Order Acceptance Modal to Match New Proposal Acceptance UI",
+      "title": "Error When Adding New User",
       "status": "pushed to production",
-      "closedAt": "2026-05-04T10:04:57.497Z",
-      "url": "https://app.clickup.com/t/86b8zg0cz"
+      "closedAt": "2026-05-11T09:11:31.260Z",
+      "url": "https://app.clickup.com/t/86b9be77d"
     },
     {
-      "title": "Notification Trigger for Manual Change Order Acceptance",
+      "title": "Top Shelf Painting (#13680) - Work Order Shows Multiple Packages (Proposal #2653829)",
       "status": "pushed to production",
-      "closedAt": "2026-05-04T10:04:50.731Z",
-      "url": "https://app.clickup.com/t/86b3xmuw4"
+      "closedAt": "2026-05-11T09:11:30.526Z",
+      "url": "https://app.clickup.com/t/86b9c8x3f"
     },
     {
-      "title": "Schedule a Demo Button: Job Costing, Production Rates & Zapier",
+      "title": "Enhance Contact Import to Require and Map Lead Source",
       "status": "pushed to production",
-      "closedAt": "2026-05-04T10:04:45.403Z",
-      "url": "https://app.clickup.com/t/86b8z6hv0"
+      "closedAt": "2026-05-11T09:11:29.834Z",
+      "url": "https://app.clickup.com/t/86b9h0pdd"
     }
   ]
 }
