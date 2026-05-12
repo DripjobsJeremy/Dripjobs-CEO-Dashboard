@@ -1,61 +1,61 @@
 {
-  "lastUpdated": "2026-05-11T13:04:25.497Z",
+  "lastUpdated": "2026-05-12T12:45:00.467Z",
   "stats": {
     "featuresShipped": 15,
     "qaPassRate": 100,
-    "inProgress": 3,
-    "openBugs": 65,
+    "inProgress": 8,
+    "openBugs": 67,
     "tasksClosed": 15
   },
   "bugs": {
-    "newThisWeek": 10,
+    "newThisWeek": 12,
     "resolved": 0,
-    "open": 65,
+    "open": 67,
     "deferred": 0
   },
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 14,
+        "featuresShipped": 1,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 65,
-        "tasksClosed": 14
+        "inProgress": 8,
+        "openBugs": 67,
+        "tasksClosed": 1
       },
       "bugs": {
-        "newThisWeek": 0,
+        "newThisWeek": 3,
         "resolved": 0,
-        "open": 65,
+        "open": 67,
         "deferred": 0
       }
     },
     "thisWeek": {
       "stats": {
-        "featuresShipped": 14,
+        "featuresShipped": 15,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 65,
-        "tasksClosed": 14
+        "inProgress": 8,
+        "openBugs": 67,
+        "tasksClosed": 15
       },
       "bugs": {
-        "newThisWeek": 0,
+        "newThisWeek": 3,
         "resolved": 0,
-        "open": 65,
+        "open": 67,
         "deferred": 0
       }
     },
     "lastWeek": {
       "stats": {
-        "featuresShipped": 25,
+        "featuresShipped": 26,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 65,
+        "inProgress": 8,
+        "openBugs": 67,
         "tasksClosed": 11
       },
       "bugs": {
         "newThisWeek": 10,
         "resolved": 0,
-        "open": 65,
+        "open": 67,
         "deferred": 0
       }
     },
@@ -63,29 +63,29 @@
       "stats": {
         "featuresShipped": 15,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 65,
+        "inProgress": 8,
+        "openBugs": 67,
         "tasksClosed": 15
       },
       "bugs": {
-        "newThisWeek": 10,
+        "newThisWeek": 12,
         "resolved": 0,
-        "open": 65,
+        "open": 67,
         "deferred": 0
       }
     },
     "30d": {
       "stats": {
-        "featuresShipped": 45,
+        "featuresShipped": 46,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 65,
-        "tasksClosed": 45
+        "inProgress": 8,
+        "openBugs": 67,
+        "tasksClosed": 46
       },
       "bugs": {
-        "newThisWeek": 27,
+        "newThisWeek": 29,
         "resolved": 0,
-        "open": 65,
+        "open": 67,
         "deferred": 0
       }
     },
@@ -93,64 +93,71 @@
       "stats": {
         "featuresShipped": 174,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 65,
+        "inProgress": 8,
+        "openBugs": 67,
         "tasksClosed": 174
       },
       "bugs": {
-        "newThisWeek": 71,
+        "newThisWeek": 74,
         "resolved": 0,
-        "open": 65,
+        "open": 67,
         "deferred": 0
       }
     },
     "ytd": {
       "stats": {
-        "featuresShipped": 274,
+        "featuresShipped": 275,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 65,
-        "tasksClosed": 274
+        "inProgress": 8,
+        "openBugs": 67,
+        "tasksClosed": 275
       },
       "bugs": {
-        "newThisWeek": 74,
+        "newThisWeek": 77,
         "resolved": 0,
-        "open": 65,
+        "open": 67,
         "deferred": 0
       }
     },
     "lastYear": {
       "stats": {
-        "featuresShipped": 914,
+        "featuresShipped": 915,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 65,
+        "inProgress": 8,
+        "openBugs": 67,
         "tasksClosed": 640
       },
       "bugs": {
         "newThisWeek": 5,
         "resolved": 0,
-        "open": 65,
+        "open": 67,
         "deferred": 0
       }
     },
     "allTime": {
       "stats": {
-        "featuresShipped": 1249,
+        "featuresShipped": 1250,
         "qaPassRate": 99,
-        "inProgress": 3,
-        "openBugs": 65,
-        "tasksClosed": 1416
+        "inProgress": 8,
+        "openBugs": 67,
+        "tasksClosed": 1418
       },
       "bugs": {
-        "newThisWeek": 80,
-        "resolved": 15,
-        "open": 65,
+        "newThisWeek": 83,
+        "resolved": 16,
+        "open": 67,
         "deferred": 0
       }
     }
   },
   "changelog": [
+    {
+      "date": "2026-05-12",
+      "title": "Investigate Higher Loading Time on Proposal Sent Stage in Mobile",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b9w9a77"
+    },
     {
       "date": "2026-05-11",
       "title": "Rounded Gallon Pricing Toggle (PARENT)",
@@ -8897,6 +8904,14 @@
   ],
   "inProgress": [
     {
+      "title": "Investigate Intermittent Proposal Attachment Corruption",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b9u5w6m",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
       "title": "Proposal Builder UI update",
       "area": "Active Development",
       "status": "in progress",
@@ -8913,15 +8928,53 @@
       "assignees": "Michael Adeoye, Terry Bennett"
     },
     {
-      "title": "Pricing Restructure: Launch Growth ($197/m) Retire Advanced, $0 Price Override for Bundled Add-Ons",
+      "title": "Update Reply-to Email When Deal Salesperson Changes After Proposal Sent",
       "area": "Active Development",
-      "status": "testing complete",
-      "url": "https://app.clickup.com/t/86b90vaqz",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b9tj3x2",
       "due": null,
       "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
+      "title": "Millan Painting (#11578) - Cancelled Deal #2311626 Won’t Open to Re-Open",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b9q01vu",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
+      "title": "Restore & Improve Quantity Calculator in Add Item Modal (Proposal Builder)",
+      "area": "Active Development",
+      "status": "testing complete",
+      "url": "https://app.clickup.com/t/86b96y3rm",
+      "due": null,
+      "assignees": "ali raza, Michael Adeoye"
+    },
+    {
+      "title": "Proposal Builder — Mobile UI Button Alignment Issues (iPad & Android)",
+      "area": "Active Development",
+      "status": "testing complete",
+      "url": "https://app.clickup.com/t/86b96gh6a",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
+      "title": "Add Multiple Items to Packages",
+      "area": "Active Development",
+      "status": "testing complete",
+      "url": "https://app.clickup.com/t/86b84bmac",
+      "due": null,
+      "assignees": "ali raza, Michael Adeoye"
     }
   ],
   "recentActivity": [
+    {
+      "title": "Investigate Higher Loading Time on Proposal Sent Stage in Mobile",
+      "status": "pushed to production",
+      "closedAt": "2026-05-12T09:02:01.532Z",
+      "url": "https://app.clickup.com/t/86b9w9a77"
+    },
     {
       "title": "Rounded Gallon Pricing Toggle (PARENT)",
       "status": "pushed to production",
@@ -8945,12 +8998,6 @@
       "status": "pushed to production",
       "closedAt": "2026-05-11T09:11:30.526Z",
       "url": "https://app.clickup.com/t/86b9c8x3f"
-    },
-    {
-      "title": "Enhance Contact Import to Require and Map Lead Source",
-      "status": "pushed to production",
-      "closedAt": "2026-05-11T09:11:29.834Z",
-      "url": "https://app.clickup.com/t/86b9h0pdd"
     }
   ]
 }
