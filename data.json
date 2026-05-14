@@ -1,156 +1,219 @@
 {
-  "lastUpdated": "2026-05-13T12:48:46.165Z",
+  "lastUpdated": "2026-05-14T12:41:09.994Z",
   "stats": {
-    "featuresShipped": 15,
-    "qaPassRate": 100,
-    "inProgress": 11,
-    "openBugs": 69,
-    "tasksClosed": 15
+    "featuresShipped": 24,
+    "qaPassRate": 96,
+    "inProgress": 3,
+    "openBugs": 67,
+    "tasksClosed": 25
   },
   "bugs": {
-    "newThisWeek": 8,
-    "resolved": 0,
-    "open": 69,
+    "newThisWeek": 6,
+    "resolved": 1,
+    "open": 67,
     "deferred": 0
   },
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 0,
-        "qaPassRate": 100,
-        "inProgress": 11,
-        "openBugs": 69,
-        "tasksClosed": 0
+        "featuresShipped": 9,
+        "qaPassRate": 90,
+        "inProgress": 3,
+        "openBugs": 67,
+        "tasksClosed": 10
       },
       "bugs": {
-        "newThisWeek": 1,
-        "resolved": 0,
-        "open": 69,
+        "newThisWeek": 0,
+        "resolved": 1,
+        "open": 67,
         "deferred": 0
       }
     },
     "thisWeek": {
       "stats": {
-        "featuresShipped": 15,
-        "qaPassRate": 100,
-        "inProgress": 11,
-        "openBugs": 69,
-        "tasksClosed": 15
+        "featuresShipped": 24,
+        "qaPassRate": 96,
+        "inProgress": 3,
+        "openBugs": 67,
+        "tasksClosed": 25
       },
       "bugs": {
-        "newThisWeek": 4,
-        "resolved": 0,
-        "open": 69,
+        "newThisWeek": 3,
+        "resolved": 1,
+        "open": 67,
         "deferred": 0
       }
     },
     "lastWeek": {
       "stats": {
-        "featuresShipped": 26,
+        "featuresShipped": 35,
         "qaPassRate": 100,
-        "inProgress": 11,
-        "openBugs": 69,
+        "inProgress": 3,
+        "openBugs": 67,
         "tasksClosed": 11
       },
       "bugs": {
         "newThisWeek": 10,
         "resolved": 0,
-        "open": 69,
+        "open": 67,
         "deferred": 0
       }
     },
     "7d": {
       "stats": {
-        "featuresShipped": 15,
-        "qaPassRate": 100,
-        "inProgress": 11,
-        "openBugs": 69,
-        "tasksClosed": 15
+        "featuresShipped": 24,
+        "qaPassRate": 96,
+        "inProgress": 3,
+        "openBugs": 67,
+        "tasksClosed": 25
       },
       "bugs": {
-        "newThisWeek": 8,
-        "resolved": 0,
-        "open": 69,
+        "newThisWeek": 6,
+        "resolved": 1,
+        "open": 67,
         "deferred": 0
       }
     },
     "30d": {
       "stats": {
-        "featuresShipped": 46,
-        "qaPassRate": 100,
-        "inProgress": 11,
-        "openBugs": 69,
-        "tasksClosed": 46
+        "featuresShipped": 47,
+        "qaPassRate": 98,
+        "inProgress": 3,
+        "openBugs": 67,
+        "tasksClosed": 48
       },
       "bugs": {
-        "newThisWeek": 30,
-        "resolved": 0,
-        "open": 69,
+        "newThisWeek": 29,
+        "resolved": 1,
+        "open": 67,
         "deferred": 0
       }
     },
     "90d": {
       "stats": {
-        "featuresShipped": 170,
-        "qaPassRate": 100,
-        "inProgress": 11,
-        "openBugs": 69,
-        "tasksClosed": 170
+        "featuresShipped": 179,
+        "qaPassRate": 99,
+        "inProgress": 3,
+        "openBugs": 67,
+        "tasksClosed": 180
       },
       "bugs": {
-        "newThisWeek": 74,
-        "resolved": 0,
-        "open": 69,
+        "newThisWeek": 72,
+        "resolved": 1,
+        "open": 67,
         "deferred": 0
       }
     },
     "ytd": {
       "stats": {
-        "featuresShipped": 275,
+        "featuresShipped": 284,
         "qaPassRate": 100,
-        "inProgress": 11,
-        "openBugs": 69,
-        "tasksClosed": 275
+        "inProgress": 3,
+        "openBugs": 67,
+        "tasksClosed": 285
       },
       "bugs": {
-        "newThisWeek": 79,
-        "resolved": 0,
-        "open": 69,
+        "newThisWeek": 78,
+        "resolved": 1,
+        "open": 67,
         "deferred": 0
       }
     },
     "lastYear": {
       "stats": {
-        "featuresShipped": 915,
+        "featuresShipped": 924,
         "qaPassRate": 100,
-        "inProgress": 11,
-        "openBugs": 69,
+        "inProgress": 3,
+        "openBugs": 67,
         "tasksClosed": 640
       },
       "bugs": {
         "newThisWeek": 5,
         "resolved": 0,
-        "open": 69,
+        "open": 67,
         "deferred": 0
       }
     },
     "allTime": {
       "stats": {
-        "featuresShipped": 1250,
+        "featuresShipped": 1259,
         "qaPassRate": 99,
-        "inProgress": 11,
-        "openBugs": 69,
-        "tasksClosed": 1418
+        "inProgress": 3,
+        "openBugs": 67,
+        "tasksClosed": 1428
       },
       "bugs": {
-        "newThisWeek": 85,
-        "resolved": 16,
-        "open": 69,
+        "newThisWeek": 84,
+        "resolved": 17,
+        "open": 67,
         "deferred": 0
       }
     }
   },
   "changelog": [
+    {
+      "date": "2026-05-14",
+      "title": "Add Multiple Items to Packages",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b84bmac"
+    },
+    {
+      "date": "2026-05-14",
+      "title": "Proposal Builder — Mobile UI Button Alignment Issues (iPad & Android)",
+      "area": "Active Development",
+      "type": "ux",
+      "url": "https://app.clickup.com/t/86b96gh6a"
+    },
+    {
+      "date": "2026-05-14",
+      "title": "Restore & Improve Quantity Calculator in Add Item Modal (Proposal Builder)",
+      "area": "Active Development",
+      "type": "ux",
+      "url": "https://app.clickup.com/t/86b96y3rm"
+    },
+    {
+      "date": "2026-05-14",
+      "title": "Delete Button Not Working - Blasts Management",
+      "area": "Active Development",
+      "type": "ux",
+      "url": "https://app.clickup.com/t/86b9dw0dj"
+    },
+    {
+      "date": "2026-05-14",
+      "title": "Millan Painting (#11578) - Cancelled Deal #2311626 Won’t Open to Re-Open",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b9q01vu"
+    },
+    {
+      "date": "2026-05-14",
+      "title": "Update Reply-to Email When Deal Salesperson Changes After Proposal Sent",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b9tj3x2"
+    },
+    {
+      "date": "2026-05-14",
+      "title": "Improve Command Center Layout to Show Key Information at a Glance",
+      "area": "Active Development",
+      "type": "ux",
+      "url": "https://app.clickup.com/t/86b9tpff0"
+    },
+    {
+      "date": "2026-05-14",
+      "title": "Investigate Intermittent Proposal Attachment Corruption",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b9u5w6m"
+    },
+    {
+      "date": "2026-05-14",
+      "title": "Update Job / Appointment Schedule Dropdown to Use Single Time Selects",
+      "area": "Active Development",
+      "type": "feature",
+      "url": "https://app.clickup.com/t/86b9xb86v"
+    },
     {
       "date": "2026-05-12",
       "title": "Investigate Higher Loading Time on Proposal Sent Stage in Mobile",
@@ -8904,52 +8967,12 @@
   ],
   "inProgress": [
     {
-      "title": "Update Job / Appointment Schedule Dropdown to Use Single Time Selects",
-      "area": "Active Development",
-      "status": "in progress",
-      "url": "https://app.clickup.com/t/86b9xb86v",
-      "due": null,
-      "assignees": "Jason Warford"
-    },
-    {
-      "title": "Investigate Intermittent Proposal Attachment Corruption",
-      "area": "Active Development",
-      "status": "pr created",
-      "url": "https://app.clickup.com/t/86b9u5w6m",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
       "title": "Proposal Builder UI update",
       "area": "Active Development",
       "status": "in progress",
       "url": "https://app.clickup.com/t/86b9u5vm7",
       "due": null,
       "assignees": "Jason Warford"
-    },
-    {
-      "title": "Improve Command Center Layout to Show Key Information at a Glance",
-      "area": "Active Development",
-      "status": "pr created",
-      "url": "https://app.clickup.com/t/86b9tpff0",
-      "due": null,
-      "assignees": "Michael Adeoye, Terry Bennett"
-    },
-    {
-      "title": "Update Reply-to Email When Deal Salesperson Changes After Proposal Sent",
-      "area": "Active Development",
-      "status": "pr created",
-      "url": "https://app.clickup.com/t/86b9tj3x2",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Millan Painting (#11578) - Cancelled Deal #2311626 Won’t Open to Re-Open",
-      "area": "Active Development",
-      "status": "pr created",
-      "url": "https://app.clickup.com/t/86b9q01vu",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
     },
     {
       "title": "Enhancement: Notification Template Keyword Set Restoration & SMS Composer Quality Improvements",
@@ -8960,68 +8983,44 @@
       "assignees": "Terry Bennett, Michael Adeoye"
     },
     {
-      "title": "Delete Button Not Working - Blasts Management",
+      "title": "Twilio Campaign Status Reconciliation — Admin Tool Mismatch Detection & Resolution",
       "area": "Active Development",
       "status": "pr created",
-      "url": "https://app.clickup.com/t/86b9dw0dj",
+      "url": "https://app.clickup.com/t/86b94wn6z",
       "due": null,
       "assignees": "Terry Bennett"
-    },
-    {
-      "title": "Restore & Improve Quantity Calculator in Add Item Modal (Proposal Builder)",
-      "area": "Active Development",
-      "status": "pr created",
-      "url": "https://app.clickup.com/t/86b96y3rm",
-      "due": null,
-      "assignees": "ali raza, Michael Adeoye"
-    },
-    {
-      "title": "Proposal Builder — Mobile UI Button Alignment Issues (iPad & Android)",
-      "area": "Active Development",
-      "status": "pr created",
-      "url": "https://app.clickup.com/t/86b96gh6a",
-      "due": null,
-      "assignees": "Terry Bennett, Michael Adeoye"
-    },
-    {
-      "title": "Add Multiple Items to Packages",
-      "area": "Active Development",
-      "status": "pr created",
-      "url": "https://app.clickup.com/t/86b84bmac",
-      "due": null,
-      "assignees": "ali raza, Michael Adeoye"
     }
   ],
   "recentActivity": [
     {
-      "title": "Investigate Higher Loading Time on Proposal Sent Stage in Mobile",
+      "title": "Add Multiple Items to Packages",
       "status": "pushed to production",
-      "closedAt": "2026-05-12T09:02:01.532Z",
-      "url": "https://app.clickup.com/t/86b9w9a77"
+      "closedAt": "2026-05-14T09:11:27.446Z",
+      "url": "https://app.clickup.com/t/86b84bmac"
     },
     {
-      "title": "Rounded Gallon Pricing Toggle (PARENT)",
+      "title": "Proposal Builder — Mobile UI Button Alignment Issues (iPad & Android)",
       "status": "pushed to production",
-      "closedAt": "2026-05-11T09:11:33.069Z",
-      "url": "https://app.clickup.com/t/86azcxv4c"
+      "closedAt": "2026-05-14T09:11:26.874Z",
+      "url": "https://app.clickup.com/t/86b96gh6a"
     },
     {
-      "title": "Exact Time Support & 5-Minute Increments for Scheduled Appointments",
+      "title": "Restore & Improve Quantity Calculator in Add Item Modal (Proposal Builder)",
       "status": "pushed to production",
-      "closedAt": "2026-05-11T09:11:31.977Z",
-      "url": "https://app.clickup.com/t/86b99gajp"
+      "closedAt": "2026-05-14T09:11:26.111Z",
+      "url": "https://app.clickup.com/t/86b96y3rm"
     },
     {
-      "title": "Error When Adding New User",
+      "title": "Delete Button Not Working - Blasts Management",
       "status": "pushed to production",
-      "closedAt": "2026-05-11T09:11:31.260Z",
-      "url": "https://app.clickup.com/t/86b9be77d"
+      "closedAt": "2026-05-14T09:11:25.131Z",
+      "url": "https://app.clickup.com/t/86b9dw0dj"
     },
     {
-      "title": "Top Shelf Painting (#13680) - Work Order Shows Multiple Packages (Proposal #2653829)",
+      "title": "Millan Painting (#11578) - Cancelled Deal #2311626 Won’t Open to Re-Open",
       "status": "pushed to production",
-      "closedAt": "2026-05-11T09:11:30.526Z",
-      "url": "https://app.clickup.com/t/86b9c8x3f"
+      "closedAt": "2026-05-14T09:11:24.210Z",
+      "url": "https://app.clickup.com/t/86b9q01vu"
     }
   ]
 }
