@@ -1,31 +1,31 @@
 {
-  "lastUpdated": "2026-05-14T12:41:09.994Z",
+  "lastUpdated": "2026-05-15T12:41:17.242Z",
   "stats": {
     "featuresShipped": 24,
     "qaPassRate": 96,
-    "inProgress": 3,
-    "openBugs": 67,
+    "inProgress": 9,
+    "openBugs": 63,
     "tasksClosed": 25
   },
   "bugs": {
-    "newThisWeek": 6,
+    "newThisWeek": 7,
     "resolved": 1,
-    "open": 67,
+    "open": 63,
     "deferred": 0
   },
   "ranges": {
     "today": {
       "stats": {
-        "featuresShipped": 9,
-        "qaPassRate": 90,
-        "inProgress": 3,
-        "openBugs": 67,
-        "tasksClosed": 10
+        "featuresShipped": 0,
+        "qaPassRate": 100,
+        "inProgress": 9,
+        "openBugs": 63,
+        "tasksClosed": 0
       },
       "bugs": {
-        "newThisWeek": 0,
-        "resolved": 1,
-        "open": 67,
+        "newThisWeek": 2,
+        "resolved": 0,
+        "open": 63,
         "deferred": 0
       }
     },
@@ -33,14 +33,14 @@
       "stats": {
         "featuresShipped": 24,
         "qaPassRate": 96,
-        "inProgress": 3,
-        "openBugs": 67,
+        "inProgress": 9,
+        "openBugs": 63,
         "tasksClosed": 25
       },
       "bugs": {
-        "newThisWeek": 3,
+        "newThisWeek": 5,
         "resolved": 1,
-        "open": 67,
+        "open": 63,
         "deferred": 0
       }
     },
@@ -48,14 +48,14 @@
       "stats": {
         "featuresShipped": 35,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 67,
+        "inProgress": 9,
+        "openBugs": 63,
         "tasksClosed": 11
       },
       "bugs": {
-        "newThisWeek": 10,
+        "newThisWeek": 9,
         "resolved": 0,
-        "open": 67,
+        "open": 63,
         "deferred": 0
       }
     },
@@ -63,14 +63,14 @@
       "stats": {
         "featuresShipped": 24,
         "qaPassRate": 96,
-        "inProgress": 3,
-        "openBugs": 67,
+        "inProgress": 9,
+        "openBugs": 63,
         "tasksClosed": 25
       },
       "bugs": {
-        "newThisWeek": 6,
+        "newThisWeek": 7,
         "resolved": 1,
-        "open": 67,
+        "open": 63,
         "deferred": 0
       }
     },
@@ -78,14 +78,14 @@
       "stats": {
         "featuresShipped": 47,
         "qaPassRate": 98,
-        "inProgress": 3,
-        "openBugs": 67,
+        "inProgress": 9,
+        "openBugs": 63,
         "tasksClosed": 48
       },
       "bugs": {
-        "newThisWeek": 29,
+        "newThisWeek": 27,
         "resolved": 1,
-        "open": 67,
+        "open": 63,
         "deferred": 0
       }
     },
@@ -93,14 +93,14 @@
       "stats": {
         "featuresShipped": 179,
         "qaPassRate": 99,
-        "inProgress": 3,
-        "openBugs": 67,
+        "inProgress": 9,
+        "openBugs": 63,
         "tasksClosed": 180
       },
       "bugs": {
-        "newThisWeek": 72,
+        "newThisWeek": 70,
         "resolved": 1,
-        "open": 67,
+        "open": 63,
         "deferred": 0
       }
     },
@@ -108,14 +108,14 @@
       "stats": {
         "featuresShipped": 284,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 67,
+        "inProgress": 9,
+        "openBugs": 63,
         "tasksClosed": 285
       },
       "bugs": {
-        "newThisWeek": 78,
+        "newThisWeek": 76,
         "resolved": 1,
-        "open": 67,
+        "open": 63,
         "deferred": 0
       }
     },
@@ -123,14 +123,14 @@
       "stats": {
         "featuresShipped": 924,
         "qaPassRate": 100,
-        "inProgress": 3,
-        "openBugs": 67,
+        "inProgress": 9,
+        "openBugs": 63,
         "tasksClosed": 640
       },
       "bugs": {
         "newThisWeek": 5,
         "resolved": 0,
-        "open": 67,
+        "open": 63,
         "deferred": 0
       }
     },
@@ -138,14 +138,14 @@
       "stats": {
         "featuresShipped": 1259,
         "qaPassRate": 99,
-        "inProgress": 3,
-        "openBugs": 67,
-        "tasksClosed": 1428
+        "inProgress": 9,
+        "openBugs": 63,
+        "tasksClosed": 1430
       },
       "bugs": {
-        "newThisWeek": 84,
-        "resolved": 17,
-        "open": 67,
+        "newThisWeek": 82,
+        "resolved": 19,
+        "open": 63,
         "deferred": 0
       }
     }
@@ -8967,12 +8967,52 @@
   ],
   "inProgress": [
     {
+      "title": "Create endpoint to send reset password email through API",
+      "area": "Active Development",
+      "status": "code complete",
+      "url": "https://app.clickup.com/t/86b9y2khe",
+      "due": null,
+      "assignees": "Ammad Islam"
+    },
+    {
+      "title": "Adjust Archived Jobs to show Archived Status through out app. Fix issue with Project Complete in Jobs list not showing jobs. ",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b9xet1k",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
+      "title": "Contact List: Add \"Created Date\" Column with Sort",
+      "area": "Active Development",
+      "status": "testing complete",
+      "url": "https://app.clickup.com/t/86b9uk39a",
+      "due": null,
+      "assignees": "ali raza, Michael Adeoye"
+    },
+    {
       "title": "Proposal Builder UI update",
       "area": "Active Development",
       "status": "in progress",
       "url": "https://app.clickup.com/t/86b9u5vm7",
       "due": null,
       "assignees": "Jason Warford"
+    },
+    {
+      "title": "Sales List Page - Horizontal Scrolling Not Working",
+      "area": "Active Development",
+      "status": "testing complete",
+      "url": "https://app.clickup.com/t/86b9r46t3",
+      "due": null,
+      "assignees": "ali raza, Michael Adeoye"
+    },
+    {
+      "title": "Support Users with Both Salesperson and Project Manager Roles",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b9q8vfy",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
     },
     {
       "title": "Enhancement: Notification Template Keyword Set Restoration & SMS Composer Quality Improvements",
@@ -8989,6 +9029,14 @@
       "url": "https://app.clickup.com/t/86b94wn6z",
       "due": null,
       "assignees": "Terry Bennett"
+    },
+    {
+      "title": "Restrict Deletion / Edit of Proposal-Based & Change Order Discounts from Invoices",
+      "area": "Active Development",
+      "status": "testing complete",
+      "url": "https://app.clickup.com/t/86b6xkg7y",
+      "due": null,
+      "assignees": "ali raza, Michael Adeoye"
     }
   ],
   "recentActivity": [
