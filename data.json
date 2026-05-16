@@ -1,16 +1,16 @@
 {
-  "lastUpdated": "2026-05-15T12:41:17.242Z",
+  "lastUpdated": "2026-05-16T12:25:30.316Z",
   "stats": {
     "featuresShipped": 24,
     "qaPassRate": 96,
-    "inProgress": 9,
-    "openBugs": 63,
+    "inProgress": 10,
+    "openBugs": 62,
     "tasksClosed": 25
   },
   "bugs": {
-    "newThisWeek": 7,
+    "newThisWeek": 5,
     "resolved": 1,
-    "open": 63,
+    "open": 62,
     "deferred": 0
   },
   "ranges": {
@@ -18,14 +18,14 @@
       "stats": {
         "featuresShipped": 0,
         "qaPassRate": 100,
-        "inProgress": 9,
-        "openBugs": 63,
+        "inProgress": 10,
+        "openBugs": 62,
         "tasksClosed": 0
       },
       "bugs": {
-        "newThisWeek": 2,
+        "newThisWeek": 0,
         "resolved": 0,
-        "open": 63,
+        "open": 62,
         "deferred": 0
       }
     },
@@ -33,14 +33,14 @@
       "stats": {
         "featuresShipped": 24,
         "qaPassRate": 96,
-        "inProgress": 9,
-        "openBugs": 63,
+        "inProgress": 10,
+        "openBugs": 62,
         "tasksClosed": 25
       },
       "bugs": {
         "newThisWeek": 5,
         "resolved": 1,
-        "open": 63,
+        "open": 62,
         "deferred": 0
       }
     },
@@ -48,14 +48,14 @@
       "stats": {
         "featuresShipped": 35,
         "qaPassRate": 100,
-        "inProgress": 9,
-        "openBugs": 63,
+        "inProgress": 10,
+        "openBugs": 62,
         "tasksClosed": 11
       },
       "bugs": {
         "newThisWeek": 9,
         "resolved": 0,
-        "open": 63,
+        "open": 62,
         "deferred": 0
       }
     },
@@ -63,14 +63,14 @@
       "stats": {
         "featuresShipped": 24,
         "qaPassRate": 96,
-        "inProgress": 9,
-        "openBugs": 63,
+        "inProgress": 10,
+        "openBugs": 62,
         "tasksClosed": 25
       },
       "bugs": {
-        "newThisWeek": 7,
+        "newThisWeek": 5,
         "resolved": 1,
-        "open": 63,
+        "open": 62,
         "deferred": 0
       }
     },
@@ -78,14 +78,14 @@
       "stats": {
         "featuresShipped": 47,
         "qaPassRate": 98,
-        "inProgress": 9,
-        "openBugs": 63,
+        "inProgress": 10,
+        "openBugs": 62,
         "tasksClosed": 48
       },
       "bugs": {
-        "newThisWeek": 27,
+        "newThisWeek": 24,
         "resolved": 1,
-        "open": 63,
+        "open": 62,
         "deferred": 0
       }
     },
@@ -93,14 +93,14 @@
       "stats": {
         "featuresShipped": 179,
         "qaPassRate": 99,
-        "inProgress": 9,
-        "openBugs": 63,
+        "inProgress": 10,
+        "openBugs": 62,
         "tasksClosed": 180
       },
       "bugs": {
-        "newThisWeek": 70,
+        "newThisWeek": 69,
         "resolved": 1,
-        "open": 63,
+        "open": 62,
         "deferred": 0
       }
     },
@@ -108,14 +108,14 @@
       "stats": {
         "featuresShipped": 284,
         "qaPassRate": 100,
-        "inProgress": 9,
-        "openBugs": 63,
+        "inProgress": 10,
+        "openBugs": 62,
         "tasksClosed": 285
       },
       "bugs": {
-        "newThisWeek": 76,
+        "newThisWeek": 75,
         "resolved": 1,
-        "open": 63,
+        "open": 62,
         "deferred": 0
       }
     },
@@ -123,14 +123,14 @@
       "stats": {
         "featuresShipped": 924,
         "qaPassRate": 100,
-        "inProgress": 9,
-        "openBugs": 63,
+        "inProgress": 10,
+        "openBugs": 62,
         "tasksClosed": 640
       },
       "bugs": {
         "newThisWeek": 5,
         "resolved": 0,
-        "open": 63,
+        "open": 62,
         "deferred": 0
       }
     },
@@ -138,14 +138,14 @@
       "stats": {
         "featuresShipped": 1259,
         "qaPassRate": 99,
-        "inProgress": 9,
-        "openBugs": 63,
+        "inProgress": 10,
+        "openBugs": 62,
         "tasksClosed": 1430
       },
       "bugs": {
-        "newThisWeek": 82,
+        "newThisWeek": 81,
         "resolved": 19,
-        "open": 63,
+        "open": 62,
         "deferred": 0
       }
     }
@@ -8967,6 +8967,14 @@
   ],
   "inProgress": [
     {
+      "title": "Jobi Communication Suggestions Panel Does Not Scroll",
+      "area": "Active Development",
+      "status": "pr created",
+      "url": "https://app.clickup.com/t/86b9yc7hx",
+      "due": null,
+      "assignees": "Terry Bennett, Michael Adeoye"
+    },
+    {
       "title": "Create endpoint to send reset password email through API",
       "area": "Active Development",
       "status": "code complete",
@@ -8985,7 +8993,7 @@
     {
       "title": "Contact List: Add \"Created Date\" Column with Sort",
       "area": "Active Development",
-      "status": "testing complete",
+      "status": "pr created",
       "url": "https://app.clickup.com/t/86b9uk39a",
       "due": null,
       "assignees": "ali raza, Michael Adeoye"
@@ -9001,7 +9009,7 @@
     {
       "title": "Sales List Page - Horizontal Scrolling Not Working",
       "area": "Active Development",
-      "status": "testing complete",
+      "status": "pr created",
       "url": "https://app.clickup.com/t/86b9r46t3",
       "due": null,
       "assignees": "ali raza, Michael Adeoye"
@@ -9033,7 +9041,7 @@
     {
       "title": "Restrict Deletion / Edit of Proposal-Based & Change Order Discounts from Invoices",
       "area": "Active Development",
-      "status": "testing complete",
+      "status": "pr created",
       "url": "https://app.clickup.com/t/86b6xkg7y",
       "due": null,
       "assignees": "ali raza, Michael Adeoye"
